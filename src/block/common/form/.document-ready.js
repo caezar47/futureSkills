@@ -1,4 +1,4 @@
-var form_panel = $(".form__panel");
+/*var form_panel = $(".form__panel");
 var phone = $(".form__control[type='tel']");
 var file = $('.form__file-input');
 var file_name = $('.form__file-name');
@@ -41,4 +41,4 @@ filterBtn.on('click', function(e) {
 
 $range.ionRangeSlider({
     step: 1,
-});
+});*/
