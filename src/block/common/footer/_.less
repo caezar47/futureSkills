@@ -1,0 +1,46 @@
+.footer__{
+	&block{
+		background-color: @default;
+		padding: 35px 0;
+		color: @info;
+		.text16();
+	}
+	&row{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;	
+		gap: 20px 15px;	
+	}
+	&copyright{
+		display: block;
+		max-width: 131px;
+	}
+	&address{
+		max-width: 460px;
+		.media-breakpoint-up(@lg; {
+			width: 25vw;
+		});
+	}
+	&contacts{
+		a{
+			display: block;
+			color: @info;
+			background-position: left center;
+			line-height: 24px;
+			padding-left: 35px;
+			&[href^="mailto:"]{
+				.icon-email(@c: 'fff');
+			}
+			&[href^="tel:"]{
+				font-weight: 700;
+				.icon-tel(@c: 'fff');
+			}
+		}
+	}
+	&btn{
+		.media-breakpoint-down(@sm; {
+			text-align: center;
+		});
+	}
+}

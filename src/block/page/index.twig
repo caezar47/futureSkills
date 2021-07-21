@@ -1,0 +1,288 @@
+{% if view == "header" %}
+    <section class="{{content_prefix}}content  {{content_mod}}" {% if bg %}style="background-image: url({{bg}});"{% endif %}>
+        <div class="{{content_prefix}}container container  {{content_mod}}">
+        	<h1 class="{{content_prefix}}heading  {{content_mod}}"> 
+        		{{heading}}		        
+	        </h1>
+        </div>
+    </section>
+{% endif %}
+{% if view == "projects" %}
+    <section class="{{content_prefix}}content  {{content_mod}}" {% if bg %}style="background-image: url({{bg}});"{% endif %}>
+        <div class="{{content_prefix}}container container  {{content_mod}}">
+        	<h2 class="{{content_prefix}}heading  {{content_mod}}"> 
+        		{{heading}}		        
+	        </h2> 
+        	<div class="{{content_prefix}}img  {{content_mod}}">
+        		<img src="{{img}}" class="img-responsive" alt="">
+        	</div>
+        </div>
+    </section>
+{% endif %}
+{% if view == "concept" %}
+    <section class="{{content_prefix}}content  {{content_mod}}" {% if bg %}style="background-image: url({{bg}});"{% endif %}>
+        <div class="{{content_prefix}}container container  {{content_mod}}">
+        	<h2 class="{{content_prefix}}heading  {{content_mod}}"> 
+        		{{heading}}		        
+	        </h2> 
+	        <div class="{{content_prefix}}flex  flex__row  {{content_mod}}  {{content_group}}">
+	        	{% include "../common/card/card.twig" with {
+                    view:	card_view,
+                    prefix:	card_prefix,
+                    mod:	card_mod,
+                    list:	card_list,                    
+                } %}
+	        </div>
+        </div>
+    </section>
+{% endif %}
+{% if view == "promo" %}
+    <section class="{{content_prefix}}content  {{content_mod}}" {% if bg %}style="background-image: url({{bg}});"{% endif %}>
+        <div class="{{content_prefix}}container container  {{content_mod}}">
+	        <div class="{{content_prefix}}flex  flex__row  {{content_mod}}">
+	        	<picture class="{{content_prefix}}img  {{content_mod}}">
+	        		{% if img_xs %}
+	        		<source media="(max-width: 451px)" srcset="{{img_xs}}">
+	        		{% endif %}
+	        		<img src="{{img}}" class="img-responsive" alt="">
+	        	</picture>
+	        	<div>
+		        	<h2 class="{{content_prefix}}heading  {{content_mod}}"> 
+		        		{{heading}}		        
+			        </h2>
+			        {% include "../common/button/tpl.twig" with {
+                        view:	'tpl',
+                        tag:	btn_tag,
+                        link: 	btn_link,
+                        attr: 	btn_attr,
+                        modal: 	btn_modal,
+                        prefix:	btn_prefix,
+                        mod:	btn_mod,
+                        elem:	btn_elem,
+                        icon:	btn_icon,
+                        name:	btn,
+                    } %}
+	        	</div>
+	        </div>
+        </div>
+    </section>
+{% endif %}
+{% if view == "announce" %}
+    <section class="{{content_prefix}}content  {{content_mod}}" {% if bg %}style="background-image: url({{bg}});"{% endif %}>
+    	<div class="{{content_prefix}}img  {{content_mod}}">
+    		<img src="{{img}}" class="img-responsive" alt="">
+    	</div>
+        <div class="{{content_prefix}}container container  {{content_mod}}">
+        	<div class="{{content_prefix}}note  {{content_mod}}"> 
+	        	<h2 class="{{content_prefix}}heading  {{content_mod}}"> 
+	        		{{heading}}		        
+		        </h2>
+		        {{note}}
+		        {% include "../common/button/tpl.twig" with {
+                    view:	'tpl',
+                    tag:	btn_tag,
+                    link: 	btn_link,
+                    attr: 	btn_attr,
+                    modal: 	btn_modal,
+                    prefix:	btn_prefix,
+                    mod:	btn_mod,
+                    elem:	btn_elem,
+                    icon:	btn_icon,
+                    name:	btn,
+                } %}
+        	</div>
+        </div>
+    </section>
+{% endif %}
+{% if view == "blockquote" %}
+    <section class="{{content_prefix}}content  {{content_mod}}" {% if bg %}style="background-image: url({{bg}});"{% endif %}>
+    	
+        <div class="{{content_prefix}}container container  {{content_mod}}">
+        	<div class="{{card_prefix}}item  {{card_mod}}"> 
+	        	<div class="{{card_prefix}}note  {{card_mod}}"> 
+		        	{{card_note}}
+	        	</div>
+	        	<div class="{{card_prefix}}group  {{card_mod}}"> 
+	        		<picture class="{{card_prefix}}img  {{card_mod}}">
+	        			<img src="{{card_img}}" class="img-responsive" alt="{{card_name}}">
+	        		</picture> 
+		        	<div>
+	        			<h4 class="{{card_prefix}}heading  {{card_mod}}">{{card_name}}</h4>
+	        			<p class="{{card_prefix}}label  {{card_mod}}">{{card_label}}</p>
+		        	</div>
+	        	</div>
+        	</div>
+        </div>
+    </section>
+{% endif %}
+{% if view == "challenge" %}
+    <section class="{{content_prefix}}content  {{content_mod}}" {% if bg %}style="background-image: url({{bg}});"{% endif %}>
+        <div class="{{content_prefix}}container container  {{content_mod}}">
+        	<div class="{{content_prefix}}group  {{content_mod}}">
+        		<div class="{{content_prefix}}note  {{content_mod}}">
+		        	<h3 class="{{content_prefix}}heading  {{content_mod}}"> 
+		        		{{heading}}		        
+			        </h3>
+			        {{note}}
+			    </div>
+			    <div {{card_slider}}>
+			    	{% include "../common/card/card.twig" with {
+	                    view:	card_view,
+	                    prefix:	card_prefix,
+	                    mod:	card_mod,
+	                    list:	card_list,                    
+	                } %}
+			    </div>
+		        {% include "../common/button/tpl.twig" with {
+                    view:	'tpl',
+                    tag:	btn_tag,
+                    link: 	btn_link,
+                    attr: 	btn_attr,
+                    modal: 	btn_modal,
+                    prefix:	btn_prefix,
+                    mod:	btn_mod,
+                    elem:	btn_elem,
+                    icon:	btn_icon,
+                    name:	btn,
+                } %}
+	        </div>
+        </div>
+    </section>
+{% endif %}
+{% if view == "connect" %}
+    <section class="{{content_prefix}}content  {{content_mod}}" {% if bg %}style="background-image: url({{bg}}), url({{bg2}});"{% endif %}>
+        <div class="{{content_prefix}}container container  {{content_mod}}">
+        	<h2 class="{{content_prefix}}heading  {{content_mod}}"> 
+        		{{heading}}		        
+	        </h2> 
+	        <div class="{{content_prefix}}grid grid__row  {{content_mod}}  {{content_group}}">
+	        	{% include "../common/card/card.twig" with {
+                    view:	card_view,
+                    prefix:	card_prefix,
+                    mod:	card_mod,
+                    list:	card_list,                    
+                } %}
+	        </div>
+        </div>
+    </section>
+{% endif %}
+
+
+
+{# old #}
+{% if view == "travel" %}
+    <section class="{{content_prefix}}content  {{content_mod}}" {% if bg %}style="background-image: url({{bg}});"{% endif %}>
+        <div class="{{content_prefix}}container container  {{content_mod}}">
+        	<div class="{{content_prefix}}grid  grid__row  {{content_mod}}">
+    			<div class="{{content_prefix}}note  {{content_mod}}">{{note}}</div>
+	        	<div id="map-2gis" class="map__block  {{content_mod}}" data-map='{{map}}'></div>
+	        </div>
+	        
+            {% include "../page/block.twig" with {
+                view:               panel_view,
+                content_prefix:     prefix.content, 
+                content_mod:        panel_mod,
+
+                bg:            		panel_bg,
+                heading:            panel_name,
+                link:            	panel_link,
+
+                img:            	panel_img,
+                list:            	panel_list,
+
+                btn:                panel_btn,
+                btn_bg:             panel_btn_bg,
+            } %}
+        </div>
+    </section>
+{% endif %}
+{% if view == "map" %}
+    <section class="{{content_prefix}}content  {{content_mod}}" {% if bg %}style="background-image: url({{bg}});"{% endif %}>
+        <div class="{{content_prefix}}container container  {{content_mod}}">
+	        <div class="{{content_prefix}}grid  grid__row  {{content_mod}}">
+				<div class="{{content_prefix}}note  {{content_mod}}">
+	        		{{note}}
+	        	</div>
+	        	<div id="map-2gis" class="map__block  {{content_mod}}" data-map='{{map}}'></div>
+	        </div>
+        </div>
+    </section>
+{% endif %}
+
+
+
+{% if view == "building" %}
+    <section class="{{content_prefix}}content  {{content_mod}}" {% if bg %}style="background-image: url({{bg}});"{% endif %}>
+        <div class="{{content_prefix}}container container  {{content_mod}}">
+
+            <div style="max-width: 500px" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Convallis mattis et mauris natoque odio dolor gravida. Turpis purus viverra risus sed laoreet nisi tellus est sit. Ut purus, integer tellus turpis dolor leo accumsan. Ultrices libero viverra ultrices varius gravida. Arcu feugiat aliquet sollicitudin diam amet varius aenean habitant. Lobortis consequat elit neque, suspendisse ut egestas nibh ultrices. </div>
+        	<div class="{{content_prefix}}header  flex__row  {{content_mod}}  {{content_group}}">      		
+        	     		
+        		<h2 class="{{content_prefix}}heading  {{content_mod}}  {{content_group}}">{{heading}}</h2>	        		
+	        	<div class="{{content_prefix}}btn  {{content_mod}}">
+	        		{% include "../common/button/tpl.twig" with {
+	                    view:'tpl',
+	                    tag:'a',
+	                    link: btn_link,
+	                    attr: btn_attr,
+	                    modal: btn_modal,
+	                    prefix:prefix.btn,
+	                    mod:"",
+	                    elem:'line',
+	                    name: btn,
+	                } %}
+	        	</div>
+        	</div>
+	        <div class="{{content_prefix}}grid  grid__row  {{content_mod}}  {{content_group}}">
+	        	{% include "../common/card/card.twig" with {
+                    view:	card_view,
+                    prefix:	card_prefix,
+                    mod:	card_mod,
+                    list:	card_list,                    
+                } %}
+	        </div>
+        </div>
+    </section>
+{% endif %}
+{% if view == "apartments" %}
+    <section class="{{content_prefix}}content  {{content_mod}}" {% if bg %}style="background-image: url({{bg}});"{% endif %}>
+        <div class="{{content_prefix}}container container  {{content_mod}}">
+	        <div class="{{content_prefix}}grid  grid__row  {{content_mod}}">
+	        	{% for value in list %}
+        			{% if value.heading %}
+    				<div class="{{content_prefix}}note  {{content_mod}}">
+		        		<h3 class="{{content_prefix}}heading  {{content_mod}}">{{value.heading}}</h3>	
+				        {% for l in value.link %}
+		        		<div>
+				        	<a class="{{prefix.btn}}line" href="{{l.link}}">{{l.name}}</a>
+			        	</div>
+				        {% endfor %}
+			        </div>
+        			{% endif %}
+        			{% if value.img %}
+				        <div class="{{content_prefix}}img  {{content_mod}}" >
+				        	<h4>{{value.num}}</h4>
+				        	<img src="{{value.img}}" class="img-responsive" alt="">
+				        	<div {% if value.bg %}style="background-image: url({{value.bg}});"{% endif %}></div>
+				        </div>
+				    {% endif %}
+	        	{% endfor %} 
+	        </div>
+        </div>
+    </section>
+{% endif %}
+{% if view == "newbuilding" %}
+    <section class="{{content_prefix}}content  {{content_mod}}" {% if bg %}style="background-image: url({{bg}});"{% endif %}>
+        <div class="{{content_prefix}}container container  {{content_mod}}">
+    		<h2 class="{{content_prefix}}heading  {{content_mod}}  {{content_group}}">{{heading}}</h2>
+	        <div {{card_slider}}>
+	        	{% include "../common/card/card.twig" with {
+                    view:	card_view,
+                    prefix:	card_prefix,
+                    mod:	card_mod,
+                    list:	card_list,                    
+                } %}
+	        </div>
+        </div>
+    </section>
+{% endif %}

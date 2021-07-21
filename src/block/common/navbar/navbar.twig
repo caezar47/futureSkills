@@ -1,0 +1,75 @@
+{% if view == "base" %}
+<header class="{{navbar_prefix}}block  {{navbar_mod}}">
+	<div class="{{navbar_prefix}}header">
+		<div class="container">
+			<div class="{{navbar_prefix}}header-row flex__row">
+				<div>
+					<a class="{{navbar_prefix}}logotip" href="{{page.index}}">
+						<img src="{{path.img}}/svg/logotip.svg" class="img-responsive" alt="">
+					</a>
+				</div>
+				<button class="{{navbar_prefix}}hamburger-card" data-hamburger>
+					<span class="{{navbar_prefix}}hamburger-card-inner">
+						<span class="{{navbar_prefix}}hamburger-card-line  is--left"></span>
+						<span class="{{navbar_prefix}}hamburger-card-line  is--center"></span>
+						<span class="{{navbar_prefix}}hamburger-card-line  is--right"></span>
+					</span>
+				</button>
+			</div>
+		</div>
+	</div>
+	<div class="{{navbar_prefix}}collapse" >
+		<div class="{{navbar_prefix}}collapse-inner">	
+			<div class="container">
+				<div class="{{navbar_prefix}}collapse-row  flex__row">
+					<div class="is--logotip">
+						<a class="{{navbar_prefix}}logotip" href="{{page.index}}">
+							<img src="{{path.img}}/svg/logotip.svg" class="img-responsive" alt="">
+						</a>
+					</div>
+					<nav class="is--navbar">
+						<ul class="{{navbar_prefix}}nav">
+							{# 
+									{
+										name:"Генплан", 
+										link:page.masterplan, 
+										mod:""
+									}, #}
+							{% include "item.twig" with {
+								prefix:navbar_prefix, 
+								list : [
+									{
+										name:"Участки", 
+										link:page.locality, 
+										mod:""
+									},
+									{
+										name:"Дома", 
+										link:page.home, 
+										mod:""
+									},
+									{
+										name:"Описание", 
+										link:page.description, 
+										mod:""
+									},	
+									{
+										name:"Контакты", 
+										link:page.contacts, 
+										mod:""
+									},	
+								]
+							} %}
+						</ul>	
+					</nav>
+					<div class="is--btn">
+						<a href="tel:{{contacts.phone_tel}}" class="{{navbar_prefix}}phone" >
+							{{contacts.phone}}
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+{% endif %}

@@ -1,0 +1,89 @@
+{% if view == "page" %}
+    <section class="{{content_prefix}}content  {{content_mod}}" {% if bg %}style="background-image: url({{bg}});"{% endif %}>
+        <div class="{{content_prefix}}container container  {{content_mod}}">
+	    	<h1 class="{{content_prefix}}heading  {{content_mod}}">{{heading}}</h1>
+            {% include "../common/form/form.twig" with {
+                view: form_block_view
+            } %}
+	        <div class="{{content_prefix}}grid  grid__row  {{content_mod}}">
+	        	{% include "../common/card/card.twig" with {
+                    view:	card_view,
+                    prefix:	card_prefix,
+                    mod:	card_mod,
+                    list:	card_list,                    
+                } %}
+        	</div>
+        </div>
+    </section>
+{% endif %}
+{% if view == "card" %}
+    <section class="{{content_prefix}}content  {{content_mod}}" {% if bg %}style="background-image: url({{bg}});"{% endif %}>
+        <div class="{{content_prefix}}container container  {{content_mod}}">
+	        <div class="{{content_prefix}}grid  grid__row  {{content_mod}}">
+	        	<div>
+	        		<h1 class="{{content_prefix}}heading  {{content_mod}}">{{heading}}</h1>
+	        		<div class="{{content_prefix}}note  {{content_mod}}">{{note}}</div>
+        			{% include "../common/button/tpl.twig" with {
+                        view:'tpl',
+                        tag:'a',
+                        link: btn_link,
+                        attr: btn_attr,
+                        modal: btn_modal,
+                        prefix:prefix.btn,
+                        mod:btn_mod,
+                        elem:'item',
+                        name:btn,
+                    } %}
+	        	</div>
+	        	<div>
+	        		{% include "../page/block.twig" with {
+		                view:               gallery_view,
+		                content_prefix:     prefix.content, 
+		                content_mod:        gallery_mod,
+
+		                grid:            	gallery_grid,
+		                bg:            		gallery_bg,
+		                heading:            gallery_name,
+		                link:            	gallery_link,
+
+		                img:            	gallery_img,
+		                list:            	gallery_list,
+
+		                btn:                gallery_btn,
+		                btn_bg:             gallery_btn_bg,
+		            } %}
+	        	</div>
+	        	<div>
+	        		<h2 class="{{content_prefix}}heading  {{content_mod}}-adv">{{adv_heading}}</h2>
+	        		<div class="{{card_prefix}}group  grid__row  {{card_mod}}">
+			        	{% include "../common/card/card.twig" with {
+		                    view:	card_view,
+		                    prefix:	card_prefix,
+		                    mod:	card_mod,
+		                    list:	card_list,                    
+		                } %}
+			        </div> 	
+	        	</div>
+	        	<div>
+	        		{% include "../page/block.twig" with {
+		                view:               panel_view,
+		                content_prefix:     prefix.content, 
+		                content_mod:        panel_mod,
+
+		                grid:            	panel_grid,
+		                bg:            		panel_bg,
+		                heading:            panel_name,
+		                link:            	panel_link,
+
+		                img:            	panel_img,
+		                list:            	panel_list,
+
+		                btn:                panel_btn,
+		                btn_bg:             panel_btn_bg,
+		                btn_mod:            panel_btn_mod,
+		            } %}
+	        	</div>
+        	</div>
+        </div>
+    </section>
+{% endif %}

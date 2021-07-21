@@ -1,0 +1,326 @@
+.section__{
+	&wrap{ 
+		flex: 1 1 auto;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		min-height: 100%;
+	}
+	&content{
+		min-height: 100%;
+	    display: flex; 
+	    flex-direction: column;
+	    flex: 1 1 auto;	
+		&.is--index-header{
+			background: linear-gradient(90deg, rgba(189,252,118,1) 0%, rgba(138,251,210,1) 100%);
+			min-height: 100vh;
+			flex-direction: row;
+		}
+		&.is--index-concept{
+			background-position: 60% center;
+			background-repeat: no-repeat;
+			.media-breakpoint-up(@md; {
+				background-position: center right;
+			});
+		}
+		&.is--index-announce{
+			position: relative;
+			overflow: hidden;
+		}
+		&.is--index-connect{
+			color: @black;
+			background-size: 0, auto;
+			.media-breakpoint-up(@sm; {
+				background-repeat: no-repeat;
+				background-position: center, top left;
+				background-size: cover, 0;
+			});
+		}
+	}
+	&container{	
+		padding-top: 30px;
+		padding-bottom: 30px;
+		.media-breakpoint-up(@xl; {
+			padding-top: 50px;
+			padding-bottom: 50px;
+		});	  
+		//index
+		&.is--index-header{
+			align-self: center;
+			padding-top: 70px;
+	    	.media-breakpoint-up(@xl; {
+			    padding-top: 355px;
+	    		padding-bottom: 355px;
+			});	
+		}  
+		&.is--index-projects{
+		    padding-top: 70px;
+		    padding-bottom: 44px;
+	    	.media-breakpoint-up(@xl; {
+	    		padding-bottom: 70px;
+			});	
+		}  
+		&.is--index-concept{
+		    padding-top: 42px;
+    		padding-bottom: 42px;
+	    	.media-breakpoint-up(@xl; {
+			    padding-top: 80px;
+	    		padding-bottom: 80px;
+			});	
+		}  
+		&.is--index-competence{
+			padding-top: 50px;
+			padding-bottom: 50px;
+	    	.media-breakpoint-up(@xl; {
+			    padding-top: 80px;
+	    		padding-bottom: 30px;
+			});	
+		} 
+		&.is--index-announce{
+			position: relative;
+			z-index: 2;
+			max-width: 1200px;
+			padding-bottom: 100px;
+	    	.media-breakpoint-up(@xl; {
+			    padding-top: 13vw;
+	    		padding-bottom: 16.5vw;
+			});	
+		} 
+		&.is--index-blockquote{
+			max-width: 1200px;
+		    padding-top: 110px;
+		    padding-bottom: 110px;
+	    	.media-breakpoint-up(@xl; {
+			    padding-top: 50px;
+	    		padding-bottom: 50px;
+			});	
+		} 
+		&.is--index-possibility{
+    		padding-bottom: 80px;
+	    	.media-breakpoint-up(@xl; {
+			    padding-top: 110px;
+	    		padding-bottom: 100px;
+			});	
+		} 
+		&.is--index-challenge{
+			max-width: 1200px;
+		    padding-top: 70px;
+	    	padding-bottom: 160px;
+	    	.media-breakpoint-up(@xl; {
+		    	padding-top: 55px;
+	    		padding-bottom: 205px;
+			});	
+		}
+		&.is--index-connect{
+			max-width: 1200px;
+		    padding-top: 45px;
+	    	padding-bottom: 60px;
+	    	.media-breakpoint-up(@xl; {
+			    padding-top: 90px;
+	    		padding-bottom: 80px;
+			});	
+		}
+	}
+	&group{
+		&.is--index-challenge{
+			background: linear-gradient(104.21deg, #01070D 7.91%, #01121E 95.12%);
+			box-shadow: 26px 33px 47px rgba(0, 0, 0, 0.23);
+			border-radius: @site_br;
+			padding: 50px 20px;
+			.media-breakpoint-up(@xl; {
+				padding: 80px 100px 100px;
+			});
+		}
+	}		
+	&grid{		
+		&.is--index-connect{
+			grid-gap: 50px 30px;
+			grid-template-columns: 100%;
+			.media-breakpoint-up(@md; {
+				grid-template-columns: repeat(4, 1fr);
+			});
+		}
+	}
+	&flex{ 
+		&.is--index-concept{
+			max-width: 1200px;
+			margin: 0 auto;
+			gap: 30px;
+			justify-content: center;
+			.media-breakpoint-up(@xl; {
+				gap: 44px 30px;
+				& > *{
+					flex: 0 0 ~"calc(33.333% - 30px)"
+				}
+			});
+		}  
+		&.is--index-competence{
+			gap: 24px;
+			flex-wrap: nowrap;
+			flex-direction: column;
+			align-items: center;
+			.media-breakpoint-up(@md; {
+				gap: 40px;
+				flex-direction: row;
+				& > *:nth-child(2){
+					padding-bottom: 30px;
+					max-width: 650px;
+				}
+				& > *:nth-child(1){
+					flex: 0 0 42%;
+				}
+			});
+		}
+		&.is--index-possibility{
+			gap: 35px;
+			flex-wrap: nowrap;
+			flex-direction: column;
+			align-items: center;
+			.media-breakpoint-up(@md; {
+				gap: 40px;
+				flex-direction: row;
+				& > *:nth-child(2){
+					padding-bottom: 50px;
+					max-width: 570px;
+				}
+				& > *:nth-child(1){
+					flex: 0 0 48.5%;
+				}
+			});
+		}
+	}
+	&header{
+	}
+	&heading{
+		//index
+		font-weight: 400;
+		span{
+			color: @primary;
+		}
+		&.is--index-header{
+			.heading1x();
+			text-transform: uppercase;
+			text-align: center;
+			color: @default;
+		}	
+		&.is--index-projects{  
+			max-width: 680px; 
+			text-align: center;
+			margin: 0 auto 20px; 
+			.media-breakpoint-up(@xl; {
+				margin: 0 auto 60px; 
+			});
+		}
+		&.is--index-concept{  
+			max-width: 1050px; 
+			text-align: center;
+			margin: 0 auto 50px; 
+			.heading3();
+			.media-breakpoint-up(@xl; {
+				margin: 0 auto 108px; 
+				.heading2();
+			});
+		}	    
+		&.is--index-competence{
+			max-width: 90%;
+			line-height: 132%;
+			& + .button__item{
+				margin-top: 40px;
+			}
+		}     
+		&.is--index-announce{
+			margin-bottom: 20px;
+			.media-breakpoint-up(@md; {
+				margin-bottom: 30px;
+			});
+		}
+		&.is--index-possibility{
+			line-height: 132%;
+			& + .button__item{
+				margin-top: 40px;
+			}
+		} 
+		&.is--index-challenge{
+			margin-bottom: 20px;
+			color: @primary;
+		}
+		&.is--index-connect{
+			margin-bottom: 40px;
+			max-width: 90%;
+			.media-breakpoint-up(@xl; {
+				margin-bottom: 45px;
+			});
+		}
+	}
+	&note{	
+		&.is--index-announce{  
+			max-width: 640px; 
+			p, div{
+				font-family: @site_ff_custom;
+				margin-bottom: 10px;
+				.text18();
+			}
+			* + .button__item{
+				margin-top: 30px;
+			}
+		}
+		&.is--index-challenge{   
+			max-width: 700px; 
+			text-align: center;
+			margin-bottom: 45px;
+			p, div{
+				font-family: @site_ff_custom;
+				.text18();
+			}
+			& ~ .button__item{
+				margin-top: 55px;
+			}
+			.media-breakpoint-up(@xl; {
+				text-align: left;
+				margin-bottom: 65px;
+			});
+		}
+	}
+	&btn{
+	}
+	&img{	
+		//index
+		&.is--index-projects{ 
+			img{
+				margin: 0 auto;
+				min-height: 366px;
+			}
+		} 
+		&.is--index-competence{
+			display: block;
+			img{
+				margin: 0 auto;
+			}
+			.media-breakpoint-up(@md; {
+				img{
+					margin: 0 0 0 auto;
+				}
+			});
+		}
+		&.is--index-announce{
+			padding-top: 75px;
+			.media-breakpoint-up(@md; {
+				padding-top: 0;
+				position: absolute;
+				z-index: 1;
+				max-width: 1065px;
+				width: 56vw;
+				top: 50%;
+				right: 0;
+				transform: translate(37%, -50%);
+			});
+		}   
+		&.is--index-possibility{
+			img{
+				margin: 0 auto;
+			}
+		}
+	}
+	&slider{
+	}
+}

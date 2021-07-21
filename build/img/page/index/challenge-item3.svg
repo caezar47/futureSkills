@@ -1,0 +1,14 @@
+<svg width="152" height="142" viewBox="0 0 152 142" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="70.5645" cy="71.3411" r="70" fill="white" fill-opacity="0.1"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M73.3113 22.0495L88.2513 40.1785L87.4408 39.3713L73.3113 53.5592V22.0495ZM73.3113 56.3935L88.7984 40.8423L94.6938 47.996C96.9199 50.7088 98.7496 53.6116 100.192 56.6354L99.4854 55.9268L76.5137 78.8331L77.2198 79.5412H72.3111V76.4652H73.3113V56.3935ZM78.636 79.5412H81.9971V82.6172H91.6832V89.8163V104.804C104.318 92.4929 107.731 73.5005 100.638 57.6019L78.636 79.5412ZM71.3113 22.0483L49.863 48.0615C37.7554 62.7215 37.3627 83.0098 47.1142 97.9316L52.9389 103.756V57.9439H62.625V76.0725H71.3113V22.0483Z" fill="url(#paint0_linear)"/>
+<path d="M81.9972 82.6826V79.6066H72.3112V76.138H62.6251V57.9438H52.939V103.756L46.3944 97.2117C43.5148 94.3321 38.8026 94.3321 35.923 97.2117L33.5669 99.5678L53.0045 119.005H83.1098V110.432H91.6833V89.8817V82.6826H81.9972Z" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="bevel"/>
+<path d="M62.6255 76.0725V89.8817" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="bevel"/>
+<path d="M72.3115 76.4653V90.2745" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="bevel"/>
+<path d="M81.9976 82.6826V90.798" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="bevel"/>
+<defs>
+<linearGradient id="paint0_linear" x1="72.2649" y1="20.8358" x2="72.2649" y2="104.804" gradientUnits="userSpaceOnUse">
+<stop stop-color="#C0FF27"/>
+<stop offset="1" stop-color="#17FFB9"/>
+</linearGradient>
+</defs>
+</svg>

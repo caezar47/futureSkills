@@ -1,0 +1,152 @@
+{% if view == "tpl" %}
+	{% for value in list %}	
+		{% if value.view == "input" %}
+		<label class="{{prefix}}item  {{mod}}  {{value.mod}}">
+			{% if value.label %}
+			<p class="{{prefix}}label  {{mod}}">{{value.label}}</p>
+			{% endif %}
+			<input type="{{value.type}}" class="{{prefix}}control  {{mod}}  {{color}}  {{value.validate}}" {{value.required}} placeholder="{{value.placeholder}}">
+		</label>
+		{% endif %}
+		{% if value.view == "range" %}
+		<label class="{{prefix}}item  {{mod}}  {{value.mod}}">
+			{% if value.label %}
+			<p class="{{prefix}}label  {{mod}}">{{value.label}}</p>
+			{% endif %}
+			<input 	type="text" class="js-range-slider" data-min="{{value.min}}" data-max="{{value.max}}" data-from="{{value.min}}" 		data-to="{{value.max}}" data-type="{{value.type}}" data-step="{{value.step}}">
+		</label>
+		{% endif %}
+		{% if value.view == "double" %}
+		<label class="{{prefix}}item  {{mod}}  {{value.mod}}">
+			{% if value.label %}
+			<p class="{{prefix}}label  {{mod}}">{{value.label}}</p>
+			{% endif %}
+			<div class="{{prefix}}group  {{mod}}  {{value.mod}}">
+				<input type="{{value.type}}" class="{{prefix}}control  {{mod}}  {{color}}  {{value.validate}}" {{value.required}} placeholder="{{value.placeholder}}">
+				<input type="{{value.type2}}" class="{{prefix}}control  {{mod}}  {{color}}  {{value.validate2}}" {{value.required2}} placeholder="{{value.placeholder2}}">
+			</div>
+		</label>
+		{% endif %}
+		{% if value.view == "value" %}
+		<label class="{{prefix}}item  {{mod}}  {{value.mod}}">
+			<input type="{{value.type}}" class="{{prefix}}control  {{mod}}  {{color}}" name="f[{{value.name}}]">
+			{% if value.label %}
+			<p class="{{prefix}}label  {{mod}}  {{value.mod}}">{{value.label}}</p>
+			{% endif %}
+			<span>{{value.name}}</span>
+		</label>
+		{% endif %}
+		{% if value.view == "select" %}
+		<div class="{{prefix}}item  {{mod}}  {{value.mod}}">
+			{% if value.label %}
+			<p class="{{prefix}}label  {{mod}}">{{value.label}}</p>
+			{% endif %}
+			<select class="{{prefix}}control  {{value.mod}}  {{color}}  {{value.validate}}" {{value.type}}>
+				{% for option in value.option %}
+					<option {{option.status}} {% if option.value %}value="{{option.value}}"{% endif %}>{{option.name}}</option>
+				{% endfor %}
+			</select>
+		</div>
+		{% endif %}
+		{% if value.view == "textarea" %}
+		<label class="{{prefix}}item  {{mod}}  {{value.mod}}">
+			<textarea class="{{prefix}}control  {{mod}}  {{value.validate}}  is--textarea" {{value.required}} placeholder="{{value.placeholder}}"></textarea> 
+		</label>
+		{% endif %}
+		{% if value.view == "captcha" %}
+		<div class="{{prefix}}item  {{mod}}  {{value.mod}}">
+			<img src="{{value.img}}"  class="{{prefix}}captcha-img  img-fluid"> 
+		</div>
+		{% endif %}
+		{% if value.view == "checkbox" %}
+			<div class="{{prefix}}item  {{mod}}  {{value.mod}}">
+				{% if value.label %}
+				<p class="{{prefix}}label  {{mod}}">{{value.label}}</p>
+				{% endif %}
+				<div class="{{prefix}}checkbox-group  {{mod}}">
+					{% for v in value.list %}
+						<label class="{{prefix}}checkbox  {{mod}}">
+							<input class="{{prefix}}checkbox-input  {{mod}}  {{value.attr}}" type="{{v.type}}" {{v.status}}  id="{{v.id}}" name="{{v.form_id}}" {% if v.value %}value="{{v.value}}"{% endif %}>
+							<span class="{{prefix}}checkbox-icon  {{mod}}"></span>
+							{% if v.name %}
+							<span class="{{prefix}}checkbox-name  {{mod}}">{% if v.link %}<a href="{{v.link}}">{{v.name}}</a>{% else %}{{v.name}}{% endif %}
+							</span>
+							{% endif %}
+						</label>
+					{% endfor %}
+				</div>
+			</div>
+		{% endif %}
+		{% if value.view == "submit" %}
+		<div class="{{prefix}}item  is--submit  {{value.mod}}">
+			{% include "../button/tpl.twig" with {
+                view:'tpl',
+                tag:'button',
+                type:"submit",
+                attr: '',
+                prefix:value.prefix,
+                mod:"",
+                elem:'item',
+                name:value.name, 
+            } %}
+		</div>
+		{% endif %}
+		{% if value.view == "link" %}
+		<div class="{{prefix}}item  {{value.group_mod}}">
+			{% include "../button/tpl.twig" with {
+                view:'tpl',
+                tag:'a',
+                link:value.link,
+                attr: '',
+                prefix:value.prefix,
+                mod:value.mod,
+                elem:value.elem,
+                name:value.name, 
+            } %}
+		</div>
+		{% endif %}
+		{% if value.view == "btn" %}
+		<div class="{{prefix}}item  {{value.group_mod}}">
+			{% include "../button/tpl.twig" with {
+                view:'tpl',
+                tag:'button',
+                type:value.type,
+                attr: '',
+                prefix:value.prefix,
+                mod:value.mod,
+                elem:value.elem,
+                name:value.name, 
+            } %}
+		</div>
+		{% endif %}
+		{% if value.view == "modal" %}
+		<div class="{{prefix}}item  {{mod}}  {{value.mod}}  is--modal">
+	        {% include "../button/tpl.twig" with {
+                view:'tpl',
+                tag:'button',
+                type:'button',
+                modal:value.modal,
+                attr: value.attr,
+                prefix:value.prefix,
+                mod:"",
+                elem:'item',
+                name:value.name,
+            } %}
+		</div>
+		{% endif %}
+		{% if value.view == "agreement" %}
+		<div class="{{prefix}}item  {{mod}}  is--agreement">
+			<input type="hidden" name="f[Согласие на обработку персональных данных]" value="Да">
+			<p class="{{prefix}}agreement  {{mod}}  {{value.mod}}  {{color}}">{{value.name}}</p>
+		</div>
+		{% endif %}
+		{% if value.view == "file" %}
+		<div class="{{prefix}}item  {{mod}}  is--file">
+			<label class="{{prefix}}file  {{mod}}">
+				<input type="file" class="{{prefix}}file-input  {{mod}}"  name="f[{{value.name}}]">
+				<div class="{{prefix}}file-name  {{mod}}">{{value.name}}</div>
+			</label>
+		</div>
+		{% endif %}
+	{% endfor %}
+{% endif %}

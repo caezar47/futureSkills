@@ -1,0 +1,61 @@
+{
+	"contacts":{
+		"name":"futureSkills",
+		"domain":"futureSkills",
+		"domain_link":"futureSkills",
+		"color":"#F24F00",
+		"agreement_page":"agreement",
+		"email":"info@fedoperator.ru",
+		"phone":"8 (800) 450-57-57",  
+		"phone_tel":"88004505757",    
+		"clock":"С 10 до 19:00, без выходных",  
+		"address":"ул. Красноармейская, д. 1, п. 232",
+		"map_center":"52.977, 36.068",
+		"map_center_coord":"[52.977, 36.068]",
+		"map_zoom":"18",
+		"map_zoom_xs":"12",
+		"map_point_coord":"[55.737464, 37.6367]",
+		"map_point_heading":"Большая Татарская улица, 35 строение 7-9"
+	},
+	"soc":{
+		"yb":"https://www.youtube.com/channel/UC1cnObAoKV_l9dI1qrGGOGw",
+		"inst":"https://www.instagram.com/2sharp_agency",
+		"fb":"https://www.facebook.com/2sharp.creative",
+		"bh":"https://www.behance.net/teams/2sharp",
+		"vi":"https://vimeo.com/twosharp"
+	},
+
+	"page":{
+		"index":"./",
+		"locality":"./locality.html",
+		"masterplan":"./masterplan.html",
+		"home":"./home.html",
+		"home_card":"./home-card.html",
+		"description":"./description.html",
+		"agreement":"./agreement.html",
+		"contacts":"./contacts.html"
+	},
+	"prefix":{
+		"content":"section__",
+		"heading":"page-header__",
+		"btn":"button__",
+		"form":"form__",
+		"card":"card__",
+		"video":"video__",
+		"table":"table__",
+		"tabs":"tabs__",
+		"map":"map__",
+		"smap":"map-svg__",
+		"link":"link__",
+		"breadcrumb":"breadcrumb__",
+		"pagination":"pagination__",
+		"btn-icon":"btn-icon__"
+	},
+	"path":{		                  
+		"css":"./css",
+		"img":"./img",
+		"js":"./js",
+		"favicon":"./favicon",
+		"docs":"./docs" 
+	}
+}

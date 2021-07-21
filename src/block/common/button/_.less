@@ -1,0 +1,111 @@
+.button__{
+	&item{
+		.btn-clearfix(); 
+		position: relative;	
+		z-index: 1;
+		display: inline-flex; 	
+    	gap: 11px;
+		text-align: center;	
+		align-items: center;
+		color: @default;
+		background: @primary-p;
+		text-transform: uppercase;
+		padding: 11px 40px;
+		justify-content: center;
+		.text12();
+		border-radius: @site_br - 10px;
+		overflow: hidden;
+		span{
+			position: relative;
+			z-index: 2;
+			color: inherit!important;
+		}
+		svg{
+			position: relative;
+			z-index: 2;
+			&.icon-goforward{
+				width: 18px;			
+				height: 18px;
+			}			
+		}
+		&::after{
+			content: '';
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background: @primary-g;
+			transition: @trs-site;
+		}
+		&:hover{
+			color: @default; 
+			&::after{
+				opacity: 0;	
+			}
+		}
+	}
+	/*
+	&line{
+		.btn-clearfix(); 
+		color: @default;
+		display: inline-flex;
+		position: relative;
+		z-index: 1;
+		font-weight: 700;
+		padding: 0 3px 0px;
+		span{
+			position: relative;
+			z-index: 2;
+		}
+		&::after{
+			content: '';
+			position: absolute;
+			z-index: -1;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 7px;
+			background-color: fadeout(@success, 50%);
+			transition: @trs-site;
+		}
+		&:hover{
+			color: @default;
+			&::after{
+				height: 3px;
+				background-color: @success;
+			}
+		}
+		&.is--white{
+			color: @white;
+		}
+	}
+	&sort{
+		.btn-clearfix();
+		color: @info;
+		padding-right: 10px;
+		background-position: center right;
+		&.is--desc{
+			color: @primary;
+			.icon-dropdown(@c: 'FFB526');
+		}
+		&.is--asc{
+			color: @primary;
+			.icon-dropdown-open(@c: 'FFB526');
+		}
+	}
+	&icon {
+		.btn-clearfix();
+		&.is--filter{
+			display: block;
+			min-width: 20px;
+			width: 20px;
+			height: 20px;
+			color: @info;
+			&.is--active{
+				color: @primary;
+			}
+		}
+	}*/
+}

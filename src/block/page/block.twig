@@ -1,0 +1,172 @@
+{% if view == "banner" %}
+    <section class="{{content_prefix}}content  {{content_mod}}" >
+        <div class="{{content_prefix}}container container  {{content_mod}}" {% if bg %}style="background-image: url({{bg}});"{% endif %}>
+            <div class="{{content_prefix}}note  {{content_mod}}">
+                {{note}}
+                <div class="{{content_prefix}}btn  {{content_mod}}">      
+                    {% include "../common/button/tpl.twig" with {
+                        view:'tpl',
+                        tag:'a',
+                        link: btn_link,
+                        attr: btn_attr,
+                        modal: btn_modal,
+                        prefix:prefix.btn,
+                        mod:btn_mod,
+                        elem:'item',
+                        name:btn,
+                    } %}  
+                </div>
+            </div>
+        </div>
+        {% if img %}
+        <div class="{{content_prefix}}img  {{content_mod}}">
+            <img src="{{img}}" class="img-responsive" alt="">
+        </div> 
+        {% endif %}
+    </section>
+{% endif %}
+{% if view == "adv" %}
+    <section class="{{content_prefix}}content  {{content_mod}}" {% if bg %}style="background-image: url({{bg}});"{% endif %}>
+        <div class="{{content_prefix}}container container  {{content_mod}}">
+            {% if heading %}
+                <h2 class="{{content_prefix}}heading  {{content_mod}}">{{heading}}</h2>
+            {% endif %}
+            <div class="{{content_prefix}}grid  grid__row  {{content_mod}}  {{content_group}}">
+                {% include "../common/card/card.twig" with {
+                    view:   card_view,
+                    prefix: card_prefix,
+                    mod:    card_mod,
+                    list:   card_list,                    
+                } %}
+            </div>
+            {% if panel_view %}
+                {% include "../page/block.twig" with {
+                    view:               panel_view,
+                    content_prefix:     prefix.content, 
+                    content_mod:        panel_mod,
+
+                    bg:                 panel_bg,
+                    heading:            panel_name,
+                    link:               panel_link,
+
+                    btn:                panel_btn,
+                    btn_link:           panel_btn_link,
+                } %}
+            {% endif %}
+        </div>
+    </section>
+{% endif %}
+{% if view == "panel" %}
+    <{% if link %}a href="{{link}}"{% else %}section{% endif %} class="{{content_prefix}}content  {{content_mod}}" {% if bg %}style="background-image: url({{bg}});"{% endif %}>
+        {% if heading %}
+        <h3 class="{{content_prefix}}heading  {{content_mod}}">
+            {{heading}}    
+        </h3>        
+        {% endif %}
+        {% if btn %}
+        <div class="{{content_prefix}}btn  {{content_mod}}">
+           {% include "../common/button/tpl.twig" with {
+                view:'tpl',
+                tag:'a',
+                link: btn_link,
+                attr: '',
+                modal: '',
+                prefix:prefix.btn,
+                mod:btn_mod,
+                elem:'item',
+                name:btn,
+            } %}     
+        </div>        
+        {% endif %}
+    </{% if link %}a{% else %}section{% endif %}>
+{% endif %}
+{% if view == "gallery" %}
+    <section class="{{content_prefix}}content  {{content_mod}}" {% if bg %}  style="background-image: url({{bg}});"{% endif %}>
+        {% if grid != "null" %}
+        <div class="{{content_prefix}}grid  grid__row  {{content_mod}}">
+            <div>
+                {% if heading %}
+                <h2 class="{{content_prefix}}heading  {{content_mod}}">{{heading}}</h2>
+                {% endif %}
+                {% if img %}
+                <div class="{{content_prefix}}img  {{content_mod}}">
+                    <img src="{{img}}" class="img-responsive" alt="">
+                </div>
+                {% endif %}
+                {% if btn %}
+                <div class="{{content_prefix}}img  {{content_mod}}  is--btn" style="background-image: url({{btn_bg}});">
+                    {% include "../common/button/tpl.twig" with {
+                        view:'tpl',
+                        tag:'a',
+                        link: btn_link,
+                        attr: btn_attr,
+                        modal: btn_modal,
+                        prefix:prefix.btn,
+                        mod:btn_mod,
+                        elem:'item',
+                        name:btn,
+                    } %}
+                </div>
+                {% endif %}
+            </div>
+            <div>
+        {% endif %}
+                <div data-slick-gallery>
+                    {% for value in list %}
+                        <div>
+                            <img src="{{value.img}}" class="img-responsive" alt="">
+                        </div>
+                    {% endfor %}
+                </div>
+                <div data-slick-gallery-thumb>
+                    {% for value in list %}
+                        <div>
+                            <img src="{{value.img}}" class="img-responsive" alt="">
+                        </div>
+                    {% endfor %}
+                </div>
+        {% if grid != "null" %}                    
+            </div>
+        </div>
+        {% endif %}
+    </section>
+{% endif %}
+
+
+
+
+{# old #}
+{% if view == "seo" %}
+    <section class="{{content_prefix}}content  {{content_mod}}" {% if bg %}style="background-image: url({{bg}});"{% endif %}>
+        <div class="{{content_prefix}}container container  {{content_mod}}">
+            {% if heading %}
+            <h2 class="{{content_prefix}}heading  {{content_mod}}">{{heading}}</h2>
+            {% endif %}
+            {% if card_list %}
+            <ul class="{{content_prefix}}grid  grid__row  {{content_mod}}">
+                {% for value in card_list %}
+                    <li class="{{card_prefix}}item  {{card_mod}}" >
+                        <a href="{{value.link}}">{{value.name}}</a>
+                    </li>
+                {% endfor %}
+                <li>
+                    {% include "../common/button/tpl.twig" with {
+                        view:'tpl',
+                        tag:'a',
+                        link: btn_link,
+                        attr: btn_attr,
+                        modal: btn_modal,
+                        prefix:prefix.btn,
+                        mod:btn_mod,
+                        elem:'line',
+                        name:btn,
+                    } %}
+                </li>
+            </ul>
+            {% endif %}
+            <div class="{{content_prefix}}note  {{content_mod}}">
+                {{note}}
+            </div>
+        </div>
+    </section>
+{% endif %}

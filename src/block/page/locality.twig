@@ -1,0 +1,92 @@
+{% if view == "page" %}
+    <section class="{{content_prefix}}content  {{content_mod}}" {% if bg %}style="background-image: url({{bg}});"{% endif %}>
+        <div class="{{content_prefix}}container container  {{content_mod}}">
+	        <div class="{{content_prefix}}grid  grid__row  {{content_mod}}">
+	        	<div>
+	    			<h1 class="{{content_prefix}}heading  {{content_mod}}">{{heading}}</h1>	
+	    			
+	        		<div class="{{content_prefix}}note  {{content_mod}}  is--legend">
+	        			{{note}} 
+	        		</div>
+	        		<div class="{{content_prefix}}note  {{content_mod}}  is--decs  js-box-data">
+	        			<h3 class="js-caption">
+	        				Участок №<span class="js-id">47</span>
+	        			</h3>
+	        			<dl>
+	        				<div class="js-val-status">
+		        				<div>
+		        					<dt>Статус:</dt>
+		        					<dd><span class="js-val">Свободен</span></dd>
+		        				</div>
+	        				</div>
+	        				<div class="js-val-area">
+		        				<div>
+		        					<dt>Площадь:</dt>
+		        					<dd><span class="js-val">6,06</span> м<sup>2</sup></dd>
+		        				</div>
+	        				</div>
+	        				<div class="js-val-sotka">
+		        				<div>
+		        					<dt>Цена за сотку от:</dt>
+		        					<dd><span class="js-val">450000</span> ₽</dd>
+		        				</div>
+	        				</div>
+	        				<div class="js-val-land">
+		        				<div>
+		        					<dt>Стоимость земли:</dt>
+		        					<dd><span class="js-val">2727000</span> ₽</dd>
+		        				</div>
+	        				</div>
+	        				<div class="js-val-arr">
+		        				<div>
+		        					<dt>Стоимость обустройства: </dt>
+		        					<dd><span class="js-val">20000</span> ₽</dd>
+		        				</div>
+	        				</div>
+	        				<div class="js-val-full">
+		        				<div>
+		        					<dt>Полная стоимость участка: </dt>
+		        					<dd><span class="js-val">2747000</span> ₽</dd>
+		        				</div>
+	        				</div>
+	        			</dl>
+						<div class="js-val-status-btn">
+							<a href="#" class="button__item  pelk__link-get_land">
+								<span class="btn__name">Забронировать</span>
+							</a>  
+						</div>
+					</div>
+					{% include "../common/button/tpl.twig" with {
+		                view:'tpl',
+		                tag:'a',
+		                link: btn_link,
+		                attr: btn_attr,
+		                modal: btn_modal,
+		                prefix:prefix.btn,
+		                mod:btn_mod,
+		                elem:'item',
+		                name:btn,
+		            } %} 
+	        	</div>
+	        	<div>
+	        		{% include "../common/svg/tpl.twig" with {
+		                prefix:        map_prefix,
+		                bg:            map_bg,
+		                list:          map_list,
+		            } %}
+	        	</div>
+	        	<div>
+	        		<h2 class="{{content_prefix}}heading  {{content_mod}}  is--adv">Инфраструктура:</h2>
+	        		<div class="{{card_prefix}}group  grid__row  {{card_mod}}">
+			        	{% include "../common/card/card.twig" with {
+		                    view:	card_view,
+		                    prefix:	card_prefix,
+		                    mod:	card_mod,
+		                    list:	card_list,                    
+		                } %}
+			        </div> 	
+	        	</div>
+        	</div>
+        </div>
+    </section>
+{% endif %}

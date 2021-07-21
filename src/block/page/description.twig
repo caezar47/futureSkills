@@ -1,0 +1,38 @@
+{% if view == "page" %}
+    <section class="{{content_prefix}}content  {{content_mod}}" {% if bg %}style="background-image: url({{bg}});"{% endif %}>
+        <div class="{{content_prefix}}container container  {{content_mod}}">
+	        <div class="{{content_prefix}}grid  grid__row  {{content_mod}}">
+	        	<div>
+	        		<div class="{{content_prefix}}note  {{content_mod}}">
+	    				<h1 class="{{content_prefix}}heading  {{content_mod}}">{{heading}}</h1>	
+	        			{{note}} 
+	        		</div>
+					{% include "../common/button/tpl.twig" with {
+		                view:'tpl',
+		                tag:'a',
+		                link: btn_link,
+		                attr: btn_attr,
+		                modal: btn_modal,
+		                prefix:prefix.btn,
+		                mod:btn_mod,
+		                elem:'item',
+		                name:btn,
+		            } %} 
+	        	</div>
+        		<picture class="{{content_prefix}}img  {{content_mod}}">
+        			<img src="{{img}}" alt="" class="img-responsive">
+        		</picture>
+	        	<div>
+	        		<div class="{{card_prefix}}group  grid__row  {{card_mod}}">
+			        	{% include "../common/card/card.twig" with {
+		                    view:	card_view,
+		                    prefix:	card_prefix,
+		                    mod:	card_mod,
+		                    list:	card_list,                    
+		                } %}
+			        </div> 	
+	        	</div>
+        	</div>
+        </div>
+    </section>
+{% endif %}

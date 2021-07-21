@@ -1,0 +1,29 @@
+.container {
+	padding-left: @container_gap;
+	padding-right: @container_gap;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	max-width: @container_size;
+	.media-breakpoint-up(@xl; {
+		&.is--page-text{
+			max-width: @container_size_text;
+		}
+	});
+	.media-breakpoint-up(@xxl; {
+		width: 90vw; 
+	});
+} 
+.grid__{
+	&row{
+		display: grid;
+		grid-gap: 30px;		
+	}
+}
+.flex__{
+	&row{
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px 15px;	
+	}
+}

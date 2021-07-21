@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU"> 
+    <head>
+        {% include "../block/common/head/head.twig" with {title:"Главная"}  %}
+    </head>
+    <body>
+       {#  {% include "../block/common/navbar/navbar.twig" with {
+            view:"base",
+            navbar_prefix:"navbar__",
+            navbar_mod:"is--index",
+            active:'',
+        } %}  #}   
+
+        <main class="{{prefix.content}}wrap">
+            {% include "../block/page/index.twig" with {
+                view:               'header',
+                content_prefix:     prefix.content, 
+                content_mod:        'is--index-header',
+
+                heading:            'Проект<br> WorldSkills Russia',
+            } %}
+            {% include "../block/page/index.twig" with {
+                view:               'projects',
+                content_prefix:     prefix.content, 
+                content_mod:        'is--index-projects',
+
+                heading:            'Проект <span>Future–Skills</span> реализуется в нескольких плоскостях',
+
+                img: [path.img,"/page/index/projecrs-img.png"].join(""),
+            } %}
+            {% include "../block/page/index.twig" with {
+                view:               'concept',
+                content_prefix:     prefix.content, 
+                content_mod:        'is--index-concept',
+
+                bg:                 [path.img,"/page/index/concept-bg.png"].join(""),
+
+                heading:            'Концепция проекта впервые была представлена  в рамках Чемпионата WorldSkills HiTech в 2015 году. <br>Сегодня в активе <span>Future–Skills</span>:',
+
+                card_view:          'adv',
+                card_prefix:        prefix.card,
+                card_mod:           "is--index-concept", 
+                card_list:[
+                    {
+                        img: [path.img,"/page/index/concept-item1.svg"].join(""),
+                        name: 'исследовательские проекты, охватившие 49&nbsp;стран и&nbsp;более 800&nbsp;экспертов', 
+                    }, 
+                    {
+                        img: [path.img,"/page/index/concept-item2.svg"].join(""),
+                        name: 'более 40 компетенций Future Skills, описывающих навыки будущего', 
+                    },
+                    {
+                        img: [path.img,"/page/index/concept-item3.svg"].join(""),
+                        name: 'более 80<br> университетов участвуют в Future Skills', 
+                    },
+                    {
+                        img: [path.img,"/page/index/concept-item4.svg"].join(""),
+                        name: '25 компетенций представлены в отдельной соревновательной зоне международного чемпионата WorldSkills Kazan 2019', 
+                    },
+                    {
+                        img: [path.img,"/page/index/concept-item5.svg"].join(""),
+                        name: '5 компетенций Future Skills входят в медальный зачет международного чемпионата WorldSkills Shanghai 2022', 
+                    },
+                ],
+            } %}
+            {% include "../block/page/index.twig" with {
+                view:               'promo',
+                content_prefix:     prefix.content, 
+                content_mod:        'is--index-competence',
+
+                heading:            'Познакомьтесь с компетенциями <span>Future Skills</span>, которые, по мнению экспертов, понадобятся людям в будущем',
+
+                img: [path.img,"/page/index/competence-img.png"].join(""),
+                img_xs: [path.img,"/page/index/competence-img-xs.png"].join(""),
+
+                btn:                'Подробнее',
+                btn_prefix:         prefix.btn,
+                btn_tag:            'a',
+                btn_elem:           'item',
+                btn_link:           '#',
+                btn_icon:           'goforward',
+                btn_mod:            '',
+            } %}
+            {% include "../block/page/index.twig" with {
+                view:               'announce',
+                content_prefix:     prefix.content, 
+                content_mod:        'is--index-announce',
+
+                heading:            'WorldSkills Russia представляет совместный с Global Education Futures доклад <span>«Навыки будущего для 2020-х: новая надежда»</span>',
+                note:               '<p>Исследование направлено на&nbsp;определение «карт будущего», технологий и&nbsp;бизнес-моделей, которые будут определять спрос на&nbsp;навыки в&nbsp;ближайшее время и&nbsp;выявление наиболее значимых навыков для ключевых секторов экономики.</p>',
+
+                img: [path.img,"/page/index/announce-img.png"].join(""),
+
+                btn:                'Подробнее',
+                btn_prefix:         prefix.btn,
+                btn_tag:            'a',
+                btn_elem:           'item',
+                btn_link:           '#',
+                btn_icon:           'goforward',
+                btn_mod:            '',
+            } %}
+            {% include "../block/page/index.twig" with {
+                view:               'blockquote',
+                content_prefix:     prefix.content, 
+                content_mod:        'is--index-blockquote',
+
+                card_prefix:        prefix.card,
+                card_mod:           "is--index-blockquote",
+                card_note:          '<p>Говоря про будущее, в&nbsp;первую очередь мы&nbsp;думаем о&nbsp;новых технологиях, которые изменят нашу жизнь. Но, что не&nbsp;менее важно, с&nbsp;течением времени меняется и&nbsp;организация нашей работы: она становится все более творческой, сложной, системной. И&nbsp;на&nbsp;первый план, наряду с&nbsp;владением современными технологиями, выходят и&nbsp;Soft Skills: навыки коммуникации, кооперации, системное мышление и&nbsp;многие другие. Именно владение этими навыками будет определять профессионала следующего десятилетия</p>',
+
+                card_img:           [path.img,"/page/team/loshkareva.jpg"].join(""),
+                card_name:          'Екатерина Лошкарева',
+                card_label:         'Заместитель генерального директора по исследованиям и разработкам, официальный делегат WorldSkills Россия',
+            } %}
+            {% include "../block/page/index.twig" with {
+                view:               'promo',
+                content_prefix:     prefix.content, 
+                content_mod:        'is--index-possibility',
+
+                heading:            'Возможности <span>Future—Skills</span> для современных российских университетов',
+
+                img:                [path.img,"/page/index/possibility-img.png"].join(""),
+
+                btn:                'Подробнее',
+                btn_prefix:         prefix.btn,
+                btn_tag:            'a',
+                btn_elem:           'item',
+                btn_link:           '#',
+                btn_icon:           'goforward',
+                btn_mod:            '',
+            } %}
+            {% include "../block/page/index.twig" with {
+                view:               'challenge',
+                content_prefix:     prefix.content, 
+                content_mod:        'is--index-challenge',
+
+                heading:            'F–S Team Challenge',
+                note:               '<p>Новый формат командных соревнований по&nbsp;методологии WorldSkills на&nbsp;основе глобальных трендов и&nbsp;ключевых навыков следующего десятилетия</p>',
+
+                card_view:          'adv',
+                card_slider:        'data-slick-challenge',
+                card_prefix:        prefix.card,
+                card_mod:           "is--index-challenge", 
+                card_list:[
+                    {
+                        img: [path.img,"/page/index/challenge-item1.svg"].join(""),
+                        name: 'Cоциально-экономические и&nbsp;культурные', 
+                        note: '<ul> 
+                            <li>Командная работа</li>
+                            <li>Коммуникации</li>
+                            <li>Сообщества</li>
+                            <li>Предпринимательское мышление</li>
+                        </ul>', 
+                    }, 
+                    {
+                        img: [path.img,"/page/index/challenge-item2.svg"].join(""),
+                        name: 'Когнитивные и&nbsp;фундаментальные', 
+                        note: '<ul> 
+                            <li>Деятельность в&nbsp;условиях неопределенности</li>
+                            <li> Системное мышление</li>
+                            <li> Критическое мышление</li>
+                        </ul>', 
+                    },
+                    {
+                        img: [path.img,"/page/index/challenge-item3.svg"].join(""),
+                        name: '«Зеленые» и&nbsp;связанные с&nbsp;универсальным благополучием', 
+                        note: '<ul> 
+                            <li>Экология </li>
+                            <li> Бережливое производство</li>
+                            <li> Регенеративная экономика</li>
+                        </ul>', 
+                    },
+                    {
+                        img: [path.img,"/page/index/challenge-item4.svg"].join(""),
+                        name: 'Технические и&nbsp;цифровые', 
+                        note: '<ul> 
+                            <li>Цифровизация экономики</li>
+                            <li>Передовые технологии (ИИ, роботизация, квантовые технологии, генетика и&nbsp;др.)</li>
+                            <li>Интеграция технологических решений</li>
+                        </ul>', 
+                    },
+                ],
+
+                btn:                'Подробнее',
+                btn_prefix:         prefix.btn,
+                btn_tag:            'a',
+                btn_elem:           'item',
+                btn_link:           '#',
+                btn_icon:           'goforward',
+                btn_mod:            '',
+            } %}
+            {% include "../block/page/index.twig" with {
+                view:               'connect',
+                content_prefix:     prefix.content, 
+                content_mod:        'is--index-connect',
+
+                bg:                [path.img,"/page/index/connect-bg.jpg"].join(""),
+                bg2:                [path.img,"/page/index/connect-bg-xs.jpg"].join(""),
+
+                heading:            'Подключайтесь к&nbsp;проекту',
+
+                card_view:          'adv',
+                card_prefix:        prefix.card,
+                card_mod:           "is--index-connect", 
+                card_list:[
+                    {
+                        name: 'Участвуйте', 
+                        note: 'в соревнованиях WorlsSkills по компетенциям Future Skills и FS Team Challenge', 
+                    }, 
+                    {
+                        name: 'Учите', 
+                        note: 'навыкам будущего, реализуйте образовательные программы', 
+                    },
+                    {
+                        name: 'Обменивайтесь', 
+                        note: 'практиками по развитию навыков будущего', 
+                    },
+                    {
+                        name: 'Развивайте', 
+                        note: 'вместе с WorldSkills Russia ваши идеи по навыкам будущего и форматам Future Skills', 
+                    },
+                ],
+            } %}
+
+            {# {% include "../block/common/form/form.twig" with {
+                view:               "base",              
+
+                bg:                [path.img,"/page/block/form-bg.jpg"].join(""),
+
+                content_prefix:     prefix.content, 
+                content_mod:        "is--block-form", 
+
+                heading:            "Запишитесь на <span>экскурсию</span>",
+                note:               "Оставьте свои данные и мы свяжемся с вами",
+
+                form_view:          'tpl',
+                form_id:            '3',
+                form_prefix:        prefix.form,
+                form_mod:           "is--block-form",
+                form_color:         "is--white",
+                form_list: [
+                    {
+                        view:"input", 
+                        type:"text", 
+                        name:"Имя", 
+                        placeholder:"Имя",
+                        validate:"validate[required, custom[onlyLetterSp]]",
+                    },
+                    {
+                        view:"input", 
+                        type:"tel", 
+                        name:"Номер телефона", 
+                        placeholder:"Номер телефона",
+                        validate:"validate[required, custom[phone]]",
+                    },
+                    {
+                        view:"submit",
+                        prefix:'button__',
+                        name:"Отправить",
+                    },
+                    {
+                        view:"agreement",
+                        mod:"is--white",
+                        name:["Нажимая на кнопку «Отправить» вы соглашаетесь с правилами <a class='button__line' href='",page.agreement,"'>обработки персональных данных</a>"].join(""),
+                    },
+                ]
+            } %} #}
+        </main>
+
+        {# {% include "../block/common/footer/footer.twig" with {
+            view:"base",
+            footer_prefix:"footer__"
+        } %}  #}
+        {# {% include "../block/common/modals/include.twig"%}         #}
+        {% include "../block/common/script/script.twig" with {
+        } %}
+    </body>
+</html> 

@@ -1,0 +1,59 @@
+{% if view == "base" %}
+	<form action="#" class="{{content_prefix}}content  {{content_mod}}  azbn7__api__form" {% if bg %}style="background-image: url({{bg}});"{% endif %}>
+        <input type="hidden" name="key" value="londonisthecapitalofgreatbritain">
+        <input type="hidden" name="f[Форма]" value="{{heading}}">
+        <input type="hidden" name="f[form_id]" value="{{form_id}}">
+        <div class="{{content_prefix}}container container  {{content_mod}}">
+            <div class="{{form_prefix}}block  {{form_mod}}">
+            	<h3 class="{{content_prefix}}heading  {{content_mod}}">{{heading}}</h3>	
+            	{% if note %}
+            	<div class="{{content_prefix}}note  {{content_mod}}">{{note}}</div>	
+            	{% endif %}
+	            <div class="{{form_prefix}}grid  grid__row  {{form_mod}}"> 
+	            	{% include "elem-tpl.twig" with {
+						view: 	form_view, 
+						prefix:	form_prefix, 
+						mod:	'', 
+						color:	form_color,  
+						list:	form_list
+					} %}
+	            </div>
+        	</div>
+		</div>
+	</form>
+{% endif %}
+{% if view == "filter" %}
+	<form action="#" class="{{form_prefix}}block  {{form_mod}}">
+        <div class="{{form_prefix}}grid  flex__row  {{form_mod}}"> 
+        	{% include "elem-tpl.twig" with {
+				view: 	form_view, 
+				prefix:	form_prefix, 
+				mod:	'', 
+				color:	form_color,  
+				list:	form_list
+			} %}
+        </div>
+	</form>
+{% endif %}
+{% if view == "index_search" %}
+	<form action="#" class="{{form_prefix}}block  {{form_mod}}">
+        <div class="{{form_prefix}}grid  flex__row  {{form_mod}}"> 
+        	{% include "elem-tpl.twig" with {
+				view: 	form_view, 
+				prefix:	form_prefix, 
+				mod:	'', 
+				color:	form_color,  
+				list:	form_list
+			} %}
+        </div>
+        <div class="{{form_prefix}}grid  flex__row  {{form_btn_mod}}"> 
+        	{% include "elem-tpl.twig" with {
+				view: 	form_view, 
+				prefix:	form_prefix, 
+				mod:	'', 
+				color:	form_color,  
+				list:	form_btn
+			} %}
+        </div>
+	</form>
+{% endif %}
