@@ -1,23 +1,75 @@
 {% if view == 'adv' %}
 	{% for value in list %}
-		<div class="{{prefix}}item  {{mod}}">
+		<{% if value.link %}a href="{{value.link}}"{% else %}div{% endif %} class="{{prefix}}item  {{mod}}">
 			{% if value.img %}
 			<div class="{{prefix}}img  {{mod}}">
 				<img src="{{value.img}}" class="img-responsive" alt="">
 			</div>
 			{% endif %}
-			{% if value.name %}
-			<h5 class="{{prefix}}heading  {{mod}}">				
-				{{value.name}}
-			</h5> 
-			{% endif %}
-			{% if value.note %}
-			<div class="{{prefix}}note  {{mod}}">				
-				{{value.note}}
+			<div class="{{prefix}}group  {{mod}}">
+				{% if value.name %}
+				<h5 class="{{prefix}}heading  {{mod}}">				
+					{{value.name}}
+				</h5> 
+				{% endif %}
+				{% if value.note %}
+				<div class="{{prefix}}note  {{mod}}">				
+					{{value.note}}
+				</div> 
+				{% endif %}
 			</div> 
-			{% endif %}
-		</div>
+		</{% if value.link %}a{% else %}div{% endif %}>
 	{% endfor %}
+{% endif %}
+{% if view == 'university_card' %}
+	{% for value in list %}
+		<a href="#" data-toggle="modal" data-target="#{{value.modal}}" class="{{prefix}}item  {{mod}}"  data-modal='{"name":"{{value.name}}", "note":"{{value.note}}", "img":"{{value.img}}"}'>
+			{% if value.img %}
+			<div class="{{prefix}}img  {{mod}}">
+				<picture>
+					<img src="{{value.img}}" class="img-responsive" alt="">
+				</picture>
+			</div>
+			{% endif %}
+			<div class="{{prefix}}group  {{mod}}">
+				{% if value.name %}
+				<h5 class="{{prefix}}heading  {{mod}}">				
+					{{value.name}}
+				</h5> 
+				{% endif %}
+			</div> 
+		</a>
+	{% endfor %}
+{% endif %}
+{% if view == 'university_item' %}
+	{% for value in list %}
+	<div> 
+		<div class="{{prefix}}item  {{mod}}">
+			<div class="{{prefix}}img  {{mod}}">
+				<picture>
+					<img src="{{value.img}}" class="img-responsive" alt="{{value.note}}">
+				</picture>
+			</div>
+			<div class="{{prefix}}group  {{mod}}">
+				<h4 class="{{prefix}}heading  {{mod}}">{{value.name}}</h4>
+				<div class="{{prefix}}note  {{mod}}">{{value.note}}</div>
+			</div> 
+		</div>
+	</div>
+	{% endfor %}
+{% endif %}
+{% if view == 'university_modal' %}
+	<div class="{{prefix}}item  {{mod}}">
+		<div class="{{prefix}}img  {{mod}}">
+			<picture>
+				<img src="" data-uni-img class="img-responsive" alt="">
+			</picture>
+		</div>
+		<div class="{{prefix}}group  {{mod}}">
+			<h4 class="{{prefix}}heading  {{mod}}" data-uni-name></h4>
+			<div class="{{prefix}}note  {{mod}}" data-uni-note></div>
+		</div> 
+	</div>
 {% endif %}
 
 {# old #}

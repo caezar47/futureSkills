@@ -4,13 +4,14 @@
         {% include "../block/common/head/head.twig" with {title:"Главная"}  %}
     </head>
     <body>
-       {#  {% include "../block/common/navbar/navbar.twig" with {
-            view:"base",
-            navbar_prefix:"navbar__",
-            navbar_mod:"is--index",
-            active:'',
-        } %}  #}   
-
+        {#
+        {% include "../block/common/navbar/navbar.twig" with {
+            view:           'base',
+            navbar_prefix:  'navbar__',
+            navbar_mod:     'is--scroll  is--index',
+            active:         '',
+        } %}    
+        #}
         <main class="{{prefix.content}}wrap">
             {% include "../block/page/index.twig" with {
                 view:               'header',
@@ -68,7 +69,7 @@
                 content_prefix:     prefix.content, 
                 content_mod:        'is--index-competence',
 
-                heading:            'Познакомьтесь с компетенциями <span>Future Skills</span>, которые, по мнению экспертов, понадобятся людям в будущем',
+                heading:            'Познакомьтесь с компетенциями <span>Future Skills</span>, которые, по мнению экспертов, понадобятся людям в будущем', 
 
                 img: [path.img,"/page/index/competence-img.png"].join(""),
                 img_xs: [path.img,"/page/index/competence-img-xs.png"].join(""),
@@ -221,56 +222,70 @@
                     },
                 ],
             } %}
-
-            {# {% include "../block/common/form/form.twig" with {
+            {% include "../block/common/form/form.twig" with {
                 view:               "base",              
-
-                bg:                [path.img,"/page/block/form-bg.jpg"].join(""),
 
                 content_prefix:     prefix.content, 
                 content_mod:        "is--block-form", 
 
-                heading:            "Запишитесь на <span>экскурсию</span>",
-                note:               "Оставьте свои данные и мы свяжемся с вами",
+                heading:            "Напишите нам",
 
                 form_view:          'tpl',
-                form_id:            '3',
+                form_id:            '',
                 form_prefix:        prefix.form,
                 form_mod:           "is--block-form",
-                form_color:         "is--white",
+                form_color:         "",
                 form_list: [
                     {
-                        view:"input", 
-                        type:"text", 
-                        name:"Имя", 
-                        placeholder:"Имя",
-                        validate:"validate[required, custom[onlyLetterSp]]",
+                        view:           "input", 
+                        mod:            "is--name",
+                        type:           "text", 
+                        name:           "Имя", 
+                        placeholder:    "Имя",
+                        validate:       "validate[required, custom[onlyLetterSp]]",
                     },
                     {
-                        view:"input", 
-                        type:"tel", 
-                        name:"Номер телефона", 
-                        placeholder:"Номер телефона",
-                        validate:"validate[required, custom[phone]]",
+                        view:           "input", 
+                        mod:            "is--email",
+                        type:           "email", 
+                        name:           "E-mail", 
+                        placeholder:    "E-mail",
+                        validate:        "validate[required, custom[email]]",
                     },
                     {
-                        view:"submit",
-                        prefix:'button__',
-                        name:"Отправить",
+                        view:           "input", 
+                        type:           "tel", 
+                        mod:            "is--tel",
+                        name:           "Номер телефона", 
+                        placeholder:    "",
+                        validate:       "validate[required, custom[phone]]",
+                        code_attr:      'data-selectize-default',
+                        code:           [
+                            {name: '+7'},
+                        ],
                     },
                     {
-                        view:"agreement",
-                        mod:"is--white",
-                        name:["Нажимая на кнопку «Отправить» вы соглашаетесь с правилами <a class='button__line' href='",page.agreement,"'>обработки персональных данных</a>"].join(""),
+                        view:           "textarea", 
+                        mod:            "is--textarea",
+                        name:           "Текст обращения", 
+                        placeholder:    "Текст обращения",
+                        validate:       "validate[required]",
+                    },
+                    {
+                        view:           "submit",
+                        prefix:         'button__',
+                        name:           "Отправить",
+                        icon:           'goforward',
                     },
                 ]
-            } %} #}
+            } %}
         </main>
 
-        {# {% include "../block/common/footer/footer.twig" with {
+        {% include "../block/common/footer/footer.twig" with {
             view:"base",
             footer_prefix:"footer__"
-        } %}  #}
+        } %} 
+
         {# {% include "../block/common/modals/include.twig"%}         #}
         {% include "../block/common/script/script.twig" with {
         } %}

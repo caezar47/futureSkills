@@ -1,112 +1,109 @@
 .form__{
 	&block{
-		&.is--block-form{
-			position: relative;
-			z-index: 3;	
-			.media-breakpoint-up(@md; {
-				margin-left: auto;
-				max-width: 745px;
-				width: 48vw;
-			});
-		}
-		&.is--home-filter{
-			position: relative;
-			background-color: @info;
-			padding: 30px;
-			margin-bottom: 30px;
-			.media-breakpoint-up(@xl; {
-				padding: 45px 55px;
-			});
-			&::after{
-				content: '';
-				position: absolute;
-				z-index: 1;
-				top: 50%;
-				right: 0;
-				transform: translate(50%,-50%);
-				width: 130px;
-				height: 230px;
-				background: url('@{url-path-img}/page/block/filter-bg.svg') no-repeat center;
-				
-			}
-		}
 	}
 	&grid{
 		&.is--block-form{
-			gap: 10px;
-			& > .is--submit{
-				padding-top: 10px;
-			}
-			& > .is--agreement{
-				padding-top: 10px;
+			max-width: 770px;
+			gap: 30px;
+			& > *{
+				flex: 0 0 100%;
+				&.is--textarea,
+				&.is--submit{
+					margin-top: 20px;
+				}
+				&.is--submit{
+					margin-top: 20px;
+					text-align: center;
+				}
 			}
 			.media-breakpoint-up(@md; {
-				max-width: 400px;
-			});
-		}
-		&.is--home-filter{
-			position: relative;
-			z-index: 2;
-			align-items: flex-end;
-			gap: 20px;
-			& > *{
-				flex: 1 1 100%;
-			}
-			.media-breakpoint-up(@sm; {
+				gap: 34px 4%;
 				& > *{
-					flex: 0 0 48%;
-				}
-				& > *:nth-child(3){
-					flex: 0 0 100%;
-				}
-				& > *:nth-child(4),
-				& > *:nth-child(5){
-					flex: initial;
-				}
-			});
-			.media-breakpoint-up(@xxl; {
-				gap: 48px 50px;
-				& > *{
-					flex: initial;
-				}
-				& > *:nth-child(1){
-					flex: 0.95 0 0;
-				}
-				& > *:nth-child(3){
-					flex: 1.16 0 0;
-				}
-				& > *:nth-child(4){
-					flex: 1.44 0 0;
-				}
-				& > *:nth-child(5){
-					flex: 1 1 100%;
+					&.is--name{
+						flex: 0 0 22%;
+					}
+					&.is--email{
+						flex: 0 0 35%;
+					}
+					&.is--tel{
+						flex: 0 0 35%;						
+					}
+					&.is--textarea,
+					&.is--submit{
+						flex: 0 0 100%;
+					}
+					&.is--textarea{
+						margin-top: 0;
+					}
+					&.is--submit{
+						margin-top: 5px;
+						text-align: left;
+					}
 				}
 			});
 		}
 	}
 	&item{
 		position: relative;
-		&.is--radio{
-			& + &{
-				padding-top: 5px;
-			}
+		&.is--tel{
+			display: flex;	
+			gap: 30px;				
 		}
 	}
 	&label{
-		display: block;
-		.heading5();
-		color: @warning;
-		margin-bottom: 13px;
 	}
 	&group{
-		display: flex;
-		margin-left: -1.5px;
-		margin-right: -1.5px;
-		& > *{
-			margin-left: 1.5px;
-			margin-right: 1.5px;
+	}
+	&control{
+		width: 100%;
+		font-weight: 400;
+		background: fadeout(@white, 100%);
+		border: 1px solid fadeout(@white, 60%); 
+		color: @white;  
+		border-radius: 9px;	   
+		height: 40px;
+		padding: 10px 8px;
+		box-shadow: none;
+		.text14();
+		font-family: @site_ff_custom;
+		transition: @trs-site;
+		&[type="text"]{
+			-webkit-appearance: none;
+		}
+		&::-moz-placeholder{
+			transition: @trs-site;
+			color: fadeout(@white, 60%);
+		}
+		&::-webkit-input-placeholder {
+			transition: @trs-site;
+			color: fadeout(@white, 60%);
+		}
+		&.is--textarea{
+			height: 144px;
+			.media-breakpoint-up(@xl; {
+				height: 124px;
+			});
+		}
+		.form__dropdown-input:focus &,
+		&[value], 
+		&:focus{ 
+			outline:none;
+			border-color: @default;
+			background-color: @white;
+			color: @default;	
+			&::-moz-placeholder{
+				color: fadeout(@default, 60%);
+			}
+			&::-webkit-input-placeholder {
+				color: fadeout(@default, 60%);
+			}
 		}
 	}
+	&agreement{
+	}
+
+	/*
+
 	&control{
 		width: 100%;
 		font-weight: 400;
@@ -225,29 +222,16 @@
 					border-color: @success;
 				}
 			}
-			/*&.is--select{
+			&.is--select{
 				color: @white;
 				background-color: fadeout(@input_w_bg, 100%);
 				&:focus{
 					color: @input_w_plh_color;
 					background-color: fadeout(@input_w_bg, 0%);
 				}
-			}*/
+			}*
 		}
 	}
-	&agreement{
-		.text16();
-		a{
-			color: @success;
-			&:hover{
-				color: @white;
-			}
-		}
-		&.is--white{
-			color: @white;
-		}
-	}
-	/*
 	&text{
 	}
 	&clear{
@@ -398,7 +382,7 @@
 				cursor: default;
 			}
 		}
-	}*/
+	}
 	//radio	
 	&checkbox{
 		&-group{
@@ -625,7 +609,6 @@
 		}
 	}
 	//search
-	/*
 	&search{
 		display: flex;
 		&.is--modal-city{

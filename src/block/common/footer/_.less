@@ -1,46 +1,105 @@
 .footer__{
 	&block{
-		background-color: @default;
-		padding: 35px 0;
-		color: @info;
-		.text16();
+		background-color: @black;
+		padding: 55px 0 100px;
+		.text14();
+		color: fadeout(@white, 30%);
+		font-family: @site_ff_custom;
+		text-align: center;
+		.media-breakpoint-up(@md; {
+			text-align: left;
+			padding: 70px 0 55px;
+		});
+	}
+	&container{
+		&.container{
+			max-width: 83%;
+			.media-breakpoint-up(@md; {
+				max-width: 1200px;
+			});
+		}
 	}
 	&row{
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
-		align-items: center;	
-		gap: 20px 15px;	
-	}
-	&copyright{
-		display: block;
-		max-width: 131px;
-	}
-	&address{
-		max-width: 460px;
-		.media-breakpoint-up(@lg; {
-			width: 25vw;
+		gap: 30px 15px;	
+		& > *{
+			flex: 1 1 100%;
+			border-bottom: 1px solid fadeout(@white, 70%);
+			padding-top: 20px;
+			padding-bottom: 35px;
+			&:last-child{
+				padding-top: 10px;
+				padding-bottom: 0;
+				border-bottom: 0
+			}
+		}
+		.media-breakpoint-up(@md; {
+			& > *{
+				flex: initial;
+				padding: 0!important;
+				border: 0;
+			}
 		});
 	}
-	&contacts{
-		a{
-			display: block;
-			color: @info;
-			background-position: left center;
-			line-height: 24px;
-			padding-left: 35px;
-			&[href^="mailto:"]{
-				.icon-email(@c: 'fff');
+	&logotip{
+		display: block;
+		color: @white;
+		max-width: 210px;
+		height: 16px;
+		margin: 0 auto 25px;
+		.media-breakpoint-up(@md; {
+			margin: 0 0 30px;
+			*{
+				flex: initial;
 			}
-			&[href^="tel:"]{
-				font-weight: 700;
-				.icon-tel(@c: 'fff');
+		});
+		.media-breakpoint-up(@md; {
+			max-width: 225px;
+		});
+		&:hover{
+			color: inherit;
+		}
+	}
+	&wsr{
+		display: inline-block;
+	}
+	&contacts{
+		margin-bottom: 20px;
+		&:last-child{
+			margin-bottom: 0;
+		}
+		*{
+			display: block;
+			color: inherit;
+			&:hover{
+				color: inherit;
 			}
 		}
 	}
-	&btn{
-		.media-breakpoint-down(@sm; {
-			text-align: center;
+	&soc{
+		p,div{
+			margin-bottom: 20px;
+		}
+		ul{
+			display: flex;
+			justify-content: center;
+			gap: 20px;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			a{
+				color: @white;
+				&:hover{
+					color: @primary;
+				}
+			}
+		}
+		.media-breakpoint-up(@md; {
+			ul{
+				justify-content: initial;
+			}
 		});
 	}
 }

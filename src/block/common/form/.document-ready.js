@@ -1,5 +1,6 @@
-/*var form_panel = $(".form__panel");
 var phone = $(".form__control[type='tel']");
+phone.mask("(999) 999-99-99",{placeholder:"(___) ___-__-__"});
+/*var form_panel = $(".form__panel");
 var file = $('.form__file-input');
 var file_name = $('.form__file-name');
 var input = $(".form__control");
@@ -12,7 +13,6 @@ var $range = $(".js-range-slider");
 var dropdown = $(".form__dropdown-input");
 var dropdown_collapse = $(".form__dropdown-collapse");
 
-phone.mask("+7 (999) 999-99-99",{placeholder:"+7 (___) ___-__-__"});
 form_panel.validationEngine(
 	'attach', {
 		promptPosition : "bottomLeft",

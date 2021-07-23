@@ -1,0 +1,16 @@
+<div class="{{prefix}}block modals  fade  {{mod}}" id="{{ID}}" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="{{prefix}}dialog  {{mod}}">
+		<div class="{{prefix}}body  {{mod}}  {% if view == "null" %}is--null{% endif %}" {% if view == "null" %}style="background-image: url({{bg}});"{% endif %}>
+			<button type="button" class="{{prefix}}btn-close  {{mod}}" data-dismiss="modal" aria-hidden="true">
+				{% include "../svg-sprite/svg.twig" with {icon:"modal-close"} %}
+			</button>
+			{% if view == "university" %}
+				{% include "../card/card.twig" with {
+                    view:   card_view,
+                    prefix: card_prefix,
+                    mod:    card_mod,
+                } %}
+			{% endif %} 
+		</div>
+	</div>
+</div>

@@ -5,7 +5,7 @@
 			<div class="{{navbar_prefix}}header-row flex__row">
 				<div>
 					<a class="{{navbar_prefix}}logotip" href="{{page.index}}">
-						<img src="{{path.img}}/svg/logotip.svg" class="img-responsive" alt="">
+						{% include "../svg-sprite/svg.twig" with {icon:'logotip'} %}
 					</a>
 				</div>
 				<button class="{{navbar_prefix}}hamburger-card" data-hamburger>
@@ -22,51 +22,52 @@
 		<div class="{{navbar_prefix}}collapse-inner">	
 			<div class="container">
 				<div class="{{navbar_prefix}}collapse-row  flex__row">
-					<div class="is--logotip">
-						<a class="{{navbar_prefix}}logotip" href="{{page.index}}">
-							<img src="{{path.img}}/svg/logotip.svg" class="img-responsive" alt="">
+					<div class="is--logotip-anim">
+						<a class="{{navbar_prefix}}logotip-anim" href="{{page.index}}">
+							{% include "../svg-sprite/svg.twig" with {icon:'logotip-start'} %} 
+							<div class="icon-tire-h"></div>
+							<div class="icon-tire-v"></div>
+							{# 
+							{% include "../svg-sprite/svg.twig" with {icon:'logotip-finish'} %}  #}
 						</a>
 					</div>
+					<div class="is--logotip">
+						<a class="{{navbar_prefix}}logotip" href="{{page.index}}">
+							{% include "../svg-sprite/svg.twig" with {icon:'logotip'} %} 
+						</a>
+					</div>
+					
 					<nav class="is--navbar">
 						<ul class="{{navbar_prefix}}nav">
-							{# 
-									{
-										name:"Генплан", 
-										link:page.masterplan, 
-										mod:""
-									}, #}
+							
 							{% include "item.twig" with {
 								prefix:navbar_prefix, 
 								list : [
 									{
-										name:"Участки", 
-										link:page.locality, 
+										name:"Компетенции", 
+										link:page.competencies, 
 										mod:""
 									},
 									{
-										name:"Дома", 
+										name:"FS Team Challenge", 
 										link:page.home, 
 										mod:""
 									},
 									{
-										name:"Описание", 
-										link:page.description, 
-										mod:""
-									},	
-									{
-										name:"Контакты", 
-										link:page.contacts, 
+										name:"Университетам", 
+										link:page.university, 
 										mod:""
 									},	
 								]
 							} %}
 						</ul>	
 					</nav>
-					<div class="is--btn">
-						<a href="tel:{{contacts.phone_tel}}" class="{{navbar_prefix}}phone" >
-							{{contacts.phone}}
+					<div class="is--search">
+						<a class="{{navbar_prefix}}search" href="#">
+							{% include "../svg-sprite/svg.twig" with {icon:'search'} %} 
 						</a>
 					</div>
+					
 				</div>
 			</div>
 		</div>

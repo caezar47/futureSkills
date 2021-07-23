@@ -5,11 +5,10 @@
 		"domain_link":"futureSkills",
 		"color":"#F24F00",
 		"agreement_page":"agreement",
-		"email":"info@fedoperator.ru",
-		"phone":"8 (800) 450-57-57",  
-		"phone_tel":"88004505757",    
-		"clock":"С 10 до 19:00, без выходных",  
-		"address":"ул. Красноармейская, д. 1, п. 232",
+		"email":"futureskills@info.com",
+		"phone":"+7 (912) 345 67 89",  
+		"phone_tel":"+79123456789",    
+		"address":"Москва, ул. Покровка, 2/1 С2",
 		"map_center":"52.977, 36.068",
 		"map_center_coord":"[52.977, 36.068]",
 		"map_zoom":"18",
@@ -18,16 +17,16 @@
 		"map_point_heading":"Большая Татарская улица, 35 строение 7-9"
 	},
 	"soc":{
-		"yb":"https://www.youtube.com/channel/UC1cnObAoKV_l9dI1qrGGOGw",
-		"inst":"https://www.instagram.com/2sharp_agency",
-		"fb":"https://www.facebook.com/2sharp.creative",
-		"bh":"https://www.behance.net/teams/2sharp",
-		"vi":"https://vimeo.com/twosharp"
+		"yb":"https://www.youtube.com/",
+		"inst":"https://www.instagram.com/",
+		"tw":"https://www.twitter.com/",
+		"fb":"https://www.facebook.com/"
 	},
-
 	"page":{
 		"index":"./",
-		"locality":"./locality.html",
+		"competencies":"./competencies.html",
+		"competencies_card":"./competencies-card.html",
+		"university":"./university.html",
 		"masterplan":"./masterplan.html",
 		"home":"./home.html",
 		"home_card":"./home-card.html",

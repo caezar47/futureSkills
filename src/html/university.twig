@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU"> 
+    <head>
+        {% include "../block/common/head/head.twig" with {title:"Компетенции"}  %}
+    </head>
+    <body>
+        
+        {% include "../block/common/navbar/navbar.twig" with {
+            view:           'base',
+            navbar_prefix:  'navbar__',
+            navbar_mod:     '',
+            active:         page.university,
+        } %}    
+        
+        <main class="{{prefix.content}}wrap">
+            {% include "../block/page/page.twig" with {
+                view:               'university',
+                content_prefix:     prefix.content, 
+                content_mod:        'is--university',
+
+                heading:            'Университетам ',
+                text:               '<p>Проект FutureSkills предлагает спектр возможностей и взаимодействия для современных российских университетов:</p>',
+                text:               '<p>Проект FutureSkills предлагает спектр возможностей и&nbsp;направлений взаимодействия для современных российских университетов:</p>',
+
+                back:                'Главная',
+                back_prefix:         prefix.btn,
+                back_tag:            'a',
+                back_elem:           'link',
+                back_link:           page.index, 
+                back_icon:           'goback',
+                back_mod:            '', 
+ 
+
+                card_view:          'university_card',
+                card_prefix:        prefix.card,
+                card_mod:           "is--university  is--card", 
+
+                card_slider:        "data-slick-uni", 
+                card_slider_view:   "university_item", 
+                card_slider_mod:    "is--university  is--item", 
+                card_list:[
+                    {  
+                        modal: 'modal-university',
+                        name: 'Реализуйте образовательные программы (ДПО) по компетенциям FutureSkills в сотрудничестве с Академией Ворлдскиллс Россия', 
+                        img: [path.img,"/page/university/university-item1.jpg"].join(""),
+                        note: 'Войдите в сеть из уже более 1200 центров обучения Ворлдскиллс и получите доступ к нашему Банку эталонных программ. Развивайте профессиональные компетенции преподавателей и участвуйте в программах массовой подготовки граждан в рамках федеральных проектов «Молодые профессионалы» и «Содействие занятости»', 
+                    }
+                ],
+            } %}
+
+        </main>
+
+        {% include "../block/common/footer/footer.twig" with {
+            view:"base",
+            footer_prefix:"footer__"
+        } %} 
+
+        {% include "../block/common/modals/include.twig"%}        
+        {% include "../block/common/script/script.twig" with {
+        } %}
+    </body>
+</html> 

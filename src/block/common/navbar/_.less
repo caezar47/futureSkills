@@ -1,6 +1,5 @@
 .navbar__{ 
 	&block{
-		background-color: @navbar_bg;
 		color: @navbar_color;
 		position: fixed;
 		width: 100%;
@@ -9,17 +8,18 @@
 		left: 0;
 		@media print{display: none;}
 		.media-breakpoint-up(@xl; {
-			&.is--index{
-				background-color: @white;
-			}
+			position: absolute;			
 		});
 	}
 	//header
 	&header{
 		&{
 			width: 100%; 
-			background: @navbar_bg;
-			padding: 10px 0;
+			padding: 45px 0;
+			transition: @trs-site;
+			.is--open-navbar &{
+				background-color: @black;
+			}
 			.media-breakpoint-up(@xl; {
 				display: none;
 			});
@@ -30,17 +30,123 @@
 			flex-wrap: nowrap;
 		}	
 	}
+	&logotip-anim{
+		display: flex;
+		.icon-logotip-start{
+			position: relative;
+			min-width: 95px;
+			width: 95px;
+			height: 17px;
+		}
+		.icon-tire-h{
+			position: relative;
+			top: 6px;
+			left: 7px;
+			min-width: 23px;
+			width: 23px;
+			height: 2px;
+			transition: @trs-site;
+			background-color: @black;
+		}
+		.icon-tire-v{
+			position: relative;
+			width: 2px;
+			height: 0;
+			top: 6px;
+			left: -220px;
+			background-color: @white;
+			transition: @trs-site;
+		}
+		.is--index &{
+			color: @black;				
+		//.is--index.is--return &{
+			.icon-logotip-start{
+				animation: logo-start 2s ease forwards;
+				animation-play-state: paused;
+			}
+			.icon-tire-h{
+				animation: tire-h 2s ease forwards;
+				animation-play-state: paused;
+			}
+		}
+		.is--index.is--logo-white &{
+			color: @white;
+			.icon-logotip-start{
+				animation: logo-start 2s ease  forwards;
+				animation-play-state: running;
+			}
+			.icon-tire-h{
+				background-color: @white;
+				animation: tire-h 2s 0.6s ease forwards;
+				animation-play-state: running;
+			}
+			.icon-tire-v{
+				animation: tire-v 2s 1.2s ease forwards;
+				animation-play-state: running;
+			}
+		}	
+		/*
+		@keyframes logo-start {
+			from {
+				top: 0px;
+				left: 0px;
+			}
+			30% {				
+				left: -123px;
+			}
+			50% {
+				transform:rotate(-90deg);				
+				left: -123px;
+				top: 5vh;
+			}
+			to {
+				transform:rotate(-90deg);
+				top: 78vh;
+				left: -123px;
+			}
+		}
+		@keyframes tire-h {
+			from {
+    			width: 23px;
+				left: 7px;
+			}
+			30% {				
+				left: -170px;
+    			width: 48px;
+			}
+			50% {	
+				left: -170px;
+    			width: 48px;
+			}
+			to {	
+				left: -170px;
+    			width: 48px;
+			}
+		}
+		@keyframes tire-v {
+			from {
+    			height: 0;
+			}
+			to {	
+				height: 72vh;
+			}
+		}
+		*/
+		
+		//
+	}
 	&logotip{
 		position: relative;	
-		display: block;
-		width: 100%;
-		transition: none;
-		max-width: @navbar_logo_device_widht;
-		img{width: 100%;}
-		&, &:hover, &:focus{color: @navbar_logo_color_device;}
+		display: block;		
+		min-width: 210px;
+		width: 210px;
+		height: 17px;
+		transition: @trs-site;
+		svg{display: block;}
+		&, &:hover, &:focus{color: @white;}
 		.media-breakpoint-up(@xl; {
-			max-width: @navbar_logo_widht;
-			&, &:hover, &:focus{color: @navbar_logo_color;}	
+			min-width: 225px;
+			width: 225px;			
 		});	
 	}
 	//collapse
@@ -48,14 +154,14 @@
 		&{
 			.media-breakpoint-down(@xl; {
 				position: fixed;
-				top: @navbar_device;
+				top: 120px;
 				left: -270px;
 				width: 270px;
-				height: ~"calc(100vh - @{navbar_device})";
+				height: ~"calc(100vh - 120px)";
 				opacity: 0;
 			    visibility: hidden;
 			    transition: @trs-site;
-			    background: @navbar_bg;
+			    background: @black;
 			    &.is--open{
 			    	visibility: visible;
 			    	opacity: 1;
@@ -68,7 +174,7 @@
 			});
 		}	
 		&-inner{
-			padding: 8px 0px;
+			padding: 22px 0px;
 			.media-breakpoint-down(@xl; {
 				position: relative;
 				height: 100%;
@@ -79,21 +185,24 @@
 			align-items: center;
 			flex-wrap: wrap;
 			gap: 20px;
-			& > .is--btn,
+			& > .is--logotip-anim{
+				display: none;
+			}
 			& > .is--logotip{
 				display: none;
 			}
 			.media-breakpoint-up(@xl; {
 				justify-content: space-between; 
 				flex-wrap: nowrap;
-				gap: 15px;
-				& > .is--btn,
+				gap: 45px;
 				& > .is--logotip{
 					display: block;
 				}
 				& > .is--navbar{
 					margin-left: auto;
-					margin-right: auto;
+				}
+				& > .is--search{
+					margin-right: 10px;
 				}
 			});
 		}
@@ -110,7 +219,7 @@
 			.media-breakpoint-up(@xl; {
 				flex-wrap: nowrap;
 				justify-content: center;
-				gap: 25px;
+				gap: 35px;
 			});
 		} 
 		&-item{
@@ -124,55 +233,37 @@
 			});
 		}
 		&-link{
-		    display: inline-block;
+		    display: block;
 		    position: relative;
-			font-weight: 700;
-			text-transform: uppercase;
-			color: @navbar_color;
+			color: @white;
 			transition: @trs-site;
-			padding: 7px 15px;
+			text-transform: uppercase;
 			.media-breakpoint-up(@xl; {
-				padding: 12px 15px;
+				font-size: 0.556rem;
+				line-height: 120%;				
 			});
-			&::after{
-				content: '';
-				position: absolute;
-				z-index: -1;
-				top: 0;
-				bottom: 0;
-				left: 0;
-				right: 0;
-				transform-origin: 100% 0;
-				transform: scale(0, 1);
-				background-color: @navbar_bg_hover;
-				transition: @trs-site, transform-origin 0s ;
-			}
 			&:focus,
 			&:hover{
-				color: @navbar_color_hover;
-			}
-			&:hover{
-				color: @navbar_color_hover;
-				&::after{
-					transform-origin: 0 0;
-					transform: scale(1, 1);
-				}
+				color: @primary;
 			}
 			.navbar__nav-item.open &,
 			&.is--active{			
 				cursor: default;
-				color: @navbar_color_active;
-				&::after{
-					transform-origin: 0 0;
-					transform: scale(1, 1);
-				}
+				color: @primary;
+				
 			}
 		}
 	}
-	&phone{
-		.heading4();
-		&, &:hover, &:focus{
-			color: @warning;
+	&search{
+		display: block;
+		width: 14px;
+		height: 14px;
+		color: @white;
+		svg{
+			display: block;
+		}
+		&:hover{
+			color: @primary;
 		}
 	}
 	&hamburger{
@@ -191,7 +282,7 @@
 			display: block;
 		}
 		&-card-inner{		
-			width: @navbar_humb_size - 5;
+			width: 21px;
 			height: @navbar_humb_size;
 			padding: 8px 0;
 			display: flex;
@@ -203,7 +294,7 @@
 			width: 100%;
 			height: 2px;
 			transition: @trs-site;
-			background-color: @navbar_humb_bg;
+			background-color: @white;
 			border-radius: 3px;
 	    	position: relative;
 			transition: @trs-site;
@@ -217,6 +308,8 @@
 				}
 			}	
 			&.is--center{
+				margin-left: auto;
+				width: 60%;
 				transform-origin: 100% 0;
 				transition: @trs-site 0.2s;
 				.navbar__hamburger-card.is--active &{
@@ -225,6 +318,8 @@
 				}
 			}	
 			&.is--right{
+				margin-left: auto;
+				width: 80%;
 				.navbar__hamburger-card.is--active &{			
 					transform: translate(-1px, -7px) rotate(135deg);
 					transition: @trs-site 0.2s;

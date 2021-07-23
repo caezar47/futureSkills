@@ -1,31 +1,42 @@
 {% if view == "base" %}
 	<footer class="{{footer_prefix}}block"> 	
-		<div class="container">
+		<div class="{{footer_prefix}}container container">
 			<div class="{{footer_prefix}}row">
-				<a href="{{page.index}}" class="{{footer_prefix}}copyright">
-					<img src="{{path.img}}/svg/logotip-white.svg" class="img-responsive" alt="">
-				</a>
-				<div class="{{footer_prefix}}address">
-					<p>{{contacts.address}}</p>
+				<div>
+					<a href="{{page.index}}" class="{{footer_prefix}}logotip">
+						{% include "../svg-sprite/svg.twig" with {icon:'logotip'} %} 
+					</a>
+					<a href="https://worldskills.ru/" target="_blank" class="{{footer_prefix}}wsr">
+						<img src="{{path.img}}/default/wsr.png" class="img-responsive" alt="">
+					</a>
 				</div>
-				<div class="{{footer_prefix}}contacts">
-					<a href="tel:{{contacts.phone_tel}}">{{contacts.phone}}</a>
+				<div>
+					<div class="{{footer_prefix}}contacts">
+						<a href="tel:{{contacts.phone_tel}}">{{contacts.phone}}</a>
+					</div>
+					<div class="{{footer_prefix}}contacts">
+						<a href="mailto:{{contacts.email}}">{{contacts.email}}</a>
+					</div>
+					<div class="{{footer_prefix}}contacts">
+						{{contacts.address}}
+					</div>
 				</div>
-				<div class="{{footer_prefix}}contacts">
-					<a href="mailto:{{contacts.email}}">{{contacts.email}}</a>
-				</div>
-				<div class="{{footer_prefix}}btn">
-					 {% include "../button/tpl.twig" with {
-                        view:'tpl',
-                        tag:'button',
-                        type:'button',
-                        attr: "data-toggle='modal' data-target='#modal-tpl-phone-email'",
-                        modal: '"id":"5","target":"Получить презентацию","name":"Получить презентацию","note":"Наш специалист вышлет Вам презентацию в ближайшее время"',
-                        prefix:prefix.btn,
-                        mod:"is--line  is--white",
-                        elem:'item',
-                        name:'Заказать звонок',
-                    } %}
+				<div class="{{footer_prefix}}soc">
+					<p>Подпишитесь на нас в соцсетях:</p>
+					<ul>
+						<li>
+							<a href="{{soc.inst}}" target="_blank">instagram</a>			
+						</li>
+						<li>
+							<a href="{{soc.yb}}" target="_blank">youtube</a>
+						</li>
+						<li>
+							<a href="{{soc.fb}}" target="_blank">facebook</a>
+						</li>
+						<li>
+							<a href="{{soc.tw}}" target="_blank">twitter</a>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</div>

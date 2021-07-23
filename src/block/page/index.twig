@@ -133,18 +133,20 @@
 	                    list:	card_list,                    
 	                } %}
 			    </div>
-		        {% include "../common/button/tpl.twig" with {
-                    view:	'tpl',
-                    tag:	btn_tag,
-                    link: 	btn_link,
-                    attr: 	btn_attr,
-                    modal: 	btn_modal,
-                    prefix:	btn_prefix,
-                    mod:	btn_mod,
-                    elem:	btn_elem,
-                    icon:	btn_icon,
-                    name:	btn,
-                } %}
+        		<div class="{{content_prefix}}btn  {{content_mod}}">
+			        {% include "../common/button/tpl.twig" with {
+	                    view:	'tpl',
+	                    tag:	btn_tag,
+	                    link: 	btn_link,
+	                    attr: 	btn_attr,
+	                    modal: 	btn_modal,
+	                    prefix:	btn_prefix,
+	                    mod:	btn_mod,
+	                    elem:	btn_elem,
+	                    icon:	btn_icon,
+	                    name:	btn,
+	                } %}
+	        	</div>
 	        </div>
         </div>
     </section>

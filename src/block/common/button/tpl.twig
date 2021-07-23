@@ -6,5 +6,8 @@
 	{% if icon %}
 		{% include "../svg-sprite/svg.twig" with {icon:icon} %}
 	{% endif %}
+	{% if icon_svg %}
+		{{icon_svg}}
+	{% endif %}
 </{{tag}}>  
 {% endif %}

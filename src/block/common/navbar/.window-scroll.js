@@ -1,6 +1,18 @@
-var topPos = $(document).scrollTop();		
+/*var topPos = $(document).scrollTop();		
 var snb = $('.navbar__block.is--scroll');	
 
+var projects = $('.section__content.is--index-projects');
+var projectsPos = projects.offset().top;
+
+//console.log(projects.offset().top);
+if(topPos > projectsPos) {
+	snb.addClass('is--logo-white');
+} else {
+	snb.removeClass('is--logo-white');	
+	snb.addClass('is--return');
+}
+*/
+/*
 if(snb.hasClass('opacity')) {
 	if(topPos <= 200) {
 		snb.removeClass('opacity');
@@ -28,3 +40,4 @@ if(snb.hasClass('scroll-navbar')) {
 		snb.addClass('scroll-navbar');
 	} 
 }
+*/

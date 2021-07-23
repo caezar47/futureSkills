@@ -1,0 +1,57 @@
+{% if view == "competencies" %}
+    <section class="{{content_prefix}}content  {{content_mod}}" {% if bg %}style="background-image: url({{bg}});"{% endif %}>
+        <div class="{{content_prefix}}container container  {{content_mod}}">
+        	{% include "block.twig" with {
+                view:	'header',
+            } %}
+        	<div class="{{content_prefix}}grid  grid__row  {{content_mod}}">
+        		{% include "../common/card/card.twig" with {
+                    view:	card_view,
+                    prefix:	card_prefix,
+                    mod:	card_mod,
+                    list:	card_list,                    
+                } %}
+       		</div>
+        	<div class="{{content_prefix}}btn  is--more">
+		        {% include "../common/button/tpl.twig" with {
+                    view:       'tpl',
+                    tag:	    btn_tag,
+                    link:       btn_link,
+                    attr:       btn_attr,
+                    modal:      btn_modal,
+                    prefix:     btn_prefix,
+                    mod:        btn_mod,
+                    elem:       btn_elem,
+                    icon:       btn_icon,
+                    icon_svg:	btn_icon_svg,
+                    name:       btn,
+                } %}
+            </div>
+        </div>
+    </section>
+{% endif %}
+{% if view == "university" %}
+    <section class="{{content_prefix}}content  {{content_mod}}" {% if bg %}style="background-image: url({{bg}});"{% endif %}>
+        <div class="{{content_prefix}}container container  {{content_mod}}">
+            {% include "block.twig" with {
+                view:   'header',
+            } %}
+            <div class="{{content_prefix}}grid  grid__row  {{content_mod}}">
+                {% include "../common/card/card.twig" with {
+                    view:   card_view,
+                    prefix: card_prefix,
+                    mod:    card_mod,
+                    list:   card_list,                    
+                } %}
+            </div>
+            <div class="{{content_prefix}}group  {{content_mod}}"  {{card_slider}}>
+                {% include "../common/card/card.twig" with {
+                    view:   card_slider_view,
+                    prefix: card_prefix,
+                    mod:    card_slider_mod,
+                    list:   card_list,                    
+                } %}
+            </div>
+        </div>
+    </section>
+{% endif %}

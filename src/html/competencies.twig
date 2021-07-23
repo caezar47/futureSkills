@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU"> 
+    <head>
+        {% include "../block/common/head/head.twig" with {title:"Компетенции"}  %}
+    </head>
+    <body>
+        
+        {% include "../block/common/navbar/navbar.twig" with {
+            view:           'base',
+            navbar_prefix:  'navbar__',
+            navbar_mod:     '',
+            active:         page.competencies,
+        } %}    
+        
+        <main class="{{prefix.content}}wrap">
+            {% include "../block/page/page.twig" with {
+                view:               'competencies',
+                content_prefix:     prefix.content, 
+                content_mod:        'is--competencies',
+
+                heading:            'Компетенции',
+                text:               '<p>Каждую компетенцию Future Skills курирует менеджер - профессионал в своей технологической области, с которым вы можете обсудить подробности компетенции и возможности подключения к ней</p>',
+
+                back:                'Главная',
+                back_prefix:         prefix.btn,
+                back_tag:            'a',
+                back_elem:           'link',
+                back_link:           page.index, 
+                back_icon:           'goback',
+                back_mod:            '', 
+
+                btn:                'Показать больше',
+                btn_prefix:         prefix.btn,
+                btn_tag:            'a',
+                btn_elem:           'line',
+                btn_link:           '#', 
+                btn_icon_svg:       '<svg class="icon-gobottom" width="15" height="22" viewBox="0 0 15 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.93188 0.0371094L7.86909 13.3703L6.8691 13.3656L6.9319 0.0323996L7.93188 0.0371094Z" class="line"/><path fill-rule="evenodd" clip-rule="evenodd" d="M12.7048 12.8927L13.0914 13.7069L7.72672 20.3483L6.94586 20.3447L1.64398 13.653L2.03824 12.8425L12.7048 12.8927ZM11.6598 13.8878L3.07383 13.8473L7.34153 19.2338L11.6598 13.8878Z" class="tri"/></svg>',
+                btn_mod:            '',  
+
+
+                card_view:          'adv',
+                card_prefix:        prefix.card,
+                card_mod:           "is--competencies", 
+                card_list:[
+                    {
+                        img: [path.img,"/page/competencies/competencies-item1.jpg"].join(""),
+                        link: page.competencies_card, 
+                        name: 'Профессия №1', 
+                        note: 'Краткое описание профессии на несколько строчек, может, даже на три или больше c информацией по теме', 
+                    }, 
+                    {
+                        img: [path.img,"/page/competencies/competencies-item2.jpg"].join(""),
+                        link: page.competencies_card, 
+                        name: 'Профессия №2', 
+                        note: 'Lorem, ipsum dolor sit, amet consectetur adipisicing elit.', 
+                    },  
+                    {
+                        img: [path.img,"/page/competencies/competencies-item3.jpg"].join(""),
+                        link: page.competencies_card, 
+                        name: 'Профессия №3', 
+                        note: 'Lorem, ipsum dolor sit, amet consectetur adipisicing elit. Beatae ipsa cum, sit assumenda sequi delectus quasi,', 
+                    },  
+                    {
+                        img: [path.img,"/page/competencies/competencies-item2.jpg"].join(""),
+                        link: page.competencies_card, 
+                        name: 'Профессия №2', 
+                        note: 'Lorem, ipsum dolor sit, amet consectetur adipisicing elit.', 
+                    }, 
+                    {
+                        img: [path.img,"/page/competencies/competencies-item1.jpg"].join(""),
+                        link: page.competencies_card, 
+                        name: 'Профессия №1', 
+                        note: 'Краткое описание профессии на несколько строчек, может, даже на три или больше c информацией по теме', 
+                    }, 
+                    {
+                        img: [path.img,"/page/competencies/competencies-item3.jpg"].join(""),
+                        link: page.competencies_card, 
+                        name: 'Профессия №3', 
+                        note: 'Lorem, ipsum dolor sit, amet consectetur adipisicing elit. Beatae ipsa cum, sit assumenda sequi delectus quasi,', 
+                    },
+                ],
+            } %}
+
+        </main>
+
+        {% include "../block/common/footer/footer.twig" with {
+            view:"base",
+            footer_prefix:"footer__"
+        } %} 
+
+        {# {% include "../block/common/modals/include.twig"%}         #}
+        {% include "../block/common/script/script.twig" with {
+        } %}
+    </body>
+</html> 

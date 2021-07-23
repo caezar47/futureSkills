@@ -1,0 +1,120 @@
+@modal_backdrop 					:	@default;
+@modal_backdrop_fade 				:	0.9;
+@modal_bg 							:	@white;
+@modal_border_rad 					:	0;
+@modal_width 						:	665px;
+ 
+@modal_btn_width 					: 	32px;
+@modal_btn_color 					:	@default;
+.modal-open {
+	overflow: hidden!important;  
+}
+.modal__ {
+	&block{
+		display: none;
+		overflow: hidden;
+		position: fixed; 
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1210;
+		-webkit-overflow-scrolling: touch;
+		outline: 0;		
+		/*&#modal-duck{
+			display: block!important;
+			opacity: 1;
+			background: @black;
+		}*/
+		.media-breakpoint-up(@md; {
+			&.is--inline{
+				display: block!important;
+				position: initial;
+				opacity: 1;
+				overflow: visible;
+			}
+		});
+	}
+	&dialog {
+		transition: all 0.5s;
+		position: relative;
+		width: auto;	
+		margin: 5px auto;
+		max-width: @modal_width;
+		left: -100%;
+		top: 0;
+		max-height: 100%;
+		height: ~"calc(100% - 10px)";
+		.modal__block.in &{
+			left: 0;
+		}
+		.media-breakpoint-up(@md; {
+			height: auto;
+			max-height: ~"calc(100% - 20px)";
+			top: 50%;
+			transform: translateY(-50%);
+			background-color: @modal_bg;			
+			left: inherit;			
+			.modal__block.in &{
+				left: inherit;
+			}
+		});
+		/*#modal-duck &{
+			top: 60px!important;
+			left: 0!important;
+			transform: translateY(0px)!important;
+		}*/
+	}
+	&body {
+		position: relative;
+		background: @white-g;
+		padding: 40px 20px;
+	    border-radius: @site_br - 10;
+	    max-width: 94%;
+	    margin: 0 auto;
+	    height: 100%;
+		overflow: auto;
+	}
+	&btn-close{
+		.btn-clearfix();
+	    position: absolute;
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	    z-index: 5; 
+		top: 10px;
+		right: 10px;
+	   	color: @black;
+		width: 34px;
+		height: 34px;
+		background-color: @white;
+		border-radius: 50%;
+	   	transition: @trs-site;  	 
+		svg{
+			display: block;
+			width: 15px;
+			height: 15px;
+		}
+		&:hover{
+			color: @white;
+			background-color: @primary;
+		}
+	}
+
+}
+.modal-backdrop {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: -1px;
+	left: 0;
+	z-index: 1200;
+	background-color: @modal_backdrop;
+	backdrop-filter: blur(20px);
+	&.fade { 
+		opacity: 0;
+	}
+	&.in {
+		opacity: @modal_backdrop_fade;
+	}
+}

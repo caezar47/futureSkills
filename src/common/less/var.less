@@ -9,19 +9,18 @@
 @url-path-js 				: 	'@{url-path}/js';
 
 //===== color =====//
-@white 						:	#fff;
-@black 						: 	#000;
-@black-33 					: 	#333333;
-@black-b5 					: 	#B5B5BD;
-@black-c5 					: 	#C5C6C6;
-@orange 					:	#F24F00;
-@yellow 					:	#FFB526;
+@white 						:	#fff; //+
+@white-g 					:	linear-gradient(122.81deg, #F8FFFF 12.15%, #E8FAED 67.57%, #D9F8E9 102.75%); //+
+@black 						: 	#000;  //+
 
 @primary 					:	#31FF9C; //+
 @primary-p 					:	#CBFA79; //*
 @primary-g 					:	linear-gradient(87.91deg, @primary-p 4.53%, #8CF9A2 100%); //+
+
 @default 					:	#031B19; //+
 @default-p 					:	#020F19; //+
+@default-s 					:	26px 33px 57px fadeout(@black, 77%); //+
+
 @warning 					:	#1F9672;
 @success 					:	#FF9F0B;
 @success-g 					:	linear-gradient(94.59deg, #FFC700 0.45%, #FF5F1B 100%);
@@ -41,6 +40,9 @@
 
 //===== base =====//
 @site_bg 					:	linear-gradient(181.13deg, #00131B 4.71%, #001E2D 8.25%, #051822 23.73%, #061A28 32.87%, #16333D 87.29%, #1A4C5C 100.53%); 
+@site_bg 					:	linear-gradient(182.05deg, #042B3B 1.77%, #001E2D 25.71%, #0C2735 36.76%, #0B202B 49.22%, #0B2131 71.77%, #061A28 100.52%); 
+
+
 @site_color 				:	@white; 
 @site_link_color 			:	@primary; 
 @site_link_color_hover 		:	@success; 
@@ -84,7 +86,7 @@
 @xl 						:	1200px;
 @xxl 						:	1700px;
 
-@container_size  			:	1550px;
+@container_size  			:	1200px;
 @container_size_text  		:	1045px;
 @container_gap  			:	15px;
 @container_gap_xl  			:	6.7vw;
@@ -92,7 +94,7 @@
 //===== navbar =====//
 //= size
 @navbar_device 				:	75px;   
-@navbar_screen 				:	92px;
+@navbar_screen 				:	57px;
 
 
 @navbar_bg 					:	@info;

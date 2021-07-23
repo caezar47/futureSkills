@@ -5,9 +5,49 @@
 			{% if value.label %}
 			<p class="{{prefix}}label  {{mod}}">{{value.label}}</p>
 			{% endif %}
+			{% if value.code %}
+				<select {{value.code_attr}}>
+					{% for code in value.code %}
+						<option {{code.status}} {% if code.value %}value="{{code.value}}"{% endif %}>{{code.name}}</option>
+					{% endfor %}
+				</select>
+			{% endif %}
 			<input type="{{value.type}}" class="{{prefix}}control  {{mod}}  {{color}}  {{value.validate}}" {{value.required}} placeholder="{{value.placeholder}}">
 		</label>
 		{% endif %}
+		{% if value.view == "select" %}
+		<div class="{{prefix}}item  {{mod}}  {{value.mod}}">
+			{% if value.label %}
+			<p class="{{prefix}}label  {{mod}}">{{value.label}}</p>
+			{% endif %}
+			<select class="{{prefix}}control  {{value.mod}}  {{color}}  {{value.validate}}" {{value.type}}>
+				{% for option in value.option %}
+					<option {{option.status}} {% if option.value %}value="{{option.value}}"{% endif %}>{{option.name}}</option>
+				{% endfor %}
+			</select>
+		</div>
+		{% endif %}
+		{% if value.view == "textarea" %}
+		<label class="{{prefix}}item  {{mod}}  {{value.mod}}">
+			<textarea class="{{prefix}}control  {{mod}}  {{value.validate}}  is--textarea" {{value.required}} placeholder="{{value.placeholder}}"></textarea> 
+		</label>
+		{% endif %}
+		{% if value.view == "submit" %}
+		<div class="{{prefix}}item  is--submit  {{value.mod}}">
+			{% include "../button/tpl.twig" with {
+                view:'tpl',
+                tag:'button',
+                type:"submit",
+                attr: '',
+                prefix:value.prefix,
+                mod:"",
+                icon:value.icon,
+                elem:'item',
+                name:value.name, 
+            } %}
+		</div>
+		{% endif %}
+		{# old #}
 		{% if value.view == "range" %}
 		<label class="{{prefix}}item  {{mod}}  {{value.mod}}">
 			{% if value.label %}
@@ -36,23 +76,6 @@
 			<span>{{value.name}}</span>
 		</label>
 		{% endif %}
-		{% if value.view == "select" %}
-		<div class="{{prefix}}item  {{mod}}  {{value.mod}}">
-			{% if value.label %}
-			<p class="{{prefix}}label  {{mod}}">{{value.label}}</p>
-			{% endif %}
-			<select class="{{prefix}}control  {{value.mod}}  {{color}}  {{value.validate}}" {{value.type}}>
-				{% for option in value.option %}
-					<option {{option.status}} {% if option.value %}value="{{option.value}}"{% endif %}>{{option.name}}</option>
-				{% endfor %}
-			</select>
-		</div>
-		{% endif %}
-		{% if value.view == "textarea" %}
-		<label class="{{prefix}}item  {{mod}}  {{value.mod}}">
-			<textarea class="{{prefix}}control  {{mod}}  {{value.validate}}  is--textarea" {{value.required}} placeholder="{{value.placeholder}}"></textarea> 
-		</label>
-		{% endif %}
 		{% if value.view == "captcha" %}
 		<div class="{{prefix}}item  {{mod}}  {{value.mod}}">
 			<img src="{{value.img}}"  class="{{prefix}}captcha-img  img-fluid"> 
@@ -76,20 +99,6 @@
 					{% endfor %}
 				</div>
 			</div>
-		{% endif %}
-		{% if value.view == "submit" %}
-		<div class="{{prefix}}item  is--submit  {{value.mod}}">
-			{% include "../button/tpl.twig" with {
-                view:'tpl',
-                tag:'button',
-                type:"submit",
-                attr: '',
-                prefix:value.prefix,
-                mod:"",
-                elem:'item',
-                name:value.name, 
-            } %}
-		</div>
 		{% endif %}
 		{% if value.view == "link" %}
 		<div class="{{prefix}}item  {{value.group_mod}}">
