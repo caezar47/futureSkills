@@ -23,7 +23,7 @@
 {% endif %}
 {% if view == 'university_card' %}
 	{% for value in list %}
-		<a href="#" data-toggle="modal" data-target="#{{value.modal}}" class="{{prefix}}item  {{mod}}"  data-modal='{"name":"{{value.name}}", "note":"{{value.note}}", "img":"{{value.img}}"}'>
+		<a href="#" data-toggle="modal" data-target="#{{value.modal}}" class="{{prefix}}item  {{mod}}"  data-modal='{"name":"{{value.name}}", "note":"{{value.note}}", "img":"{{value.img}}" {% if value.team %}, "team":[{% for team in value.team %}{"name": "{{team.name}}","label": "{{team.label}}","img": "{{team.img}}","tel": "{{team.tel}}","email": "{{team.email}}"}{% if  loop.last %}{% else %},{% endif %}{% endfor %}]{% else %},"team":""{% endif %} }'>
 			{% if value.img %}
 			<div class="{{prefix}}img  {{mod}}">
 				<picture>
@@ -43,7 +43,7 @@
 {% endif %}
 {% if view == 'university_item' %}
 	{% for value in list %}
-	<div> 
+	<div class="{{prefix}}wrap  {{mod}}"> 
 		<div class="{{prefix}}item  {{mod}}">
 			<div class="{{prefix}}img  {{mod}}">
 				<picture>
@@ -54,6 +54,17 @@
 				<h4 class="{{prefix}}heading  {{mod}}">{{value.name}}</h4>
 				<div class="{{prefix}}note  {{mod}}">{{value.note}}</div>
 			</div> 
+			<div class="{{content_prefix}}group  {{content_mod}}-team">
+				<h5 class="{{content_prefix}}heading  {{content_mod}}-team">Связаться</h5>
+				<div class="{{content_prefix}}grid  grid__row  {{content_mod}}-team">
+					{% include "card.twig" with {
+	                    view:   value.team_view,
+	                    prefix: prefix,
+	                    mod:    value.team_mod,
+	                    list:   value.team,                    
+	                } %}
+				</div>
+			</div>
 		</div>
 	</div>
 	{% endfor %}
@@ -69,7 +80,44 @@
 			<h4 class="{{prefix}}heading  {{mod}}" data-uni-name></h4>
 			<div class="{{prefix}}note  {{mod}}" data-uni-note></div>
 		</div> 
+		<div class="{{content_prefix}}group  {{content_mod}}-team" data-uni-team-group>
+			<h5 class="{{content_prefix}}heading  {{content_mod}}-team">Связаться</h5>
+			<div class="{{content_prefix}}grid  grid__row  {{content_mod}}-team" data-uni-team>
+			</div>
+		</div>
 	</div>
+{% endif %}
+{% if view == 'team' %}
+	{% for value in list %}
+		<div class="{{prefix}}item  {{mod}}">
+			<div class="{{prefix}}img  {{mod}}">
+				<img src="{{value.img}}" class="img-responsive" alt="">
+			</div>
+			<div class="{{prefix}}group  {{mod}}">
+				<h6 class="{{prefix}}heading  {{mod}}">				
+					{{value.name}}
+				</h6> 
+				<p class="{{prefix}}label  {{mod}}">				
+					{{value.label}}
+				</p> 
+				<p class="{{prefix}}tel  {{mod}}">				
+					<a href="tel:{{value.tel}}">{{value.tel}}</a> 	
+				</p> 
+				<p class="{{prefix}}email  {{mod}}">				
+					<a href="mailto:{{value.email}}">{{value.email}}</a> 	
+				</p> 
+			</div> 
+		</div>
+	{% endfor %}
+{% endif %}
+{% if view == 'docs' %}
+	{% for value in list %}
+		<a href="{{value.link}}" class="{{prefix}}item  {{mod}}">
+			<p class="{{prefix}}heading  {{mod}}">				
+				{{value.name}}
+			</p> 
+		</a>
+	{% endfor %}
 {% endif %}
 
 {# old #}

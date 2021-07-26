@@ -5,35 +5,31 @@ modal_btn_show.on('click', function(e) {
 	var name = 					modal_data.name;
 	var note = 					modal_data.note;
 	var img = 					modal_data.img;
+	var team = 					modal_data.team;
 
-	var target = 				modal_data.target;
 	var modal = 				$(this).attr('data-target');
 
 	var modal_heading = 		$(modal).find("[data-uni-name]");
 	var modal_note = 			$(modal).find("[data-uni-note]");
 	var modal_img = 			$(modal).find("[data-uni-img]");
+	var modal_team_group = 		$(modal).find("[data-uni-team-group]");
+	var modal_team = 			$(modal).find("[data-uni-team]");
 
-
-	var modal_form = 			$(modal).find(".azbn7__api__form");
-	var modal_form_id = 		$(modal).find("[data-form-id]");
-	var modal_form_heading = 	$(modal).find("[data-form-heading]");
-
-	if(target){
-		modal_form.prepend('<input type="hidden" name="f[Цель]" data-form-target>');
-		var modal_form_target = 	$(modal).find("[data-form-target]");
-		modal_form_target.attr({'value':target});
+	if(team.length) {
+		modal_team_group.addClass('is--visible');
+		for(var i = 0; i < team.length; i++) {
+			var content = '<div class="card__item  is--team"><div class="card__img  is--team"><img src="'+team[i].img+'" class="img-responsive" alt=""></div><div class="card__group  is--team"><h6 class="card__heading  is--team">'+team[i].name+'</h6><p class="card__label  is--team">'+team[i].label+'</p><p class="card__tel  is--team"><a href="tel:'+team[i].tel+'">'+team[i].tel+'</a></p><p class="card__email  is--team"><a href="mailto:'+team[i].email+'">'+team[i].email+'</a></p></div></div>'
+			modal_team.append(content);
+		}
 	}
 
 	modal_heading.text(name);
 	modal_note.text(note);
 	modal_img.attr({'src':img});
 
-	modal_form_id.attr({'value':id});
-	modal_form_heading.attr({'value':name});
-
 });
 $('.modal__block').on('hidden.bs.modal', function (e) {
-	$(this).find("[data-form-target]").remove();
+	$(this).find("[data-uni-team]").empty();
 });
 
 /*var basketOpen = $('.informer__modal .btn__item');

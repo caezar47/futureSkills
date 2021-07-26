@@ -12,7 +12,7 @@
             active:         page.university,
         } %}    
         
-        <main class="{{prefix.content}}wrap">
+        <main class="{{prefix.content}}wrap"  style="background-image: url('{{path.img}}/page/main-bg.png');">
             {% include "../block/page/page.twig" with {
                 view:               'university',
                 content_prefix:     prefix.content, 
@@ -29,7 +29,6 @@
                 back_link:           page.index, 
                 back_icon:           'goback',
                 back_mod:            '', 
- 
 
                 card_view:          'university_card',
                 card_prefix:        prefix.card,
@@ -44,9 +43,272 @@
                         name: 'Реализуйте образовательные программы (ДПО) по компетенциям FutureSkills в сотрудничестве с Академией Ворлдскиллс Россия', 
                         img: [path.img,"/page/university/university-item1.jpg"].join(""),
                         note: 'Войдите в сеть из уже более 1200 центров обучения Ворлдскиллс и получите доступ к нашему Банку эталонных программ. Развивайте профессиональные компетенции преподавателей и участвуйте в программах массовой подготовки граждан в рамках федеральных проектов «Молодые профессионалы» и «Содействие занятости»', 
-                    }
+                        team_view: 'team',
+                        team_mod: 'is--team',   
+                        team:[
+                            {
+                                img: [path.img,"/page/team/kaisin.jpg"].join(""),
+                                name:       'Константин Кайсин',
+                                label:      'Главный эксперт',
+                                tel:        '+7 912 345 67 89',
+                                email:      'hisemail@gmail.com',
+                            },
+                            {
+                                img: [path.img,"/page/team/kaisin.jpg"].join(""),
+                                name:       'Константин Кайсин',
+                                label:      'Главный эксперт',
+                                tel:        '+7 912 345 67 89',
+                                email:      'hisemail@gmail.com',
+                            },
+                            {
+                                img: [path.img,"/page/team/kaisin.jpg"].join(""),
+                                name:       'Константин Кайсин',
+                                label:      'Главный эксперт',
+                                tel:        '+7 912 345 67 89',
+                                email:      'hisemail@gmail.com',
+                            },
+                            {
+                                img: [path.img,"/page/team/kaisin.jpg"].join(""),
+                                name:       'Константин Кайсин',
+                                label:      'Главный эксперт',
+                                tel:        '+7 912 345 67 89',
+                                email:      'hisemail@gmail.com',
+                            },
+                        ],
+                    },
+                    {  
+                        modal: 'modal-university',
+                        name: 'Проводите внутривузовские чемпионаты по компетенциям FutureSkills и участвуйте в межвузовском чемпионате WorldSkills Russia', 
+                        img: [path.img,"/page/university/university-item1.jpg"].join(""),
+                        note: 'Войдите в сеть из уже более 1200 центров обучения Ворлдскиллс и получите доступ к нашему Банку эталонных программ. Развивайте профессиональные компетенции преподавателей и участвуйте в программах массовой подготовки граждан в рамках федеральных проектов «Молодые профессионалы» и «Содействие занятости»', 
+                        team_view: 'team',
+                        team_mod: 'is--team',
+                        team:[
+                            {
+                                img: [path.img,"/page/team/loshkareva.jpg"].join(""),
+                                name:       'Екатерина Лошкарева',
+                                label:      'Главный эксперт',
+                                tel:        '+7 912 345 67 89',
+                                email:      'hisemail@gmail.com',
+                            },
+                            {
+                                img: [path.img,"/page/team/loshkareva.jpg"].join(""),
+                                name:       'Екатерина Лошкарева',
+                                label:      'Главный эксперт',
+                                tel:        '+7 912 345 67 89',
+                                email:      'hisemail@gmail.com',
+                            },
+                            {
+                                img: [path.img,"/page/team/loshkareva.jpg"].join(""),
+                                name:       'Екатерина Лошкарева',
+                                label:      'Главный эксперт',
+                                tel:        '+7 912 345 67 89',
+                                email:      'hisemail@gmail.com',
+                            },
+                            {
+                                img: [path.img,"/page/team/loshkareva.jpg"].join(""),
+                                name:       'Екатерина Лошкарева',
+                                label:      'Главный эксперт',
+                                tel:        '+7 912 345 67 89',
+                                email:      'hisemail@gmail.com',
+                            },
+                        ],
+                    },
+                    {  
+                        modal: 'modal-university',
+                        name: 'Включайтесь в мировое сообщество лидеров изменений в области образования', 
+                        img: [path.img,"/page/university/university-item1.jpg"].join(""),
+                        note: 'Войдите в сеть из уже более 1200 центров обучения Ворлдскиллс и получите доступ к нашему Банку эталонных программ. Развивайте профессиональные компетенции преподавателей и участвуйте в программах массовой подготовки граждан в рамках федеральных проектов «Молодые профессионалы» и «Содействие занятости»', 
+                        team_view: 'team',
+                        team_mod: 'is--team',   
+                        team:[
+                            {
+                                img: [path.img,"/page/team/kaisin.jpg"].join(""),
+                                name:       'Константин Кайсин',
+                                label:      'Главный эксперт',
+                                tel:        '+7 912 345 67 89',
+                                email:      'hisemail@gmail.com',
+                            },
+                            {
+                                img: [path.img,"/page/team/kaisin.jpg"].join(""),
+                                name:       'Константин Кайсин',
+                                label:      'Главный эксперт',
+                                tel:        '+7 912 345 67 89',
+                                email:      'hisemail@gmail.com',
+                            },
+                            {
+                                img: [path.img,"/page/team/kaisin.jpg"].join(""),
+                                name:       'Константин Кайсин',
+                                label:      'Главный эксперт',
+                                tel:        '+7 912 345 67 89',
+                                email:      'hisemail@gmail.com',
+                            },
+                            {
+                                img: [path.img,"/page/team/kaisin.jpg"].join(""),
+                                name:       'Константин Кайсин',
+                                label:      'Главный эксперт',
+                                tel:        '+7 912 345 67 89',
+                                email:      'hisemail@gmail.com',
+                            },
+                        ],
+                    },
+                    {  
+                        modal: 'modal-university',
+                        name: 'Участвуйте в исследованиях, формируйте новые компетенции FutureSkills и будущее рынка труда совместно с индустриальными партнерами', 
+                        img: [path.img,"/page/university/university-item1.jpg"].join(""),
+                        note: 'Войдите в сеть из уже более 1200 центров обучения Ворлдскиллс и получите доступ к нашему Банку эталонных программ. Развивайте профессиональные компетенции преподавателей и участвуйте в программах массовой подготовки граждан в рамках федеральных проектов «Молодые профессионалы» и «Содействие занятости»', 
+                        team_view: 'team',
+                        team_mod: 'is--team',
+                        team:[
+                            {
+                                img: [path.img,"/page/team/loshkareva.jpg"].join(""),
+                                name:       'Екатерина Лошкарева',
+                                label:      'Главный эксперт',
+                                tel:        '+7 912 345 67 89',
+                                email:      'hisemail@gmail.com',
+                            },
+                            {
+                                img: [path.img,"/page/team/loshkareva.jpg"].join(""),
+                                name:       'Екатерина Лошкарева',
+                                label:      'Главный эксперт',
+                                tel:        '+7 912 345 67 89',
+                                email:      'hisemail@gmail.com',
+                            },
+                            {
+                                img: [path.img,"/page/team/loshkareva.jpg"].join(""),
+                                name:       'Екатерина Лошкарева',
+                                label:      'Главный эксперт',
+                                tel:        '+7 912 345 67 89',
+                                email:      'hisemail@gmail.com',
+                            },
+                            {
+                                img: [path.img,"/page/team/loshkareva.jpg"].join(""),
+                                name:       'Екатерина Лошкарева',
+                                label:      'Главный эксперт',
+                                tel:        '+7 912 345 67 89',
+                                email:      'hisemail@gmail.com',
+                            },
+                        ],
+                    },
+                    {  
+                        modal: 'modal-university',
+                        name: 'Развивайте практики подготовки студентов по перспективным компетенциям', 
+                        img: [path.img,"/page/university/university-item1.jpg"].join(""),
+                        note: 'Войдите в сеть из уже более 1200 центров обучения Ворлдскиллс и получите доступ к нашему Банку эталонных программ. Развивайте профессиональные компетенции преподавателей и участвуйте в программах массовой подготовки граждан в рамках федеральных проектов «Молодые профессионалы» и «Содействие занятости»', 
+                        team_view: 'team',
+                        team_mod: 'is--team',   
+                        team:[
+                            {
+                                img: [path.img,"/page/team/kaisin.jpg"].join(""),
+                                name:       'Константин Кайсин',
+                                label:      'Главный эксперт',
+                                tel:        '+7 912 345 67 89',
+                                email:      'hisemail@gmail.com',
+                            },
+                            {
+                                img: [path.img,"/page/team/kaisin.jpg"].join(""),
+                                name:       'Константин Кайсин',
+                                label:      'Главный эксперт',
+                                tel:        '+7 912 345 67 89',
+                                email:      'hisemail@gmail.com',
+                            },
+                            {
+                                img: [path.img,"/page/team/kaisin.jpg"].join(""),
+                                name:       'Константин Кайсин',
+                                label:      'Главный эксперт',
+                                tel:        '+7 912 345 67 89',
+                                email:      'hisemail@gmail.com',
+                            },
+                            {
+                                img: [path.img,"/page/team/kaisin.jpg"].join(""),
+                                name:       'Константин Кайсин',
+                                label:      'Главный эксперт',
+                                tel:        '+7 912 345 67 89',
+                                email:      'hisemail@gmail.com',
+                            },
+                        ],
+                    },
+                    {  
+                        modal: 'modal-university',
+                        name: 'Участвуйте в новом формате соревнований FS Team Challenge', 
+                        img: [path.img,"/page/university/university-item1.jpg"].join(""),
+                        note: 'Войдите в сеть из уже более 1200 центров обучения Ворлдскиллс и получите доступ к нашему Банку эталонных программ. Развивайте профессиональные компетенции преподавателей и участвуйте в программах массовой подготовки граждан в рамках федеральных проектов «Молодые профессионалы» и «Содействие занятости»', 
+                        team_view: 'team',
+                        team_mod: 'is--team',
+                        team:[
+                            {
+                                img: [path.img,"/page/team/loshkareva.jpg"].join(""),
+                                name:       'Екатерина Лошкарева',
+                                label:      'Главный эксперт',
+                                tel:        '+7 912 345 67 89',
+                                email:      'hisemail@gmail.com',
+                            },
+                            {
+                                img: [path.img,"/page/team/loshkareva.jpg"].join(""),
+                                name:       'Екатерина Лошкарева',
+                                label:      'Главный эксперт',
+                                tel:        '+7 912 345 67 89',
+                                email:      'hisemail@gmail.com',
+                            },
+                            {
+                                img: [path.img,"/page/team/loshkareva.jpg"].join(""),
+                                name:       'Екатерина Лошкарева',
+                                label:      'Главный эксперт',
+                                tel:        '+7 912 345 67 89',
+                                email:      'hisemail@gmail.com',
+                            },
+                            {
+                                img: [path.img,"/page/team/loshkareva.jpg"].join(""),
+                                name:       'Екатерина Лошкарева',
+                                label:      'Главный эксперт',
+                                tel:        '+7 912 345 67 89',
+                                email:      'hisemail@gmail.com',
+                            },
+                        ],
+                    },
                 ],
             } %}
+            {% include "../block/page/block.twig" with {
+                view:               'docs',
+                content_prefix:     prefix.content, 
+                content_mod:        'is--university-docs',
+
+                heading:            'Основополагающие документы',
+
+                card_view:          'docs',
+                card_prefix:        prefix.card,
+                card_mod:           "is--docs",   
+                card_list:[
+                    {  
+                        link: 'text.pdf', 
+                        name: 'Техническое описание',
+                    },
+                    {  
+                        link: 'text.pdf', 
+                        name: 'Инфраструктурный лист',
+                    },
+                    {  
+                        link: 'text.pdf', 
+                        name: 'Пример конкурсного задания',
+                    },
+                    {  
+                        link: 'text.pdf', 
+                        name: 'Инфраструктурный лист',
+                    },
+                    {  
+                        link: 'text.pdf', 
+                        name: 'Техническое описание',
+                    },
+                ], 
+
+                btn:                'скачать все',
+                btn_prefix:         prefix.btn,
+                btn_tag:            'a',
+                btn_elem:           'link',
+                btn_link:           page.index, 
+                btn_icon:           'download',
+                btn_mod:            '',      
+            } %} 
 
         </main>
 

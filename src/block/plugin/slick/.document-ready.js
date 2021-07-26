@@ -1,9 +1,11 @@
 'use strict';
 $(function() { 
 	var challenge 		= $('[data-slick-challenge]');
+	var uni 			= $('[data-slick-uni]');
 
 	var prevArrow = '<button type="button" class="slick-btn  is--prev"><span class="sr-only">Предыдущий слайд</span></button>';
 	var nextArrow = '<button type="button" class="slick-btn  is--next"><span class="sr-only">Следующий слайд</span></button>';
+	var count = $('.slick-count');
 
 	challenge.slick({
 		slidesToShow: 4,
@@ -33,6 +35,23 @@ $(function() {
 				}
 		    }
 		]
+	});
+
+   	uni.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide) {
+		var i = (currentSlide ? currentSlide : 0) + 1;
+		$(this).find(count).html(i + '/' + slick.$dots[0].children.length);
+    });
+	uni.slick({
+		slide: '.card__wrap',
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		dots: true,
+		prevArrow: $(this).find('.slick-btn.is--prev.is--uni'),
+		nextArrow: $(this).find('.slick-btn.is--next.is--uni'),
+		draggable: false,
+		swipe: false,
+		touchMove: false,
+		fade: true, 	
 	});
 	
 	/*

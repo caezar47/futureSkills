@@ -21,7 +21,82 @@
 
 <link href="./css/style.css" rel="stylesheet">    </head>
     <body>
-        
+        <header class="navbar__block  is--scroll ">
+	<div class="navbar__header">
+		<div class="container">
+			<div class="navbar__header-row flex__row">
+				<div>
+					<a class="navbar__logotip" href="./">
+						<svg class="icon-svg icon-logotip" role="img">
+	<use xlink:href="./img/svg/sprite.svg#logotip"></use>
+</svg>					</a>
+				</div>
+				<button class="navbar__hamburger-card" data-hamburger>
+					<span class="navbar__hamburger-card-inner">
+						<span class="navbar__hamburger-card-line  is--left"></span>
+						<span class="navbar__hamburger-card-line  is--center"></span>
+						<span class="navbar__hamburger-card-line  is--right"></span>
+					</span>
+				</button>
+			</div>
+		</div>
+	</div>
+	<div class="navbar__collapse" >
+		<div class="navbar__collapse-inner">	
+			<div class="container">
+				<div class="navbar__collapse-row  flex__row">
+					<div class="is--logotip-anim">
+						<a class="navbar__logotip-anim" href="./">
+							<svg class="icon-svg icon-logotip-start" role="img">
+	<use xlink:href="./img/svg/sprite.svg#logotip-start"></use>
+</svg> 
+							<div class="icon-tire-h"></div>
+							<div class="icon-tire-v"></div>
+							
+						</a>
+					</div>
+					<div class="is--logotip">
+						<a class="navbar__logotip" href="./">
+							<svg class="icon-svg icon-logotip" role="img">
+	<use xlink:href="./img/svg/sprite.svg#logotip"></use>
+</svg> 
+						</a>
+					</div>
+					
+					<nav class="is--navbar">
+						<ul class="navbar__nav">
+							
+							<li class="navbar__nav-item   ">
+	<a href="./competencies.html"  class="navbar__nav-link    ">
+				Компетенции		
+	</a>  
+	</li>
+<li class="navbar__nav-item   ">
+	<a href="./home.html"  class="navbar__nav-link    ">
+				FS Team Challenge		
+	</a>  
+	</li>
+<li class="navbar__nav-item   ">
+	<a href="./university.html"  class="navbar__nav-link    ">
+				Университетам		
+	</a>  
+	</li>
+						</ul>	
+					</nav>
+					<div class="is--search">
+						<a class="navbar__search" href="#">
+							<svg class="icon-svg icon-search" role="img">
+	<use xlink:href="./img/svg/sprite.svg#search"></use>
+</svg> 
+						</a>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+    
         <main class="section__wrap">
                 <section class="section__content  is--index-header" >
         <div class="section__container container  is--index-header">
@@ -136,7 +211,7 @@
 		        	<h2 class="section__heading  is--index-competence"> 
 		        		Познакомьтесь с компетенциями <span>Future Skills</span>, которые, по мнению экспертов, понадобятся людям в будущем		        
 			        </h2>
-			        <a  href="#"  class="button__item  "   >
+			        <a  href="./competencies.html"  class="button__item  "   >
 			<span>Подробнее</span>
 		
 			<svg class="icon-svg icon-goforward" role="img">
@@ -215,7 +290,7 @@
 		        	<h2 class="section__heading  is--index-possibility"> 
 		        		Возможности <span>Future—Skills</span> для современных российских университетов		        
 			        </h2>
-			        <a  href="#"  class="button__item  "   >
+			        <a  href="./university.html"  class="button__item  "   >
 			<span>Подробнее</span>
 		
 			<svg class="icon-svg icon-goforward" role="img">

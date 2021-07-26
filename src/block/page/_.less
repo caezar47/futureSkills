@@ -5,6 +5,13 @@
 		flex-direction: column;
 		width: 100%;
 		min-height: 100%;
+		//&.is--university{
+			background-repeat: no-repeat;
+			background-position: 90% 110%;
+			.media-breakpoint-up(@lg; {
+				background-position: bottom right;
+			});
+		//}
 	}
 	&content{
 		min-height: 100%;
@@ -45,7 +52,6 @@
 				background-size: cover, 0;
 			});
 		}
-
 	}
 	&container{	
 		padding-top: 135px;
@@ -149,6 +155,20 @@
 			.media-breakpoint-up(@xl; {
 			});
 		}
+		&.is--university{
+			padding-bottom: 45px;
+			.media-breakpoint-up(@xl; {
+				padding-bottom: 75px;
+			});	
+		}
+		&.is--university-docs{
+			padding-top: 45px;
+			padding-bottom: 115px;
+			.media-breakpoint-up(@xl; {
+				padding-top: 75px;
+				padding-bottom: 135px;
+			});	
+		}
 	}
 	&group{
 		&.is--index-challenge{
@@ -164,10 +184,27 @@
 			background: @white-g;
 			box-shadow: @default-s;
 			border-radius: @site_br;
-			padding: 105px 95px 100px 105px;
+			padding: 30px;
+			.media-breakpoint-up(@xl; {
+				padding: 105px 95px 95px 105px;
+			});
 			.media-breakpoint-down(@md; {
 				display: none!important;
 			});
+		}
+		&.is--university-team{
+			.media-breakpoint-down(@md; {
+				display: none;
+				&.is--visible{
+					display: block;
+				}
+			});
+			.media-breakpoint-up(@xl; {
+				//margin-left: -5px;
+			});
+		}
+		&.is--university-docs{
+			max-width: 870px;
 		}
 	}		
 	&grid{		
@@ -190,8 +227,33 @@
 			});
 		}
 		&.is--university{
+			.media-breakpoint-up(@sm; {
+				grid-template-columns: repeat(2, 1fr)
+			});
 			.media-breakpoint-up(@md; {
 				display: none;
+			});
+		}
+		&.is--university-team{
+			.media-breakpoint-up(@md; {
+				grid-template-columns: repeat(2, 1fr);
+				grid-gap: 40px 30px;
+			});
+		}
+		&.is--university-docs{
+			grid-gap: 29px;
+			& + .section__btn{
+				margin-top: 45px;
+			}
+			.media-breakpoint-up(@sm; {
+				grid-template-columns: repeat(2, 1fr);
+			});
+			.media-breakpoint-up(@md; {
+				grid-gap: 25px 30px;
+				grid-template-columns: repeat(3, 1fr);
+				& + .section__btn{
+					margin-top: 0;
+				}				
 			});
 		}
 	}
@@ -320,6 +382,23 @@
 				margin-bottom: 45px;
 			});
 		}
+		//page
+		&.is--university-team{
+			.heading4();
+			margin-bottom: 23px;
+			.media-breakpoint-up(@md; {
+				.heading5();
+				margin-bottom: 35px;
+			});
+			.media-breakpoint-up(@xl; {
+			});
+		}
+		&.is--university-docs{
+			margin-bottom: 40px;
+			.media-breakpoint-up(@xl; {
+				margin-bottom: 35px;
+			});
+		}
 	}
 	&text{
 		.heading5();
@@ -371,6 +450,12 @@
 			.media-breakpoint-up(@md; {
 				margin-top: 55px;
 				text-align: left;
+			});
+		}
+		&.is--download{
+			text-align: center;
+			.media-breakpoint-up(@md; {
+				text-align: right;
 			});
 		}
 	}
