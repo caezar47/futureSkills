@@ -1,5 +1,6 @@
 .slick { 
 	@g: 15px;
+	@ch_item: 2.075vw;
 	&-slider{	
 		position: relative;
 		display: block;
@@ -35,12 +36,28 @@
 			margin-left: -15px;
 			margin-right: -15px;
 		}
+		[data-slick-gallery-thumb] &{
+			margin-left: -4px;
+			margin-right: -4px;
+		}
+		/*[data-slick-challenge-item] &{
+			margin-left: -15px;
+			margin-right: -15px;
+		}*/
 		
-		.media-breakpoint-up(@xl; {			
+		.media-breakpoint-up(@xl; {	
+			[data-slick-gallery-thumb] &{
+				margin-left: -15px;
+				margin-right: -15px;
+			}		
 			[data-slick-challenge] &{
 				margin-left: -20px;
 				margin-right: -20px;
 			}
+			/*[data-slick-challenge-item] &{
+				margin-left: -@ch_item;
+				margin-right: -@ch_item;
+			}*/
 		});
 		
 	} 
@@ -64,6 +81,19 @@
 		}
 		.slick-loading & {
 			visibility: hidden;
+		}
+		[data-slick-challenge-adv-thumb] &{
+			display: flex;
+    		justify-content: space-between;
+    		& > *{
+    			width: auto!important;
+    			&:nth-child(2){
+    				margin-left: auto;
+    				margin-right: auto;
+    			}
+    		}
+		}
+		[data-slick-challenge-card] &{
 		}
 	}
 	&-slide {
@@ -107,11 +137,31 @@
 			margin-left: 15px;
 			margin-right: 15px;
 		}
+		[data-slick-gallery-thumb] &{
+			margin-left: 4px;
+			margin-right: 4px;
+		}	
+		[data-slick-challenge-item] &{
+			margin-left: 15px;
+			margin-right: 15px;
+		}
+		[data-slick-challenge-card] &{
+			margin-left: 7.5px;
+			margin-right: 7.5px;
+		}
 		
-		.media-breakpoint-up(@xl; {			
+		.media-breakpoint-up(@xl; {	
+			[data-slick-gallery-thumb] &{
+				margin-left: 15px;
+				margin-right: 15px;
+			}			
 			[data-slick-challenge] &{
 				margin-left: 20px;
 				margin-right: 20px;
+			}	
+			[data-slick-challenge-item] &{
+				margin-left: @ch_item;
+				margin-right: @ch_item;
 			}
 		});
 		
@@ -148,52 +198,90 @@
 				position: relative;
 				z-index: 2;
 			}
-		}
-		.btn-clearfix();
-		cursor: pointer;
-		background-position: center;
-		
-		[data-slick-challenge] &{
-			position: absolute;
-			z-index: 5;
-			width: 40px;
-			height: 40px;
-			top: 50px;
-			&.is--prev{
-				.icon-prev();
-				&:hover{
-					.icon-prev(@c: 'fff');
-				}
-			}
-			&.is--next{
-				.icon-next();
-				&:hover{
-					.icon-next(@c: 'fff');
-				}
-			}
-			&.is--prev{
-				left: -10px;
-			}
-			&.is--next{
-				right: -10px;
+			[data-slick-challenge-item] &{
+				.media-breakpoint-down(@md; {
+					position: static;
+					padding: 0;
+					background: none;
+					.slick-count,
+					&::before{
+						display: none;
+					}
+
+				});
+				.media-breakpoint-up(@md; {
+					top: 40px;
+					left: 5.2vw;
+				});
 			}
 		}
-		[data-slick-uni] &{
-			position: relative;
-			width: 21px;
-			height: 14px;
-			&.is--prev{
-				.icon-back();
-				&:hover{
-					.icon-back(@c: '000');
+		&{
+			.btn-clearfix();
+			cursor: pointer;
+			background-position: center;
+			
+			[data-slick-challenge] &{
+				position: absolute;
+				z-index: 5;
+				width: 40px;
+				height: 40px;
+				top: 50px;
+				&.is--prev{
+					.icon-prev();
+					left: -10px;
+					&:hover{
+						.icon-prev(@c: 'fff');
+					}
+				}
+				&.is--next{
+					.icon-next();
+					right: -10px;
+					&:hover{
+						.icon-next(@c: 'fff');
+					}
 				}
 			}
-			&.is--next{
-				.icon-forward();
-				&:hover{
-					.icon-forward(@c: '000');
+			.slick-btn-group &{
+				position: relative;
+				width: 21px;
+				height: 14px;
+				&.is--prev{
+					.icon-back();
+					&:hover{
+						.icon-back(@c: '000');
+					}
+				}
+				&.is--next{
+					.icon-forward();
+					&:hover{
+						.icon-forward(@c: '000');
+					}
 				}
 			}
+			[data-slick-challenge-item] &{
+				.media-breakpoint-down(@md; {
+					position: absolute;
+					z-index: 5;
+					width: 40px;
+					height: 40px;
+					top: 180px;
+					&.is--prev{
+						left: 10px;
+						.icon-prev(@l:'000');
+						&:hover{
+							.icon-prev(@l:'000',@c: '000');
+						}
+					}
+					&.is--next{
+						right: 10px;
+						.icon-next(@l:'000',);
+						&:hover{
+							.icon-next(@l:'000',@c: '000');
+						}
+					}
+				});
+			}
+
 		}
 	}	
 	&-dots{

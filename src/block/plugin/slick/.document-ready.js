@@ -1,7 +1,13 @@
 'use strict';
 $(function() { 
 	var challenge 		= $('[data-slick-challenge]');
+	var ch_adv 			= $('[data-slick-challenge-adv]');
+	var ch_adv_thumb 	= $('[data-slick-challenge-adv-thumb]');
+	var ch_item 		= $('[data-slick-challenge-item]');
+	var ch_card 		= $('[data-slick-challenge-card]');
 	var uni 			= $('[data-slick-uni]');
+	var gallery 		= $('[data-slick-gallery]');
+	var gallery_thumb 	= $('[data-slick-gallery-thumb]');
 
 	var prevArrow = '<button type="button" class="slick-btn  is--prev"><span class="sr-only">Предыдущий слайд</span></button>';
 	var nextArrow = '<button type="button" class="slick-btn  is--next"><span class="sr-only">Следующий слайд</span></button>';
@@ -53,10 +59,122 @@ $(function() {
 		touchMove: false,
 		fade: true, 	
 	});
+
 	
+	gallery.slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		dots: false,
+		draggable: false,
+		pauseOnFocus: false,
+		pauseOnHover: false,
+		swipe: false,
+		touchMove: false,
+		fade: true, 	
+		autoplay: true,
+		speed: 1000,
+		autoplaySpeed: 7000,
+  		asNavFor: gallery_thumb
+	});
+	gallery_thumb.slick({
+		slidesToShow: 4,
+		slidesToScroll: 1,
+		arrows: false,
+		dots: false,
+		infinite: true,
+		autoplay: false,
+  		asNavFor: gallery,
+		focusOnSelect: true,
+	});
+	
+	ch_adv.slick({		
+  		responsive: [	
+			{
+				breakpoint: 99999,
+				settings: "unslick"
+		    },	
+			{
+				breakpoint: 767,
+				settings:{
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					arrows: false,
+					dots: false,
+					draggable: false,
+					pauseOnFocus: false,
+					pauseOnHover: false,
+					swipe: false,
+					touchMove: false,
+					fade: true, 	
+					autoplay: false,
+			  		asNavFor: ch_adv_thumb,
+				}
+		    }
+
+		]
+	});
+	ch_adv_thumb.slick({
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		arrows: false,
+		dots: false,
+		infinite: true,
+		autoplay: false,
+  		asNavFor: ch_adv,
+		focusOnSelect: true,
+	});
+
+   	ch_item.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide) {
+		var i = (currentSlide ? currentSlide : 0) + 1;
+		$(this).find(count).html(i + '/' + slick.$dots[0].children.length);
+    });
+	ch_item.slick({
+		slide: '.card__item',
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		variableWidth: true,
+		infinite: false,
+		dots: true,
+		prevArrow: $(this).find('.slick-btn.is--prev.is--ch-item'),
+		nextArrow: $(this).find('.slick-btn.is--next.is--ch-item'),
+		responsive: [		  
+		    {
+				breakpoint: 992,
+				settings: {
+					slidesToShow: 2,
+				}
+		    },	
+		    {
+				breakpoint: 576,
+				settings: {
+					slidesToShow: 1,
+					variableWidth: false,
+				}
+		    }
+		]
+	});
+	ch_card.slick({		
+  		responsive: [	
+			{
+				breakpoint: 99999,
+				settings: "unslick"
+		    },	
+			{
+				breakpoint: 767,
+				settings:{
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					infinite: false,
+					arrows: false,
+					dots: false,
+					variableWidth: true,
+				}
+		    }
+
+		]
+	});
 	/*
-	var gallery 		= $('[data-slick-gallery]');
-	var gallery_thumb 	= $('[data-slick-gallery-thumb]');
 	var banner = $('[data-slick-banner]');
 	var banner_white = $('[data-slick-banner-white]');
 	var banner_blue = $('[data-slick-banner-blue]');
@@ -78,52 +196,6 @@ $(function() {
 		autoplay: true,
 		speed: 1000,
 		autoplaySpeed: 7000,
-	});
-	gallery.slick({
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		prevArrow: prevArrow,
-		nextArrow: nextArrow,
-		draggable: false,
-		pauseOnFocus: false,
-		pauseOnHover: false,
-		swipe: false,
-		touchMove: false,
-		fade: true, 	
-		autoplay: true,
-		speed: 1000,
-		autoplaySpeed: 7000,
-  		asNavFor: gallery_thumb
-	});
-	gallery_thumb.slick({
-		slidesToShow: 7,
-		slidesToScroll: 1,
-		arrows: false,
-		dots: false,
-		infinite: true,
-		autoplay: false,
-  		asNavFor: gallery,
-		focusOnSelect: true,
-		responsive: [				  
-		    {
-				breakpoint: 1023,
-				settings: {
-					slidesToShow: 5,
-				}
-		    },				  
-		    {
-				breakpoint: 998,
-				settings: {
-					slidesToShow: 4,
-				}
-		    },			  
-		    {
-				breakpoint: 500,
-				settings: {
-					slidesToShow: 2,
-				}
-		    },
-		]
 	});
 
 banner_white.slick({
@@ -166,7 +238,11 @@ banner_white.slick({
 		variableWidth: true,
 		prevArrow: prevArrow,
 		nextArrow: nextArrow,
-		responsive: [		  
+		responsive: [	
+		{
+					breakpoint: 768,
+					settings: "unslick"
+			    }	  
 		    {
 				breakpoint: 1200,
 				settings: {

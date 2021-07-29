@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU"> 
+    <head>
+        {% include "../block/common/head/head.twig" with {title:"Эксплуатация беспилотных авиационных систем"}  %}
+    </head>
+    <body>
+        
+        {% include "../block/common/navbar/navbar.twig" with {
+            view:           'base',
+            navbar_prefix:  'navbar__',
+            navbar_mod:     '',
+            active:         page.competencies_card,
+        } %}    
+        
+        <main class="{{prefix.content}}wrap"  style="background-image: url('{{path.img}}/page/main-bg.png');">
+            {% include "../block/page/page.twig" with {
+                view:               'competencies_card',
+                content_prefix:     prefix.content, 
+                content_mod:        'is--competencies-card',
+
+                heading:            'Эксплуатация беспилотных авиационных систем',
+                text:               '<p>Компетенция охватывает процессы, связанные с&nbsp;эксплуатацией беспилотных авиационных систем в&nbsp;промышленности и&nbsp;повседневной жизни, в&nbsp;том числе&nbsp;— дистанционное пилотирование.</p><p>Специалист, работающий с&nbsp;беспилотниками, должен обладать навыками оператора, внешнего пилота, программиста, инженера, техника и&nbsp;др.</p>',
+
+                back:                'Компетенции',
+                back_prefix:         prefix.btn,
+                back_tag:            'a',
+                back_elem:           'link',
+                back_link:           page.competencies, 
+                back_icon:           'goback',
+                back_mod:            '',
+
+                tags_prefix:         prefix.btn,
+                tags_mod:            'is--tags',
+                tags:[
+                    {
+                        name: 'Future Skills',
+                        link: '#',
+                    },
+                    {
+                        name: 'team challenge',
+                        link: '#',
+                    },
+                    {
+                        name: 'презентационная',
+                        link: '#',
+                    },
+                    {
+                        name: 'международная',
+                        link: '#',
+                    },
+                ],  
+
+                content:[
+                    {
+                        mod:        'is--tabs',
+                        heading:    'Где востребована <span>компетенция</span>',
+                        tabs_prefix: prefix.tabs,
+                        tabs:[
+                            {
+                                status:     'active',
+                                id:         'now',
+                                name:       'Сейчас',
+                                type:       'adv',
+
+                                card_view:  'adv',
+                                card_mod:   'is--competencies-adv',
+                                card_list:[
+                                    {
+                                        img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                        name: 'картография', 
+                                    }, 
+                                    {
+                                        img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                        name: 'сельское хозяйство', 
+                                    }, 
+                                    {
+                                        img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                        name: 'доставка грузов', 
+                                    }, 
+                                    {
+                                        img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                        name: 'организация представлений', 
+                                    }, 
+                                    {
+                                        img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                        name: 'мониторинг движения и безопасности в городах', 
+                                    }, 
+                                    {
+                                        img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                        name: 'строительство', 
+                                    }, 
+                                    {
+                                        img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                        name: 'видеосъёмка', 
+                                    }, 
+                                    {
+                                        img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                        name: 'образование', 
+                                    }, 
+                                ],
+                            },
+                            {
+                                status: '',
+                                id:     'after2020',
+                                name:   'После 2020',
+                                type:       'adv',
+
+                                card_view:  'adv',
+                                card_mod:   'is--competencies-adv',
+                                card_list:[
+                                    {
+                                        img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                        name: 'картография', 
+                                    }, 
+                                    {
+                                        img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                        name: 'сельское хозяйство', 
+                                    }, 
+                                    {
+                                        img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                        name: 'доставка грузов', 
+                                    }, 
+                                    {
+                                        img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                        name: 'организация представлений', 
+                                    }, 
+                                    {
+                                        img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                        name: 'мониторинг движения и безопасности в городах', 
+                                    }, 
+                                    {
+                                        img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                        name: 'строительство', 
+                                    },  
+                                    {
+                                        img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                        name: 'образование', 
+                                    }, 
+                                ],
+                            },
+                            {
+                                status: '',
+                                id:     'after2035',
+                                name:   'Образ будущего 2035',
+                                
+                                type:       'adv',
+
+                                card_view:  'adv',
+                                card_mod:   'is--competencies-adv',
+                                card_list:[
+                                    {
+                                        img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                        name: 'картография', 
+                                    }, 
+                                    {
+                                        img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                        name: 'сельское хозяйство', 
+                                    }, 
+                                    {
+                                        img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                        name: 'доставка грузов', 
+                                    }, 
+                                    {
+                                        img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                        name: 'мониторинг движения и безопасности в городах', 
+                                    }, 
+                                    {
+                                        img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                        name: 'строительство', 
+                                    }, 
+                                    {
+                                        img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                        name: 'видеосъёмка', 
+                                    }, 
+                                    {
+                                        img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                        name: 'образование', 
+                                    }, 
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        mod:        'is--gallery',
+                        heading:    'Фото с соревнований',
+                        gallery:[
+                            {
+                                img: [path.img,"/page/competencies/competencies-card-item1.jpg"].join(""),
+                            },
+                            {
+                                img: [path.img,"/page/competencies/competencies-card-item2.jpg"].join(""),
+                            },
+                            {
+                                img: [path.img,"/page/competencies/competencies-card-item3.jpg"].join(""),
+                            },
+                            {
+                                img: [path.img,"/page/competencies/competencies-card-item1.jpg"].join(""),
+                            },
+                        ],
+                    },
+                    {
+                        mod:            'is--team',
+                        heading:        'Менеджер компетенции',
+                        team_view:      'team',
+                        team_prefix:    prefix.card,
+                        team_mod:       'is--team',   
+                        team:[
+                            {
+                                img: [path.img,"/page/team/kaisin.jpg"].join(""),
+                                name:       'Константин Кайсин',
+                                label:      'Главный эксперт',
+                                tel:        '+7 912 345 67 89',
+                                email:      'hisemail@gmail.com',
+                            },
+                            {
+                                img: [path.img,"/page/team/kaisin.jpg"].join(""),
+                                name:       'Константин Кайсин',
+                                label:      'Главный эксперт',
+                                tel:        '+7 912 345 67 89',
+                                email:      'hisemail@gmail.com',
+                            },
+                            {
+                                img: [path.img,"/page/team/kaisin.jpg"].join(""),
+                                name:       'Константин Кайсин',
+                                label:      'Главный эксперт',
+                                tel:        '+7 912 345 67 89',
+                                email:      'hisemail@gmail.com',
+                            },
+                            {
+                                img: [path.img,"/page/team/kaisin.jpg"].join(""),
+                                name:       'Константин Кайсин',
+                                label:      'Главный эксперт',
+                                tel:        '+7 912 345 67 89',
+                                email:      'hisemail@gmail.com',
+                            },
+                            {
+                                img: [path.img,"/page/team/kaisin.jpg"].join(""),
+                                name:       'Константин Кайсин',
+                                label:      'Главный эксперт',
+                                tel:        '+7 912 345 67 89',
+                                email:      'hisemail@gmail.com',
+                            },
+                            {
+                                img: [path.img,"/page/team/kaisin.jpg"].join(""),
+                                name:       'Константин Кайсин',
+                                label:      'Главный эксперт',
+                                tel:        '+7 912 345 67 89',
+                                email:      'hisemail@gmail.com',
+                            },
+                        ], 
+                    },
+                ],
+
+                tabs_mod:           'is--tabs',
+                tabs_heading:       'Где востребована <span>компетенция</span>',
+                tabs_prefix:        prefix.tabs,
+                tabs:[
+                    {
+                        status:     'active',
+                        id:         'now',
+                        name:       'Сейчас',
+                        type:       'adv',
+
+                        card_view:  'adv',
+                        card_mod:   'is--competencies-adv',
+                        card_list:[
+                            {
+                                img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                name: 'картография', 
+                            }, 
+                            {
+                                img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                name: 'сельское хозяйство', 
+                            }, 
+                            {
+                                img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                name: 'доставка грузов', 
+                            }, 
+                            {
+                                img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                name: 'организация представлений', 
+                            }, 
+                            {
+                                img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                name: 'мониторинг движения и безопасности в городах', 
+                            }, 
+                            {
+                                img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                name: 'строительство', 
+                            }, 
+                            {
+                                img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                name: 'видеосъёмка', 
+                            }, 
+                            {
+                                img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                name: 'образование', 
+                            }, 
+                        ],
+                    },
+                    {
+                        status: '',
+                        id:     'after2020',
+                        name:   'После 2020',
+                        type:       'adv',
+
+                        card_view:  'adv',
+                        card_mod:   'is--competencies-adv',
+                        card_list:[
+                            {
+                                img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                name: 'картография', 
+                            }, 
+                            {
+                                img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                name: 'сельское хозяйство', 
+                            }, 
+                            {
+                                img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                name: 'доставка грузов', 
+                            }, 
+                            {
+                                img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                name: 'организация представлений', 
+                            }, 
+                            {
+                                img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                name: 'мониторинг движения и безопасности в городах', 
+                            }, 
+                            {
+                                img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                name: 'строительство', 
+                            },  
+                            {
+                                img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                name: 'образование', 
+                            }, 
+                        ],
+                    },
+                    {
+                        status: '',
+                        id:     'after2035',
+                        name:   'Образ будущего 2035',
+                        
+                        type:       'adv',
+
+                        card_view:  'adv',
+                        card_mod:   'is--competencies-adv',
+                        card_list:[
+                            {
+                                img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                name: 'картография', 
+                            }, 
+                            {
+                                img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                name: 'сельское хозяйство', 
+                            }, 
+                            {
+                                img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                name: 'доставка грузов', 
+                            }, 
+                            {
+                                img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                name: 'мониторинг движения и безопасности в городах', 
+                            }, 
+                            {
+                                img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                name: 'строительство', 
+                            }, 
+                            {
+                                img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                name: 'видеосъёмка', 
+                            }, 
+                            {
+                                img: [path.img,"/page/competencies/competencies-adv.svg"].join(""),
+                                name: 'образование', 
+                            }, 
+                        ],
+                    },
+                ],
+
+
+                gallery_mod:        'is--gallery',
+                gallery_heading:    'Фото с соревнований',
+                gallery:[
+                    {
+                        img: [path.img,"/page/competencies/competencies-card-item1.jpg"].join(""),
+                    },
+                    {
+                        img: [path.img,"/page/competencies/competencies-card-item2.jpg"].join(""),
+                    },
+                    {
+                        img: [path.img,"/page/competencies/competencies-card-item3.jpg"].join(""),
+                    },
+                    {
+                        img: [path.img,"/page/competencies/competencies-card-item1.jpg"].join(""),
+                    },
+                ],
+
+
+                card_view:          'adv',
+                card_prefix:        prefix.card,
+                card_mod:           "is--competencies", 
+                card_list:[
+                    {
+                        img: [path.img,"/page/competencies/competencies-item1.jpg"].join(""),
+                        link: page.competencies_card, 
+                        name: 'Профессия №1', 
+                        note: 'Краткое описание профессии на несколько строчек, может, даже на три или больше c информацией по теме', 
+                    }, 
+                    {
+                        img: [path.img,"/page/competencies/competencies-item2.jpg"].join(""),
+                        link: page.competencies_card, 
+                        name: 'Профессия №2', 
+                        note: 'Lorem, ipsum dolor sit, amet consectetur adipisicing elit.', 
+                    },  
+                    {
+                        img: [path.img,"/page/competencies/competencies-item3.jpg"].join(""),
+                        link: page.competencies_card, 
+                        name: 'Профессия №3', 
+                        note: 'Lorem, ipsum dolor sit, amet consectetur adipisicing elit. Beatae ipsa cum, sit assumenda sequi delectus quasi,', 
+                    },  
+                    {
+                        img: [path.img,"/page/competencies/competencies-item2.jpg"].join(""),
+                        link: page.competencies_card, 
+                        name: 'Профессия №2', 
+                        note: 'Lorem, ipsum dolor sit, amet consectetur adipisicing elit.', 
+                    }, 
+                    {
+                        img: [path.img,"/page/competencies/competencies-item1.jpg"].join(""),
+                        link: page.competencies_card, 
+                        name: 'Профессия №1', 
+                        note: 'Краткое описание профессии на несколько строчек, может, даже на три или больше c информацией по теме', 
+                    }, 
+                    {
+                        img: [path.img,"/page/competencies/competencies-item3.jpg"].join(""),
+                        link: page.competencies_card, 
+                        name: 'Профессия №3', 
+                        note: 'Lorem, ipsum dolor sit, amet consectetur adipisicing elit. Beatae ipsa cum, sit assumenda sequi delectus quasi,', 
+                    },
+                ],
+            } %}
+
+            {% include "../block/page/block.twig" with {
+                view:               'docs',
+                content_prefix:     prefix.content, 
+                content_mod:        'is--competencies-partners',
+
+                heading:            'Партнеры',
+
+                bg:                 [path.img,"/page/competencies/partners-bg.jpg"].join(""),
+
+                card_view:          'partners',
+                card_prefix:        prefix.card,
+                card_mod:           "is--partners",   
+                card_list:[
+                    {  
+                        link: '#', 
+                        img: [path.img,"/page/competencies/partners-item1.png"].join(""),
+                    },
+                    {  
+                        link: '#', 
+                        img: [path.img,"/page/competencies/partners-item2.png"].join(""),
+                    },
+                ],     
+            } %} 
+
+            {% include "../block/page/block.twig" with {
+                view:               'docs',
+                content_prefix:     prefix.content, 
+                content_mod:        'is--competencies-docs',
+
+                heading:            'Документация',
+                note:               'Документация актуальна на 01.01.0001, за подробной документацией обращайтесь к ответственному менеджеру компетенции',
+
+                card_view:          'docs',
+                card_prefix:        prefix.card,
+                card_mod:           "is--docs",   
+                card_list:[
+                    {  
+                        link: 'text.pdf', 
+                        name: 'Техническое описание',
+                    },
+                    {  
+                        link: 'text.pdf', 
+                        name: 'Инфраструктурный лист',
+                    },
+                    {  
+                        link: 'text.pdf', 
+                        name: 'Пример конкурсного задания',
+                    },
+                ], 
+
+                btn:                'скачать все',
+                btn_prefix:         prefix.btn,
+                btn_tag:            'a',
+                btn_elem:           'link',
+                btn_link:           page.index, 
+                btn_icon:           'download',
+                btn_mod:            '',      
+            } %} 
+
+        </main>
+
+        {% include "../block/common/footer/footer.twig" with {
+            view:"base",
+            footer_prefix:"footer__"
+        } %} 
+
+        {# {% include "../block/common/modals/include.twig"%}         #}
+        {% include "../block/common/script/script.twig" with {
+        } %}
+    </body>
+</html> 

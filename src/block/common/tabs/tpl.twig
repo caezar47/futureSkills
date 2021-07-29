@@ -1,0 +1,25 @@
+<div class="{{prefix}}panel  {{content_mod}}  {{tabs_mod}}">
+	<ul class="{{prefix}}nav  {{mod}}">
+		{% for value in list %}
+			<li class="{{prefix}}item  {{value.status}}">
+				<a class="{{prefix}}link  {{mod}}" href="#tabs-{{value.id}}" data-toggle="tab">{{value.name}}</a>
+			</li>
+		{% endfor %}
+	</ul>
+	<div class="tabs__content  {{mod}}">
+		{% for value in list %}
+		<div class="{{prefix}}pane  {{value.status}}" id="tabs-{{value.id}}">
+			{% if value.type == "adv" %}
+				<div class="{{content_prefix}}grid  grid__row  {{content_mod}}  {{tabs_mod}}">
+					{% include "../card/card.twig" with {
+						view: 	value.card_view,
+						prefix:	"card__", 
+						mod:  	value.card_mod, 
+						list: 	value.card_list
+					} %}
+				</div>
+			{% endif %}
+		</div>
+		{% endfor %}
+	</div>
+</div>

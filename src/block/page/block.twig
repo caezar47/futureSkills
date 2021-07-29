@@ -24,15 +24,39 @@
             </div> 
             {% endif %}
             {% if tags %}
-            <ul class="{{content_prefix}}tags  {{content_mod}}"> 
+            <div class="{{content_prefix}}tags  {{content_mod}}"> 
                 {% for tags in tags %}
-                    <li><a href="{{tags.link}}">{{tags.name}}</a></li>
-                {% endfor %}             
-            </ul> 
+                    {% include "../common/button/tpl.twig" with {
+                        view:       'tpl',
+                        tag:        'a',
+                        link:       tags.link,
+                        prefix:     tags_prefix,
+                        mod:        tags_mod,
+                        elem:       'item',
+                        name:       tags.name,
+                    } %}
+                {% endfor %}            
+            </div> 
             {% endif %}
         </div> 
         {% if more %}
         <div> 
+            <div class="{{content_prefix}}img  {{content_mod}}  is--more">
+                <img src="{{more_img}}" class="img-responsive" alt="{{more}}">
+                <p>{{more}}</p>
+            </div> 
+            {% include "../common/button/tpl.twig" with {
+                view:   'tpl',
+                tag:    more_tag,
+                link:   more_link,
+                attr:   more_attr,
+                modal:  more_modal,
+                prefix: more_prefix,
+                mod:    more_mod,
+                elem:   more_elem,
+                icon:   more_icon,
+                name:   more_btn,
+            } %}
         </div> 
         {% endif %}
     </div>
@@ -52,6 +76,7 @@
                         list:   card_list,                    
                     } %}
                 </div>
+                {% if btn %}
                 <div class="{{content_prefix}}btn  is--download">
                     {% include "../common/button/tpl.twig" with {
                         view:       'tpl',
@@ -67,8 +92,11 @@
                         name:       btn,
                     } %}
                 </div>
+                {% endif %}
+                {% if note %}
+                <div class="{{content_prefix}}note  {{content_mod}}">{{note}}</div>
+                {% endif %}
             </div>
         </div>
     </section>
-
 {% endif %}

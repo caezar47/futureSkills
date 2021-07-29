@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU"> 
+    <head>
+        {% include "../block/common/head/head.twig" with {title:"Страницы не существует"}  %}
+    </head>
+    <body>
+        
+        {% include "../block/common/navbar/navbar.twig" with {
+            view:           'base',
+            navbar_prefix:  'navbar__',
+            navbar_mod:     '',
+            active:         '',
+        } %}    
+        
+        <main class="{{prefix.content}}wrap"  style="background-image: url('{{path.img}}/page/main-bg.png');">
+            {% include "../block/page/page.twig" with {
+                view:               '404',
+                content_prefix:     prefix.content, 
+                content_mod:        'is--404',
+
+                heading:            'Страницы не существует',
+                text:               '<p>Вернитесь на главную и попробуйте найти нужную информацию</p>',
+
+                back:                'Главная',
+                back_prefix:         prefix.btn,
+                back_tag:            'a',
+                back_elem:           'link',
+                back_link:           page.index, 
+                back_icon:           'goback',
+                back_mod:            '', 
+
+                btn:                'Вернуться на главную',
+                btn_prefix:         prefix.btn,
+                btn_tag:            'a',
+                btn_elem:           'item',
+                btn_link:           '#',
+                btn_icon:           'goforward',
+                btn_mod:            '',
+            } %}
+
+        </main>
+
+        {% include "../block/common/footer/footer.twig" with {
+            view:"base",
+            footer_prefix:"footer__"
+        } %} 
+
+        {# {% include "../block/common/modals/include.twig"%}         #}
+        {% include "../block/common/script/script.twig" with {
+        } %}
+    </body>
+</html> 

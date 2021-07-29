@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU"> 
+    <head>
+        {% include "../block/common/head/head.twig" with {title:"F–S Team Challenge — новый формат соревнований"}  %}
+    </head>
+    <body>
+        
+        {% include "../block/common/navbar/navbar.twig" with {
+            view:           'base',
+            navbar_prefix:  'navbar__',
+            navbar_mod:     '',
+            active:         page.competencies_card,
+        } %}    
+        
+        <main class="{{prefix.content}}wrap">
+            {% include "../block/page/page.twig" with {
+                view:               'challenge',
+                content_prefix:     prefix.content, 
+                content_mod:        'is--challenge',
+
+                heading:            '<span>F–S Team Challenge</span> — новый формат соревнований ',
+                text:               '<p>Вместе с технологическими изменениями в мировой экономике меняются и способы организации работы. Чтобы понять, какими навыками должны обладать профессионалы в следующем десятилетии и спроектировать F-S Team Challenge, мы проанализировали, как будет устроена их работа. </p>',
+
+                back:                'Главная',
+                back_prefix:         prefix.btn,
+                back_tag:            'a',
+                back_elem:           'link',
+                back_link:           page.index, 
+                back_icon:           'goback',
+                back_mod:            '', 
+
+                more:               'Профессионал',
+                more_img:           [path.img,"/page/сhallenge/сhallenge-more.svg"].join(""), 
+                more_btn:           'Подробнее',
+                more_prefix:         prefix.btn,
+                more_tag:            'button',
+                more_type:           'button',
+                more_elem:           'item',
+                more_mod:            '',
+
+                content:[
+                    {
+                        mod:        'is--adv',
+                        view:       'adv',
+                        card_view:  'сhallenge_adv',
+                        card_prefix: prefix.card,
+                        card_mod:   'is--сhallenge-adv',
+                        card_list:  [
+                            {
+                                name:   'Формат',
+                                img:    [path.img,"/page/сhallenge/сhallenge-adv1.svg"].join(""),
+                                note:    '<p>Командные соревнования по методологии WorldSkills;</p><p>Решение творческих технологических задач из практики лидеров технологического рынка</p>',
+                            },
+                            {
+                                name:   'Цели проекта',
+                                img:    [path.img,"/page/сhallenge/сhallenge-adv2.svg"].join(""),
+                                note:   '<p>Подготовка профессионалов будущего — команд, создающих новые продукты и решения;</p><p>Развитие форматов оценки и развития навыков будущего</p>',
+                            },
+                            {
+                                name:   'Участники',
+                                img:    [path.img,"/page/сhallenge/сhallenge-adv3.svg"].join(""),
+                                note:   'Мультидисциплинарные команды студентов вузов и колледжей',
+                            },
+                        ],
+                    },
+                    { 
+                        mod:        'is--item',
+                        view:       'item',
+                        heading:    'Текущие челленджи',
+                        name:       'Агентство по разработке цифровых продуктов',
+                        card_view:  'adv',
+                        card_prefix: prefix.card,
+                        card_mod:   'is--сhallenge-item',
+                        card_list:  [
+                            {
+                                name:   'Состав команды компетенции',
+                                img:    [path.img,"/page/сhallenge/сhallenge-item1.svg"].join(""),
+                                note:    '<ul> 
+                                    <li>Менеджмент и&nbsp;маркетинг</li>
+                                    <li>Промышленный дизайн</li>
+                                    <li>Электроника</li>
+                                    <li>Изготовление прототипов</li>
+                                </ul>
+                                <div>Члены команды могут собираться из разных вузов, команда может собираться непосредственно на соревнованиях</div>',
+                            },
+                            {
+                                name:   'Идея задания',
+                                img:    [path.img,"/page/сhallenge/сhallenge-item2.svg"].join(""),
+                                note:   '<p>Разработать технологический продукт и изготовить прототип на основании принципиального задания от заказчика.</p><p>Задание подразумевает широкую степень свободы в выборе способов его решения.</p>',
+                            },
+                            {
+                                name:   'Критерии оценки',
+                                img:    [path.img,"/page/сhallenge/сhallenge-item3.svg"].join(""),
+                                note:   '<ul><li>Командное взаимодействие, согласованность</li><li>Предпринимательское мышление, взаимодействие с&nbsp;заказчиком</li><li>Владение перспективными технологиями</li></ul>',
+                            },
+                        ],
+                    },
+                    {
+                        mod:        'is--card',
+                        view:       'card',
+                        heading:    'Присоединяйтесь к нам',
+                        card_view:  'сhallenge_adv',
+                        card_prefix: prefix.card,
+                        card_mod:   'is--сhallenge-card',
+                        card_list:  [
+                            {
+                                name:   'Визионеры и&nbsp;исследователи',
+                                img:    [path.img,"/page/сhallenge/сhallenge-card1.svg"].join(""),
+                                note:    'Lorem ipsum dolor, sit amet consectetur, adipisicing elit. Assumenda fugit eligendi placeat qui odit, culpa, ea illum! Dolores, sunt, harum placeat fugiat quaerat vitae doloribus excepturi facilis similique facere iure aut commodi ad impedit alias, beatae dolorem. Officiis quam est quidem hic magni et?',
+                            },
+                            {
+                                name:   'Лидеры индустрий, представители корпораций',
+                                img:    [path.img,"/page/сhallenge/сhallenge-card2.svg"].join(""),
+                                note:    '<ul><li>Станьте технологическими и содержательными партнерами F—S Team Challenge</li><li>Ваше видение современных форм организации работы может стать основой новых челленджей и ориентиром для обучения новых профессионалов</li></ul>',
+                            },
+                            {
+                                name:   'Менеджеры и эксперты компетенций',
+                                img:    [path.img,"/page/сhallenge/сhallenge-card3.svg"].join(""),
+                                note:    'Lorem ipsum dolor, sit amet consectetur, adipisicing elit. Assumenda fugit eligendi placeat qui odit, culpa, ea illum! Dolores, sunt, harum placeat fugiat quaerat vitae doloribus excepturi facilis similique facere iure aut commodi ad impedit alias, beatae dolorem. Officiis quam est quidem hic magni et?',
+                            },
+                            {
+                                name:   'Университеты и студенты',
+                                img:    [path.img,"/page/сhallenge/сhallenge-card1.svg"].join(""),
+                                note:    'Lorem ipsum dolor, sit amet consectetur, adipisicing elit. Assumenda fugit eligendi placeat qui odit, culpa, ea illum! Dolores, sunt, harum placeat fugiat quaerat vitae doloribus excepturi facilis similique facere iure aut commodi ad impedit alias, beatae dolorem. Officiis quam est quidem hic magni et?',
+                            },
+                        ],
+                    },
+                    {
+                        mod:        'is--team',
+                        view:       'team',
+                        heading:    'Пожалуйста, <span>обращайтесь</span> по вопросам взаимодействия:',
+                        card_view:  'team',
+                        card_prefix: prefix.card,
+                        card_mod:   'is--сhallenge-team',
+                        card_list:  [
+                            {
+                                title:   '<span>Обращайтесь</span> по вопросам взаимодействия:',      
+                                img: [path.img,"/page/team/kaisin.jpg"].join(""),
+                                name:       'Константин Кайсин',
+                                label:      'Главный эксперт',
+                                tel:        '+7 912 345 67 89',
+                                email:      'hisemail@gmail.com',
+                            },
+                        ],
+                    },
+                ],
+            } %}
+
+            {% include "../block/page/block.twig" with {
+                view:               'docs',
+                content_prefix:     prefix.content, 
+                content_mod:        'is--challenge-events',
+
+                heading:            'Мероприятия F—S Team Challenge',
+
+                bg:                 [path.img,"/page/competencies/partners-bg.jpg"].join(""),
+
+                card_view:          'events',
+                card_prefix:        prefix.card,
+                card_mod:           "is--challenge-events",   
+                card_list:[
+                    {  
+                        name:   'Архипелаг 21.21',
+                        date:   '4-5 Августа 2021', 
+                        label:  'г. Великий Новгород', 
+                        note:   '<ul><li>Digital Capabilities for business F—S Team Challenge - первенство вузов по готовности к цифровой трансформации</li><li>Проектная сессия по развитию Future Skills в вузах</li></ul>',
+                    },
+                    {  
+                        name:   'Digital Skills 2021',
+                        date:   '4-5 Августа 2021', 
+                        label:  'г. Казань', 
+                        note:   '<ul><li>Digital Capabilities for business F—S Team Challenge</li><li>VR F—S Team Challenge</li></ul>',
+                    },
+                    {  
+                        name:   'Финал национального межвузовского чемпионата  2021',
+                        date:   'Декабрь 2021', 
+                        label:   'г. Москва', 
+                        note:   '<ul><li>5 дисциплин F—S Team Challenge</li><li>Обсуждение методов оценки и развития межпрофессиональных навыков будущего в рамках деловой программы</li></ul>',
+                    },
+                ],     
+            } %} 
+        </main>
+
+        {% include "../block/common/footer/footer.twig" with {
+            view:"base",
+            footer_prefix:"footer__"
+        } %} 
+
+        {# {% include "../block/common/modals/include.twig"%}         #}
+        {% include "../block/common/script/script.twig" with {
+        } %}
+    </body>
+</html> 

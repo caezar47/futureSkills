@@ -4,6 +4,9 @@ body {
 	color: @site_color;
 	//padding-top: @navbar_device;
 	background: @site_bg;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 	.media-breakpoint-down(@xl; {
 		&::before{
 			content: '';

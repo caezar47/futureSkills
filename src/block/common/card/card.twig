@@ -21,6 +21,38 @@
 		</{% if value.link %}a{% else %}div{% endif %}>
 	{% endfor %}
 {% endif %}
+{% if view == 'сhallenge_adv' %}
+	{% for value in list %}
+		<div class="{{prefix}}item  {{mod}}">
+			<div class="{{prefix}}group  {{mod}}">
+				{% if value.img %}
+				<div class="{{prefix}}img  {{mod}}">
+					<img src="{{value.img}}" class="img-responsive" alt="">
+				</div>
+				{% endif %}
+				{% if value.name %}
+				<h5 class="{{prefix}}heading  {{mod}}">				
+					{{value.name}}
+				</h5> 
+				{% endif %}
+			</div>				
+			{% if value.note %}
+			<div class="{{prefix}}note  {{mod}}">				
+				{{value.note}}
+			</div> 
+			{% endif %}
+		</div> 
+	{% endfor %}
+{% endif %}
+{% if view == 'partners' %}
+	{% for value in list %}
+		<div class="{{prefix}}item  {{mod}}">
+			<div class="{{prefix}}img  {{mod}}">
+				<img src="{{value.img}}" class="img-responsive" alt="">
+			</div>
+		</div> 
+	{% endfor %}
+{% endif %}
 {% if view == 'university_card' %}
 	{% for value in list %}
 		<a href="#" data-toggle="modal" data-target="#{{value.modal}}" class="{{prefix}}item  {{mod}}"  data-modal='{"name":"{{value.name}}", "note":"{{value.note}}", "img":"{{value.img}}" {% if value.team %}, "team":[{% for team in value.team %}{"name": "{{team.name}}","label": "{{team.label}}","img": "{{team.img}}","tel": "{{team.tel}}","email": "{{team.email}}"}{% if  loop.last %}{% else %},{% endif %}{% endfor %}]{% else %},"team":""{% endif %} }'>
@@ -91,9 +123,14 @@
 	{% for value in list %}
 		<div class="{{prefix}}item  {{mod}}">
 			<div class="{{prefix}}img  {{mod}}">
-				<img src="{{value.img}}" class="img-responsive" alt="">
+				<picture><img src="{{value.img}}" class="img-responsive" alt=""></picture>
 			</div>
 			<div class="{{prefix}}group  {{mod}}">
+				{% if value.title %}
+				<h2 class="{{content_prefix}}heading  {{mod}}">				
+					{{value.title}}
+				</h2> 
+				{% endif %}
 				<h6 class="{{prefix}}heading  {{mod}}">				
 					{{value.name}}
 				</h6> 
@@ -107,6 +144,24 @@
 					<a href="mailto:{{value.email}}">{{value.email}}</a> 	
 				</p> 
 			</div> 
+		</div>
+	{% endfor %}
+{% endif %}
+{% if view == 'events' %}
+	{% for value in list %}
+		<div class="{{prefix}}item  {{mod}}">
+			<div class="{{prefix}}group  {{mod}}">
+				<h6 class="{{prefix}}heading  {{mod}}">				
+					{{value.name}}
+				</h6> 
+				<p class="{{prefix}}date  {{mod}}">				
+					{{value.date}}
+				</p> 
+				<p class="{{prefix}}label  {{mod}}">				
+					{{value.label}}
+				</p>
+			</div> 
+			<div class="{{prefix}}note  {{mod}}">{{value.note}}</div>
 		</div>
 	{% endfor %}
 {% endif %}

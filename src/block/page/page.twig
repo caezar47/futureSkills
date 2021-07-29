@@ -1,62 +1,223 @@
+{% if view == "challenge" %}
+	{# <section class="{{content_prefix}}content  {{content_mod}}" style="background-image:  url('{{path.img}}/page/сhallenge/challenge-bg-top.png'), url('{{path.img}}/page/сhallenge/challenge-bg-center.png'), url('{{path.img}}/page/сhallenge/challenge-bg-bottom.png'), linear-gradient(181.13deg, #00131B 4.71%, #001E2D 8.25%, #051822 23.73%, #061A28 32.87%, #16333D 87.29%, #1A4C5C 100.53%);">  #}
+	<section class="{{content_prefix}}content  {{content_mod}}" > 
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			{% include "block.twig" with {
+				view:   'header',
+			} %}
+			{% if content %}
+				{% for content in content %}
+				<div class="{{content_prefix}}group  {{content_mod}}  {{content.mod}}">
+					{% if content.heading %}
+					<h2 class="{{content_prefix}}heading  {{content_mod}}  {{content.mod}}"> 
+						{{content.heading}}             
+					</h2>
+					{% endif %}
+					{% if content.view == "adv" %}
+						<div data-slick-challenge-adv-thumb>
+							{% for value in content.card_list %}
+								<div class="{{content.card_prefix}}item  {{content.card_mod}}-thumb">{{value.name}}</div>
+							{% endfor %}
+						</div>
+						<div data-slick-challenge-adv  class="{{content_prefix}}grid  {{content_mod}}  {{content.mod}}">
+							{% include "../common/card/card.twig" with {
+								view:   content.card_view,
+								prefix: content.card_prefix,
+								mod:    content.card_mod,
+								list:   content.card_list,
+							} %}
+						</div>
+					{% endif %}
+					{% if content.view == "item" %}
+						<div class="{{content_prefix}}group  {{content_mod}}  {{content.mod}}-panel" data-slick-challenge-item>
+							<div class="slick-btn-group">
+								<button type="button" class="slick-btn is--prev is--ch-item slick-arrow" style=""><span class="sr-only">Предыдущий слайд</span></button>
+								<div class="slick-count"></div>
+								<button type="button" class="slick-btn is--next is--ch-item slick-arrow" style=""><span class="sr-only">Следующий слайд</span></button>
+							</div>
+							{% if content.name %}
+								<h3 class="{{content_prefix}}heading  {{content_mod}}  {{content.mod}}-panel"> 
+									{{content.name}}             
+								</h3>
+							{% endif %}
+							{% include "../common/card/card.twig" with {
+								view:   content.card_view,
+								prefix: content.card_prefix,
+								mod:    content.card_mod,
+								list:   content.card_list,
+							} %}
+						</div>
+					{% endif %}
+					{% if content.view == "card" %}
+						<div class="{{content_prefix}}group  {{content_mod}}  {{content.mod}}-panel" data-slick-challenge-card>
+							{% include "../common/card/card.twig" with {
+								view:   content.card_view,
+								prefix: content.card_prefix,
+								mod:    content.card_mod,
+								list:   content.card_list,
+							} %}
+						</div>
+					{% endif %}
+					{% if content.view == "team" %}
+						{% include "../common/card/card.twig" with {
+							view:   content.card_view,
+							prefix: content.card_prefix,
+							mod:    content.card_mod,
+							list:   content.card_list,
+						} %}
+					{% endif %}
+				</div>
+				{% endfor %}
+			{% endif %}
+		</div>
+	</section>
+{% endif %}
 {% if view == "competencies" %}
-    <section class="{{content_prefix}}content  {{content_mod}}" {% if bg %}style="background-image: url({{bg}});"{% endif %}>
-        <div class="{{content_prefix}}container container  {{content_mod}}">
-        	{% include "block.twig" with {
-                view:	'header',
-            } %}
-        	<div class="{{content_prefix}}grid  grid__row  {{content_mod}}">
-        		{% include "../common/card/card.twig" with {
-                    view:	card_view,
-                    prefix:	card_prefix,
-                    mod:	card_mod,
-                    list:	card_list,                    
-                } %}
-       		</div>
-        	<div class="{{content_prefix}}btn  is--more">
-		        {% include "../common/button/tpl.twig" with {
-                    view:       'tpl',
-                    tag:	    btn_tag,
-                    link:       btn_link,
-                    attr:       btn_attr,
-                    modal:      btn_modal,
-                    prefix:     btn_prefix,
-                    mod:        btn_mod,
-                    elem:       btn_elem,
-                    icon:       btn_icon,
-                    icon_svg:	btn_icon_svg,
-                    name:       btn,
-                } %}
-            </div>
-        </div>
-    </section>
+	<section class="{{content_prefix}}content  {{content_mod}}" {% if bg %}style="background-image: url({{bg}});"{% endif %}>
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			{% include "block.twig" with {
+				view:	'header',
+			} %}
+			<div class="{{content_prefix}}grid  grid__row  {{content_mod}}">
+				{% include "../common/card/card.twig" with {
+					view:	card_view,
+					prefix:	card_prefix,
+					mod:	card_mod,
+					list:	card_list,                    
+				} %}
+			</div>
+			<div class="{{content_prefix}}btn  is--more">
+				{% include "../common/button/tpl.twig" with {
+					view:       'tpl',
+					tag:	    btn_tag,
+					link:       btn_link,
+					attr:       btn_attr,
+					modal:      btn_modal,
+					prefix:     btn_prefix,
+					mod:        btn_mod,
+					elem:       btn_elem,
+					icon:       btn_icon,
+					icon_svg:	btn_icon_svg,
+					name:       btn,
+				} %}
+			</div>
+		</div>
+	</section>
+{% endif %}
+{% if view == "competencies_card" %}
+	<section class="{{content_prefix}}content  {{content_mod}}" {% if bg %}style="background-image: url({{bg}});"{% endif %}>
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			{% include "block.twig" with {
+				view:   'header',
+			} %}
+			{% if content %}
+				{% for content in content %}
+				<div class="{{content_prefix}}group  {{content_mod}}  {{content.mod}}">
+					<h2 class="{{content_prefix}}heading  {{content_mod}}  {{content.mod}}"> 
+						{{content.heading}}             
+					</h2>
+					{% if content.tabs %}
+						{% include "../common/tabs/tpl.twig" with {
+							prefix: content.tabs_prefix,
+							list:   content.tabs,                    
+						} %}
+					{% endif %}
+					{% if content.gallery %}
+						<div data-slick-gallery>
+							{% for gallery in content.gallery %}
+							   <div class="{{content_prefix}}img  {{content_mod}}  {{content.mod}}">
+									<picture>
+										<img src="{{gallery.img}}" class="img-responsive" alt="">
+									</picture>
+							   </div> 
+							{% endfor %}
+						</div>
+						<div data-slick-gallery-thumb>
+							{% for gallery in gallery %}
+							   <div class="{{content_prefix}}img  {{content_mod}}  {{content.mod}}-thumb">
+									<picture>
+										<img src="{{gallery.img}}" class="img-responsive" alt="">
+									</picture>
+							   </div> 
+							{% endfor %}
+						</div>
+					{% endif %}
+					{% if content.team %}
+						<div class="{{content_prefix}}grid  grid__row  {{content_mod}}  {{content.mod}}">
+							{% include "../common/card/card.twig" with {
+								view:   content.team_view,
+								prefix: content.team_prefix,
+								mod:    content.team_mod,
+								list:   content.team,                    
+							} %}
+						</div>
+					{% endif %}
+				</div>
+				{% endfor %}
+			{% endif %}
+		</div>
+	</section>
 {% endif %}
 {% if view == "university" %}
-    <section class="{{content_prefix}}content  {{content_mod}}" {% if bg %}style="background-image: url({{bg}});"{% endif %}>
-        <div class="{{content_prefix}}container container  {{content_mod}}">
-            {% include "block.twig" with {
-                view:   'header',
-            } %}
-            <div class="{{content_prefix}}grid  grid__row  {{content_mod}}">
-                {% include "../common/card/card.twig" with {
-                    view:   card_view,
-                    prefix: card_prefix,
-                    mod:    card_mod,
-                    list:   card_list,                    
-                } %}
-            </div> 
-            <div class="{{content_prefix}}group  {{content_mod}}"  {{card_slider}}>
-                <div class="slick-btn-group">
-                    <button type="button" class="slick-btn is--prev is--uni slick-arrow" style=""><span class="sr-only">Предыдущий слайд</span></button>
-                    <div class="slick-count"></div>
-                    <button type="button" class="slick-btn is--next is--uni slick-arrow" style=""><span class="sr-only">Следующий слайд</span></button>
-                </div>
-                {% include "../common/card/card.twig" with {
-                    view:   card_slider_view,
-                    prefix: card_prefix,
-                    mod:    card_slider_mod,
-                    list:   card_list,                    
-                } %}
-            </div>
-        </div>
-    </section>
+	<section class="{{content_prefix}}content  {{content_mod}}" {% if bg %}style="background-image: url({{bg}});"{% endif %}>
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			{% include "block.twig" with {
+				view:   'header',
+			} %}
+			<div class="{{content_prefix}}grid  grid__row  {{content_mod}}">
+				{% include "../common/card/card.twig" with {
+					view:   card_view,
+					prefix: card_prefix,
+					mod:    card_mod,
+					list:   card_list,                    
+				} %}
+			</div> 
+			<div class="{{content_prefix}}group  {{content_mod}}"  {{card_slider}}>
+				<div class="slick-btn-group">
+					<button type="button" class="slick-btn is--prev is--uni slick-arrow" style=""><span class="sr-only">Предыдущий слайд</span></button>
+					<div class="slick-count"></div>
+					<button type="button" class="slick-btn is--next is--uni slick-arrow" style=""><span class="sr-only">Следующий слайд</span></button>
+				</div>
+				{% include "../common/card/card.twig" with {
+					view:   card_slider_view,
+					prefix: card_prefix,
+					mod:    card_slider_mod,
+					list:   card_list,                    
+				} %}
+			</div>
+		</div>
+	</section>
+{% endif %}
+{% if view == "404" %}
+	<section class="{{content_prefix}}content  {{content_mod}}" {% if bg %}style="background-image: url({{bg}});"{% endif %}>
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			<div class="{{content_prefix}}grid  grid__row  {{content_mod}}">
+				<div>
+					<p class="{{content_prefix}}note  {{content_mod}}">404</p>
+				</div>
+				<div>
+					<h1 class="{{content_prefix}}heading  {{content_mod}}"> 
+						{{heading}}             
+					</h1> 
+					{% if text %}
+					<div class="{{content_prefix}}text  {{content_mod}}">{{text}}</div>
+					{% endif %}
+					<div class="{{content_prefix}}btn  {{content_mod}}">
+						{% include "../common/button/tpl.twig" with {
+							view:   'tpl',
+							tag:    btn_tag,
+							link:   btn_link,
+							attr:   btn_attr,
+							modal:  btn_modal,
+							prefix: btn_prefix,
+							mod:    btn_mod,
+							elem:   btn_elem,
+							icon:   btn_icon,
+							name:   btn,
+						} %}
+					</div>
+				</div>
+			</div> 
+		</div>
+	</section>
 {% endif %}

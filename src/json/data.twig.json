@@ -24,14 +24,10 @@
 	},
 	"page":{
 		"index":"./",
+		"challenge":"./challenge.html",
 		"competencies":"./competencies.html",
 		"competencies_card":"./competencies-card.html",
 		"university":"./university.html",
-		"masterplan":"./masterplan.html",
-		"home":"./home.html",
-		"home_card":"./home-card.html",
-		"description":"./description.html",
-		"agreement":"./agreement.html",
 		"contacts":"./contacts.html"
 	},
 	"prefix":{

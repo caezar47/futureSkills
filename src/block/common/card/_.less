@@ -71,6 +71,127 @@
 				}
 			}
 		}
+		//page
+		&.is--сhallenge-adv{
+			background: @white-g;
+			box-shadow: @default-s;
+			border-radius: @site_br - 10px;
+			color: @black;
+			padding: 20px 35px;
+			min-height: 260px;
+			.media-breakpoint-up(@md; {
+				border-radius: @site_br;
+				padding: 35px 30px 35px 40px;
+				min-height: 290px;
+			});
+		}
+		&.is--сhallenge-adv-thumb{
+			color: fadeout(@white, 80%);
+			transition: @trs-site;
+			&.slick-current{
+				color: @white;
+			}
+		}
+		&.is--сhallenge-item{
+			font-size: .778rem;
+			line-height: 150%;
+			.media-breakpoint-up(@md; {
+				max-width: 270px;
+			});
+		}
+		&.is--сhallenge-card{
+			max-width: 270px;
+			min-height: 420px;
+			position: relative;
+			transition: @trs-site;
+			border-radius: @site_br;
+			color: @black;
+			font-size: 0.889rem;
+			line-height: 135%;
+			padding: 60px 30px;
+			background: linear-gradient(115.86deg, #FAE579 3.38%, #E9FF92 20.66%, #E9FFA9 39.52%, #C0F3A0 61.68%, #8EE9BD 77.79%, #28D4EB 100.07%);
+			
+			box-shadow: @default-s;
+			.media-breakpoint-up(@md; {
+				&:hover{
+					box-shadow: 0px 0px 65.9298px rgba(253, 255, 176, 0.5), inset 0px 0px 6.59298px rgba(253, 255, 176, 0.5);
+				}
+			});
+		}
+		&.is--сhallenge-team{
+			display: flex; 
+			gap: 10px;
+			& > *:nth-child(1){
+				width: 28.8vw;
+				min-width: 133px;
+			}
+			& > *:nth-child(2){
+				flex: 1 1 auto;
+				margin-top: -4px;
+			}
+			.media-breakpoint-up(@md; {
+				gap: 70px;
+				margin: 0px 0 0 2.8vw;
+				& > *:nth-child(2){
+					margin-top: 0;
+					padding-top: 15px;
+				}
+			});
+		}
+		&.is--challenge-events{
+			position: relative;
+			padding-left: 20px;
+			padding-bottom: 67px;
+			border-left: 1px solid @black;
+			&::before{
+				content: '';
+				position: absolute;
+				background-color: @black;
+				left: -8px;
+				width: 8px;
+				height: 1px;
+				bottom: 42px;
+				transform: rotate(45deg);
+			}
+			&::after{
+				content: '';
+				position: absolute;
+				background-color: @black;
+				left: -1px;
+				width: 8px;
+				height: 1px;
+				bottom: 42px;
+				transform: rotate(-45deg);
+			}
+			&:last-child{
+				padding-bottom: 0;
+				&::before,
+				&::after{
+					bottom: 3px;
+				}
+			}
+			.media-breakpoint-up(@md; {
+				border-left: 0;
+				padding-bottom: 0;
+				&::before,
+				&::after{
+					display: none;
+				}
+				padding-left: 0;
+				&:last-child{
+					.card__group::after{
+						right: 0;
+					}
+				}
+			});
+			.media-breakpoint-up(@xl; {
+				&:last-child{
+					.card__heading{
+						width: 120%;
+					}
+				}
+			});
+		}
 		&.is--competencies{
 			display: flex;
 			flex-direction: column;
@@ -138,6 +259,14 @@
 
 			}
 		}
+		&.is--competencies-adv{
+			display: flex;
+			flex-direction: column;
+			gap: 10px 14px;
+			.media-breakpoint-up(@lg; {
+				flex-direction: row;
+			});
+		}
 	}
 	&group{
 		&.is--index-blockquote{
@@ -161,6 +290,59 @@
 			.media-breakpoint-up(@sm; {
 				max-width: initial;
 				margin: 0;
+			});
+		}
+		//page
+		&.is--сhallenge-adv{
+			display: flex;
+			align-items: center;
+			gap: 25px;
+			margin-bottom: 18px;
+			justify-content: center;
+			.media-breakpoint-up(@md; {
+				margin-bottom: 25px;
+				justify-content: initial;
+			});
+		}
+		&.is--сhallenge-card{
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: @default-p;
+			border-radius: @site_br;
+			color: @white;
+			padding: 75px 25px;
+			transition: @trs-site;
+			.card__item:hover &{
+				opacity: 0;
+			}
+		}
+		&.is--challenge-events{
+			.media-breakpoint-up(@md; {
+				position: relative;
+				padding-bottom: 15px;
+				&::before{
+					content: '';
+					position: absolute;
+					background-color: @black;
+					right: 0px;
+					width: 8px;
+					height: 1px;
+					bottom: 3px;
+					transform: rotate(45deg);
+				}
+				&::after{
+					content: '';
+					position: absolute;
+					bottom: 0;
+					background-color: @black;
+					height: 1px;
+					left: 0;
+					right: -30px;
+				}
 			});
 		}
 		&.is--competencies{
@@ -221,12 +403,78 @@
 				margin: 0 0 20px;
 			});
 		}
+		//page
+		&.is--сhallenge-item{
+			margin: 0 auto 15px; 
+			max-width: 140px;
+			.media-breakpoint-up(@md; {
+				max-width: initial;
+				margin: 0 0 18px;
+			});
+		}
+		&.is--сhallenge-card{
+			margin-bottom: 35px;
+			img{
+				margin: 0 auto;
+			}
+		}
+		&.is--сhallenge-team{
+			position: relative;
+			&::before{
+				content: '';
+				position: absolute;
+				z-index: 1;
+				top: 50%;
+				left: 50%;
+				max-width: 320px;
+				width: 84%;
+				height: 88%;
+				background: linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+				box-shadow: 0px 0px 5.10377px rgba(49, 255, 156, 0.7), 0px 0px 19.7583px rgba(49, 255, 156, 0.5), inset 0px 0px 1.97583px rgba(49, 255, 156, 0.5);
+				border-radius: @site_br - 15;
+				transform: rotate(-13.68deg) translate(-34%,-66%);
+				filter: blur(0.364555px);
+			}
+			picture{
+				display: block;
+				position: relative;
+				z-index: 2;
+				border-radius: @site_br - 16;
+				overflow: hidden;
+				width: 112px;
+				height: 112px;
+				margin: 0 auto;
+			}
+			img{
+				.img-bg();
+			}
+			.media-breakpoint-up(@md; {
+				&::before{
+					max-width: 87%;
+					width: 87%;
+					height: 100%;
+					transform: rotate(-13.68deg) translate(-40%,-60%);
+					border-radius: @site_br + 15px;
+					filter: blur(1.21645px);
+				}
+				picture{
+					width: 100%;
+					max-width: 372px;
+					height: 372px;
+					border-radius: @site_br + 8;
+				}
+			});
+		}
 		&.is--competencies{
 			min-height: 225px;
 			height: 225px;
 			img{
 				.img-bg();
 			}
+		}
+		&.is--competencies-adv{
+			min-width: 30px;
+			width: 30px;
 		}
 		&.is--university{
 			position: relative;
@@ -286,6 +534,11 @@
 			height: 100px;
 			border-radius: @site_br - 20;
 			overflow: hidden;
+			picture{
+				display: block;
+				width: 100%;
+				height: 100%;
+			}
 			img{
 				.img-bg();
 			}
@@ -322,6 +575,52 @@
 			.text20();
 			margin-bottom: 10px;
 		}
+		//page
+		&.is--сhallenge-adv{
+			display: none;
+			font-weight: 400;
+			.text20();
+			.media-breakpoint-up(@md; {
+				display: block;
+			});
+		}
+		&.is--сhallenge-item{
+			font-weight: 400; 
+			margin-bottom: 15px;
+			.text20();
+			text-align: center;
+			.media-breakpoint-up(@md; {
+				text-align: left;
+				margin-bottom: 10px;
+			});
+		}
+		&.is--сhallenge-card{
+			font-size: 1.111rem;
+			line-height: 155%;
+			font-family: @site_ff_custom;
+			font-weight: 400;
+			text-align: center;
+		}
+		&.is--сhallenge-team{
+			font-weight: 500;
+			margin-bottom: 10px;
+			font-size: 1rem;
+			line-height: 130%;
+			.media-breakpoint-up(@md; {
+				font-size: 1.111rem;
+			});
+		}
+		&.is--challenge-events{
+			font-weight: 400;
+			text-transform: uppercase;
+			.text20();
+		    margin-bottom: 8px;
+			.media-breakpoint-up(@md; {
+				display: flex;
+			    align-items: flex-end;
+			    min-height: 50px;
+			});
+		}
 		&.is--competencies{
 			font-weight: 400;
 			font-size: 1.111rem;
@@ -342,6 +641,12 @@
 		&.is--team{
 			font-weight: 400;
 			margin-bottom: 5px;
+		}
+		&.is--competencies-adv{
+			font-family: @site_ff_custom;
+			font-weight: 400;
+			.text16();
+			padding-top: 3px;
 		}
 	}
 	&note{
@@ -392,6 +697,135 @@
 			.text14();
 			opacity: 0.8;
 		}
+		//page
+		&.is--сhallenge-adv{
+			font-family: @site_ff_custom;
+			font-size: 0.889rem;
+			line-height: 140%;
+			text-align: center;
+			.media-breakpoint-up(@md; {
+				font-size: 0.778rem;
+				text-align: left;
+				p,div{
+					margin-bottom: 12px;
+					&:last-child{
+						margin-bottom: 0;
+					}
+				}
+			});
+		}
+		&.is--сhallenge-item{
+			font-family: @site_ff_custom;
+			p{
+				margin-bottom: 10px;
+			}
+			div{
+				font-size: 85%;
+				line-height: 155%;
+			}
+			ul{
+				margin: 0 0 15px;
+				padding: 0;
+				list-style: none;
+				li{
+					padding-left: 15px;
+					position: relative;
+					margin-bottom: 10px;
+					&::before{
+						content: '';
+						position: absolute;
+						top: 5px;
+						left: 0;
+						width: 5px;
+						height: 5px;
+						background-color: @primary;
+
+					}
+				}
+			}
+			& > *:last-child{
+				margin-bottom: 0;
+			}
+		}
+		&.is--сhallenge-card{
+			p{
+				margin-bottom: 10px;
+			}
+			ul{
+				margin: 0 0 15px;
+				padding: 0;
+				list-style: none;
+				li{
+					padding-left: 15px;
+					position: relative;
+					margin-bottom: 25px;
+					&::before{
+						content: '';
+						position: absolute;
+						top: 5px;
+						left: -1px;
+						width: 6px;
+						height: 6px;
+						background-color: @black;
+
+					}
+					&:last-child{
+						margin-bottom: 0;
+					} 
+				}
+			}
+			& > *:last-child{
+				margin-bottom: 0;
+			}
+		}
+		&.is--challenge-events{
+			padding-top: 12px;
+			position: relative;
+			font-family: @site_ff_custom;
+			font-size: .889rem;
+    		line-height: 140%;
+			ul{
+				margin: 0 0 0px;
+				padding: 0;
+				list-style: none;
+				li{
+					padding-left: 15px;
+					position: relative;
+					margin-bottom: 10px;
+					&::before{
+						content: '';
+						position: absolute;
+						top: 5px;
+						left: 0px;
+						width: 5px;
+						height: 5px;
+						background-color: @black;
+
+					}
+					&:last-child{
+						margin-bottom: 0;
+					} 
+				}
+			}
+			.media-breakpoint-up(@md; {
+				padding-top: 17px;
+				ul{
+					li{
+						margin-bottom: 15px;
+					}
+				}
+				&::before{
+					content: '';
+					position: absolute;
+					background-color: @black;
+					right: 0px;
+					width: 8px;
+					height: 1px;
+					top: 2px;
+					transform: rotate(-45deg);
+				}
+			});
+		}
 		&.is--competencies{
 			font-family: @site_ff_custom;
 			.heading6();
@@ -413,6 +847,14 @@
 				font-weight: 300;
 			});
 		}
+		&.is--сhallenge-team{
+			font-family: @site_ff_custom;
+			.t16();
+			margin-bottom: 20px;
+			.media-breakpoint-up(@md; {
+				margin-bottom: 30px;
+			});
+		}
 		&.is--team{
 			font-family: @site_ff_custom;
 			.text14();
@@ -420,27 +862,44 @@
 		}
 	}
 	&tel{
+		.t16();
+		font-family: @site_ff_custom;
+		margin-bottom: 7px;
+		a{
+			color: @white;
+			.icon-tel();
+			background-position: 0 0;
+			padding-left: 30px;
+			
+		}
 		&.is--team{
 			.text14();
-			font-family: @site_ff_custom;
-			margin-bottom: 7px;
 			a{
 				color: @black;
-				.icon-tel();
-				background-position: 0 0;
 				padding-left: 25px;
+				.section__group.is--competencies-card &{
+					color: @white;
+				}
 			}
 		}
 	}
 	&email{
+		.t16();
+		font-family: @site_ff_custom;
+		a{
+			color: @white;
+			.icon-email();
+			background-position: 0 1px;
+			padding-left: 30px;
+		}
 		&.is--team{
 			.text14();
-			font-family: @site_ff_custom;
 			a{
 				color: @black;
-				.icon-email();
-				background-position: 0 1px;
 				padding-left: 25px;
+				.section__group.is--competencies-card &{
+					color: @white;
+				}
 			}
 		}
 	}
