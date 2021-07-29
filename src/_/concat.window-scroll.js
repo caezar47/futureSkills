@@ -1,0 +1,1 @@
+var topPos=$(document).scrollTop(),snb=$(".navbar__block.is--scroll");snb.hasClass("is--scroll")&&(150<topPos?snb.addClass("is--hidden"):snb.removeClass("is--hidden"),300<topPos?snb.addClass("is--scrolled"):snb.removeClass("is--scrolled"));

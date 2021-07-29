@@ -1,11 +1,17 @@
 //humb
 var humb = $("[data-hamburger]");
+var humb_close = $("[data-hamburger-close]");
 var collapse = $('.navbar__collapse');
 var html = $('html');
 humb.on('click',function() {				
 	collapse.toggleClass("is--open");
 	html.toggleClass("is--open-navbar");
 	$(this).toggleClass("is--active");
+});	
+humb_close.on('click',function() {				
+	html.removeClass("is--open-navbar");
+	collapse.removeClass("is--open");
+	humb_close.removeClass("is--active");
 });	
 $(document.body).on('click', function(event) {
 	if($(event.target).closest('.navbar__block').length == 0){	

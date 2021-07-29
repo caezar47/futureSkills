@@ -9,11 +9,7 @@
 					</a>
 				</div>
 				<button class="{{navbar_prefix}}hamburger-card" data-hamburger>
-					<span class="{{navbar_prefix}}hamburger-card-inner">
-						<span class="{{navbar_prefix}}hamburger-card-line  is--left"></span>
-						<span class="{{navbar_prefix}}hamburger-card-line  is--center"></span>
-						<span class="{{navbar_prefix}}hamburger-card-line  is--right"></span>
-					</span>
+					{% include "../svg-sprite/svg.twig" with {icon:'humb'} %} 
 				</button>
 			</div>
 		</div>
@@ -30,6 +26,11 @@
 							{# 
 							{% include "../svg-sprite/svg.twig" with {icon:'logotip-finish'} %}  #}
 						</a>
+					</div>
+					<div class="is--humb">
+						<button class="{{navbar_prefix}}hamburger-card  is--active" data-hamburger-close>
+							{% include "../svg-sprite/svg.twig" with {icon:'humb-close'} %} 
+						</button>
 					</div>
 					<div class="is--logotip">
 						<a class="{{navbar_prefix}}logotip" href="{{page.index}}">
@@ -66,6 +67,36 @@
 						<a class="{{navbar_prefix}}search" href="#">
 							{% include "../svg-sprite/svg.twig" with {icon:'search'} %} 
 						</a>
+					</div>
+					<div class="is--soc">
+						<div class="footer__soc  is--navbar">
+							<p>Подпишитесь на нас в соцсетях:</p>
+							<ul>
+								<li>
+									<a href="{{soc.inst}}" target="_blank">instagram</a>			
+								</li>
+								<li>
+									<a href="{{soc.yb}}" target="_blank">youtube</a>
+								</li>
+								<li>
+									<a href="{{soc.fb}}" target="_blank">facebook</a>
+								</li>
+								<li>
+									<a href="{{soc.tw}}" target="_blank">twitter</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="is--contacts">
+						<div class="footer__contacts  is--navbar">
+							<a href="tel:{{contacts.phone_tel}}">{{contacts.phone}}</a>
+						</div>
+						<div class="footer__contacts  is--navbar">
+							<a href="mailto:{{contacts.email}}">{{contacts.email}}</a>
+						</div>
+						<div class="footer__contacts  is--navbar">
+							{{contacts.address}}
+						</div>
 					</div>
 					
 				</div>
