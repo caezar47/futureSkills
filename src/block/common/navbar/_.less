@@ -144,12 +144,15 @@
 		transition: @trs-site;
 		svg{display: block;}
 		&, &:hover, &:focus{color: @white;}
+		.navbar__block.is--index &{
+			color: @black;
+		}
+		.navbar__block.is--index.is--scrolled &{
+			color: @white;
+		}	
 		.media-breakpoint-up(@xl; {
 			min-width: 225px;
-			width: 225px;
-			.navbar__block.is--index &{
-				color: @black;
-			}			
+			width: 225px;		
 		});	
 	}
 	//collapse
@@ -433,6 +436,12 @@
 			width: 23px;
 			height: 23px;
 			color: @white;
+			.navbar__block.is--index &[data-hamburger]{
+				color: @black;
+			}
+			.navbar__block.is--index.is--scrolled &[data-hamburger]{
+				color: @white;
+			}
 			.media-breakpoint-up(@xl; {
 				.navbar__block.is--hidden &[data-hamburger]{
 					margin-top: -30px;
