@@ -3,7 +3,13 @@
 	<div class="{{navbar_prefix}}header">
 		<div class="container">
 			<div class="{{navbar_prefix}}header-row flex__row">
-				<div>
+				<div class="is--logotip-v">
+					<a class="{{navbar_prefix}}logotip-v" href="{{page.index}}">
+						{% include "../svg-sprite/svg.twig" with {icon:'logotip-start'} %}
+						{% include "../svg-sprite/svg.twig" with {icon:'logotip-finish'} %}
+					</a> 
+				</div>
+				<div class="is--logotip"> 
 					<a class="{{navbar_prefix}}logotip" href="{{page.index}}">
 						{% include "../svg-sprite/svg.twig" with {icon:'logotip'} %}
 					</a>
@@ -18,14 +24,11 @@
 		<div class="{{navbar_prefix}}collapse-inner">	
 			<div class="container">
 				<div class="{{navbar_prefix}}collapse-row  flex__row">
-					<div class="is--logotip-anim">
-						<a class="{{navbar_prefix}}logotip-anim" href="{{page.index}}">
-							{% include "../svg-sprite/svg.twig" with {icon:'logotip-start'} %} 
-							<div class="icon-tire-h"></div>
-							<div class="icon-tire-v"></div>
-							{# 
-							{% include "../svg-sprite/svg.twig" with {icon:'logotip-finish'} %}  #}
-						</a>
+					<div class="is--logotip-v">
+						<a class="{{navbar_prefix}}logotip-v" href="{{page.index}}">
+							{% include "../svg-sprite/svg.twig" with {icon:'logotip-start'} %}
+							{% include "../svg-sprite/svg.twig" with {icon:'logotip-finish'} %}
+						</a> 
 					</div>
 					<div class="is--humb">
 						<button class="{{navbar_prefix}}hamburger-card  is--active" data-hamburger-close>

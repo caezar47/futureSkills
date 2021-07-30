@@ -3,11 +3,13 @@
     <head>
         {% include "../block/common/head/head.twig" with {title:"F–S Team Challenge — новый формат соревнований"}  %}
     </head>
-    <body>
-        
+    <body>        
         {% include "../block/common/navbar/navbar.twig" with {
             view:           'base',
             navbar_prefix:  'navbar__',
+            navbar_mod:     'is--challenge  is--scroll',  
+            navbar_mod:     'is--challenge  is--hidden  is--scrolled', 
+            navbar_mod:     'is--scroll',
             navbar_mod:     '',
             active:         page.competencies_card,
         } %}    

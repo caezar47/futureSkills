@@ -22,6 +22,8 @@
 		}
 		//index
 		&.is--index-header{
+			overflow: hidden;
+			position: relative;
 			background: linear-gradient(90deg, rgba(189,252,118,1) 0%, rgba(138,251,210,1) 100%);
 			height: 100vh;
 			max-height: 667px;
@@ -90,6 +92,8 @@
 		}
 		//index
 		&.is--index-header{
+			position: relative;
+			z-index: 2;
 			align-self: center;
 			padding-top: 70px;
 			padding-bottom: 30px;
@@ -233,6 +237,14 @@
 		}
 	}
 	&group{
+		&.is--index-header{
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+		}
 		&.is--index-challenge{
 			background: linear-gradient(104.21deg, #01070D 7.91%, #01121E 95.12%);
 			box-shadow: 26px 33px 47px rgba(0, 0, 0, 0.23);

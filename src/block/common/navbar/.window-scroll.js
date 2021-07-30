@@ -1,17 +1,5 @@
 var topPos = $(document).scrollTop();		
-var snb = $('.navbar__block.is--scroll');	
-/*
-var projects = $('.section__content.is--index-projects');
-var projectsPos = projects.offset().top;
-
-//console.log(projects.offset().top);
-if(topPos > projectsPos) {
-	snb.addClass('is--logo-white');
-} else {
-	snb.removeClass('is--logo-white');	
-	snb.addClass('is--return');
-}
-*/
+var snb = $('.navbar__block');	
 if(snb.hasClass('is--scroll')) {
 	if(topPos > 150) {
 		snb.addClass('is--hidden');
@@ -21,6 +9,22 @@ if(snb.hasClass('is--scroll')) {
 	if(topPos > 300) {
 		snb.addClass('is--scrolled');
 	} else {
+		snb.removeClass('is--scrolled');
+	}
+}
+
+if(snb.hasClass('is--index')) {
+	var projects = $('.section__content.is--index-projects');
+	var projectsPos = projects.offset().top;
+	if(topPos > 150) {
+		snb.addClass('is--hidden');
+	} else {
+		snb.removeClass('is--hidden');
+	}
+	if(topPos > projectsPos) {
+		snb.addClass('is--scrolled');
+
+	}else{
 		snb.removeClass('is--scrolled');
 	}
 }

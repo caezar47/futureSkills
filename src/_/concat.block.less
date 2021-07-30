@@ -22,6 +22,8 @@
 		}
 		//index
 		&.is--index-header{
+			overflow: hidden;
+			position: relative;
 			background: linear-gradient(90deg, rgba(189,252,118,1) 0%, rgba(138,251,210,1) 100%);
 			height: 100vh;
 			max-height: 667px;
@@ -90,6 +92,8 @@
 		}
 		//index
 		&.is--index-header{
+			position: relative;
+			z-index: 2;
 			align-self: center;
 			padding-top: 70px;
 			padding-bottom: 30px;
@@ -233,6 +237,14 @@
 		}
 	}
 	&group{
+		&.is--index-header{
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+		}
 		&.is--index-challenge{
 			background: linear-gradient(104.21deg, #01070D 7.91%, #01121E 95.12%);
 			box-shadow: 26px 33px 47px rgba(0, 0, 0, 0.23);
@@ -3291,7 +3303,7 @@
 			max-width: @container_size_text;
 		}
 	});
-	.media-breakpoint-up(@xxl; {
+	.media-breakpoint-up(@xl; {
 		width: 90vw; 
 	});
 } 
@@ -3455,11 +3467,15 @@
 			}
 			.media-breakpoint-up(@xl; {
 				display: none;
-				.navbar__block.is--scrolled &{
+				opacity: 0;
+				.navbar__block.is--hidden &{
 					display: block;
 					.is--open-navbar &{
 						//background: none;
 					}
+				}
+				.navbar__block.is--scrolled &{					
+					opacity: 1;
 				}
 			});
 		}	
@@ -3467,112 +3483,99 @@
 			align-items: center;
 			justify-content: space-between;
 			flex-wrap: nowrap;
+			& > .is--logotip-v{
+				display: none;
+			} 
+			.navbar__block.is--scrolled &{
+				.media-breakpoint-up(@xl; {
+					& > .is--logotip{
+						display: none;
+					}
+					& > .is--logotip-v{
+						display: block;
+					}
+				});
+			}
 		}	
 	}
-	&logotip-anim{
-		display: flex;
+	&logotip-v{
+		color: @white;
+		&::before{
+			width: 2.5vw;
+			height: 2px;
+		}
+		&::after{
+			width: 2px;
+			height: 71.15vh;
+		}
+		&::before,
+		&::after{
+			content: '';
+			position: fixed;
+			z-index: 9;
+			top: 38px;
+			left: 37px;
+			background-color: @white;
+		}
+		&:hover{
+			color: @white;
+		}
 		.icon-logotip-start{
-			position: relative;
-			min-width: 95px;
-			width: 95px;
+			position: fixed;
+			z-index: 9;
+			top: 76.2vh;
+			left: 30px;
+			width: 16px;
+			height: 96px;
+		}
+		.icon-logotip-finish{
+			position: fixed;
+			z-index: 9;
+			top: 30px;
+			left: 7.1vw;
+			width: 90px;
 			height: 17px;
 		}
-		.icon-tire-h{
-			position: relative;
-			top: 6px;
-			left: 7px;
-			min-width: 23px;
-			width: 23px;
-			height: 2px;
-			transition: @trs-site;
-			background-color: @black;
-		}
-		.icon-tire-v{
-			position: relative;
-			width: 2px;
-			height: 0;
-			top: 6px;
-			left: -220px;
-			background-color: @white;
-			transition: @trs-site;
-		}
-		.is--index &{
-			color: @black;				
-		//.is--index.is--return &{
+		.navbar__block.is--challenge &{
+			&::before{
+				display: none;
+			}
+			&::after{
+				top: 125px;
+				height: ~"calc(44vh + 125px)";
+			}
 			.icon-logotip-start{
-				animation: logo-start 2s ease forwards;
-				animation-play-state: paused;
+				top: ~"calc(49vh + 125px + 96px)";
 			}
-			.icon-tire-h{
-				animation: tire-h 2s ease forwards;
-				animation-play-state: paused;
+			.icon-logotip-finish{
+				top: 22px;
+				width: 90px;
+				height: 90px;
+				left: -6px;
+				use{
+					transform: rotate(-90deg);
+					transform-origin: center;
+				}
 			}
 		}
-		.is--index.is--logo-white &{
-			color: @white;
+		.media-breakpoint-up(@xxl; {
+			&::before,
+			&::after{
+				left: 15.2vw;
+			}
 			.icon-logotip-start{
-				animation: logo-start 2s ease  forwards;
-				animation-play-state: running;
+				left: 14.9vw;
 			}
-			.icon-tire-h{
-				background-color: @white;
-				animation: tire-h 2s 0.6s ease forwards;
-				animation-play-state: running;
+			.icon-logotip-finish{
+				left: 18.1vw;
 			}
-			.icon-tire-v{
-				animation: tire-v 2s 1.2s ease forwards;
-				animation-play-state: running;
+			.navbar__block.is--challenge &{
+				.icon-logotip-finish{
+					left: 12.9vw;
+				}
 			}
-		}	
-		/*
-		@keyframes logo-start {
-			from {
-				top: 0px;
-				left: 0px;
-			}
-			30% {				
-				left: -123px;
-			}
-			50% {
-				transform:rotate(-90deg);				
-				left: -123px;
-				top: 5vh;
-			}
-			to {
-				transform:rotate(-90deg);
-				top: 78vh;
-				left: -123px;
-			}
-		}
-		@keyframes tire-h {
-			from {
-    			width: 23px;
-				left: 7px;
-			}
-			30% {				
-				left: -170px;
-    			width: 48px;
-			}
-			50% {	
-				left: -170px;
-    			width: 48px;
-			}
-			to {	
-				left: -170px;
-    			width: 48px;
-			}
-		}
-		@keyframes tire-v {
-			from {
-    			height: 0;
-			}
-			to {	
-				height: 72vh;
-			}
-		}
-		*/
-		
-		//
+		});
+
 	}
 	&logotip{
 		position: relative;	
@@ -3585,7 +3588,10 @@
 		&, &:hover, &:focus{color: @white;}
 		.media-breakpoint-up(@xl; {
 			min-width: 225px;
-			width: 225px;			
+			width: 225px;
+			.navbar__block.is--index &{
+				color: @black;
+			}			
 		});	
 	}
 	//collapse
@@ -3675,9 +3681,9 @@
 			& > *{
 				width: 100%;
 			}
-			& > .is--logotip-anim{
+			& > .is--logotip-v{
 				display: none;
-			}
+			} 
 			& > .is--logotip{
 				display: none;
 			}
@@ -3726,6 +3732,19 @@
 				& > .is--search{
 					display: block;
 					margin-right: 10px;
+				}
+				.navbar__block.is--challenge &{
+					& > .is--logotip-v{
+						display: block;
+					} 
+					& > .is--logotip{
+						display: none;
+					} 
+				}
+				.navbar__block.is--scrolled &{
+					& > .is--logotip-v{
+						display: none;
+					} 
 				}
 				.navbar__block.is--scrolled &{
 					flex-direction: column;
@@ -3802,11 +3821,17 @@
 		    display: block;
 		    position: relative;
 			color: @white;
-			transition: @trs-site;
+			transition: @trs-site, font-size 0s;
 			text-transform: uppercase;
 			.media-breakpoint-up(@xl; {
 				font-size: 0.556rem;
-				line-height: 120%;	
+				line-height: 120%;
+				.navbar__block.is--index &{
+					color: @black;
+				}		
+				.navbar__block.is--index.is--scrolled &{
+					color: @white;
+				}		
 				.navbar__block.is--scrolled &{
 					font-size: 1.222rem;
 				}			
@@ -3834,6 +3859,11 @@
 		&:hover{
 			color: @primary;
 		}
+		.media-breakpoint-up(@xl; {
+			.navbar__block.is--index &{
+				color: @black;
+			}		
+		});
 	}
 	&hamburger{
 		&-card{
@@ -3845,6 +3875,12 @@
 			width: 23px;
 			height: 23px;
 			color: @white;
+			.media-breakpoint-up(@xl; {
+				.navbar__block.is--hidden &[data-hamburger]{
+					margin-top: -30px;
+					margin-right: -30px;
+				}
+			});
 		}
 		/*
 		&-card-inner{		
@@ -3902,6 +3938,107 @@
 			}
 		}*/
 	}
+	/*&logotip-anim{
+		display: flex;
+		.icon-logotip-start{
+			position: relative;
+			min-width: 95px;
+			width: 95px;
+			height: 17px;
+		}
+		.icon-tire-h{
+			position: relative;
+			top: 6px;
+			left: 7px;
+			min-width: 23px;
+			width: 23px;
+			height: 2px;
+			transition: @trs-site;
+			background-color: @black;
+		}
+		.icon-tire-v{
+			position: relative;
+			width: 2px;
+			height: 0;
+			top: 6px;
+			left: -220px;
+			background-color: @white;
+			transition: @trs-site;
+		}
+		.is--index &{
+			color: @black;				
+		//.is--index.is--return &{
+			.icon-logotip-start{
+				animation: logo-start 2s ease forwards;
+				animation-play-state: paused;
+			}
+			.icon-tire-h{
+				animation: tire-h 2s ease forwards;
+				animation-play-state: paused;
+			}
+		}
+		.is--index.is--logo-white &{
+			color: @white;
+			.icon-logotip-start{
+				animation: logo-start 2s ease  forwards;
+				animation-play-state: running;
+			}
+			.icon-tire-h{
+				background-color: @white;
+				animation: tire-h 2s 0.6s ease forwards;
+				animation-play-state: running;
+			}
+			.icon-tire-v{
+				animation: tire-v 2s 1.2s ease forwards;
+				animation-play-state: running;
+			}
+		}	
+		@keyframes logo-start {
+			from {
+				top: 0px;
+				left: 0px;
+			}
+			30% {				
+				left: -123px;
+			}
+			50% {
+				transform:rotate(-90deg);				
+				left: -123px;
+				top: 5vh;
+			}
+			to {
+				transform:rotate(-90deg);
+				top: 78vh;
+				left: -123px;
+			}
+		}
+		@keyframes tire-h {
+			from {
+    			width: 23px;
+				left: 7px;
+			}
+			30% {				
+				left: -170px;
+    			width: 48px;
+			}
+			50% {	
+				left: -170px;
+    			width: 48px;
+			}
+			to {	
+				left: -170px;
+    			width: 48px;
+			}
+		}
+		@keyframes tire-v {
+			from {
+    			height: 0;
+			}
+			to {	
+				height: 72vh;
+			}
+		}
+	}*/
 }
 .map-svg__{
 	&panel{
