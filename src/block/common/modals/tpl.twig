@@ -10,6 +10,14 @@
                     prefix: card_prefix,
                     mod:    card_mod,
                 } %}
+			{% endif %}
+			{% if view == "challenge" %}
+			<div id="fullpage">
+				{% include "../../page/page.twig" with {
+	                view:   'challenge-modal',
+	                list:	content_list,  
+	            } %} 
+			</div> 
 			{% endif %} 
 		</div>
 	</div>

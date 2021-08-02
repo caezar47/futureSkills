@@ -1,4 +1,4 @@
-var modal_btn_show = $('[data-toggle="modal"]');
+var modal_btn_show = $('[data-target="#modal-university"]');
 modal_btn_show.on('click', function(e) {
 	var modal_data = 			JSON.parse($(this).attr('data-modal') || '{}');
 	var id = 					modal_data.id;

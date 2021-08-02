@@ -10,3 +10,101 @@
 svg4everybody();
 document.createElement("picture");
 </script> 
+
+{% if fullpage == 'true' %}
+{#
+<script src="vendors/easings.min.js"></script>
+
+ <script type="text/javascript" src="vendors/scrolloverflow.min.js"></script> #}
+
+<script src="{{path.js}}/fullpage.min.js"></script>
+<script>
+	$('#modal-challenge').on('show.bs.modal', function (e) {
+		$('#fullpage').fullpage({
+			//responsiveWidth: '768',
+			fixedElements: '#nav',
+	        //licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
+			//options here
+			//autoScrolling:true,
+			//fadingEffect:true,
+			//scrollHorizontally: true
+			/*afterLoad: function(origin, destination, direction){
+			var loadedSection = this;
+				//using index
+				if(origin.index == 2){
+					alert("Section 3 ended loading");
+				}
+			}*/
+			//afterLoad: function(origin, destination, direction){
+			/*afterRender: function(){
+				$('body').addClass('is--render');
+			},*/
+			onLeave: function(origin, destination, direction){
+			//afterLoad: function(origin, destination, direction){
+				var leavingSection = this;
+
+				if(origin.index == 0 && direction =='down'){
+					$('#nav1').removeClass('is--visible');
+					$('#nav2').addClass('is--visible');
+					$('.section__nav-inner').addClass('is--slide1');
+				}
+				else if(origin.index == 1 && direction == 'up'){				
+					$('#nav1').addClass('is--visible');
+					$('#nav2').removeClass('is--visible');
+					$('.section__nav-inner').removeClass('is--slide1');
+				}
+				else if(origin.index == 1 && direction == 'down'){				
+					$('#nav2').removeClass('is--visible');
+					$('#nav3').addClass('is--visible');
+					$('.section__nav-inner').removeClass('is--slide1');
+					$('.section__nav-inner').addClass('is--slide2');
+				}
+				else if(origin.index == 2 && direction == 'up'){				
+					$('#nav3').removeClass('is--visible');
+					$('#nav2').addClass('is--visible');
+					$('.section__nav-inner').addClass('is--slide1');
+					$('.section__nav-inner').removeClass('is--slide2');
+				}
+				else if(origin.index == 3 && direction == 'down'){				
+					$('#nav3').removeClass('is--visible');
+					$('#nav4').addClass('is--visible');
+					$('.section__nav-inner').addClass('is--slide3');
+					$('.section__nav-inner').removeClass('is--slide2');
+				}
+				else if(origin.index == 4 && direction == 'up'){				
+					$('#nav4').removeClass('is--visible');
+					$('#nav3').addClass('is--visible');
+					$('.section__nav-inner').addClass('is--slide2');
+					$('.section__nav-inner').removeClass('is--slide3');
+				}
+				/*
+				if(origin.index == 0 && direction =='down'){
+					$('#img').addClass('animate');
+				}
+				else if(origin.index == 1 && direction =='up'){
+					$('#img').removeClass('animate');
+				}
+
+				if(origin.index == 4 && direction =='up'){
+					$('#img').removeClass('static');
+					//$('.section__text.is--right').removeClass('is--static');
+				}
+				else if(origin.index == 3 && direction == 'down' ){				
+					$('#img').addClass('static');
+					//$('.section__text.is--right').addClass('is--static');
+				}*/
+			}
+		}); 
+		$('.section__nav').addClass('is--visible');
+	});
+	$('#modal-challenge').on('hide.bs.modal', function (e) {
+		$('.section__nav').toggleClass('is--visible');
+		fullpage_api.destroy();
+	});
+
+	if($(document).width() < 768) {
+		//$(".scroll--xs").wrapAll('<div class="section__inner"></div>');
+		//fullpage_api.setResponsive(true);
+	}
+</script>
+{% endif %}

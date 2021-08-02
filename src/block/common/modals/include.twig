@@ -10,3 +10,56 @@
     content_prefix:     prefix.content, 
     content_mod:        'is--university',
 } %} 
+{% include "tpl.twig" with {
+    view:               "challenge",
+    prefix:             "modal__", 
+    mod:                "is--сhallenge", 
+    ID:                 "modal-challenge",
+
+    card_view:          'university_modal',
+    card_prefix:        "card__",
+    card_mod:           "is--university  is--item", 
+    
+    content_prefix:     prefix.content, 
+    content_mod:        'is--challenge-modal',
+    content_list:       [
+        {
+            img:        [path.img,"/page/сhallenge/сhallenge-modal1.png"].join(""), 
+            nav:[
+                { 
+                    id:     'nav1',
+                    mod:    'is--visible',
+                    name:   'Профессионал',
+                    note:   'Текст про то, какими были профессионалы раньше (единицы, которые владели только hard skills), а сейчас очень ценятся и выгодно выделяют среди остальных людей, если человек обладает еще и soft skills',
+                },
+                {
+                    id:     'nav2',
+                    name:   'Навыки',
+                    note:   'Текст про то, какие сейчас есть ключевые навыки следующего десятилетия и как они определяют будущее, влияют на то, как строится работа, кто в будущем будет получать самую интересную работу',
+                },
+                {
+                    id:     'nav3',
+                    name:   'Команда',
+                    note:   'Текст про то, как строится команда. Что надо собрать классных профессионалов, людей с крутыми hard skill и soft skills и потом их нужно поместить в среду, где удобно коммуницировать, тогда в процессе командной работы и обсуждений появится сильная команда',
+                },
+                {
+                    id:     'nav4',
+                    name:   'Новые продукты',
+                    note:   'Текст про то, что такое новые продукты. Как они влияют на жизнь людей, что за ними будущее и что вообще это классно. ',
+                },
+            ]
+        },
+        {
+            img:        [path.img,"/page/сhallenge/сhallenge-modal2.png"].join(""), 
+        },
+        {
+            img:        [path.img,"/page/сhallenge/сhallenge-modal3.png"].join(""), 
+        },
+        {
+            img:        [path.img,"/page/сhallenge/сhallenge-modal4.png"].join(""), 
+        },
+        {
+            img:        [path.img,"/page/сhallenge/сhallenge-modal5.png"].join(""), 
+        },
+    ],
+} %} 

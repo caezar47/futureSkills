@@ -72,6 +72,33 @@
 		</div>
 	</section>
 {% endif %}
+{% if view == "challenge-modal" %}
+	{% for value in list %}
+	<section class="{{content_prefix}}content  {{content_mod}}  section" > 
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			{% if value.nav %}
+			<div id="nav" class="{{content_prefix}}nav  {{content_mod}}">
+			<div class="{{content_prefix}}nav-inner  {{content_mod}}">
+			{% for nav in value.nav %}
+				<div class="{{content_prefix}}group  {{content_mod}}  {{nav.mod}}" id="{{nav.id}}"> 
+					<h2 class="{{content_prefix}}heading  {{content_mod}}"> 
+						{{nav.name}}             
+					</h2>
+					<div class="{{content_prefix}}note  {{content_mod}}"> 
+						{{nav.note}}             
+					</div>
+				</div>
+			{% endfor %}
+			</div>
+			</div>
+			{% endif %}
+			<div class="{{content_prefix}}img  {{content_mod}}">
+				<img src="{{value.img}}" class="img-responsive" alt="">
+			</div>
+		</div>
+	</section>
+	{% endfor %}
+{% endif %}
 {% if view == "competencies" %}
 	<section class="{{content_prefix}}content  {{content_mod}}" {% if bg %}style="background-image: url({{bg}});"{% endif %}>
 		<div class="{{content_prefix}}container container  {{content_mod}}">

@@ -125,7 +125,7 @@
 				padding-top: 80px;
 				padding-bottom: 30px;
 			});	
-		} 
+		}
 		&.is--index-announce{
 			position: relative;
 			z-index: 2;
@@ -185,6 +185,18 @@
 			.media-breakpoint-up(@xl; {
 				padding-top: 105px;
 				padding-bottom: 130px;
+			});
+		}
+		&.is--challenge-modal{
+			padding-top: 30px;
+			padding-bottom: 30px;
+			height: 100vh;
+			display: flex;
+		    align-items: center;
+		    justify-content: flex-end;
+			.media-breakpoint-up(@xl; {
+				padding-top: 40px;
+				padding-bottom: 40px;
 			});
 		}
 		&.is--competencies{
@@ -307,6 +319,9 @@
 				});
 			}
 		}
+		&.is--challenge-modal{
+			margin-bottom: 80px;
+		}
 		&.is--competencies-card{
 			&.is--tabs{
 				margin-bottom: 105px;
@@ -369,6 +384,38 @@
 		}
 		&.is--university-docs{
 			max-width: 870px;
+		}
+	}		
+	&nav{
+		&.is--challenge-modal{
+			position: fixed;
+			z-index: -1;
+			top: 0;
+		    bottom: 0;
+		    left: 23.2vw;
+		    max-width: 460px;
+		    overflow: hidden;
+		    opacity: 0;
+		    &.is--visible{
+		    	opacity: 1;
+				z-index: 110000;
+		   		transition: @trs-site;
+		    }
+		}
+		&-inner{
+			transition: @trs-site;
+			&.is--challenge-modal{
+				transform: translateY(44%);
+				&.is--slide1{
+					transform: translateY(20.5%);
+				}
+				&.is--slide2{
+					transform: translateY(-2.5%);
+				}
+				&.is--slide3{
+					transform: translateY(-26.5%);
+				}
+			}
 		}
 	}		
 	&grid{		
@@ -670,6 +717,18 @@
 				margin-bottom: 90px;
 			});
 		}
+		&.is--challenge-modal{
+			color: fadeout(@white, 70%);
+			.heading1();
+			margin-bottom: 0;
+			.section__group.is--visible &{
+				color: @white;
+				.heading1x();
+				.is--slide3 &{
+					line-height: 90%;
+				}
+			}
+		}
 		&.is--university-team{
 			.heading4();
 			margin-bottom: 23px;
@@ -773,6 +832,15 @@
 				text-align: left;
 				margin-bottom: 65px;
 			});
+		}
+		&.is--challenge-modal{
+			display: none;
+			.heading6();
+			font-family: @site_ff_custom;
+			padding-top: 20px;
+			.section__group.is--visible &{
+				display: block;
+			}
 		}
 		&.is--competencies-docs{
 			font-family: @site_ff_custom;
@@ -889,6 +957,16 @@
 					font-size: 1rem;
 					margin-bottom: 40px;
 				});
+			}
+		}
+		&.is--challenge-modal{
+			transform: translateX(40px);
+			opacity: 0;
+			transition: @trs-site;
+			.section.active &{
+				opacity: 1;
+				transform: translateX(0);
+				transition: all 0.4s 0.5s;
 			}
 		}
 		&.is--competencies-card{

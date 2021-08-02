@@ -7,7 +7,7 @@
         {% include "../block/common/navbar/navbar.twig" with {
             view:           'base',
             navbar_prefix:  'navbar__',
-            navbar_mod:     'is--challenge  is--scroll',  
+            navbar_mod:     'is--scroll',  
             navbar_mod:     'is--challenge  is--hidden  is--scrolled', 
             navbar_mod:     'is--scroll',
             navbar_mod:     '',
@@ -37,6 +37,7 @@
                 more_prefix:         prefix.btn,
                 more_tag:            'button',
                 more_type:           'button',
+                more_attr:            'data-toggle="modal" data-target="#modal-challenge"',
                 more_elem:           'item',
                 more_mod:            '',
 
@@ -188,8 +189,9 @@
             footer_prefix:"footer__"
         } %} 
 
-        {# {% include "../block/common/modals/include.twig"%}         #}
+        {% include "../block/common/modals/include.twig"%}
         {% include "../block/common/script/script.twig" with {
+            fullpage: 'true'
         } %}
     </body>
 </html> 

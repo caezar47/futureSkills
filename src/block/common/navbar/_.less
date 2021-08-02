@@ -58,20 +58,13 @@
 	}
 	&logotip-v{
 		color: @white;
-		&::before{
-			width: 2.5vw;
-			height: 2px;
-		}
-		&::after{
-			width: 2px;
-			height: 71.15vh;
-		}
-		&::before,
 		&::after{
 			content: '';
 			position: fixed;
 			z-index: 9;
-			top: 38px;
+			top: 125px;
+			height: ~"calc(44vh + 125px)";
+			width: 2px;
 			left: 37px;
 			background-color: @white;
 		}
@@ -81,7 +74,8 @@
 		.icon-logotip-start{
 			position: fixed;
 			z-index: 9;
-			top: 76.2vh;
+			top: ~"calc(49vh + 125px + 96px)";
+			
 			left: 30px;
 			width: 16px;
 			height: 96px;
@@ -89,35 +83,44 @@
 		.icon-logotip-finish{
 			position: fixed;
 			z-index: 9;
-			top: 30px;
-			left: 7.1vw;
+			top: 22px;
 			width: 90px;
-			height: 17px;
+			height: 90px;
+			left: -6px;
+			use{
+				transform: rotate(-90deg);
+				transform-origin: center;
+			}
 		}
-		.navbar__block.is--challenge &{
+		.navbar__block.is--index &{
 			&::before{
-				display: none;
+				content: '';
+				position: fixed;
+				z-index: 9;
+				top: 38px;
+				left: 37px;
+				background-color: @white;			
+				width: 2.5vw;
+				height: 2px;
 			}
 			&::after{
-				top: 125px;
-				height: ~"calc(44vh + 125px)";
+				top: 38px;
+				height: 71.15vh;
 			}
 			.icon-logotip-start{
-				top: ~"calc(49vh + 125px + 96px)";
+				top: 76.2vh;
 			}
 			.icon-logotip-finish{
-				top: 22px;
-				width: 90px;
-				height: 90px;
-				left: -6px;
+				top: 30px;
+				left: 7.1vw;
+				height: 17px;
 				use{
-					transform: rotate(-90deg);
-					transform-origin: center;
+					transform: initial;
+					transform-origin: initial;
 				}
 			}
 		}
 		.media-breakpoint-up(@xxl; {
-			&::before,
 			&::after{
 				left: 15.2vw;
 			}
@@ -125,12 +128,18 @@
 				left: 14.9vw;
 			}
 			.icon-logotip-finish{
-				left: 18.1vw;
+				left: 12.9vw;
 			}
-			.navbar__block.is--challenge &{
-				.icon-logotip-finish{
-					left: 12.9vw;
+			.navbar__block.is--index &{
+				&::before{
+					left: 15.2vw;
 				}
+				.icon-logotip-finish{
+					left: 18.1vw;
+				}
+			}
+			.navbar__block.is--opacity &{
+				opacity: 0
 			}
 		});
 

@@ -1,5 +1,8 @@
 var topPos = $(document).scrollTop();		
+var docH = $(window).height();		
 var snb = $('.navbar__block');	
+var footer = $('.footer__block');
+var footerPos = footer.offset().top;
 if(snb.hasClass('is--scroll')) {
 	if(topPos > 150) {
 		snb.addClass('is--hidden');
@@ -10,6 +13,11 @@ if(snb.hasClass('is--scroll')) {
 		snb.addClass('is--scrolled');
 	} else {
 		snb.removeClass('is--scrolled');
+	}
+	if(topPos + docH > footerPos) {
+		snb.addClass('is--opacity');
+	} else {
+		snb.removeClass('is--opacity');
 	}
 }
 
@@ -26,6 +34,11 @@ if(snb.hasClass('is--index')) {
 
 	}else{
 		snb.removeClass('is--scrolled');
+	}
+	if(topPos + docH > footerPos) {
+		snb.addClass('is--opacity');
+	} else {
+		snb.removeClass('is--opacity');
 	}
 }
 /*	
