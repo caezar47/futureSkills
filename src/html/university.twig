@@ -12,7 +12,10 @@
             active:         page.university,
         } %}    
         
-        <main class="{{prefix.content}}wrap"  style="background-image: url('{{path.img}}/page/main-bg.png');">
+        <main class="{{prefix.content}}wrap"> 
+            <div class="{{prefix.content}}bg  is--university" > 
+                <img src="{{path.img}}/bg/uni-bg.png" alt="">
+            </div>
             {% include "../block/page/page.twig" with {
                 view:               'university',
                 content_prefix:     prefix.content, 
