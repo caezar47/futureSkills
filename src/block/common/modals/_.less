@@ -55,12 +55,17 @@
 			}
 		});
 		&.is--сhallenge{
+			background: none;
 			margin: 0;
 			width: 100%;
 			height: 100%;
 			max-width: 100%; 
 			max-height: 100%; 
 			color: @black;
+			left: inherit;			
+			.modal__block.in &{
+				left: inherit;
+			}
 		}
 		/*#modal-сhallenge &{
 			top: 0px!important;
@@ -79,7 +84,7 @@
 	    height: 100%;
 		overflow: auto;
 		&.is--сhallenge{
-			background: #01202F;
+			background: none;
 			overflow: hidden;
 			max-width: 100%;
 			border-radius: 0;

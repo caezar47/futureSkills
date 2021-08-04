@@ -538,41 +538,49 @@
 									<div id="fullpage">
 					<section class="section__content  is--challenge-modal  section" >
 		<div id="nav" class="section__group  is--challenge-modal">
+			<div class="section__bg  is--challenge-modal  is--top" > 
+                <img src="./img/bg/bg-sm.jpg" alt="">
+            </div>
+			<div class="section__bg  is--challenge-modal  is--bottom" > 
+                <img src="./img/bg/bg-lg.jpg" alt="">
+            </div>
 			<div class="section__container container  is--challenge-modal">
-			<div class="section__nav  is--challenge-modal">
-							<div class="section__group  is--challenge-modal-card  is--visible" id="nav1"> 
-					<h2 class="section__heading  is--challenge-modal"> 
-						Профессионал             
-					</h2>
-					<div class="section__note  is--challenge-modal"> 
-						Текст про то, какими были профессионалы раньше (единицы, которые владели только hard skills), а сейчас очень ценятся и выгодно выделяют среди остальных людей, если человек обладает еще и soft skills             
-					</div>
-				</div>
-							<div class="section__group  is--challenge-modal-card  " id="nav2"> 
-					<h2 class="section__heading  is--challenge-modal"> 
-						Навыки             
-					</h2>
-					<div class="section__note  is--challenge-modal"> 
-						Текст про то, какие сейчас есть ключевые навыки следующего десятилетия и как они определяют будущее, влияют на то, как строится работа, кто в будущем будет получать самую интересную работу             
-					</div>
-				</div>
-							<div class="section__group  is--challenge-modal-card  " id="nav3"> 
-					<h2 class="section__heading  is--challenge-modal"> 
-						Команда             
-					</h2>
-					<div class="section__note  is--challenge-modal"> 
-						Текст про то, как строится команда. Что надо собрать классных профессионалов, людей с крутыми hard skill и soft skills и потом их нужно поместить в среду, где удобно коммуницировать, тогда в процессе командной работы и обсуждений появится сильная команда             
-					</div>
-				</div>
-							<div class="section__group  is--challenge-modal-card  " id="nav4"> 
-					<h2 class="section__heading  is--challenge-modal"> 
-						Новые продукты             
-					</h2>
-					<div class="section__note  is--challenge-modal"> 
-						Текст про то, что такое новые продукты. Как они влияют на жизнь людей, что за ними будущее и что вообще это классно.              
-					</div>
-				</div>
+			<div class="section__nav-wrap  is--challenge-modal">
+				<div class="section__nav  is--challenge-modal">
+											<div class="section__group  is--challenge-modal-card  is--visible" id="nav1"> 
+							<h2 class="section__heading  is--challenge-modal"> 
+								Профессионал             
+							</h2>
+							<div class="section__note  is--challenge-modal"> 
+								Текст про то, какими были профессионалы раньше (единицы, которые владели только hard skills), а сейчас очень ценятся и выгодно выделяют среди остальных людей, если человек обладает еще и soft skills             
+							</div>
 						</div>
+											<div class="section__group  is--challenge-modal-card  " id="nav2"> 
+							<h2 class="section__heading  is--challenge-modal"> 
+								Навыки             
+							</h2>
+							<div class="section__note  is--challenge-modal"> 
+								Текст про то, какие сейчас есть ключевые навыки следующего десятилетия и как они определяют будущее, влияют на то, как строится работа, кто в будущем будет получать самую интересную работу             
+							</div>
+						</div>
+											<div class="section__group  is--challenge-modal-card  " id="nav3"> 
+							<h2 class="section__heading  is--challenge-modal"> 
+								Команда             
+							</h2>
+							<div class="section__note  is--challenge-modal"> 
+								Текст про то, как строится команда. Что надо собрать классных профессионалов, людей с крутыми hard skill и soft skills и потом их нужно поместить в среду, где удобно коммуницировать, тогда в процессе командной работы и обсуждений появится сильная команда             
+							</div>
+						</div>
+											<div class="section__group  is--challenge-modal-card  " id="nav4"> 
+							<h2 class="section__heading  is--challenge-modal"> 
+								Новые продукты             
+							</h2>
+							<div class="section__note  is--challenge-modal"> 
+								Текст про то, что такое новые продукты. Как они влияют на жизнь людей, что за ними будущее и что вообще это классно.              
+							</div>
+						</div>
+									</div>
+			</div>
 			<div class="section__img  is--challenge-modal">
 				<div class="arrow">
 					<img src="./img/page/сhallenge/modal/arrow-bottom.svg" alt="">
@@ -646,8 +654,8 @@ document.createElement("picture");
 <script>
 	$('#modal-challenge').on('show.bs.modal', function (e) {
 		$('#fullpage').fullpage({
-			//responsiveWidth: '768',
 			fixedElements: '#nav',
+			//responsiveWidth: '768',
 	        //licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
 			//options here
 			//autoScrolling:true,

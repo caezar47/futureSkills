@@ -13,12 +13,20 @@
 @maket: url(/img/maket/navbar.jpg) no-repeat center 0; 
 @maket: url(/img/maket/challenge.jpg) no-repeat center 0;  
 @maket: url(/img/maket/university.jpg) no-repeat right 0;  
-@maket: url(/img/maket/slide5.jpg) no-repeat center 0;  
-@maket: url(/img/maket/slide1.jpg) no-repeat center 0;  
-@maket: url(/img/maket/slide4.jpg) no-repeat center 0;  
-@maket: url(/img/maket/slide2.jpg) no-repeat center 0;  
-@maket: url(/img/maket/slide3.jpg) no-repeat center 0;  
-@maket: url(/img/maket/slide5.jpg) no-repeat center 0;  
+@maket: url(/img/maket/slide2.jpg) no-repeat 254px 50px;  
+@maket: url(/img/maket/slide3.jpg) no-repeat 247px 50px;  
+@maket: url(/img/maket/slide4.jpg) no-repeat 247px 50px;  
+@maket: url(/img/maket/slide5.jpg) no-repeat 256px 50px;   
+@maket: url(/img/maket/slide1-xs.jpg) no-repeat center -15px;   
+@maket: url(/img/maket/slide2-xs.jpg) no-repeat center -15px;   
+@maket: url(/img/maket/slide3-xs.jpg) no-repeat center -21px;   
+@maket: url(/img/maket/slide4-xs.jpg) no-repeat center -21px;   
+@maket: url(/img/maket/slide5-xs.jpg) no-repeat center -21px;
+@maket: url(/img/maket/slide1-xs.jpg) no-repeat center 0px;    
+@maket: url(/img/maket/slide2-xs.jpg) no-repeat center 0px;   
+@maket: url(/img/maket/slide3-xs.jpg) no-repeat center 0px;   
+@maket: url(/img/maket/slide1.jpg) no-repeat right 0;  
+@maket: url(/img/maket/bg.jpg) no-repeat right 0;  
 @opacity: 0.7;
 //@opacity: 0.4;
 //@opacity: 0.8;
@@ -29,8 +37,9 @@ body{
 		opacity: @opacity;
 		opacity: 0;
 	}
+	.section__group.is--challenge-modal,
 	.footer__block{
-		opacity: @opacity;
+		opacity: @opacity!important;
 	}
 	.modal__block{
 		opacity: 0.5!important;

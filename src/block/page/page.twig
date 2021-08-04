@@ -75,18 +75,26 @@
 {% if view == "challenge-modal" %}
 	<section class="{{content_prefix}}content  {{content_mod}}  section" >
 		<div id="nav" class="{{content_prefix}}group  {{content_mod}}">
+			<div class="{{content_prefix}}bg  {{content_mod}}  is--top" > 
+                <img src="{{path.img}}/bg/bg-sm.jpg" alt="">
+            </div>
+			<div class="{{content_prefix}}bg  {{content_mod}}  is--bottom" > 
+                <img src="{{path.img}}/bg/bg-lg.jpg" alt="">
+            </div>
 			<div class="{{content_prefix}}container container  {{content_mod}}">
-			<div class="{{content_prefix}}nav  {{content_mod}}">
-			{% for nav in nav %}
-				<div class="{{content_prefix}}group  {{content_mod}}-card  {{nav.mod}}" id="{{nav.id}}"> 
-					<h2 class="{{content_prefix}}heading  {{content_mod}}"> 
-						{{nav.name}}             
-					</h2>
-					<div class="{{content_prefix}}note  {{content_mod}}"> 
-						{{nav.note}}             
-					</div>
+			<div class="{{content_prefix}}nav-wrap  {{content_mod}}">
+				<div class="{{content_prefix}}nav  {{content_mod}}">
+					{% for nav in nav %}
+						<div class="{{content_prefix}}group  {{content_mod}}-card  {{nav.mod}}" id="{{nav.id}}"> 
+							<h2 class="{{content_prefix}}heading  {{content_mod}}"> 
+								{{nav.name}}             
+							</h2>
+							<div class="{{content_prefix}}note  {{content_mod}}"> 
+								{{nav.note}}             
+							</div>
+						</div>
+					{% endfor %}
 				</div>
-			{% endfor %}
 			</div>
 			<div class="{{content_prefix}}img  {{content_mod}}">
 				<div class="arrow">
