@@ -678,6 +678,7 @@ document.createElement("picture");
 
 				if(origin.index == 0 && direction =='down'){
 					$('#nav1').removeClass('is--visible');
+					$('#nav1').addClass('is--viewed');
 					$('#nav2').addClass('is--visible');
 					$('.section__nav').addClass('is--slide1');
 
@@ -685,13 +686,16 @@ document.createElement("picture");
 				}
 				else if(origin.index == 1 && direction == 'up'){				
 					$('#nav1').addClass('is--visible');
+					$('#nav1').removeClass('is--viewed');
 					$('#nav2').removeClass('is--visible');
 					$('.section__nav').removeClass('is--slide1');
 
 					$('.section__img').removeClass('is--slide1');
 				}
 				else if(origin.index == 1 && direction == 'down'){				
+					$('#nav2').addClass('is--viewed');
 					$('#nav2').removeClass('is--visible');
+
 					$('#nav3').addClass('is--visible');
 					$('.section__nav').removeClass('is--slide1');
 					$('.section__nav').addClass('is--slide2');
@@ -699,9 +703,10 @@ document.createElement("picture");
 					$('.section__img').removeClass('is--slide1');
 					$('.section__img').addClass('is--slide2');
 				}
-				else if(origin.index == 2 && direction == 'up'){			
+				else if(origin.index == 2 && direction == 'up'){
 					$('#nav3').removeClass('is--visible');
 					$('#nav2').addClass('is--visible');
+					$('#nav2').removeClass('is--viewed');			
 
 					$('.section__nav').addClass('is--slide1');
 					$('.section__nav').removeClass('is--slide2');
@@ -719,6 +724,7 @@ document.createElement("picture");
 				}
 				else if(origin.index == 3 && direction == 'down'){				
 					$('#nav3').removeClass('is--visible');
+					$('#nav3').addClass('is--viewed');	
 					$('#nav4').addClass('is--visible');
 					$('.section__nav').addClass('is--slide3');
 					$('.section__nav').removeClass('is--slide2');
@@ -729,6 +735,7 @@ document.createElement("picture");
 				else if(origin.index == 4 && direction == 'up'){				
 					$('#nav4').removeClass('is--visible');
 					$('#nav3').addClass('is--visible');
+					$('#nav3').removeClass('is--viewed');	
 					$('.section__nav').addClass('is--slide2');
 					$('.section__nav').removeClass('is--slide3');
 

@@ -31,7 +31,7 @@ modal_btn_show.on('click', function(e) {
 $('.modal__block').on('hidden.bs.modal', function (e) {
 	$(this).find("[data-uni-team]").empty();
 });
-//$('#modal-challenge').modal();
+$('#modal-challenge').modal();
 
 /*var basketOpen = $('.informer__modal .btn__item');
 basketOpen.on('click', function(e) {
