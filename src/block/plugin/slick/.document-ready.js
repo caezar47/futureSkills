@@ -35,21 +35,21 @@ $(function() {
         renderer: 'svg',
         loop: false,
         autoplay: false,
-        path: '/js/lottie1.json',
+        path: './js/lottie1.json',
     };
 	var params2 = {
         container: document.getElementById('lottie2'),
         renderer: 'svg',
         loop: false,
         autoplay: false,
-        path: '/js/lottie2.json',
+        path: './js/lottie2.json',
     };
 	var params3 = {
         container: document.getElementById('lottie3'),
         renderer: 'svg',
         loop: false,
         autoplay: false,
-        path: '/js/lottie3.json',
+        path: './js/lottie3.json',
     };
 
     var anim1 = lottie.loadAnimation(params1);
