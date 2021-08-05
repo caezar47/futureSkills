@@ -1,5 +1,6 @@
 'use strict';
 $(function() { 
+	var header 			= $('[data-slick-header]');
 	var challenge 		= $('[data-slick-challenge]');
 	var ch_adv 			= $('[data-slick-challenge-adv]');
 	var ch_adv_thumb 	= $('[data-slick-challenge-adv-thumb]');
@@ -12,6 +13,67 @@ $(function() {
 	var prevArrow = '<button type="button" class="slick-btn  is--prev"><span class="sr-only">Предыдущий слайд</span></button>';
 	var nextArrow = '<button type="button" class="slick-btn  is--next"><span class="sr-only">Следующий слайд</span></button>';
 	var count = $('.slick-count');
+
+	header.slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		dots: false,
+		draggable: false,
+		pauseOnFocus: false,
+		pauseOnHover: false,
+		swipe: false,
+		touchMove: false,
+		fade: true, 	
+		autoplay: true,
+		speed: 1000,
+		autoplaySpeed: 8000,
+	});
+
+	var params1 = {
+        container: document.getElementById('lottie1'),
+        renderer: 'svg',
+        loop: false,
+        autoplay: false,
+        path: '/js/lottie1.json',
+    };
+	var params2 = {
+        container: document.getElementById('lottie2'),
+        renderer: 'svg',
+        loop: false,
+        autoplay: false,
+        path: '/js/lottie2.json',
+    };
+	var params3 = {
+        container: document.getElementById('lottie3'),
+        renderer: 'svg',
+        loop: false,
+        autoplay: false,
+        path: '/js/lottie3.json',
+    };
+
+    var anim1 = lottie.loadAnimation(params1);
+    var anim2 = lottie.loadAnimation(params2);
+    var anim3 = lottie.loadAnimation(params3);
+
+	
+    //anim3.play(); 
+    header.on('init', function() {
+    	//alert('1');
+    	anim1.goToAndPlay(0, true);
+    });
+	anim1.goToAndPlay(0, true);
+    header.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide) {
+        if(currentSlide == 0){
+        	anim1.goToAndPlay(0, true);
+        }
+        if(currentSlide == 1){
+        	anim2.goToAndPlay(0, true);
+        }
+        if(currentSlide == 2){
+        	anim3.goToAndPlay(0, true);
+        }
+    });
 
 	challenge.slick({
 		slidesToShow: 4,
@@ -182,21 +244,8 @@ $(function() {
 	var insta = $('[data-slick-insta]');
 	var catalog = $('[data-slick-catalog]');
 	var catalog_note = $('[data-slick-catalog-note]');
-	header.slick({
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		prevArrow: prevArrow,
-		nextArrow: nextArrow,
-		draggable: false,
-		pauseOnFocus: false,
-		pauseOnHover: false,
-		swipe: false,
-		touchMove: false,
-		fade: true, 	
-		autoplay: true,
-		speed: 1000,
-		autoplaySpeed: 7000,
-	});
+
+   
 
 banner_white.slick({
 		slidesToShow: 1,

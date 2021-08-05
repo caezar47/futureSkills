@@ -1,11 +1,15 @@
 {% if view == "header" %}
-    <section class="{{content_prefix}}content  {{content_mod}}" {% if bg %}style="background-image: url({{bg}});"{% endif %}>
-        <div class="{{content_prefix}}group  {{content_mod}}" id="lottie"></div>
-        <div class="{{content_prefix}}container container  {{content_mod}}">
-        	<h1 class="{{content_prefix}}heading  {{content_mod}}"> 
-        		{{heading}}		        
-	        </h1>
-        </div>
+    <section class="{{content_prefix}}content  {{content_mod}}" {% if bg %}style="background-image: url({{bg}});"{% endif %}  {{slick_data}}>
+    	{% for slick in slick_list %}
+    		<div>
+		        <div class="{{content_prefix}}group  {{content_mod}}" id="{{slick.id}}"></div>
+		        <div class="{{content_prefix}}container container  {{content_mod}}">
+		        	<h1 class="{{content_prefix}}heading  {{content_mod}}"> 
+		        		{{slick.name}}		        
+			        </h1>
+		        </div>
+    		</div>
+        {% endfor %}
     </section>
 {% endif %}
 {% if view == "projects" %}
