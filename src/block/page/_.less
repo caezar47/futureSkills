@@ -1283,7 +1283,13 @@
 				width: 56vw;
 				top: 50%;
 				right: 0;
-				transform: translate(37%, -50%);
+				transform: translate(50%, -50%);
+				opacity: 0;
+				transition: @trs-site;
+				&.is--visible{
+					opacity: 1;
+					transform: translate(37%, -50%);
+				}
 			});
 		}   
 		&.is--index-possibility{

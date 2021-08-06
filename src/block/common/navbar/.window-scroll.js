@@ -3,6 +3,14 @@ var docH = $(window).height();
 var snb = $('.navbar__block');	
 var footer = $('.footer__block');
 var footerPos = footer.offset().top;
+
+var announcePos = $('.section__content.is--index-announce').offset().top;
+var announce = $('.section__img.is--index-announce');
+console.log(topPos);
+if(topPos + 480 > announcePos) {
+	announce.addClass('is--visible');
+}
+//section__content  is--index-announce
 if(snb.hasClass('is--scroll')) {
 	if(topPos > 150) {
 		snb.addClass('is--hidden');
