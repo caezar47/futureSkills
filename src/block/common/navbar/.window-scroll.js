@@ -41,6 +41,15 @@ if(snb.hasClass('is--index')) {
 		snb.removeClass('is--opacity');
 	}
 }
+/*
+var dde = $('html');
+dde.on('mousemove', function(e){
+ 	var ow = dde.offsetWidth; 
+  	var oh = dde.offsetHeight; 
+
+	dde.css('--mouseX', e.clientX * 100 / ow + "%");
+	dde.css('--mouseY', e.clientY * 100 / oh + "%");
+});*/
 /*	
 if(snb.hasClass('fixed')) {
 	if(topPos <= 400) {

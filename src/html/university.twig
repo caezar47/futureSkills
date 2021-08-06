@@ -12,9 +12,11 @@
             active:         page.university,
         } %}    
         
-        <main class="{{prefix.content}}wrap"> 
-            <div class="{{prefix.content}}bg  is--university" > 
-                <img src="{{path.img}}/bg/uni-bg.png" alt="">
+        <main class="{{prefix.content}}wrap  is--default">
+            <img src="{{path.img}}/bg/bg-lg.jpg" alt="" class="{{prefix.content}}bg  is--default  is--bottom">
+            <div class="{{prefix.content}}bg  is--glow  is--uni" data-glow >
+                <img src="{{path.img}}/bg/uni-glow-top.png" alt=""  >
+                <img src="{{path.img}}/bg/uni-glow-bottom.png" alt="">
             </div>
             {% include "../block/page/page.twig" with {
                 view:               'university',

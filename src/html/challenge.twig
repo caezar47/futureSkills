@@ -14,7 +14,18 @@
             active:         page.competencies_card,
         } %}    
         
-        <main class="{{prefix.content}}wrap">
+        <main class="{{prefix.content}}wrap  is--challenge">
+
+            {# <div class="{{prefix.content}}bg  is--challenge  is--top" >  #}
+                <img src="{{path.img}}/bg/bg-sm.jpg" alt="" class="{{prefix.content}}bg  is--challenge  is--top">
+            {# </div>  #}
+            {# <div class="{{prefix.content}}bg  is--challenge  is--middle" >  #}
+                <img src="{{path.img}}/bg/bg-md.jpg" alt="" class="{{prefix.content}}bg  is--challenge  is--middle">
+            {# </div>  #}
+            {# <div class="{{prefix.content}}bg  is--challenge  is--bottom" >  #}
+                <img src="{{path.img}}/bg/bg-lg.jpg" alt="" class="{{prefix.content}}bg  is--challenge  is--bottom">
+            {# </div>  #}
+
             {% include "../block/page/page.twig" with {
                 view:               'challenge',
                 content_prefix:     prefix.content, 

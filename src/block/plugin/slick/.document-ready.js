@@ -14,6 +14,7 @@ $(function() {
 	var nextArrow = '<button type="button" class="slick-btn  is--next"><span class="sr-only">Следующий слайд</span></button>';
 	var count = $('.slick-count');
 
+
 	header.slick({
 		slidesToShow: 1,
 		slidesToScroll: 1,
@@ -30,6 +31,9 @@ $(function() {
 		autoplaySpeed: 8000,
 	});
 
+	/*setTimeout(function () {
+        header.addClass('is--active');
+    }, 600); */
 	var params1 = {
         container: document.getElementById('lottie1'),
         renderer: 'svg',

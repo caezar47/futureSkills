@@ -312,7 +312,7 @@
 			right: 0;
 			bottom: 0;
 			background: @default-p;
-			border-radius: @site_br;
+			border-radius: @site_br - 5;
 			color: @white;
 			padding: 75px 25px;
 			transition: @trs-site;
@@ -644,9 +644,12 @@
 		}
 		&.is--competencies-adv{
 			font-family: @site_ff_custom;
-			font-weight: 400;
+			font-weight: 300;
 			.text16();
 			padding-top: 3px;
+		}
+		&.is--docs{
+			opacity: 0.8;
 		}
 	}
 	&note{
@@ -724,6 +727,7 @@
 				line-height: 155%;
 			}
 			ul{
+				font-weight: 300;
 				margin: 0 0 15px;
 				padding: 0;
 				list-style: none;
@@ -788,6 +792,7 @@
 				margin: 0 0 0px;
 				padding: 0;
 				list-style: none;
+				opacity: 0.8;
 				li{
 					padding-left: 15px;
 					position: relative;
@@ -859,6 +864,8 @@
 			font-family: @site_ff_custom;
 			.text14();
 			margin-bottom: 10px;
+			//font-weight: 300;
+			opacity: 0.8;
 		}
 	}
 	&tel{
@@ -879,6 +886,7 @@
 				padding-left: 25px;
 				.section__group.is--competencies-card &{
 					color: @white;
+					opacity: 0.8;
 				}
 			}
 		}
@@ -899,6 +907,7 @@
 				padding-left: 25px;
 				.section__group.is--competencies-card &{
 					color: @white;
+					opacity: 0.8;
 				}
 			}
 		}

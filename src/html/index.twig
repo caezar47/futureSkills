@@ -12,7 +12,9 @@
             navbar_mod:     'is--scroll ',
             active:         '',
         } %}    
-        <main class="{{prefix.content}}wrap">
+        <main class="{{prefix.content}}wrap  is--index">
+            <img src="{{path.img}}/bg/bg-md.jpg" alt="" class="{{prefix.content}}bg  is--index  is--top">
+            <img src="{{path.img}}/bg/bg-md.jpg" alt="" class="{{prefix.content}}bg  is--index  is--bottom">
             {% include "../block/page/index.twig" with {
                 view:               'header',
                 content_prefix:     prefix.content, 
@@ -23,15 +25,18 @@
                 slick_list:[
                     {  
                         id:     'lottie1',
-                        name:   'Проект<br> WorldSkills Russia', 
+                        name:   '<span>Проект</span> <span>WorldSkills</span> <span>Russia</span>', 
+                        style:  'text-align: center;',
                     },
                     {  
                         id:     'lottie2',
-                        name:   'Подготовка и соревнования новых  профессионалов', 
+                        name:   '<span>Подготовка</span> <span>и соревнования новых</span> <span>профессионалов</span>', 
+                        style:  'text-align: left;',
                     }, 
                     {  
                         id:     'lottie3',
-                        name:   'Для высокотехнологичных производств и цифровой экономики', 
+                        name:   '<span>Для высокотехнологичных</span> <span>производств и цифровой</span> <span>экономики</span>', 
+                        style:  'text-align: right;',
                     },
                 ],
             } %}
@@ -48,8 +53,6 @@
                 view:               'concept',
                 content_prefix:     prefix.content, 
                 content_mod:        'is--index-concept',
-
-                bg:                 [path.img,"/page/index/concept-bg.png"].join(""),
 
                 heading:            'Концепция проекта впервые была представлена  в рамках Чемпионата WorldSkills HiTech в 2015 году. <br>Сегодня в активе <span>Future–Skills</span>:',
 

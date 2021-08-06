@@ -14,8 +14,12 @@
             active:         page.competencies,
         } %}    
         
-        <main class="{{prefix.content}}wrap"  style="background-image: url('{{path.img}}/page/main-bg.png');">
-        {# <main class="{{prefix.content}}wrap"> #}
+        <main class="{{prefix.content}}wrap  is--default">
+            <img src="{{path.img}}/bg/bg-lg.jpg" alt="" class="{{prefix.content}}bg  is--default  is--bottom">
+            <div class="{{prefix.content}}bg  is--glow  is--competencies" data-glow >
+                <img src="{{path.img}}/bg/competencies-glow-top.png" alt=""  >
+                <img src="{{path.img}}/bg/competencies-glow-bottom.png" alt="">
+            </div>
             {% include "../block/page/page.twig" with {
                 view:               'competencies',
                 content_prefix:     prefix.content, 
