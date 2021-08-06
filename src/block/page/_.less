@@ -56,8 +56,8 @@
 		&.is--index-connect{
 			color: @black;
 			background-size: 0, auto;
+			background-repeat: no-repeat;
 			.media-breakpoint-up(@sm; {
-				background-repeat: no-repeat;
 				background-position: center, top left;
 				background-size: cover, 0;
 			});
@@ -1391,6 +1391,8 @@
 
 				&--img{
 					display: flex;
+				    width: 100%;
+    				justify-content: center;
 					img{
 						transition: @trs-site;
 					}
