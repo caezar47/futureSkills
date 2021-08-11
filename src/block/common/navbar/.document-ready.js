@@ -29,7 +29,7 @@ $('.navbar__nav-bottom a[href="'+url+'"]').parent().addClass('is--active');
 $('.navbar-aside__nav a[href="'+url+'"]').parent().addClass('is--active'); 
 $('.tabs__nav a[href="'+url+'"]').parent().addClass('is--active');
 
-
+/*
 $('[data-azbn-toggle="dropdown"]').on('click', function(e) {
 	$(".azbn-dropdown").toggleClass('open');
 });	
@@ -44,3 +44,4 @@ $('.azbn__search-dropdown').on('shown.bs.dropdown', function(e) {
 });
 $('.navbar-xs__block').closest('body').addClass('is--navbar-xs-bottom');
 $('.banner__block').closest('body').addClass('is--banner');
+*/

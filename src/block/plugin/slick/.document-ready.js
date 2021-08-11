@@ -227,7 +227,7 @@ $(function() {
 				settings: "unslick"
 		    },	
 			{
-				breakpoint: 767,
+				breakpoint: 1199,
 				settings:{
 					slidesToShow: 1,
 					slidesToScroll: 1,

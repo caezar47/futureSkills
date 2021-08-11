@@ -4,11 +4,13 @@ var snb = $('.navbar__block');
 var footer = $('.footer__block');
 var footerPos = footer.offset().top;
 
-var announcePos = $('.section__content.is--index-announce').offset().top;
 var announce = $('.section__img.is--index-announce');
-console.log(topPos);
-if(topPos + 480 > announcePos) {
-	announce.addClass('is--visible');
+//console.log(topPos);
+if(announce.length > 0) {
+	var announcePos = $('.section__content.is--index-announce').offset().top;
+	if(topPos + 480 > announcePos) {
+		announce.addClass('is--visible');
+	}
 }
 //section__content  is--index-announce
 if(snb.hasClass('is--scroll')) {
