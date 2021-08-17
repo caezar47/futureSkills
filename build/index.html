@@ -342,7 +342,9 @@
 
 
 
-                <section class="section__content  is--index-possibility" >
+            <div class="section__content  is--index-vertical">
+                <div class="section__bg  is--index-vertical" id="vertical"></div>
+                    <section class="section__content  is--index-possibility" >
         <div class="section__container container  is--index-possibility">
 	        <div class="section__flex  flex__row  is--index-possibility">
 	        	<picture class="section__img  is--index-possibility">
@@ -369,7 +371,7 @@
 
 
 
-                <section class="section__content  is--index-challenge" >
+                    <section class="section__content  is--index-challenge" >
         <div class="section__container container  is--index-challenge">
         	<div class="section__group  is--index-challenge">
         		<div class="section__note  is--index-challenge">
@@ -389,11 +391,11 @@
 				</h5> 
 												<div class="card__note  is--index-challenge">				
 					<ul> 
-                            <li>Командная работа</li>
-                            <li>Коммуникации</li>
-                            <li>Сообщества</li>
-                            <li>Предпринимательское мышление</li>
-                        </ul>
+                                <li>Командная работа</li>
+                                <li>Коммуникации</li>
+                                <li>Сообщества</li>
+                                <li>Предпринимательское мышление</li>
+                            </ul>
 				</div> 
 							</div> 
 		</div>
@@ -407,10 +409,10 @@
 				</h5> 
 												<div class="card__note  is--index-challenge">				
 					<ul> 
-                            <li>Деятельность в&nbsp;условиях неопределенности</li>
-                            <li> Системное мышление</li>
-                            <li> Критическое мышление</li>
-                        </ul>
+                                <li>Деятельность в&nbsp;условиях неопределенности</li>
+                                <li> Системное мышление</li>
+                                <li> Критическое мышление</li>
+                            </ul>
 				</div> 
 							</div> 
 		</div>
@@ -424,10 +426,10 @@
 				</h5> 
 												<div class="card__note  is--index-challenge">				
 					<ul> 
-                            <li>Экология </li>
-                            <li> Бережливое производство</li>
-                            <li> Регенеративная экономика</li>
-                        </ul>
+                                <li>Экология </li>
+                                <li> Бережливое производство</li>
+                                <li> Регенеративная экономика</li>
+                            </ul>
 				</div> 
 							</div> 
 		</div>
@@ -441,10 +443,10 @@
 				</h5> 
 												<div class="card__note  is--index-challenge">				
 					<ul> 
-                            <li>Цифровизация экономики</li>
-                            <li>Передовые технологии (ИИ, роботизация, квантовые технологии, генетика и&nbsp;др.)</li>
-                            <li>Интеграция технологических решений</li>
-                        </ul>
+                                <li>Цифровизация экономики</li>
+                                <li>Передовые технологии (ИИ, роботизация, квантовые технологии, генетика и&nbsp;др.)</li>
+                                <li>Интеграция технологических решений</li>
+                            </ul>
 				</div> 
 							</div> 
 		</div>
@@ -472,6 +474,7 @@
 
 
 
+            </div>
                 <section class="section__content  is--index-connect" style="background-image: url(./img/page/index/connect-bg.jpg), url(./img/page/index/connect-bg-xs.jpg);">
         <div class="section__container container  is--index-connect">
         	<h2 class="section__heading  is--index-connect"> 
@@ -637,7 +640,39 @@ document.createElement("picture");
 
 
         <script>
+            var params_vertical = {
+                container: document.getElementById('vertical'),
+                renderer: 'svg',
+                loop: false,
+                autoplay: false,
+                path: '/js/lottie-vertical.json',
+            };
 
+            var vertical = lottie.loadAnimation(params_vertical);
+
+            $(window).on('scroll',function(event){
+                var doc_top = $(document).scrollTop(),   
+                    doc_height = $(window).height(),
+                    doc_center = doc_top + (doc_height / 2),
+                    container = $('.section__content.is--index-vertical'),
+                    container_pos = container.offset().top,  
+                    speed = 8,
+                    shot = (doc_center - container_pos) / speed;
+
+                if (doc_center > container_pos){
+                    vertical.goToAndStop(shot, true);
+                }
+            }).trigger('scroll');
+
+           /* window.addEventListener('scroll', function() {
+                var sc = (pageYOffset-50) / 1.5;
+                console.log(sc);
+                if (sc < 1200){
+                    vertical.goToAndStop(sc, true);
+                } else {
+                    vertical.goToAndPlay(1200, true);
+                }
+            });*/
             /*var header = $('[data-slick-header]');
 
             header.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide) {

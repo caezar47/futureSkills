@@ -131,83 +131,86 @@
                 card_name:          'Екатерина Лошкарева',
                 card_label:         'Заместитель генерального директора по исследованиям и разработкам, официальный делегат WorldSkills Россия',
             } %}
-            {% include "../block/page/index.twig" with {
-                view:               'promo',
-                content_prefix:     prefix.content, 
-                content_mod:        'is--index-possibility',
+            <div class="section__content  is--index-vertical">
+                <div class="section__bg  is--index-vertical" id="vertical"></div>
+                {% include "../block/page/index.twig" with {
+                    view:               'promo',
+                    content_prefix:     prefix.content, 
+                    content_mod:        'is--index-possibility',
 
-                heading:            'Возможности <span>Future—Skills</span> для современных российских университетов',
+                    heading:            'Возможности <span>Future—Skills</span> для современных российских университетов',
 
-                img:                [path.img,"/page/index/possibility-img.png"].join(""),
+                    img:                [path.img,"/page/index/possibility-img.png"].join(""),
 
-                btn:                'Подробнее',
-                btn_prefix:         prefix.btn,
-                btn_tag:            'a',
-                btn_elem:           'item',
-                btn_link:           page.university,
-                btn_icon:           'goforward',
-                btn_mod:            '',
-            } %}
-            {% include "../block/page/index.twig" with {
-                view:               'challenge',
-                content_prefix:     prefix.content, 
-                content_mod:        'is--index-challenge',
+                    btn:                'Подробнее',
+                    btn_prefix:         prefix.btn,
+                    btn_tag:            'a',
+                    btn_elem:           'item',
+                    btn_link:           page.university,
+                    btn_icon:           'goforward',
+                    btn_mod:            '',
+                } %}
+                {% include "../block/page/index.twig" with {
+                    view:               'challenge',
+                    content_prefix:     prefix.content, 
+                    content_mod:        'is--index-challenge',
 
-                heading:            'F–S Team Challenge',
-                note:               '<p>Новый формат командных соревнований по&nbsp;методологии WorldSkills на&nbsp;основе глобальных трендов и&nbsp;ключевых навыков следующего десятилетия</p>',
+                    heading:            'F–S Team Challenge',
+                    note:               '<p>Новый формат командных соревнований по&nbsp;методологии WorldSkills на&nbsp;основе глобальных трендов и&nbsp;ключевых навыков следующего десятилетия</p>',
 
-                card_view:          'adv',
-                card_slider:        'data-slick-challenge',
-                card_prefix:        prefix.card,
-                card_mod:           "is--index-challenge", 
-                card_list:[
-                    {
-                        img: [path.img,"/page/index/challenge-item1.svg"].join(""),
-                        name: 'Cоциально-экономические и&nbsp;культурные', 
-                        note: '<ul> 
-                            <li>Командная работа</li>
-                            <li>Коммуникации</li>
-                            <li>Сообщества</li>
-                            <li>Предпринимательское мышление</li>
-                        </ul>', 
-                    }, 
-                    {
-                        img: [path.img,"/page/index/challenge-item2.svg"].join(""),
-                        name: 'Когнитивные и&nbsp;фундаментальные', 
-                        note: '<ul> 
-                            <li>Деятельность в&nbsp;условиях неопределенности</li>
-                            <li> Системное мышление</li>
-                            <li> Критическое мышление</li>
-                        </ul>', 
-                    },
-                    {
-                        img: [path.img,"/page/index/challenge-item3.svg"].join(""),
-                        name: '«Зеленые» и&nbsp;связанные с&nbsp;универсальным благополучием', 
-                        note: '<ul> 
-                            <li>Экология </li>
-                            <li> Бережливое производство</li>
-                            <li> Регенеративная экономика</li>
-                        </ul>', 
-                    },
-                    {
-                        img: [path.img,"/page/index/challenge-item4.svg"].join(""),
-                        name: 'Технические и&nbsp;цифровые', 
-                        note: '<ul> 
-                            <li>Цифровизация экономики</li>
-                            <li>Передовые технологии (ИИ, роботизация, квантовые технологии, генетика и&nbsp;др.)</li>
-                            <li>Интеграция технологических решений</li>
-                        </ul>', 
-                    },
-                ],
+                    card_view:          'adv',
+                    card_slider:        'data-slick-challenge',
+                    card_prefix:        prefix.card,
+                    card_mod:           "is--index-challenge", 
+                    card_list:[
+                        {
+                            img: [path.img,"/page/index/challenge-item1.svg"].join(""),
+                            name: 'Cоциально-экономические и&nbsp;культурные', 
+                            note: '<ul> 
+                                <li>Командная работа</li>
+                                <li>Коммуникации</li>
+                                <li>Сообщества</li>
+                                <li>Предпринимательское мышление</li>
+                            </ul>', 
+                        }, 
+                        {
+                            img: [path.img,"/page/index/challenge-item2.svg"].join(""),
+                            name: 'Когнитивные и&nbsp;фундаментальные', 
+                            note: '<ul> 
+                                <li>Деятельность в&nbsp;условиях неопределенности</li>
+                                <li> Системное мышление</li>
+                                <li> Критическое мышление</li>
+                            </ul>', 
+                        },
+                        {
+                            img: [path.img,"/page/index/challenge-item3.svg"].join(""),
+                            name: '«Зеленые» и&nbsp;связанные с&nbsp;универсальным благополучием', 
+                            note: '<ul> 
+                                <li>Экология </li>
+                                <li> Бережливое производство</li>
+                                <li> Регенеративная экономика</li>
+                            </ul>', 
+                        },
+                        {
+                            img: [path.img,"/page/index/challenge-item4.svg"].join(""),
+                            name: 'Технические и&nbsp;цифровые', 
+                            note: '<ul> 
+                                <li>Цифровизация экономики</li>
+                                <li>Передовые технологии (ИИ, роботизация, квантовые технологии, генетика и&nbsp;др.)</li>
+                                <li>Интеграция технологических решений</li>
+                            </ul>', 
+                        },
+                    ],
 
-                btn:                'Подробнее',
-                btn_prefix:         prefix.btn,
-                btn_tag:            'a',
-                btn_elem:           'item',
-                btn_link:           '#',
-                btn_icon:           'goforward',
-                btn_mod:            '',
-            } %}
+                    btn:                'Подробнее',
+                    btn_prefix:         prefix.btn,
+                    btn_tag:            'a',
+                    btn_elem:           'item',
+                    btn_link:           '#',
+                    btn_icon:           'goforward',
+                    btn_mod:            '',
+                } %}
+            </div>
             {% include "../block/page/index.twig" with {
                 view:               'connect',
                 content_prefix:     prefix.content, 
@@ -309,7 +312,39 @@
         } %}
 
         <script>
+            var params_vertical = {
+                container: document.getElementById('vertical'),
+                renderer: 'svg',
+                loop: false,
+                autoplay: false,
+                path: '/js/lottie-vertical.json',
+            };
 
+            var vertical = lottie.loadAnimation(params_vertical);
+
+            $(window).on('scroll',function(event){
+                var doc_top = $(document).scrollTop(),   
+                    doc_height = $(window).height(),
+                    doc_center = doc_top + (doc_height / 2),
+                    container = $('.section__content.is--index-vertical'),
+                    container_pos = container.offset().top,  
+                    speed = 8,
+                    shot = (doc_center - container_pos) / speed;
+
+                if (doc_center > container_pos){
+                    vertical.goToAndStop(shot, true);
+                }
+            }).trigger('scroll');
+
+           /* window.addEventListener('scroll', function() {
+                var sc = (pageYOffset-50) / 1.5;
+                console.log(sc);
+                if (sc < 1200){
+                    vertical.goToAndStop(sc, true);
+                } else {
+                    vertical.goToAndPlay(1200, true);
+                }
+            });*/
             /*var header = $('[data-slick-header]');
 
             header.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide) {
