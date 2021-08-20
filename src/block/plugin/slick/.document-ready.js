@@ -113,6 +113,9 @@ $(function() {
 		var i = (currentSlide ? currentSlide : 0) + 1;
 		$(this).find(count).html(i + '/' + slick.$dots[0].children.length);
     });
+   	uni.on('init reInit', function(event, slick, currentSlide, nextSlide) {
+   		$(".section__wrap").children('[data-glow]').parallax( { mouseport: $(".section__wrap"), decay: 0.5 }, {});
+    });
 	uni.slick({
 		slide: '.card__wrap',
 		slidesToShow: 1,
@@ -127,6 +130,9 @@ $(function() {
 	});
 
 	
+   	gallery.on('init reInit', function(event, slick, currentSlide, nextSlide) {
+   		$(".section__wrap").children('[data-glow]').parallax( { mouseport: $(".section__wrap"), decay: 0.5 }, {});
+    });
 	gallery.slick({
 		slidesToShow: 1,
 		slidesToScroll: 1,

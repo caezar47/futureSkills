@@ -76,14 +76,15 @@
 			background-repeat: no-repeat;
 			background-position: center 20%;
 			color: @black;
+			background-size: cover;
 			.media-breakpoint-down(@sm; {
-				background-size: cover;
 				background-position: 45% 0%;
 			});
 		}
 		&.is--competencies-partners{
 			background-repeat: no-repeat;
 			background-position: center 20%;
+			background-size: cover;
 			color: @black;
 		}
 	}
@@ -499,6 +500,7 @@
 			left: -15%;
 			bottom: 0;
 			width: 100%;
+		    max-width: 1085px;
 			transform: scale(2,3.4);
 			.media-breakpoint-up(@sm; {
 				top: 15%;
@@ -4472,17 +4474,26 @@
 			width: 16px;
 			height: 96px;
 		}
+		.icon-logotip-finish-h{
+			display: none;
+			position: fixed;
+			z-index: 9;
+			top: 30px;
+			width: 90px;
+			height: 17px;
+			left: 7.1vw;
+		}
 		.icon-logotip-finish{
 			position: fixed;
 			z-index: 9;
 			top: 22px;
-			width: 90px;
+			width: 16px;
 			height: 90px;
 			left: -6px;
-			use{
+			/*use{
 				transform: rotate(-90deg);
 				transform-origin: center;
-			}
+			}*/
 		}
 		.navbar__block.is--index &{
 			&::before{
@@ -4503,13 +4514,11 @@
 				top: 76.2vh;
 			}
 			.icon-logotip-finish{
-				top: 30px;
-				left: 7.1vw;
+				display: none;
+			}
+			.icon-logotip-finish-h{
+				display: block;
 				height: 17px;
-				use{
-					transform: initial;
-					transform-origin: initial;
-				}
 			}
 		}
 		.media-breakpoint-up(@xxl; {
@@ -4520,13 +4529,13 @@
 				left: 14.9vw;
 			}
 			.icon-logotip-finish{
-				left: 12.9vw;
+				left: 14.9vw;
 			}
 			.navbar__block.is--index &{
 				&::before{
 					left: 15.2vw;
 				}
-				.icon-logotip-finish{
+				.icon-logotip-finish-h{
 					left: 18.1vw;
 				}
 			}
