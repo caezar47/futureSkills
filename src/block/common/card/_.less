@@ -619,12 +619,15 @@
 		&.is--challenge-events{
 			font-weight: 400;
 			text-transform: uppercase;
-			.text20();
+			.text18();
 		    margin-bottom: 8px;
 			.media-breakpoint-up(@md; {
 				display: flex;
 			    align-items: flex-end;
 			    min-height: 50px;
+			});
+			.media-breakpoint-up(@xxl; {
+				.text20();
 			});
 		}
 		&.is--competencies{
@@ -744,7 +747,7 @@
 					&::before{
 						content: '';
 						position: absolute;
-						top: 5px;
+						top: 7px;
 						left: 0;
 						width: 5px;
 						height: 5px;

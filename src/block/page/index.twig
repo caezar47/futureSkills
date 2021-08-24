@@ -2,7 +2,7 @@
     <section class="{{content_prefix}}content  {{content_mod}}" {% if bg %}style="background-image: url({{bg}});"{% endif %}  {{slick_data}}>
     	{% for slick in slick_list %}
     		<div>
-		        <div class="{{content_prefix}}group  {{content_mod}}" id="{{slick.id}}"></div>
+		        <div id="lottie{{loop.index0}}" class="{{content_prefix}}group  {{content_mod}}"></div>
 		        <div class="{{content_prefix}}container container  {{content_mod}}">
 		        	<h1 class="{{content_prefix}}heading  {{content_mod}}"  style="{{slick.style}}"> 
 		        		{{slick.name}}		        
@@ -11,6 +11,50 @@
     		</div>
         {% endfor %}
     </section>
+        
+{% endif %}
+{% if view == "header_script" %}
+<script>
+	var header = $('[data-slick-header]');
+	header.slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		dots: false,
+		draggable: false,
+		pauseOnFocus: false,
+		pauseOnHover: false,
+		swipe: false,
+		touchMove: false,
+		fade: true,     
+		autoplay: true,
+		speed: 1000,
+		autoplaySpeed: 8000,
+	});
+	{% for slick in slick_list %}
+	var params{{loop.index0}} = {
+        container: document.getElementById('lottie{{loop.index0}}'),
+        renderer: 'svg',
+        loop: false,
+        autoplay: false,
+        path: '{{slick.path}}',
+    };
+		var anim{{loop.index0}} = lottie.loadAnimation(params{{loop.index0}});
+
+	{% endfor %}
+    header.on('init', function() {
+    	anim0.goToAndPlay(0, true);
+    });
+	anim0.goToAndPlay(0, true);
+
+    header.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide) {
+		{% for slick in slick_list %}
+        if(currentSlide == {{loop.index0}}){
+        	anim{{loop.index0}}.goToAndPlay(0, true);
+        }
+   		{% endfor %}
+   	});
+</script>
 {% endif %}
 {% if view == "projects" %}
     <section class="{{content_prefix}}content  {{content_mod}}" {% if bg %}style="background-image: url({{bg}});"{% endif %}>

@@ -510,11 +510,13 @@
 				top: 10%;
 				transform: scale(1,1.2);
 			});
+			.media-breakpoint-up(@xl; {
+				transform: scale(1,1.3);
+			});
 			.media-breakpoint-up(@xxl; {
 				top: 9%;
 				left: -4%;
 				width: 57%;
-				transform: scale(1,1.3);
 			});
 		}
 	}
@@ -1815,16 +1817,16 @@
 		&.is--competencies-card{
 			picture{
 				display: block;
-				overflow: hidden;
-				border-radius: @site_br - 22;
 				position: relative;
 				z-index: 2;
+				//border-radius: @site_br - 22;
 			}
 			img{
 				.img-bg();
 			}
 			&.is--gallery{
 				picture{
+					overflow: hidden;
 					min-height: 192px;
 					height: 35vw;
 					max-height: 650px;
@@ -1832,6 +1834,7 @@
 				}
 			}
 			&.is--gallery-thumb{
+				cursor: pointer;
 				position: relative;
 				padding: 2px;
 				transition: @trs-site;
@@ -1843,16 +1846,18 @@
 				&::before{
 					content: '';
 					position: absolute;
-					overflow: hidden;
 					z-index: 1;
-					top: -2px;
-					right: -2px;
-					bottom: -2px;
-					left: -2px;
+					top: 0px;
+					right: 0px;
+					bottom: 0px;
+					left: 0px;
 					background: @primary-g2;
 					border-radius: @site_br - 16;
 					opacity: 0;
 					transition: @trs-site;
+				}
+				img{
+					border-radius: @site_br - 16;
 				}
 				&.slick-current{
 					&::before{
@@ -1862,7 +1867,7 @@
 			}
 			.media-breakpoint-up(@md; {
 				picture{
-					border-radius: @site_br - 12;
+					//border-radius: @site_br - 12;
 				}
 				&.is--gallery{
 					picture{
@@ -1872,6 +1877,9 @@
 				&.is--gallery-thumb{
 					picture{
 						height: 20vw;
+						img{
+							border-radius: @site_br - 5;
+						}
 					}
 					&::before{
 						border-radius: @site_br - 5;

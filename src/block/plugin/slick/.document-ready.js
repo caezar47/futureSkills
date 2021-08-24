@@ -15,7 +15,7 @@ $(function() {
 	var count = $('.slick-count');
 
 
-	header.slick({
+	/*header.slick({
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		arrows: false,
@@ -30,31 +30,6 @@ $(function() {
 		speed: 1000,
 		autoplaySpeed: 8000,
 	});
-
-	/*setTimeout(function () {
-        header.addClass('is--active');
-    }, 600); */
-	var params1 = {
-        container: document.getElementById('lottie1'),
-        renderer: 'svg',
-        loop: false,
-        autoplay: false,
-        path: './js/lottie1.json',
-    };
-	var params2 = {
-        container: document.getElementById('lottie2'),
-        renderer: 'svg',
-        loop: false,
-        autoplay: false,
-        path: './js/lottie2.json',
-    };
-	var params3 = {
-        container: document.getElementById('lottie3'),
-        renderer: 'svg',
-        loop: false,
-        autoplay: false,
-        path: './js/lottie3.json',
-    };
 
     var anim1 = lottie.loadAnimation(params1);
     var anim2 = lottie.loadAnimation(params2);
@@ -77,7 +52,7 @@ $(function() {
         if(currentSlide == 2){
         	anim3.goToAndPlay(0, true);
         }
-    });
+    });*/
 
 	challenge.slick({
 		slidesToShow: 4,

@@ -1,393 +1,435 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="ru-RU"> 
-    <head>
-        {% include "../block/common/head/head.twig" with {title:"Главная"}  %}
-    </head>
-    <body>
-        {% include "../block/common/navbar/navbar.twig" with {
-            view:           'base',
-            navbar_prefix:  'navbar__',
-            navbar_mod:     'is--index',
-            navbar_mod:     '',
-            navbar_mod:     'is--scroll ',
-            active:         '',
-        } %}    
-        <main class="{{prefix.content}}wrap  is--index">
-            <img src="{{path.img}}/bg/bg-md.jpg" alt="" class="{{prefix.content}}bg  is--index  is--top">
-            <img src="{{path.img}}/bg/bg-md.jpg" alt="" class="{{prefix.content}}bg  is--index  is--bottom">
-            {% include "../block/page/index.twig" with {
-                view:               'header',
-                content_prefix:     prefix.content, 
-                content_mod:        'is--index-header',
+	<head>
+		{% include "../block/common/head/head.twig" with {title:"Главная"}  %}
+	</head>
+	<body>
+		{% include "../block/common/navbar/navbar.twig" with {
+			view:           'base',
+			navbar_prefix:  'navbar__',
+			navbar_mod:     'is--index',
+			navbar_mod:     '',
+			navbar_mod:     'is--scroll ',
+			active:         '',
+		} %}    
+		<main class="{{prefix.content}}wrap  is--index">
+			<img src="{{path.img}}/bg/bg-md.jpg" alt="" class="{{prefix.content}}bg  is--index  is--top">
+			<img src="{{path.img}}/bg/bg-md.jpg" alt="" class="{{prefix.content}}bg  is--index  is--bottom">
+			{% include "../block/page/index.twig" with {
+				view:               'header',
+				content_prefix:     prefix.content, 
+				content_mod:        'is--index-header',
 
-                heading:            'Проект<br> WorldSkills Russia',
-                slick_data:         'data-slick-header',
-                slick_list:[
-                    {  
-                        id:     'lottie1',
-                        name:   '<span>Проект</span> <span>WorldSkills</span> <span>Russia</span>', 
-                        style:  'text-align: center;',
-                    },
-                    {  
-                        id:     'lottie2',
-                        name:   '<span>Подготовка</span> <span>и соревнования новых</span> <span>профессионалов</span>', 
-                        style:  'text-align: left;',
-                    }, 
-                    {  
-                        id:     'lottie3',
-                        name:   '<span>Для высокотехнологичных</span> <span>производств и цифровой</span> <span>экономики</span>', 
-                        style:  'text-align: right;',
-                    },
-                ],
-            } %}
-            {% include "../block/page/index.twig" with {
-                view:               'projects',
-                content_prefix:     prefix.content, 
-                content_mod:        'is--index-projects',
+				heading:            'Проект<br> WorldSkills Russia',
+				slick_data:         'data-slick-header',
+				slick_list:[
+					{  
+						id:     'lottie1',
+						path:   './js/lottie1.json',
+						name:   '<span>Проект</span> <span>WorldSkills</span> <span>Russia</span>', 
+						style:  'text-align: center;',
+					},
+					{  
+						id:     'lottie2',
+						path:   './js/lottie2.json',
+						name:   '<span>Подготовка</span> <span>и соревнования новых</span> <span>профессионалов</span>', 
+						style:  'text-align: left;',
+					}, 
+					{  
+						id:     'lottie3',
+						path:   './js/lottie3.json',
+						name:   '<span>Для высокотехнологичных</span> <span>производств и цифровой</span> <span>экономики</span>', 
+						style:  'text-align: right;',
+					},
+				],
+			} %}
+			{% include "../block/page/index.twig" with {
+				view:               'projects',
+				content_prefix:     prefix.content, 
+				content_mod:        'is--index-projects',
 
-                heading:            'Проект <span>Future–Skills</span> реализуется в нескольких плоскостях',
+				heading:            'Проект <span>Future–Skills</span> реализуется в нескольких плоскостях',
 
-                img: [path.img,"/page/index/projecrs-img.png"].join(""),
-            } %}
-            {% include "../block/page/index.twig" with {
-                view:               'concept',
-                content_prefix:     prefix.content, 
-                content_mod:        'is--index-concept',
+				img: [path.img,"/page/index/projecrs-img.png"].join(""),
+			} %}
+			{% include "../block/page/index.twig" with {
+				view:               'concept',
+				content_prefix:     prefix.content, 
+				content_mod:        'is--index-concept',
 
-                heading:            'Концепция проекта впервые была представлена  в рамках Чемпионата WorldSkills HiTech в 2015 году. <br>Сегодня в активе <span>Future–Skills</span>:',
+				heading:            'Концепция проекта впервые была представлена  в рамках Чемпионата WorldSkills HiTech в 2015 году. <br>Сегодня в активе <span>Future–Skills</span>:',
 
-                card_view:          'adv',
-                card_prefix:        prefix.card,
-                card_mod:           "is--index-concept", 
-                card_list:[
-                    {
-                        img: [path.img,"/page/index/concept-item1.svg"].join(""),
-                        name: 'исследовательские проекты, охватившие 49&nbsp;стран и&nbsp;более 800&nbsp;экспертов', 
-                    }, 
-                    {
-                        img: [path.img,"/page/index/concept-item2.svg"].join(""),
-                        name: 'более 40 компетенций Future Skills, описывающих навыки будущего', 
-                    },
-                    {
-                        img: [path.img,"/page/index/concept-item3.svg"].join(""),
-                        name: 'более 80<br> университетов участвуют в Future Skills', 
-                    },
-                    {
-                        img: [path.img,"/page/index/concept-item4.svg"].join(""),
-                        name: '25 компетенций представлены в отдельной соревновательной зоне международного чемпионата WorldSkills Kazan 2019', 
-                    },
-                    {
-                        img: [path.img,"/page/index/concept-item5.svg"].join(""),
-                        name: '5 компетенций Future Skills входят в медальный зачет международного чемпионата WorldSkills Shanghai 2022', 
-                    },
-                ],
-            } %}
-            {% include "../block/page/index.twig" with {
-                view:               'promo',
-                content_prefix:     prefix.content, 
-                content_mod:        'is--index-competence',
+				card_view:          'adv',
+				card_prefix:        prefix.card,
+				card_mod:           "is--index-concept", 
+				card_list:[
+					{
+						img: [path.img,"/page/index/concept-item1.svg"].join(""),
+						name: 'исследовательские проекты, охватившие 49&nbsp;стран и&nbsp;более 800&nbsp;экспертов', 
+					}, 
+					{
+						img: [path.img,"/page/index/concept-item2.svg"].join(""),
+						name: 'более 40 компетенций Future Skills, описывающих навыки будущего', 
+					},
+					{
+						img: [path.img,"/page/index/concept-item3.svg"].join(""),
+						name: 'более 80<br> университетов участвуют в Future Skills', 
+					},
+					{
+						img: [path.img,"/page/index/concept-item4.svg"].join(""),
+						name: '25 компетенций представлены в отдельной соревновательной зоне международного чемпионата WorldSkills Kazan 2019', 
+					},
+					{
+						img: [path.img,"/page/index/concept-item5.svg"].join(""),
+						name: '5 компетенций Future Skills входят в медальный зачет международного чемпионата WorldSkills Shanghai 2022', 
+					},
+				],
+			} %}
+			{% include "../block/page/index.twig" with {
+				view:               'promo',
+				content_prefix:     prefix.content, 
+				content_mod:        'is--index-competence',
 
-                heading:            'Познакомьтесь с компетенциями <span>Future Skills</span>, которые, по мнению экспертов, понадобятся людям в будущем', 
+				heading:            'Познакомьтесь с компетенциями <span>Future Skills</span>, которые, по мнению экспертов, понадобятся людям в будущем', 
 
-                img: [path.img,"/page/index/competence-img.png"].join(""),
-                img_xs: [path.img,"/page/index/competence-img-xs.png"].join(""),
+				img: [path.img,"/page/index/competence-img.png"].join(""),
+				img_xs: [path.img,"/page/index/competence-img-xs.png"].join(""),
 
-                btn:                'Подробнее',
-                btn_prefix:         prefix.btn,
-                btn_tag:            'a',
-                btn_elem:           'item',
-                btn_link:           page.competencies,
-                btn_icon:           'goforward',
-                btn_mod:            '',
-            } %}
-            {% include "../block/page/index.twig" with {
-                view:               'announce',
-                content_prefix:     prefix.content, 
-                content_mod:        'is--index-announce',
+				btn:                'Подробнее',
+				btn_prefix:         prefix.btn,
+				btn_tag:            'a',
+				btn_elem:           'item',
+				btn_link:           page.competencies,
+				btn_icon:           'goforward',
+				btn_mod:            '',
+			} %}
+			{% include "../block/page/index.twig" with {
+				view:               'announce',
+				content_prefix:     prefix.content, 
+				content_mod:        'is--index-announce',
 
-                heading:            'WorldSkills Russia представляет совместный с Global Education Futures доклад <span>«Навыки будущего для 2020-х: новая надежда»</span>',
-                note:               '<p>Исследование направлено на&nbsp;определение «карт будущего», технологий и&nbsp;бизнес-моделей, которые будут определять спрос на&nbsp;навыки в&nbsp;ближайшее время и&nbsp;выявление наиболее значимых навыков для ключевых секторов экономики.</p>',
+				heading:            'WorldSkills Russia представляет совместный с Global Education Futures доклад <span>«Навыки будущего для 2020-х: новая надежда»</span>',
+				note:               '<p>Исследование направлено на&nbsp;определение «карт будущего», технологий и&nbsp;бизнес-моделей, которые будут определять спрос на&nbsp;навыки в&nbsp;ближайшее время и&nbsp;выявление наиболее значимых навыков для ключевых секторов экономики.</p>',
 
-                img: [path.img,"/page/index/announce-img.png"].join(""),
+				img: [path.img,"/page/index/announce-img.png"].join(""),
 
-                btn:                'Подробнее',
-                btn_prefix:         prefix.btn,
-                btn_tag:            'a',
-                btn_elem:           'item',
-                btn_link:           '#',
-                btn_icon:           'goforward',
-                btn_mod:            '',
-            } %}
-            {% include "../block/page/index.twig" with {
-                view:               'blockquote',
-                content_prefix:     prefix.content, 
-                content_mod:        'is--index-blockquote',
+				btn:                'Подробнее',
+				btn_prefix:         prefix.btn,
+				btn_tag:            'a',
+				btn_elem:           'item',
+				btn_link:           '#',
+				btn_icon:           'goforward',
+				btn_mod:            '',
+			} %}
+			{% include "../block/page/index.twig" with {
+				view:               'blockquote',
+				content_prefix:     prefix.content, 
+				content_mod:        'is--index-blockquote',
 
-                card_prefix:        prefix.card,
-                card_mod:           "is--index-blockquote",
-                card_note:          '<p>Говоря про будущее, в&nbsp;первую очередь мы&nbsp;думаем о&nbsp;новых технологиях, которые изменят нашу жизнь. Но, что не&nbsp;менее важно, с&nbsp;течением времени меняется и&nbsp;организация нашей работы: она становится все более творческой, сложной, системной. И&nbsp;на&nbsp;первый план, наряду с&nbsp;владением современными технологиями, выходят и&nbsp;Soft Skills: навыки коммуникации, кооперации, системное мышление и&nbsp;многие другие. Именно владение этими навыками будет определять профессионала следующего десятилетия</p>',
+				card_prefix:        prefix.card,
+				card_mod:           "is--index-blockquote",
+				card_note:          '<p>Говоря про будущее, в&nbsp;первую очередь мы&nbsp;думаем о&nbsp;новых технологиях, которые изменят нашу жизнь. Но, что не&nbsp;менее важно, с&nbsp;течением времени меняется и&nbsp;организация нашей работы: она становится все более творческой, сложной, системной. И&nbsp;на&nbsp;первый план, наряду с&nbsp;владением современными технологиями, выходят и&nbsp;Soft Skills: навыки коммуникации, кооперации, системное мышление и&nbsp;многие другие. Именно владение этими навыками будет определять профессионала следующего десятилетия</p>',
 
-                card_img:           [path.img,"/page/team/loshkareva.jpg"].join(""),
-                card_name:          'Екатерина Лошкарева',
-                card_label:         'Заместитель генерального директора по исследованиям и разработкам, официальный делегат WorldSkills Россия',
-            } %}
-            <div class="section__content  is--index-vertical">
-                <div class="section__bg  is--index-vertical" id="vertical"></div>
-                {% include "../block/page/index.twig" with {
-                    view:               'promo',
-                    content_prefix:     prefix.content, 
-                    content_mod:        'is--index-possibility',
+				card_img:           [path.img,"/page/team/loshkareva.jpg"].join(""),
+				card_name:          'Екатерина Лошкарева',
+				card_label:         'Заместитель генерального директора по исследованиям и разработкам, официальный делегат WorldSkills Россия',
+			} %}
+			<div class="section__content  is--index-vertical">
+				<div class="section__bg  is--index-vertical" id="vertical"></div>
+				{% include "../block/page/index.twig" with {
+					view:               'promo',
+					content_prefix:     prefix.content, 
+					content_mod:        'is--index-possibility',
 
-                    heading:            'Возможности <span>Future—Skills</span> для современных российских университетов',
+					heading:            'Возможности <span>Future—Skills</span> для современных российских университетов',
 
-                    img:                [path.img,"/page/index/possibility-img.png"].join(""),
+					img:                [path.img,"/page/index/possibility-img.png"].join(""),
 
-                    btn:                'Подробнее',
-                    btn_prefix:         prefix.btn,
-                    btn_tag:            'a',
-                    btn_elem:           'item',
-                    btn_link:           page.university,
-                    btn_icon:           'goforward',
-                    btn_mod:            '',
-                } %}
-                {% include "../block/page/index.twig" with {
-                    view:               'challenge',
-                    content_prefix:     prefix.content, 
-                    content_mod:        'is--index-challenge',
+					btn:                'Подробнее',
+					btn_prefix:         prefix.btn,
+					btn_tag:            'a',
+					btn_elem:           'item',
+					btn_link:           page.university,
+					btn_icon:           'goforward',
+					btn_mod:            '',
+				} %}
+				{% include "../block/page/index.twig" with {
+					view:               'challenge',
+					content_prefix:     prefix.content, 
+					content_mod:        'is--index-challenge',
 
-                    heading:            'F–S Team Challenge',
-                    note:               '<p>Новый формат командных соревнований по&nbsp;методологии WorldSkills на&nbsp;основе глобальных трендов и&nbsp;ключевых навыков следующего десятилетия</p>',
+					heading:            'F–S Team Challenge',
+					note:               '<p>Новый формат командных соревнований по&nbsp;методологии WorldSkills на&nbsp;основе глобальных трендов и&nbsp;ключевых навыков следующего десятилетия</p>',
 
-                    card_view:          'adv',
-                    card_slider:        'data-slick-challenge',
-                    card_prefix:        prefix.card,
-                    card_mod:           "is--index-challenge", 
-                    card_list:[
-                        {
-                            img: [path.img,"/page/index/challenge-item1.svg"].join(""),
-                            name: 'Cоциально-экономические и&nbsp;культурные', 
-                            note: '<ul> 
-                                <li>Командная работа</li>
-                                <li>Коммуникации</li>
-                                <li>Сообщества</li>
-                                <li>Предпринимательское мышление</li>
-                            </ul>', 
-                        }, 
-                        {
-                            img: [path.img,"/page/index/challenge-item2.svg"].join(""),
-                            name: 'Когнитивные и&nbsp;фундаментальные', 
-                            note: '<ul> 
-                                <li>Деятельность в&nbsp;условиях неопределенности</li>
-                                <li> Системное мышление</li>
-                                <li> Критическое мышление</li>
-                            </ul>', 
-                        },
-                        {
-                            img: [path.img,"/page/index/challenge-item3.svg"].join(""),
-                            name: '«Зеленые» и&nbsp;связанные с&nbsp;универсальным благополучием', 
-                            note: '<ul> 
-                                <li>Экология </li>
-                                <li> Бережливое производство</li>
-                                <li> Регенеративная экономика</li>
-                            </ul>', 
-                        },
-                        {
-                            img: [path.img,"/page/index/challenge-item4.svg"].join(""),
-                            name: 'Технические и&nbsp;цифровые', 
-                            note: '<ul> 
-                                <li>Цифровизация экономики</li>
-                                <li>Передовые технологии (ИИ, роботизация, квантовые технологии, генетика и&nbsp;др.)</li>
-                                <li>Интеграция технологических решений</li>
-                            </ul>', 
-                        },
-                    ],
+					card_view:          'adv',
+					card_slider:        'data-slick-challenge',
+					card_prefix:        prefix.card,
+					card_mod:           "is--index-challenge", 
+					card_list:[
+						{
+							img: [path.img,"/page/index/challenge-item1.svg"].join(""),
+							name: 'Cоциально-экономические и&nbsp;культурные', 
+							note: '<ul> 
+								<li>Командная работа</li>
+								<li>Коммуникации</li>
+								<li>Сообщества</li>
+								<li>Предпринимательское мышление</li>
+							</ul>', 
+						}, 
+						{
+							img: [path.img,"/page/index/challenge-item2.svg"].join(""),
+							name: 'Когнитивные и&nbsp;фундаментальные', 
+							note: '<ul> 
+								<li>Деятельность в&nbsp;условиях неопределенности</li>
+								<li> Системное мышление</li>
+								<li> Критическое мышление</li>
+							</ul>', 
+						},
+						{
+							img: [path.img,"/page/index/challenge-item3.svg"].join(""),
+							name: '«Зеленые» и&nbsp;связанные с&nbsp;универсальным благополучием', 
+							note: '<ul> 
+								<li>Экология </li>
+								<li> Бережливое производство</li>
+								<li> Регенеративная экономика</li>
+							</ul>', 
+						},
+						{
+							img: [path.img,"/page/index/challenge-item4.svg"].join(""),
+							name: 'Технические и&nbsp;цифровые', 
+							note: '<ul> 
+								<li>Цифровизация экономики</li>
+								<li>Передовые технологии (ИИ, роботизация, квантовые технологии, генетика и&nbsp;др.)</li>
+								<li>Интеграция технологических решений</li>
+							</ul>', 
+						},
+					],
 
-                    btn:                'Подробнее',
-                    btn_prefix:         prefix.btn,
-                    btn_tag:            'a',
-                    btn_elem:           'item',
-                    btn_link:           '#',
-                    btn_icon:           'goforward',
-                    btn_mod:            '',
-                } %}
-            </div>
-            {% include "../block/page/index.twig" with {
-                view:               'connect',
-                content_prefix:     prefix.content, 
-                content_mod:        'is--index-connect',
+					btn:                'Подробнее',
+					btn_prefix:         prefix.btn,
+					btn_tag:            'a',
+					btn_elem:           'item',
+					btn_link:           '#',
+					btn_icon:           'goforward',
+					btn_mod:            '',
+				} %}
+			</div>
+			{% include "../block/page/index.twig" with {
+				view:               'connect',
+				content_prefix:     prefix.content, 
+				content_mod:        'is--index-connect',
 
-                bg:                [path.img,"/page/index/connect-bg.jpg"].join(""),
-                bg2:                [path.img,"/page/index/connect-bg-xs.jpg"].join(""),
+				bg:                [path.img,"/page/index/connect-bg.jpg"].join(""),
+				bg2:                [path.img,"/page/index/connect-bg-xs.jpg"].join(""),
 
-                heading:            'Подключайтесь к&nbsp;проекту',
+				heading:            'Подключайтесь к&nbsp;проекту',
 
-                card_view:          'adv',
-                card_prefix:        prefix.card,
-                card_mod:           "is--index-connect", 
-                card_list:[
-                    {
-                        name: 'Участвуйте', 
-                        note: 'в соревнованиях WorlsSkills по компетенциям Future Skills и FS Team Challenge', 
-                    }, 
-                    {
-                        name: 'Учите', 
-                        note: 'навыкам будущего, реализуйте образовательные программы', 
-                    },
-                    {
-                        name: 'Обменивайтесь', 
-                        note: 'практиками по развитию навыков будущего', 
-                    },
-                    {
-                        name: 'Развивайте', 
-                        note: 'вместе с WorldSkills Russia ваши идеи по навыкам будущего и форматам Future Skills', 
-                    },
-                ],
-            } %}
-            {% include "../block/common/form/form.twig" with {
-                view:               "base",              
+				card_view:          'adv',
+				card_prefix:        prefix.card,
+				card_mod:           "is--index-connect", 
+				card_list:[
+					{
+						name: 'Участвуйте', 
+						note: 'в соревнованиях WorlsSkills по компетенциям Future Skills и FS Team Challenge', 
+					}, 
+					{
+						name: 'Учите', 
+						note: 'навыкам будущего, реализуйте образовательные программы', 
+					},
+					{
+						name: 'Обменивайтесь', 
+						note: 'практиками по развитию навыков будущего', 
+					},
+					{
+						name: 'Развивайте', 
+						note: 'вместе с WorldSkills Russia ваши идеи по навыкам будущего и форматам Future Skills', 
+					},
+				],
+			} %}
+			{% include "../block/common/form/form.twig" with {
+				view:               "base",              
 
-                content_prefix:     prefix.content, 
-                content_mod:        "is--block-form", 
+				content_prefix:     prefix.content, 
+				content_mod:        "is--block-form", 
 
-                heading:            "Напишите нам",
+				heading:            "Напишите нам",
 
-                form_view:          'tpl',
-                form_id:            '',
-                form_prefix:        prefix.form,
-                form_mod:           "is--block-form",
-                form_color:         "",
-                form_list: [
-                    {
-                        view:           "input", 
-                        mod:            "is--name",
-                        type:           "text", 
-                        name:           "Имя", 
-                        placeholder:    "Имя",
-                        validate:       "validate[required, custom[onlyLetterSp]]",
-                    },
-                    {
-                        view:           "input", 
-                        mod:            "is--email",
-                        type:           "email", 
-                        name:           "E-mail", 
-                        placeholder:    "E-mail",
-                        validate:        "validate[required, custom[email]]",
-                    },
-                    {
-                        view:           "input", 
-                        type:           "tel", 
-                        mod:            "is--tel",
-                        name:           "Номер телефона", 
-                        placeholder:    "",
-                        validate:       "validate[required, custom[phone]]",
-                        code_attr:      'data-selectize-default',
-                        code:           [
-                            {name: '+7'},
-                        ],
-                    },
-                    {
-                        view:           "textarea", 
-                        mod:            "is--textarea",
-                        name:           "Текст обращения", 
-                        placeholder:    "Текст обращения",
-                        validate:       "validate[required]",
-                    },
-                    {
-                        view:           "submit",
-                        prefix:         'button__',
-                        name:           "Отправить",
-                        icon:           'goforward',
-                    },
-                ]
-            } %}
-        </main>
+				form_view:          'tpl',
+				form_id:            '',
+				form_prefix:        prefix.form,
+				form_mod:           "is--block-form",
+				form_color:         "",
+				form_list: [
+					{
+						view:           "input", 
+						mod:            "is--name",
+						type:           "text", 
+						name:           "Имя", 
+						placeholder:    "Имя",
+						validate:       "validate[required, custom[onlyLetterSp]]",
+					},
+					{
+						view:           "input", 
+						mod:            "is--email",
+						type:           "email", 
+						name:           "E-mail", 
+						placeholder:    "E-mail",
+						validate:        "validate[required, custom[email]]",
+					},
+					{
+						view:           "input", 
+						type:           "tel", 
+						mod:            "is--tel",
+						name:           "Номер телефона", 
+						placeholder:    "",
+						validate:       "validate[required, custom[phone]]",
+						code_attr:      'data-selectize-default',
+						code:           [
+							{name: '+7'},
+						],
+					},
+					{
+						view:           "textarea", 
+						mod:            "is--textarea",
+						name:           "Текст обращения", 
+						placeholder:    "Текст обращения",
+						validate:       "validate[required]",
+					},
+					{
+						view:           "submit",
+						prefix:         'button__',
+						name:           "Отправить",
+						icon:           'goforward',
+					},
+				]
+			} %}
+		</main>
 
-        {% include "../block/common/footer/footer.twig" with {
-            view:"base",
-            footer_prefix:"footer__"
-        } %} 
+		{% include "../block/common/footer/footer.twig" with {
+			view:"base",
+			footer_prefix:"footer__"
+		} %} 
 
-        {# {% include "../block/common/modals/include.twig"%}         #}
-        {% include "../block/common/script/script.twig" with {
-        } %}
+		{# {% include "../block/common/modals/include.twig"%}         #}
+		{% include "../block/common/script/script.twig" with {
+		} %}
 
-        <script>
-            var params_vertical = {
-                container: document.getElementById('vertical'),
-                renderer: 'svg',
-                loop: false,
-                autoplay: false,
-                path: './js/lottie-vertical.json',
-            };
+		<script>
+			/*var header  = $('[data-slick-header]');
+			header.slick({
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				arrows: false,
+				dots: false,
+				draggable: false,
+				pauseOnFocus: false,
+				pauseOnHover: false,
+				swipe: false,
+				touchMove: false,
+				fade: true,     
+				autoplay: true,
+				speed: 1000,
+				autoplaySpeed: 8000,
+			});*/
+			{#var header_slider = $('[data-slick-header] .slick-slide');
+			console.log(header_slider.length);
+			if(header_slider.length) {
+				for(var i = 0; i < header_slider.length; i++) {
+					//console.log(header_slider[i].find('.section__group').attr('data-path'));
+					console.log(header_slider[i]);
+					var path = header_slider[i].attributes[0].value;
+					var id = header_slider[i].attributes[1].value;
+					console.log(path);
+					console.log(id);
+					var params = {
+				        container: id,
+				        //container: $('#lottie1 .section__group'), 
+				        renderer: 'svg',
+				        loop: false,
+				        autoplay: false,
+				        path: path,
+				    };
+				}
+			}#}
 
-            var vertical = lottie.loadAnimation(params_vertical);
+			/*var params1 = {
+		        container: document.getElementById('lottie1'),
+		        renderer: 'svg',
+		        loop: false,
+		        autoplay: false,
+		        path: './js/lottie1.json',
+		    };
+			var params2 = {
+		        container: document.getElementById('lottie2'),
+		        renderer: 'svg',
+		        loop: false,
+		        autoplay: false,
+		        path: './js/lottie2.json',
+		    };
+			var params3 = {
+		        container: document.getElementById('lottie3'),
+		        renderer: 'svg',
+		        loop: false,
+		        autoplay: false,
+		        path: './js/lottie3.json',
+		    };		
+		    
+		    var anim1 = lottie.loadAnimation(params1);
+		    var anim2 = lottie.loadAnimation(params2);
+		    var anim3 = lottie.loadAnimation(params3); 
+		    header.on('init', function() {
+		    	anim1.goToAndPlay(0, true);
+		    });
+			anim1.goToAndPlay(0, true);
+		    header.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide) {
+		        if(currentSlide == 0){
+		        	anim1.goToAndPlay(0, true);
+		        }
+		        if(currentSlide == 1){
+		        	anim2.goToAndPlay(0, true);
+		        }
+		        if(currentSlide == 2){
+		        	anim3.goToAndPlay(0, true);
+		        }
+		    });*/
 
-            $(window).on('scroll',function(event){
-                var doc_top = $(document).scrollTop(),   
-                    doc_height = $(window).height(),
-                    doc_center = doc_top + (doc_height / 2),
-                    container = $('.section__content.is--index-vertical'),
-                    container_pos = container.offset().top,  
-                    speed = 8,
-                    shot = (doc_center - container_pos) / speed;
+			var params_vertical = {
+				container: document.getElementById('vertical'),
+				renderer: 'svg',
+				loop: false,
+				autoplay: false,
+				path: './js/lottie-vertical.json',
+			};
+			var vertical = lottie.loadAnimation(params_vertical);
 
-                if (doc_center > container_pos){
-                    vertical.goToAndStop(shot, true);
-                }
-            }).trigger('scroll');
+			$(window).on('scroll',function(event){
+				var doc_top = $(document).scrollTop(),   
+					doc_height = $(window).height(),
+					doc_center = doc_top + (doc_height / 2),
+					container = $('.section__content.is--index-vertical'),
+					container_pos = container.offset().top,  
+					speed = 8,
+					shot = (doc_center - container_pos) / speed;
 
-           /* window.addEventListener('scroll', function() {
-                var sc = (pageYOffset-50) / 1.5;
-                console.log(sc);
-                if (sc < 1200){
-                    vertical.goToAndStop(sc, true);
-                } else {
-                    vertical.goToAndPlay(1200, true);
-                }
-            });*/
-            /*var header = $('[data-slick-header]');
+				if (doc_center > container_pos){
+					vertical.goToAndStop(shot, true);
+				}
+			}).trigger('scroll');
 
-            header.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide) {
-                console.log(currentSlide);
-            });
-
-        var params3 = {
-            container: document.getElementById('lottie3'),
-            renderer: 'svg',
-            loop: false,
-            autoplay: false,
-            path: '/js/lottie3.json',
-            //animationData: animationData
-        };
-
-        var anim3 = lottie.loadAnimation(params3);
-
-        anim3.play();  
-
-        var container = document.getElementById('container');
-        var state = 'play';
-     
-        //anim.goToAndStop(-50, true);
-        anim.play();  
-        /*container.addEventListener('click', () => {
-          if(state === 'play') {
-            anim.playSegments([15, 1100], true);
-            state = 'pause';
-          } else {
-            anim.playSegments([15, 1100], true);
-            state = 'play';
-          }
-        });
-        window.addEventListener('scroll', function() {
-            var sc = (pageYOffset-50) / 1.5;
-            //console.log(sc);
-            if (sc < 1200){
-                anim.goToAndStop(sc, true);
-            } else {
-                anim.goToAndPlay(1200, true);
-            }
-        });*/
-
-</script>
-    </body>
-</html> 
+		</script>
+		{% include "../block/page/index.twig" with {
+			view:               'header_script',
+			slick_list:[
+				{  
+					path:   './js/lottie1.json',
+				},
+				{  
+					path:   './js/lottie2.json',
+				}, 
+				{  
+					path:   './js/lottie3.json',
+				},
+			],
+		} %}
+	</body>
+</html>
