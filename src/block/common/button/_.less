@@ -4,11 +4,11 @@
 		position: relative;	
 		z-index: 1;
 		display: inline-flex; 	
-    	gap: 11px;
+    	gap: 10px;
 		text-align: center;	
 		align-items: center;
 		color: @default;
-		background: @primary-p;
+		background: linear-gradient(87.04deg, #62E3FF 4.83%, #64FF8F 141.59%);
 		text-transform: uppercase;
 		padding: 11px 40px;
 		justify-content: center;
@@ -43,6 +43,9 @@
 			color: @default; 
 			&::after{
 				opacity: 0;	
+			}
+			& ~ .section__img.is--challenge.is--more{
+				filter: drop-shadow(0px 0px 22px rgba(181, 251, 255, 0.8));
 			}
 		}
 		&.is--tags{
@@ -80,7 +83,7 @@
 			}			
 		}
 		&:hover{
-			color: @primary; 
+			color: @warning; 
 		}
 	}
 	&line{	
@@ -92,10 +95,23 @@
 		background:  @primary-g2;
 		text-align: center;	
 		align-items: center;
-		padding: 8px 32px;
+		padding: 7px 30px;
 		justify-content: center;
 		.text12();
 		border-radius: @site_br - 10px;
+		&::before{
+			content: '';
+			position: absolute;
+			z-index: 1;
+			top: 0px;
+			left: 0px;
+			right: 0px;
+			bottom: 0px;
+			background: @primary-g;
+			border-radius: @site_br - 10px;
+			transition: @trs-site;
+			opacity: 0;
+		}	
 		&::after{
 			content: '';
 			position: absolute;
@@ -130,10 +146,13 @@
 			}
 		}		
 		.media-breakpoint-up(@xl; {
-			padding: 11px 30px;
+			//padding: 11px 30px;
 		});
 		&:hover{
 			color: @black;
+			&::before{
+				opacity: 1;
+			}
 			&::after{
 				background-color: fadeout(@info, 100%);
 			}

@@ -15,17 +15,9 @@
         } %}    
         
         <main class="{{prefix.content}}wrap  is--challenge">
-
-            {# <div class="{{prefix.content}}bg  is--challenge  is--top" >  #}
-                <img src="{{path.img}}/bg/bg-sm.jpg" alt="" class="{{prefix.content}}bg  is--challenge  is--top">
-            {# </div>  #}
-            {# <div class="{{prefix.content}}bg  is--challenge  is--middle" >  #}
-                <img src="{{path.img}}/bg/bg-md.jpg" alt="" class="{{prefix.content}}bg  is--challenge  is--middle">
-            {# </div>  #}
-            {# <div class="{{prefix.content}}bg  is--challenge  is--bottom" >  #}
-                <img src="{{path.img}}/bg/bg-lg.jpg" alt="" class="{{prefix.content}}bg  is--challenge  is--bottom">
-            {# </div>  #}
-
+            <img src="{{path.img}}/bg/bg-sm.jpg" alt="" class="{{prefix.content}}bg  is--challenge  is--top">
+            <img src="{{path.img}}/bg/bg-md.jpg" alt="" class="{{prefix.content}}bg  is--challenge  is--middle">
+            <img src="{{path.img}}/bg/bg-lg.jpg" alt="" class="{{prefix.content}}bg  is--challenge  is--bottom">
             {% include "../block/page/page.twig" with {
                 view:               'challenge',
                 content_prefix:     prefix.content, 
@@ -48,7 +40,7 @@
                 more_prefix:         prefix.btn,
                 more_tag:            'button',
                 more_type:           'button',
-                more_attr:            'data-toggle="modal" data-target="#modal-challenge"',
+                more_attr:           'data-toggle="modal" data-target="#modal-challenge"',
                 more_elem:           'item',
                 more_mod:            '',
 

@@ -40,16 +40,12 @@
             {% endif %}
         </div> 
         {% if more %}
-        <div> 
-            <div class="{{content_prefix}}img  {{content_mod}}  is--more">
-                <img src="{{more_img}}" class="img-responsive" alt="{{more}}">
-                <p>{{more}}</p>
-            </div> 
+        <div class="{{content_prefix}}group  {{content_mod}}  is--more">
             {% include "../common/button/tpl.twig" with {
                 view:   'tpl',
                 tag:    more_tag,
                 link:   more_link,
-                attr:   more_attr,
+                attr:   '',
                 modal:  more_modal,
                 prefix: more_prefix,
                 mod:    more_mod,
@@ -57,6 +53,10 @@
                 icon:   more_icon,
                 name:   more_btn,
             } %}
+            <div class="{{content_prefix}}img  {{content_mod}}  is--more">
+                <img src="{{more_img}}" class="img-responsive" alt="{{more}}">
+                <p>{{more}}</p>
+            </div> 
         </div> 
         {% endif %}
     </div>

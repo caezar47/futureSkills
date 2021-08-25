@@ -550,6 +550,15 @@
 		}
 		//page
 		&.is--challenge{
+			&.is--more{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				.button__item{
+					order: 1;
+				}
+			}
 			&.is--adv{
 				margin-bottom: 85px;
 				[data-slick-challenge-adv-thumb]{
@@ -1359,6 +1368,7 @@
 				line-height: 130%;
 				margin: 0 auto 30px;
 				padding: 7px 20px 20px 20px;
+				transition: @trs-site;
 				.media-breakpoint-up(@md; {
 					padding-top: 20px;
 					gap: 20px;
@@ -1897,11 +1907,11 @@
 		position: relative;	
 		z-index: 1;
 		display: inline-flex; 	
-    	gap: 11px;
+    	gap: 10px;
 		text-align: center;	
 		align-items: center;
 		color: @default;
-		background: @primary-p;
+		background: linear-gradient(87.04deg, #62E3FF 4.83%, #64FF8F 141.59%);
 		text-transform: uppercase;
 		padding: 11px 40px;
 		justify-content: center;
@@ -1936,6 +1946,9 @@
 			color: @default; 
 			&::after{
 				opacity: 0;	
+			}
+			& ~ .section__img.is--challenge.is--more{
+				filter: drop-shadow(0px 0px 22px rgba(181, 251, 255, 0.8));
 			}
 		}
 		&.is--tags{
@@ -1973,7 +1986,7 @@
 			}			
 		}
 		&:hover{
-			color: @primary; 
+			color: @warning; 
 		}
 	}
 	&line{	
@@ -1985,10 +1998,23 @@
 		background:  @primary-g2;
 		text-align: center;	
 		align-items: center;
-		padding: 8px 32px;
+		padding: 7px 30px;
 		justify-content: center;
 		.text12();
 		border-radius: @site_br - 10px;
+		&::before{
+			content: '';
+			position: absolute;
+			z-index: 1;
+			top: 0px;
+			left: 0px;
+			right: 0px;
+			bottom: 0px;
+			background: @primary-g;
+			border-radius: @site_br - 10px;
+			transition: @trs-site;
+			opacity: 0;
+		}	
 		&::after{
 			content: '';
 			position: absolute;
@@ -2023,10 +2049,13 @@
 			}
 		}		
 		.media-breakpoint-up(@xl; {
-			padding: 11px 30px;
+			//padding: 11px 30px;
 		});
 		&:hover{
 			color: @black;
+			&::before{
+				opacity: 1;
+			}
 			&::after{
 				background-color: fadeout(@info, 100%);
 			}
@@ -2186,6 +2215,11 @@
 			color: @black;
 			padding: 20px 35px;
 			min-height: 260px;
+			cursor: pointer;
+			transition: @trs-site;
+			&:hover{
+				box-shadow: @default-sh;
+			}
 			.media-breakpoint-up(@md; {
 				border-radius: @site_br;
 				padding: 35px 30px 35px 40px;
@@ -2218,12 +2252,17 @@
 			padding: 60px 30px;
 			background: linear-gradient(115.86deg, #FAE579 3.38%, #E9FF92 20.66%, #E9FFA9 39.52%, #C0F3A0 61.68%, #8EE9BD 77.79%, #28D4EB 100.07%);
 			
-			box-shadow: @default-s;
-			.media-breakpoint-up(@md; {
+			box-shadow: @default-s;			
+			cursor: pointer;
+			transition: @trs-site;
+			&:hover{
+				box-shadow: @default-sh;
+			}
+			/*.media-breakpoint-up(@md; {
 				&:hover{
 					box-shadow: 0px 0px 65.9298px rgba(253, 255, 176, 0.5), inset 0px 0px 6.59298px rgba(253, 255, 176, 0.5);
 				}
-			});
+			});*/
 		}
 		&.is--сhallenge-team{
 			display: flex; 
@@ -2365,8 +2404,7 @@
 			padding-left: 45px;
 			min-height: 35px;
 			&:hover{
-				color: @primary;
-				.icon-pdf(@c: '31FF9C');
+				color: @warning;
 			}
 			&[href$=".pdf"]{
 
@@ -3015,6 +3053,9 @@
 			.icon-email();
 			background-position: 0 1px;
 			padding-left: 30px;
+			&:hover{
+				color: @warning!important;
+			}
 		}
 		&.is--team{
 			.text14();
@@ -3244,14 +3285,13 @@
 		&[value], 
 		&:focus{ 
 			outline:none;
-			border-color: @default;
-			background-color: @white;
-			color: @default;	
+			border-color: @white;
+			color: @white;	
 			&::-moz-placeholder{
-				color: fadeout(@default, 60%);
+				color: fadeout(@white, 60%);
 			}
 			&::-webkit-input-placeholder {
-				color: fadeout(@default, 60%);
+				color: fadeout(@white, 60%);
 			}
 		}
 	}
@@ -4405,7 +4445,7 @@
 }
 .navbar__{ 
 	&block{
-		color: @navbar_color;
+		//color: @def;
 		position: fixed;
 		width: 100%;
 		z-index: 100;
