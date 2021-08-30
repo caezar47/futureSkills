@@ -10,19 +10,9 @@
             navbar_prefix:  'navbar__',
             navbar_mod:     'is--scroll',
             active:         page.competencies_card,
-        } %}    
-        <script>
-/*
-var dde = document.documentElement;
-dde.addEventListener("mousemove", e => {
-  var ow = dde.offsetWidth; 
-  var oh = dde.offsetHeight; 
-  dde.style.setProperty('--mouseX', e.clientX * 100 / ow + "%");
-  dde.style.setProperty('--mouseY', e.clientY * 100 / oh + "%");
-});*/
-        </script>
-        
-        <main class="{{prefix.content}}wrap  is--default">            
+        } %}            
+        <main class="{{prefix.content}}wrap  is--default">        
+            <img src="{{path.img}}/bg/bg-sm.jpg" alt="" class="{{prefix.content}}bg  is--default  is--top">           
             <img src="{{path.img}}/bg/bg-lg.jpg" alt="" class="{{prefix.content}}bg  is--competencies-card">
             <div class="{{prefix.content}}bg  is--glow  is--competencies" data-glow >
                 <img src="{{path.img}}/bg/competencies-glow-top.png" alt=""  >

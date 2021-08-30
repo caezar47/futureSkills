@@ -1,4 +1,15 @@
 {% include "tpl.twig" with {
+    view:               "message",
+    prefix:             "modal__", 
+    mod:                "is--message", 
+    ID:                 "modal-message",
+    
+    content_prefix:     prefix.content, 
+    content_mod:        'is--message',
+    content_note:       '<h3>Отправлено!</h3><p>Lorem ipsum dolor sit, amet consectetur adipisicing, elit. Quisquam sapiente doloribus aut, consequuntur repellat reiciendis nihil magnam amet debitis cupiditate?</p>',
+} %} 
+
+{% include "tpl.twig" with {
     view:               "university",
     prefix:             "modal__", 
     mod:                "", 

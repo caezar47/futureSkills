@@ -83,9 +83,12 @@
 		}
 		&.is--competencies-partners{
 			background-repeat: no-repeat;
-			background-position: center 20%;
-			background-size: cover;
+			background-size: 1440px 766px;
 			color: @black;
+			.media-breakpoint-up(@md; {
+				background-position: center 20%;
+				background-size: cover;
+			});
 		}
 	}
 	&container{	
@@ -271,17 +274,27 @@
 }*/
 	&bg{		
 		&.is--default{
+			position: absolute;
+			z-index: 1;
+			max-width: initial;
+			mix-blend-mode: lighten;	
+			&.is--top{
+				top: 158px;
+				right: -500px;
+				transform: rotate(-83.14deg);
+				width: 825px;
+				height: 473px;
+				.media-breakpoint-up(@md; {
+					display: none;
+				});
+			}
 			&.is--bottom{
-				position: absolute;
-				z-index: 1;
 				transform: scale(1,-1) rotate(149deg);
 				bottom: -305px;
 				right: -895px;
 				width: 1445px;
 				height: 852px;
-				max-width: initial;
 				filter: blur(98px);
-				mix-blend-mode: lighten;	
 				.media-breakpoint-up(@md; {
 					bottom: -395px;
 					right: -1005px;
@@ -344,7 +357,7 @@
 			}
 			&.is--middle{
 				transform: rotate(-28.71deg);
-				top: 1340px;
+				top: 1560px;
 				right: -285px;
 				width: 911px;
 				height: 779px;
@@ -572,7 +585,7 @@
 				});
 			}
 			&.is--item{
-				margin-bottom: 85px;
+				margin-bottom: 135px;
 				.media-breakpoint-up(@md; {
 					margin-bottom: 130px;
 				});
@@ -583,10 +596,14 @@
 				box-shadow: @default-s;
 				border-radius: @site_br - 10px;
 				color: @black;
-				padding: 38px 45px 55px;
+				padding: 34px 20px 50px;
 				.media-breakpoint-up(@md; {
 					border-radius: @site_br;
 					padding: 115px 5.2vw 65px 5.2vw;
+					margin-bottom: 0;
+					[data-slick-challenge-item-thumb]{
+						display: none;
+					}
 				});
 			}
 			&.is--card{
@@ -790,9 +807,10 @@
 	}		
 	&grid{		
 		&.is--index-connect{
-			grid-gap: 50px 30px;
+			grid-gap: 25px 30px;
 			grid-template-columns: 100%;
 			.media-breakpoint-up(@md; {
+				grid-gap: 50px 30px;
 				grid-template-columns: repeat(4, 1fr);
 			});
 		}
@@ -1081,9 +1099,15 @@
 		}
 		//page
 		&.is--challenge{
+			&.is--item{
+				margin-bottom: 15px;
+				.media-breakpoint-up(@md; {
+					margin-bottom: 25px;
+				});
+			}
 			&.is--item-panel{
 				font-family: @site_ff_custom;
-				margin-bottom: 10px;
+				margin-bottom: 15px;
 				text-align: center;
 				.media-breakpoint-up(@md; {
 					text-align: left;
@@ -1272,6 +1296,17 @@
 				font-size: 242.438px;
 				line-height: 80%;
 			});
+		}
+		&.is--message{
+			.text18();
+			font-weight: 300;
+			font-family: @site_ff_custom;
+			h1,h2,h3,h4,h5,h6{
+				font-weight: 400;
+				font-size: 1.333rem;
+    			line-height: 130%;
+   				margin-bottom: 25px;
+			}
 		}
 	}
 	&tags{

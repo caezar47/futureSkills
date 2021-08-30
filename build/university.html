@@ -147,6 +147,7 @@
     
         
         <main class="section__wrap  is--default">
+            <img src="./img/bg/bg-sm.jpg" alt="" class="section__bg  is--default  is--top">
             <img src="./img/bg/bg-lg.jpg" alt="" class="section__bg  is--default  is--bottom">
             <div class="section__bg  is--glow  is--uni" data-glow >
                 <img src="./img/bg/uni-glow-top.png" alt=""  >
@@ -959,14 +960,27 @@
 	</footer>
  
 
-        <div class="modal__block modals  fade  " id="modal-university" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal__block modals  fade  is--message" id="modal-message" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal__dialog  is--message">
+		<div class="modal__body  is--message  " >
+			<button type="button" class="modal__btn-close  is--message" data-dismiss="modal" aria-hidden="true">
+				<svg class="icon-svg icon-modal-close" role="img">
+	<use xlink:href="./img/svg/sprite.svg#modal-close"></use>
+</svg>			</button>
+							<div class="section__note  is--message"><h3>Отправлено!</h3><p>Lorem ipsum dolor sit, amet consectetur adipisicing, elit. Quisquam sapiente doloribus aut, consequuntur repellat reiciendis nihil magnam amet debitis cupiditate?</p></div>
+									 
+		</div>
+	</div>
+</div> 
+
+<div class="modal__block modals  fade  " id="modal-university" tabindex="-1" role="dialog" aria-hidden="true">
 	<div class="modal__dialog  ">
 		<div class="modal__body    " >
 			<button type="button" class="modal__btn-close  " data-dismiss="modal" aria-hidden="true">
 				<svg class="icon-svg icon-modal-close" role="img">
 	<use xlink:href="./img/svg/sprite.svg#modal-close"></use>
 </svg>			</button>
-								<div class="card__item  is--university  is--item">
+											<div class="card__item  is--university  is--item">
 		<div class="card__img  is--university  is--item">
 			<picture>
 				<img src="" data-uni-img class="img-responsive" alt="">
@@ -998,7 +1012,7 @@
 				<svg class="icon-svg icon-modal-close" role="img">
 	<use xlink:href="./img/svg/sprite.svg#modal-close"></use>
 </svg>			</button>
-									<div id="fullpage">
+												<div id="fullpage">
 					<section class="section__content  is--challenge-modal  section" >
 		<div id="nav" class="section__group  is--challenge-modal">
             <img src="./img/bg/bg-sm.jpg" alt="" class="section__bg  is--challenge-modal  is--top">

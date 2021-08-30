@@ -5,6 +5,7 @@ $(function() {
 	var ch_adv 			= $('[data-slick-challenge-adv]');
 	var ch_adv_thumb 	= $('[data-slick-challenge-adv-thumb]');
 	var ch_item 		= $('[data-slick-challenge-item]');
+	var ch_item_thumb 	= $('[data-slick-challenge-item-thumb]');
 	var ch_card 		= $('[data-slick-challenge-card]');
 	var uni 			= $('[data-slick-uni]');
 	var gallery 		= $('[data-slick-gallery]');
@@ -162,11 +163,12 @@ $(function() {
 		]
 	});
 	ch_adv_thumb.slick({
-		slidesToShow: 3,
+		variableWidth: true,
+		slidesToShow: 1,
 		slidesToScroll: 1,
 		arrows: false,
 		dots: false,
-		infinite: true,
+		//infinite: true,
 		autoplay: false,
   		asNavFor: ch_adv,
 		focusOnSelect: true,
@@ -174,10 +176,12 @@ $(function() {
 
    	ch_item.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide) {
 		var i = (currentSlide ? currentSlide : 0) + 1;
+
 		$(this).find(count).html(i + '/' + slick.$dots[0].children.length);
+		//console_log(slick.$dots[0]);
     });
 	ch_item.slick({
-		slide: '.card__item',
+		slide: '.card__item.is--card',
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		variableWidth: true,
@@ -192,14 +196,34 @@ $(function() {
 					slidesToShow: 2,
 				}
 		    },	
-		    {
+		    /*{
 				breakpoint: 576,
 				settings: {
 					slidesToShow: 1,
 					variableWidth: false,
 				}
+		    },*/	
+			{
+				breakpoint: 767,
+				settings:{
+					infinite: true,
+					slidesToShow: 1,
+					variableWidth: false,
+			  		asNavFor: ch_item_thumb,
+				}
 		    }
 		]
+	});
+	ch_item_thumb.slick({		
+		variableWidth: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		dots: true,
+		//infinite: true,
+		autoplay: false,
+  		asNavFor: ch_item,
+		focusOnSelect: true,
 	});
 	ch_card.slick({		
   		responsive: [	

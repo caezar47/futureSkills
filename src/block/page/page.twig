@@ -1,5 +1,4 @@
 {% if view == "challenge" %}
-	{# <section class="{{content_prefix}}content  {{content_mod}}" style="background-image:  url('{{path.img}}/page/сhallenge/challenge-bg-top.png'), url('{{path.img}}/page/сhallenge/challenge-bg-center.png'), url('{{path.img}}/page/сhallenge/challenge-bg-bottom.png'), linear-gradient(181.13deg, #00131B 4.71%, #001E2D 8.25%, #051822 23.73%, #061A28 32.87%, #16333D 87.29%, #1A4C5C 100.53%);">  #}
 	<section class="{{content_prefix}}content  {{content_mod}}" > 
 		<div class="{{content_prefix}}container container  {{content_mod}}">
 			{% include "block.twig" with {
@@ -40,6 +39,14 @@
 									{{content.name}}             
 								</h3>
 							{% endif %}
+							<div data-slick-challenge-item-thumb>
+								{% include "../common/card/card.twig" with {
+									view:   content.card_view,
+									prefix: content.card_prefix,
+									mod:    content.card_mod_thumb,
+									list:   content.card_list,
+								} %}
+							</div>
 							{% include "../common/card/card.twig" with {
 								view:   content.card_view,
 								prefix: content.card_prefix,

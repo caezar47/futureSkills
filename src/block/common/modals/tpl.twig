@@ -4,6 +4,9 @@
 			<button type="button" class="{{prefix}}btn-close  {{mod}}" data-dismiss="modal" aria-hidden="true">
 				{% include "../svg-sprite/svg.twig" with {icon:"modal-close"} %}
 			</button>
+			{% if view == "message" %}
+				<div class="{{content_prefix}}note  {{content_mod}}">{{content_note}}</div>
+			{% endif %}
 			{% if view == "university" %}
 				{% include "../card/card.twig" with {
                     view:   card_view,
