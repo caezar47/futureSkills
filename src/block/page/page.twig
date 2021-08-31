@@ -28,31 +28,37 @@
 						</div>
 					{% endif %}
 					{% if content.view == "item" %}
-						<div class="{{content_prefix}}group  {{content_mod}}  {{content.mod}}-panel" data-slick-challenge-item>
+						<div class="{{content_prefix}}group  {{content_mod}}  {{content.mod}}-panel" data-slick-challenge-group>
 							<div class="slick-btn-group">
 								<button type="button" class="slick-btn is--prev is--ch-item slick-arrow" style=""><span class="sr-only">Предыдущий слайд</span></button>
 								<div class="slick-count"></div>
 								<button type="button" class="slick-btn is--next is--ch-item slick-arrow" style=""><span class="sr-only">Следующий слайд</span></button>
 							</div>
-							{% if content.name %}
-								<h3 class="{{content_prefix}}heading  {{content_mod}}  {{content.mod}}-panel"> 
-									{{content.name}}             
-								</h3>
-							{% endif %}
-							<div data-slick-challenge-item-thumb>
-								{% include "../common/card/card.twig" with {
-									view:   content.card_view,
-									prefix: content.card_prefix,
-									mod:    content.card_mod_thumb,
-									list:   content.card_list,
-								} %}
+							{% for value in content.card_list %}
+							<div class="slide--group">
+								{% if value.name %}
+									<h3 class="{{content_prefix}}heading  {{content_mod}}  {{content.mod}}-panel"> 
+										{{value.name}}             
+									</h3>
+								{% endif %}
+								<div data-slick-challenge-item-thumb>
+									{% include "../common/card/card.twig" with {
+										view:   content.card_view,
+										prefix: content.card_prefix,
+										mod:    content.card_mod_thumb,
+										list:   value.card_list,
+									} %}
+								</div>
+								<div class="{{content_prefix}}grid  {{content_mod}}  {{content.mod}}" data-slick-challenge-item>
+									{% include "../common/card/card.twig" with {
+										view:   content.card_view,
+										prefix: content.card_prefix,
+										mod:    content.card_mod,
+										list:   value.card_list,
+									} %}
+								</div>
 							</div>
-							{% include "../common/card/card.twig" with {
-								view:   content.card_view,
-								prefix: content.card_prefix,
-								mod:    content.card_mod,
-								list:   content.card_list,
-							} %}
+							{% endfor %}
 						</div>
 					{% endif %}
 					{% if content.view == "card" %}

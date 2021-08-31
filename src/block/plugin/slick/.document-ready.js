@@ -4,6 +4,7 @@ $(function() {
 	var challenge 		= $('[data-slick-challenge]');
 	var ch_adv 			= $('[data-slick-challenge-adv]');
 	var ch_adv_thumb 	= $('[data-slick-challenge-adv-thumb]');
+	var ch_group 		= $('[data-slick-challenge-group]');
 	var ch_item 		= $('[data-slick-challenge-item]');
 	var ch_item_thumb 	= $('[data-slick-challenge-item-thumb]');
 	var ch_card 		= $('[data-slick-challenge-card]');
@@ -16,44 +17,6 @@ $(function() {
 	var count = $('.slick-count');
 
 
-	/*header.slick({
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		arrows: false,
-		dots: false,
-		draggable: false,
-		pauseOnFocus: false,
-		pauseOnHover: false,
-		swipe: false,
-		touchMove: false,
-		fade: true, 	
-		autoplay: true,
-		speed: 1000,
-		autoplaySpeed: 8000,
-	});
-
-    var anim1 = lottie.loadAnimation(params1);
-    var anim2 = lottie.loadAnimation(params2);
-    var anim3 = lottie.loadAnimation(params3);
-
-	
-    //anim3.play(); 
-    header.on('init', function() {
-    	//alert('1');
-    	anim1.goToAndPlay(0, true);
-    });
-	anim1.goToAndPlay(0, true);
-    header.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide) {
-        if(currentSlide == 0){
-        	anim1.goToAndPlay(0, true);
-        }
-        if(currentSlide == 1){
-        	anim2.goToAndPlay(0, true);
-        }
-        if(currentSlide == 2){
-        	anim3.goToAndPlay(0, true);
-        }
-    });*/
 
 	challenge.slick({
 		slidesToShow: 4,
@@ -174,57 +137,83 @@ $(function() {
 		focusOnSelect: true,
 	});
 
-   	ch_item.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide) {
+   	ch_group.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide) {
 		var i = (currentSlide ? currentSlide : 0) + 1;
 
-		$(this).find(count).html(i + '/' + slick.$dots[0].children.length);
-		//console_log(slick.$dots[0]);
+
+		//console.log(slick);
     });
-	ch_item.slick({
-		slide: '.card__item.is--card',
+
+	ch_group.slick({
+		slide: '.slide--group',
 		slidesToShow: 1,
 		slidesToScroll: 1,
-		variableWidth: true,
 		infinite: false,
 		dots: true,
+		draggable: false,
+		pauseOnFocus: false,
+		pauseOnHover: false,
+		swipe: false,
+		touchMove: false,
+		autoplay: false,
 		prevArrow: $(this).find('.slick-btn.is--prev.is--ch-item'),
 		nextArrow: $(this).find('.slick-btn.is--next.is--ch-item'),
-		responsive: [		  
-		    {
-				breakpoint: 992,
-				settings: {
-					slidesToShow: 2,
-				}
+		/*customPaging: function(slick, index) {
+	      var d = $(slick.$slides[index]).find('[data-thumb]').data('thumb'); 
+	      var d = $(slick.$slides[index]).data('thumb'); 
+	      return '<a>'+d+'</a>';
+	    },*/
+	});
+
+   	ch_group.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide) {
+	    var currentSlide = ch_group.slick('slickCurrentSlide') + 1;
+		var allSlide =  ch_group.slick("getSlick").slideCount;
+		//if (allSlide > 1) {
+			ch_group.find(count).html(currentSlide + '/' + allSlide);
+		//}
+    });
+
+	ch_item.slick({
+		responsive: [	
+			{
+				breakpoint: 99999,
+				settings: "unslick"
 		    },	
-		    /*{
-				breakpoint: 576,
-				settings: {
-					slidesToShow: 1,
-					variableWidth: false,
-				}
-		    },*/	
 			{
 				breakpoint: 767,
 				settings:{
-					infinite: true,
 					slidesToShow: 1,
-					variableWidth: false,
+					slidesToScroll: 1,
 			  		asNavFor: ch_item_thumb,
+					//infinite: false,
+					arrows: false,
 				}
 		    }
-		]
+		],
 	});
-	ch_item_thumb.slick({		
-		variableWidth: true,
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		arrows: false,
-		dots: true,
-		//infinite: true,
-		autoplay: false,
-  		asNavFor: ch_item,
-		focusOnSelect: true,
+	ch_item_thumb.slick({	
+		responsive: [	
+			{
+				breakpoint: 99999,
+				settings: "unslick"
+		    },	
+			{
+				breakpoint: 767,
+				settings:{					
+					variableWidth: true,
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					arrows: false,
+					dots: true,
+					//infinite: false,
+					autoplay: false,
+			  		asNavFor: ch_item,
+					focusOnSelect: true,
+				}
+		    }
+		],	
 	});
+
 	ch_card.slick({		
   		responsive: [	
 			{
@@ -387,4 +376,43 @@ banner_white.slick({
 		speed: 1000,
 		autoplaySpeed: 7000,
 	});*/
+
+	/*header.slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		dots: false,
+		draggable: false,
+		pauseOnFocus: false,
+		pauseOnHover: false,
+		swipe: false,
+		touchMove: false,
+		fade: true, 	
+		autoplay: true,
+		speed: 1000,
+		autoplaySpeed: 8000,
+	});
+
+    var anim1 = lottie.loadAnimation(params1);
+    var anim2 = lottie.loadAnimation(params2);
+    var anim3 = lottie.loadAnimation(params3);
+
+	
+    //anim3.play(); 
+    header.on('init', function() {
+    	//alert('1');
+    	anim1.goToAndPlay(0, true);
+    });
+	anim1.goToAndPlay(0, true);
+    header.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide) {
+        if(currentSlide == 0){
+        	anim1.goToAndPlay(0, true);
+        }
+        if(currentSlide == 1){
+        	anim2.goToAndPlay(0, true);
+        }
+        if(currentSlide == 2){
+        	anim3.goToAndPlay(0, true);
+        }
+    });*/
 }); 

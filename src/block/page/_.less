@@ -823,6 +823,13 @@
 					grid-template-columns: repeat(3,1fr);
 				});
 			}
+			&.is--item{
+				.media-breakpoint-up(@md; {
+					display: grid;
+					grid-gap: 30px;
+					grid-template-columns: repeat(3,1fr);
+				});
+			}
 		}
 		&.is--challenge-events{
 			grid-gap: 0;
