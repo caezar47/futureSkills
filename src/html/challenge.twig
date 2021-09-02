@@ -18,6 +18,10 @@
             <img src="{{path.img}}/bg/bg-sm.jpg" alt="" class="{{prefix.content}}bg  is--challenge  is--top">
             <img src="{{path.img}}/bg/bg-md.jpg" alt="" class="{{prefix.content}}bg  is--challenge  is--middle">
             <img src="{{path.img}}/bg/bg-lg.jpg" alt="" class="{{prefix.content}}bg  is--challenge  is--bottom">
+            <div class="{{prefix.content}}bg  is--glow  is--competencies" data-glow >
+                <img src="{{path.img}}/bg/competencies-glow-top.png" alt=""  >
+                <img src="{{path.img}}/bg/competencies-glow-bottom.png" alt="">
+            </div>
             {% include "../block/page/page.twig" with {
                 view:               'challenge',
                 content_prefix:     prefix.content, 
@@ -153,7 +157,7 @@
                             },
                             {
                                 name:   'Университеты и студенты',
-                                img:    [path.img,"/page/сhallenge/сhallenge-card1.svg"].join(""),
+                                img:    [path.img,"/page/сhallenge/сhallenge-card4.svg"].join(""),
                                 note:    '<ul><li>Участвуйте в соревнованиях F—S Team Challenge, сформированных вместе с&nbsp;ведущими работодателями и&nbsp;лидерами технологических рынков</li><li>Внедряйте оценку и&nbsp;развитие навыков будущего в&nbsp;образовательные программы</li></ul>',
                             },
                         ],
@@ -223,5 +227,10 @@
         {% include "../block/common/script/script.twig" with {
             fullpage: 'true'
         } %}
+        <script>
+            $('.card__item.is--сhallenge-card').on("mousemove", function() {
+                $(this).addClass('is--visit');
+            });
+        </script>
     </body>
 </html> 

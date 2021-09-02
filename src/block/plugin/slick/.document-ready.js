@@ -80,12 +80,13 @@ $(function() {
 		draggable: false,
 		pauseOnFocus: false,
 		pauseOnHover: false,
+		infinite: false,
 		swipe: false,
 		touchMove: false,
 		fade: true, 	
 		autoplay: true,
-		speed: 1000,
-		autoplaySpeed: 7000,
+		speed: 350,
+		autoplaySpeed: 5000,
   		asNavFor: gallery_thumb
 	});
 	gallery_thumb.slick({
@@ -93,7 +94,7 @@ $(function() {
 		slidesToScroll: 1,
 		arrows: false,
 		dots: false,
-		infinite: true,
+		infinite: false,
 		autoplay: false,
   		asNavFor: gallery,
 		focusOnSelect: true,
@@ -137,12 +138,6 @@ $(function() {
 		focusOnSelect: true,
 	});
 
-   	ch_group.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide) {
-		var i = (currentSlide ? currentSlide : 0) + 1;
-
-
-		//console.log(slick);
-    });
 
 	ch_group.slick({
 		slide: '.slide--group',

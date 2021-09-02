@@ -149,6 +149,10 @@
             <img src="./img/bg/bg-sm.jpg" alt="" class="section__bg  is--challenge  is--top">
             <img src="./img/bg/bg-md.jpg" alt="" class="section__bg  is--challenge  is--middle">
             <img src="./img/bg/bg-lg.jpg" alt="" class="section__bg  is--challenge  is--bottom">
+            <div class="section__bg  is--glow  is--competencies" data-glow >
+                <img src="./img/bg/competencies-glow-top.png" alt=""  >
+                <img src="./img/bg/competencies-glow-bottom.png" alt="">
+            </div>
             	<section class="section__content  is--challenge" > 
 		<div class="section__container container  is--challenge">
 			    <div class="section__header  is--challenge">
@@ -483,7 +487,7 @@
 			<div class="card__item  is--сhallenge-card">
 			<div class="card__group  is--сhallenge-card">
 								<div class="card__img  is--сhallenge-card">
-					<img src="./img/page/сhallenge/сhallenge-card1.svg" class="img-responsive" alt="">
+					<img src="./img/page/сhallenge/сhallenge-card4.svg" class="img-responsive" alt="">
 				</div>
 												<h5 class="card__heading  is--сhallenge-card">				
 					Университеты и студенты
@@ -926,5 +930,10 @@ document.createElement("picture");
 		//fullpage_api.setResponsive(true);
 	}
 </script>
+        <script>
+            $('.card__item.is--сhallenge-card').on("mousemove", function() {
+                $(this).addClass('is--visit');
+            });
+        </script>
     </body>
 </html> 

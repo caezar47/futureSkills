@@ -29,7 +29,7 @@
 		fade: true,     
 		autoplay: true,
 		speed: 1000,
-		autoplaySpeed: 8000,
+		autoplaySpeed: 4000,
 	});
 	{% for slick in slick_list %}
 	var params{{loop.index0}} = {
@@ -46,11 +46,13 @@
     	anim0.goToAndPlay(0, true);
     });
 	anim0.goToAndPlay(0, true);
+	anim0.setSpeed(2.1);
 
     header.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide) {
 		{% for slick in slick_list %}
         if(currentSlide == {{loop.index0}}){
         	anim{{loop.index0}}.goToAndPlay(0, true);
+        	anim{{loop.index0}}.setSpeed(2.1);
         }
    		{% endfor %}
    	});

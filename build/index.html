@@ -559,10 +559,7 @@
 										
 																						
 				<label class="form__item    is--tel">
-										<select data-selectize-default>
-											<option  >+7</option>
-									</select>
-						<input type="tel" class="form__control      validate[required, custom[phone]]"  placeholder="">
+									<input type="tel" class="form__control      validate[required, custom[phone]]"  placeholder="Номер телефона">
 		</label>
 										
 																						
@@ -745,7 +742,7 @@ document.createElement("picture");
 		fade: true,     
 		autoplay: true,
 		speed: 1000,
-		autoplaySpeed: 8000,
+		autoplaySpeed: 4000,
 	});
 		var params0 = {
         container: document.getElementById('lottie0'),
@@ -778,16 +775,20 @@ document.createElement("picture");
     	anim0.goToAndPlay(0, true);
     });
 	anim0.goToAndPlay(0, true);
+	anim0.setSpeed(2.1);
 
     header.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide) {
 		        if(currentSlide == 0){
         	anim0.goToAndPlay(0, true);
+        	anim0.setSpeed(2.1);
         }
    		        if(currentSlide == 1){
         	anim1.goToAndPlay(0, true);
+        	anim1.setSpeed(2.1);
         }
    		        if(currentSlide == 2){
         	anim2.goToAndPlay(0, true);
+        	anim2.setSpeed(2.1);
         }
    		   	});
 </script>

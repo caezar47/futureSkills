@@ -1,5 +1,5 @@
 var phone = $(".form__control[type='tel']");
-phone.mask("(999) 999-99-99",{placeholder:"(___) ___-__-__"});
+phone.mask("+7 (999) 999-99-99",{placeholder:"+7 (___) ___-__-__"});
 /*var form_panel = $(".form__panel");
 var file = $('.form__file-input');
 var file_name = $('.form__file-name');
