@@ -934,6 +934,11 @@ document.createElement("picture");
             $('.card__item.is--сhallenge-card').on("mousemove", function() {
                 $(this).addClass('is--visit');
             });
+            if($(document).width() < 1200) {
+               $('.card__item.is--сhallenge-card').on("click", function() {
+                    $(this).addClass('is--visit');
+                });
+            } 
         </script>
     </body>
 </html> 
