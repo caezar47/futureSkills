@@ -21,6 +21,13 @@
 		</{% if value.link %}a{% else %}div{% endif %}>
 	{% endfor %}
 {% endif %}
+{% if view == 'competencies_adv' %}
+	{% for value in list %}
+		<li {% if value.img %}style="background-image: url({{value.img}});"{% endif %}>
+			{{value.name}}
+		</li>
+	{% endfor %}
+{% endif %}
 {% if view == 'сhallenge_adv' %}
 	{% for value in list %}
 		<div class="{{prefix}}item  {{mod}}">

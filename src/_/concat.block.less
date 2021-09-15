@@ -36,10 +36,17 @@
 			//background: linear-gradient(90deg, rgba(189,252,118,1) 0%, rgba(138,251,210,1) 100%);
 			background: linear-gradient(249.86deg, #CBFA79 13.31%, #BCF9A2 96.9%);
 			height: 100vh;
-			max-height: 667px;
+			max-height: 662px;
 			flex-direction: row;
-			.media-breakpoint-up(@lg; {
-				max-height: 845px;
+			.media-breakpoint-up(@md; {
+				max-height: 342px;
+			});
+			.media-breakpoint-up(@xl; {
+				max-height: 542px;
+			});
+			.media-breakpoint-up(@xxl; {
+				//max-height: 845px;
+				max-height: 752px;
 			});
 		}
 		&.is--index-concept{
@@ -269,9 +276,9 @@
 		}
 	}
 	/*:root {
-  --mouseX: 50%;
-  --mouseY: 50%;
-}*/
+	  --mouseX: 50%;
+	  --mouseY: 50%;
+	}*/
 	&bg{		
 		&.is--default{
 			position: absolute;
@@ -541,14 +548,14 @@
 			left: 0;
 			bottom: 0;
 			right: 0;
-			transform: scale(3.4);
+			transform: scale(5.5);
 			.media-breakpoint-up(@sm; {
-				transform: scale(1.2);
+				transform: scale(2.2);
 			});
 			.media-breakpoint-up(@md; {
-				transform: scale(1.7);
+				transform: scale(1.6);
 			});
-			.media-breakpoint-up(@xl; {
+			.media-breakpoint-up(@uxl; {
 				transform: scale(1.2);
 			});
 		}
@@ -892,10 +899,31 @@
 		}
 		&.is--competencies-card{
 			&.is--tabs{
-				grid-template-columns: repeat(2,1fr);
-				.media-breakpoint-up(@md; {
-					grid-template-columns: repeat(4,1fr);
-				});
+				ul{
+					margin: 0;
+					padding: 0;
+					list-style: none;
+					display: grid;
+					align-items: flex-start;
+					grid-gap: 30px;
+					grid-template-columns: repeat(2,1fr);
+					.media-breakpoint-up(@md; {
+						grid-template-columns: repeat(4,1fr);
+					});
+					li{
+						padding-left: 44px;
+						display: flex;
+						align-items: center;
+						min-height: 30px;
+						background-position: left top;
+						background-repeat: no-repeat;
+						background-size: 30px auto;
+						font-family: @site_ff_custom;
+						font-weight: 300;
+						.text16();
+						background-image: url('@{url-path-img}/page/competencies/competencies-adv.svg');
+					}
+				}
 			}
 			&.is--team{
 				grid-template-columns: 100%;
@@ -2495,14 +2523,14 @@
 
 			}
 		}
-		&.is--competencies-adv{
+		/*&.is--competencies-adv{
 			display: flex;
 			flex-direction: column;
 			gap: 10px 14px;
 			.media-breakpoint-up(@lg; {
 				flex-direction: row;
 			});
-		}
+		}*/
 		&.is--сhallenge-item{
 			&.is--thumb{
 				transition: @trs-site;
@@ -2732,10 +2760,10 @@
 				.img-bg();
 			}
 		}
-		&.is--competencies-adv{
+		/*&.is--competencies-adv{
 			min-width: 30px;
 			width: 30px;
-		}
+		}*/
 		&.is--university{
 			position: relative;
 			margin-bottom: 40px;
@@ -2923,12 +2951,12 @@
 			font-weight: 400;
 			margin-bottom: 5px;
 		}
-		&.is--competencies-adv{
+		/*&.is--competencies-adv{
 			font-family: @site_ff_custom;
 			font-weight: 300;
 			.text16();
 			padding-top: 3px;
-		}
+		}*/
 		&.is--docs{
 			opacity: 0.8;
 		}

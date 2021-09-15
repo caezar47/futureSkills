@@ -10,13 +10,15 @@
 		{% for value in list %}
 		<div class="{{prefix}}pane  {{value.status}}" id="tabs-{{value.id}}">
 			{% if value.type == "adv" %}
-				<div class="{{content_prefix}}grid  grid__row  {{content_mod}}  {{content.mod}}">
-					{% include "../card/card.twig" with {
-						view: 	value.card_view,
-						prefix:	"card__", 
-						mod:  	value.card_mod, 
-						list: 	value.card_list
-					} %}
+				<div class="{{content_prefix}}grid  {{content_mod}}  {{content.mod}}">
+					<ul>
+						{% include "../card/card.twig" with {
+							view: 	value.card_view,
+							prefix:	"card__", 
+							mod:  	value.card_mod, 
+							list: 	value.card_list
+						} %}
+					</ul>
 				</div>
 			{% endif %}
 		</div>
