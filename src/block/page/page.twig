@@ -41,7 +41,7 @@
 										{{value.name}}             
 									</h3>
 								{% endif %}
-								<div data-slick-challenge-item-thumb>
+								{# <div data-slick-challenge-item-thumb> 
 									{% include "../common/card/card.twig" with {
 										view:   content.card_view,
 										prefix: content.card_prefix,
@@ -50,6 +50,16 @@
 									} %}
 								</div>
 								<div class="{{content_prefix}}grid  {{content_mod}}  {{content.mod}}" data-slick-challenge-item>
+								#}
+								<ul class="{{content_prefix}}grid  {{content_mod}}  {{content.mod}}  is--nav">
+									{% include "../common/card/card.twig" with {
+										view:   content.card_view,
+										prefix: content.card_prefix,
+										mod:    content.card_mod,
+										list:   value.card_list_nav,
+									} %}
+								</ul>
+								<div class="{{content_prefix}}grid  {{content_mod}}  {{content.mod}}">
 									{% include "../common/card/card.twig" with {
 										view:   content.card_view,
 										prefix: content.card_prefix,

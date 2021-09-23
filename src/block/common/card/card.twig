@@ -1,6 +1,9 @@
 {% if view == 'adv' %}
 	{% for value in list %}
-		<{% if value.link %}a href="{{value.link}}"{% else %}div{% endif %} class="{{prefix}}item  {{mod}}">
+		{% if value.toggle == "tab" %}
+		<li {% if value.status %}class="{{value.status}}"{% endif %}>
+		{% endif %}
+		<{% if value.link %}a href="{{value.link}}"{% else %}div{% endif %}  {% if value.toggle %}data-toggle="{{value.toggle}}"{% endif %}  {% if value.id %}id="{{value.id}}"{% endif %} class="{{prefix}}item  {{mod}}  {{value.tabs}}">
 			{% if value.img %}
 			<div class="{{prefix}}img  {{mod}}">
 				<img src="{{value.img}}" class="img-responsive" alt="">
@@ -19,6 +22,9 @@
 				{% endif %}
 			</div> 
 		</{% if value.link %}a{% else %}div{% endif %}>
+		{% if value.toggle == "tab" %}
+		</li>
+		{% endif %}
 	{% endfor %}
 {% endif %}
 {% if view == 'competencies_adv' %}
@@ -47,6 +53,9 @@
 			<div class="{{prefix}}note  {{mod}}">				
 				{{value.note}}
 			</div> 
+			{% endif %}
+			{% if value.close %}
+			<button data-close class="{{prefix}}btn  {{mod}}">{% include "../svg-sprite/svg.twig" with {icon:"modal-close"} %}</button>
 			{% endif %}
 		</div> 
 	{% endfor %}

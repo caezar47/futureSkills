@@ -108,8 +108,17 @@
 		&.is--сhallenge-item{
 			font-size: .778rem;
 			line-height: 150%;
+			&[id]{
+				display: none;
+				&.active{
+					display: block;
+				}
+			}
 			.media-breakpoint-up(@md; {
 				max-width: 270px;
+				&[id]{
+					display: block;
+				}
 			});
 		}
 		&.is--сhallenge-card{
@@ -140,19 +149,27 @@
 				opacity: 0;
 				transform: scale(-1,1);
 			}
-			&.is--visit,
-			&:hover{
+			&.is--visit{
 				transform: scale(-1,1);
+				box-shadow: @default-s;	
 				&::before{
 					opacity: 1;
 				}
 			}
-			&:hover{
-				box-shadow: @default-sh;
-			}
-			&.is--visit:hover{	
-				box-shadow: @default-s;	
-			}
+			//&.is--visit:hover{	
+			//	box-shadow: @default-s;	
+			//}
+			.media-breakpoint-up(@xl; {
+				&:hover{
+					transform: scale(-1,1);
+					&::before{
+						opacity: 1;
+					}
+				}
+				&:hover{
+					box-shadow: @default-sh;
+				}
+			});
 			/*.media-breakpoint-up(@md; {
 				&:hover{
 					box-shadow: 0px 0px 65.9298px rgba(253, 255, 176, 0.5), inset 0px 0px 6.59298px rgba(253, 255, 176, 0.5);
@@ -376,10 +393,14 @@
 			color: @white;
 			padding: 75px 25px;
 			transition: @trs-site;
-			.card__item.is--visit &,
-			.card__item:hover &{
+			.card__item.is--visit &{
 				opacity: 0;
 			}
+			.media-breakpoint-up(@xl; {
+				.card__item:hover &{
+					opacity: 0;
+				}
+			});
 		}
 		&.is--challenge-events{
 			.media-breakpoint-up(@md; {
@@ -467,14 +488,21 @@
 		//page
 		&.is--сhallenge-item{
 			margin: 0 auto 15px; 
-			max-width: 140px;
+			//max-width: 140px;
+			max-width: 84px;
 			&.is--thumb{
 				max-width: 84px;
 			}
 			&.is--card{
-				display: none;
+				//display: none;
+			}
+			opacity: 0.5;
+			transition: @trs-site;
+			.active &{
+				opacity: 1;
 			}
 			.media-breakpoint-up(@md; {
+				opacity: 1;
 				max-width: initial;
 				margin: 0 0 18px;
 				&.is--card{
@@ -1027,6 +1055,32 @@
 					opacity: 0.8;
 				}
 			}
+		}
+	}
+	&btn{
+		&.is--сhallenge-card{
+			opacity: 0;
+			visibility: hidden;
+			.btn-clearfix();
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			z-index: 4;
+			width: 32px;
+			height: 32px;
+			color: @default;
+			padding: 10px;
+			transition: @trs-site;
+			.is--visit &{
+				opacity: 1;
+				visibility: visible;
+			}
+			svg{
+				display: block;
+			}
+			.media-breakpoint-up(@xl; {
+				display: none;
+			});
 		}
 	}
 }

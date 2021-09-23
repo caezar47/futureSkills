@@ -138,6 +138,17 @@ $(function() {
 		focusOnSelect: true,
 	});
 
+   	/*ch_group.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide) {
+	    var currentSlide = ch_group.slick('slickCurrentSlide') + 1;
+		var allSlide =  ch_group.slick("getSlick").slideCount;
+		//if (allSlide > 1) {
+			ch_group.find(count).html(currentSlide + '/' + allSlide);
+		//}
+    });*/
+    ch_group.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide) {
+		var i = (currentSlide ? currentSlide : 0) + 1;
+		$(this).find(count).html(i + '/' + slick.$dots[0].children.length);
+    });
 
 	ch_group.slick({
 		slide: '.slide--group',
@@ -160,14 +171,7 @@ $(function() {
 	    },*/
 	});
 
-   	ch_group.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide) {
-	    var currentSlide = ch_group.slick('slickCurrentSlide') + 1;
-		var allSlide =  ch_group.slick("getSlick").slideCount;
-		//if (allSlide > 1) {
-			ch_group.find(count).html(currentSlide + '/' + allSlide);
-		//}
-    });
-
+	/*
 	ch_item.slick({
 		responsive: [	
 			{
@@ -207,7 +211,7 @@ $(function() {
 				}
 		    }
 		],	
-	});
+	});*/
 
 	ch_card.slick({		
   		responsive: [	

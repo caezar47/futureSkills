@@ -85,11 +85,30 @@
                         card_list:  [
                             {
                                 name:   'Агентство по разработке цифровых продуктов',
+                                card_list_nav:  [
+                                    {
+                                        link:   '#tabs-item1',
+                                        toggle: 'tab',
+                                        status: 'active',
+                                        img:    [path.img,"/page/сhallenge/сhallenge-item1.svg"].join(""),
+                                    },
+                                    {
+                                        link:   '#tabs-item2',
+                                        toggle: 'tab',
+                                        img:    [path.img,"/page/сhallenge/сhallenge-item2.svg"].join(""),
+                                    },
+                                    {
+                                        link:   '#tabs-item3',
+                                        toggle: 'tab',
+                                        img:    [path.img,"/page/сhallenge/сhallenge-item3.svg"].join(""),
+                                    },
+                                ],
                                 card_list:  [
                                     {
+                                        id:     'tabs-item1',
+                                        tabs:   'active',
                                         name:   'Состав команды компетенции',
-                                        img:    [path.img,"/page/сhallenge/сhallenge-item1.svg"].join(""),
-                                        note:    '<ul> 
+                                        note:   '<ul> 
                                             <li>Менеджмент и&nbsp;маркетинг</li>
                                             <li>Промышленный дизайн</li>
                                             <li>Электроника</li>
@@ -98,24 +117,43 @@
                                         <div>Члены команды могут собираться из разных вузов, команда может собираться непосредственно на соревнованиях</div>',
                                     },
                                     {
+                                        id:     'tabs-item2',
                                         name:   'Идея задания',
-                                        img:    [path.img,"/page/сhallenge/сhallenge-item2.svg"].join(""),
                                         note:   '<p>Разработать технологический продукт и изготовить прототип на основании принципиального задания от заказчика.</p><p>Задание подразумевает широкую степень свободы в выборе способов его решения.</p>',
                                     },
                                     {
+                                        id:     'tabs-item3',
                                         name:   'Критерии оценки',
-                                        img:    [path.img,"/page/сhallenge/сhallenge-item3.svg"].join(""),
                                         note:   '<ul><li>Командное взаимодействие, согласованность</li><li>Предпринимательское мышление, взаимодействие с&nbsp;заказчиком</li><li>Владение перспективными технологиями</li></ul>',
                                     },
                                 ],
                             },
                             {
                                 name:   'Агентство цифровых продуктов',
+                                card_list_nav:  [
+                                    {
+                                        link:   '#tabs-item4',
+                                        toggle: 'tab',
+                                        status: 'active',
+                                        img:    [path.img,"/page/сhallenge/сhallenge-item1.svg"].join(""),
+                                    },
+                                    {
+                                        link:   '#tabs-item5',
+                                        toggle: 'tab',
+                                        img:    [path.img,"/page/сhallenge/сhallenge-item2.svg"].join(""),
+                                    },
+                                    {
+                                        link:   '#tabs-item6',
+                                        toggle: 'tab',
+                                        img:    [path.img,"/page/сhallenge/сhallenge-item3.svg"].join(""),
+                                    },
+                                ],
                                 card_list:  [
                                     {
+                                        id:     'tabs-item4',
+                                        tabs:   'active',
                                         name:   'Состав команды компетенции',
-                                        img:    [path.img,"/page/сhallenge/сhallenge-item1.svg"].join(""),
-                                        note:    '<ul> 
+                                        note:   '<ul> 
                                             <li>Менеджмент и&nbsp;маркетинг</li>
                                             <li>Промышленный дизайн</li>
                                             <li>Электроника</li>
@@ -124,8 +162,13 @@
                                         <div>Члены команды могут собираться из разных вузов, команда может собираться непосредственно на соревнованиях</div>',
                                     },
                                     {
+                                        id:     'tabs-item5',
+                                        name:   'Идея задания',
+                                        note:   '<p>Разработать технологический продукт и изготовить прототип на основании принципиального задания от заказчика.</p><p>Задание подразумевает широкую степень свободы в выборе способов его решения.</p>',
+                                    },
+                                    {
+                                        id:     'tabs-item6',
                                         name:   'Критерии оценки',
-                                        img:    [path.img,"/page/сhallenge/сhallenge-item3.svg"].join(""),
                                         note:   '<ul><li>Командное взаимодействие, согласованность</li><li>Предпринимательское мышление, взаимодействие с&nbsp;заказчиком</li><li>Владение перспективными технологиями</li></ul>',
                                     },
                                 ],
@@ -144,21 +187,25 @@
                                 name:   'Визионеры и&nbsp;исследователи',
                                 img:    [path.img,"/page/сhallenge/сhallenge-card1.svg"].join(""),
                                 note:    '<ul><li>Участвуйте в&nbsp;наших исследованиях будущего навыков и&nbsp;профессий</li></ul>',
+                                close: 'true',
                             },
                             {
                                 name:   'Лидеры индустрий, представители корпораций',
                                 img:    [path.img,"/page/сhallenge/сhallenge-card2.svg"].join(""),
                                 note:    '<ul><li>Станьте технологическими и&nbsp;содержательными партнерами F—S Team Challenge</li><li>Ваше видение современных форм организации работы может стать основой новых челленджей и&nbsp;ориентиром для обучения новых профессионалов</li></ul>',
+                                close: 'true',
                             },
                             {
                                 name:   'Менеджеры и эксперты компетенций',
                                 img:    [path.img,"/page/сhallenge/сhallenge-card3.svg"].join(""),
                                 note:    '<ul><li>Включайте элементы оценки межпрофессиональных навыков будущего в&nbsp;существующие компетенции</li><li>Формируйте командные челленджи на основе перспективных технологий и&nbsp;форматов организации работы</li></ul>',
+                                close: 'true',
                             },
                             {
                                 name:   'Университеты и студенты',
                                 img:    [path.img,"/page/сhallenge/сhallenge-card4.svg"].join(""),
                                 note:    '<ul><li>Участвуйте в соревнованиях F—S Team Challenge, сформированных вместе с&nbsp;ведущими работодателями и&nbsp;лидерами технологических рынков</li><li>Внедряйте оценку и&nbsp;развитие навыков будущего в&nbsp;образовательные программы</li></ul>',
+                                close: 'true',
                             },
                         ],
                     },
@@ -232,8 +279,11 @@
                 $(this).addClass('is--visit');
             });*/
             if($(document).width() < 1200) {
-               $('.card__item.is--сhallenge-card').on("click", function() {
-                    $(this).addClass('is--visit');
+               $('.card__group.is--сhallenge-card').on("click", function() {
+                    $(this).parent().addClass('is--visit');
+                });
+                $('[data-close]').on("click", function() {
+                    $(this).parent().removeClass('is--visit');
                 });
             } 
         </script>
