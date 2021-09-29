@@ -18,7 +18,7 @@
 		}
 	}
 	&content{
-		min-height: 100%;
+		//min-height: 100%;
 		display: flex; 
 		flex-direction: column;
 		flex: 1 1 auto;	
@@ -560,6 +560,7 @@
 			});
 			.media-breakpoint-up(@uxl; {
 				//transform: scale(2);
+				transform: scale(2.5);
 			});
 		}
 		&.is--index-challenge{
@@ -583,12 +584,13 @@
 				}
 			}
 			&.is--adv{
-				margin-bottom: 85px;
+				//margin-bottom: 85px;
+				margin-bottom: 135px;
 				[data-slick-challenge-adv-thumb]{
 					margin-bottom: 30px;
 				}
 				.media-breakpoint-up(@md; {
-					margin-bottom: 135px;
+					//margin-bottom: 135px;
 					[data-slick-challenge-adv-thumb]{
 						display: none;
 					}
@@ -767,7 +769,8 @@
 		transition: @trs-site;
 		&-wrap{
 			&.is--challenge-modal{
-			    height: 250px;
+			    //height: 250px;
+			    height: 230px;
 	    		overflow: hidden;
 	    		position: relative;
 	    		/*position: relative;
@@ -922,7 +925,7 @@
 						grid-template-columns: repeat(4,1fr);
 					});
 					li{
-						padding-left: 44px;
+						padding-top: 44px;
 						display: flex;
 						align-items: center;
 						min-height: 30px;
@@ -933,6 +936,10 @@
 						font-weight: 300;
 						.text16();
 						background-image: url('@{url-path-img}/page/competencies/competencies-adv-default.svg');
+						.media-breakpoint-up(@md; {
+							padding-top: 0;
+							padding-left: 44px;
+						});
 					}
 				}
 			}
@@ -1303,7 +1310,7 @@
 			max-width: 750px;
 		}
 		& + .section__tags{
-			margin-top: 52px;
+			padding-top: 52px;
 		}
 		&.is--404{
 			.text20();
@@ -1341,11 +1348,12 @@
 		}
 		&.is--challenge-modal{
 			display: none;
-		   	font-size: 0.889rem;
-			line-height: 155%;
+		   	font-size: 0.75rem;
+			line-height: 140%;
 			font-family: @site_ff_custom;
 			padding-top: 25px;
 			.media-breakpoint-up(@md; {
+		   		font-size: 0.889rem;
 				line-height: 140%;
 				padding-top: 20px;
 			});
@@ -1387,7 +1395,18 @@
 		&.is--competencies-card{
 			display: flex;
 			flex-wrap: wrap;
-			gap: 20px;
+			@g: 10px;
+			margin: -@g;
+			& > *{
+				margin: @g;
+			}
+			.flexbox-gap &{
+				gap: @g*2;
+				margin: 0!important;
+				& > *{
+					margin: 0 !important;
+				}
+			}
 		}
 	}
 	&btn{
@@ -1501,6 +1520,9 @@
 			font-family: @site_ff_custom;
 			.text12();
 			font-weight: 300;
+			.media-breakpoint-down(@md; {
+				transform: scale(0.8);
+			});
 			.media-breakpoint-up(@lg; {
 				.t16();
 				width: 570px;
@@ -1934,6 +1956,7 @@
 			}*/
 		}
 		&.is--competencies-card{
+			outline: none!important;
 			picture{
 				display: block;
 				position: relative;

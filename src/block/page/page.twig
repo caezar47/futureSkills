@@ -13,12 +13,17 @@
 					</h2>
 					{% endif %}
 					{% if content.view == "adv" %}
-						<div data-slick-challenge-adv-thumb>
+						{# <div data-slick-challenge-adv-thumb>
 							{% for value in content.card_list %}
 								<div class="{{content.card_prefix}}item  {{content.card_mod}}-thumb">{{value.name}}</div>
 							{% endfor %}
-						</div>
+						</div>#}
 						<div data-slick-challenge-adv  class="{{content_prefix}}grid  {{content_mod}}  {{content.mod}}">
+							<div class="slick-btn-group">
+								<button type="button" class="slick-btn  is--prev is--ch-adv  slick-arrow" style=""><span class="sr-only">Предыдущий слайд</span></button>
+								<div class="slick-count"></div>
+								<button type="button" class="slick-btn  is--next is--ch-adv slick-arrow" style=""><span class="sr-only">Следующий слайд</span></button>
+							</div>
 							{% include "../common/card/card.twig" with {
 								view:   content.card_view,
 								prefix: content.card_prefix,

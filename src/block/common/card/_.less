@@ -187,28 +187,59 @@
 		}
 		&.is--сhallenge-team{
 			display: flex; 
-			gap: 10px;
-			& > *:nth-child(1){
-				min-width: 133px;
+			margin-left: -5px;
+			margin-right: -5px;
+			& > *{
+				margin-left: 5px;
+				margin-right: 5px;
+
+				&:nth-child(1){
+					min-width: 133px;
+				}
+				&:nth-child(2){
+					flex: 1 1 auto;
+					margin-top: -4px;
+				}
 			}
-			& > *:nth-child(2){
-				flex: 1 1 auto;
-				margin-top: -4px;
+			.flexbox-gap &{
+				gap: 10px;
+				margin-left: 0 !important;
+				margin-right: 0 !important;
+				& > *{
+					margin-left: 0 !important;
+					margin-right: 0 !important;
+				}
 			}
 			.media-breakpoint-up(@md; {
-				gap: 30px;
-				& > *:nth-child(1){
-					width: 28.8vw;
-					min-width: 300px;
+				margin-left: -15px;
+				margin-right: -15px;
+				& > *{
+					margin-left: 15px;
+					margin-right: 15px;
+					&:nth-child(1){
+						width: 28.8vw;
+						min-width: 300px;
+					}
+					&:nth-child(2){
+						margin-top: 0;
+						padding-top: 15px;
+					}
 				}
-				& > *:nth-child(2){
-					margin-top: 0;
-					padding-top: 15px;
+				.flexbox-gap &{
+					gap: 30px;
 				}
 			});
 			.media-breakpoint-up(@xl; {
-				gap: 70px;
-				margin: 0px 0 0 2.8vw;
+				padding-left: 2.8vw;
+				margin-left: -35px;
+				margin-right: -35px;
+				& > *{
+					margin-left: 35px;
+					margin-right: 35px;
+				}
+				.flexbox-gap &{
+					gap: 70px;
+				}
 			});
 		}
 		&.is--challenge-events{
@@ -310,9 +341,21 @@
 		}
 		&.is--team{
 			display: flex;
-			gap: 30px;
+			@g: 15px;
+			margin: -@g;
+			& > *{
+				margin: @g;
+			}
 			& > *:nth-child(2){
 				flex: 1 1 0;
+			}
+
+			.flexbox-gap &{
+				gap: @g*2;
+				margin: 0 !important;
+				& > *{
+					margin: 0 !important;
+				}
 			}
 		}
 		&.is--docs{
@@ -377,11 +420,24 @@
 		&.is--сhallenge-adv{
 			display: flex;
 			align-items: center;
-			gap: 25px;
-			margin-bottom: 18px;
+			@g: 12.5px;
+			margin: -@g;
+			& > *{
+				margin: @g;
+			}
+			padding-bottom: 18px;
 			justify-content: center;
+
+			.flexbox-gap &{
+				gap: @g*2;
+				margin: 0 !important;
+				& > *{
+					margin: 0 !important;
+				}
+
+			}
 			.media-breakpoint-up(@md; {
-				margin-bottom: 25px;
+				padding-bottom: 25px;
 				justify-content: initial;
 			});
 		}
@@ -534,8 +590,9 @@
 				top: 50%;
 				left: 50%;
 				max-width: 320px;
-				width: 84%;
-				height: 88%;
+				max-height: 320px;
+				width: 80%;
+				height: 85%;
 				background: linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
 				box-shadow: 0px 0px 5.10377px rgba(49, 255, 156, 0.7), 0px 0px 19.7583px rgba(49, 255, 156, 0.5), inset 0px 0px 1.97583px rgba(49, 255, 156, 0.5);
 				border-radius: @site_br - 15;
@@ -693,11 +750,11 @@
 		}
 		//page
 		&.is--сhallenge-adv{
-			display: none;
+			//display: none;
 			font-weight: 400;
 			.text20();
 			.media-breakpoint-up(@md; {
-				display: block;
+				//display: block;
 			});
 		}
 		&.is--сhallenge-item{
@@ -920,6 +977,18 @@
 					} 
 				}
 			}
+			.media-breakpoint-down(@md; {
+				.text16();
+				font-size: 0.85rem;
+				ul{
+					li{
+						margin-bottom: 15px;
+					}
+					&:last-child{
+						margin-bottom: 0;
+					} 
+				}
+			});
 			& > *:last-child{
 				margin-bottom: 0;
 			}
@@ -1026,9 +1095,9 @@
 		a{
 			color: @white;
 			.icon-tel();
-			background-position: 0 0;
+			display: inline-block;			
+			background-position: 0 2px;
 			padding-left: 30px;
-			
 		}
 		&.is--team{
 			.text14();
@@ -1048,7 +1117,8 @@
 		a{
 			color: @white;
 			.icon-email();
-			background-position: 0 1px;
+			display: inline-block;			
+			background-position: 0px 3px;
 			padding-left: 30px;
 			&:hover{
 				color: @warning!important;

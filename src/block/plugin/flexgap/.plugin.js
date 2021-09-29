@@ -17,7 +17,7 @@ function checkFlexGap() {
   return isSupported;
 }
 
-console.log(checkFlexGap());
+//console.log(checkFlexGap());
 
 if (checkFlexGap()) {
   document.documentElement.classList.add("flexbox-gap");

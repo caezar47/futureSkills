@@ -100,6 +100,12 @@ $(function() {
 		focusOnSelect: true,
 	});
 	
+    if($(document).width() < 768) {
+	    ch_adv.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide) {
+			var i = (currentSlide ? currentSlide : 0) + 1;
+			$(this).find(count).html(i + '/' + slick.$dots[0].children.length);
+	    });
+	}
 	ch_adv.slick({		
   		responsive: [	
 			{
@@ -109,10 +115,17 @@ $(function() {
 			{
 				breakpoint: 767,
 				settings:{
+					slide: '.card__item',
 					slidesToShow: 1,
 					slidesToScroll: 1,
+					dots: true,
+					infinite: false,
+					prevArrow: $(this).find('.slick-btn.is--prev.is--ch-adv'),
+					nextArrow: $(this).find('.slick-btn.is--next.is--ch-adv'),
+					//prevArrow: prevArrow,
+					//nextArrow: nextArrow,
+					/*
 					arrows: false,
-					dots: false,
 					draggable: false,
 					pauseOnFocus: false,
 					pauseOnHover: false,
@@ -120,13 +133,13 @@ $(function() {
 					touchMove: false,
 					fade: true, 	
 					autoplay: false,
-			  		asNavFor: ch_adv_thumb,
+			  		asNavFor: ch_adv_thumb,*/
 				}
 		    }
 
 		]
 	});
-	ch_adv_thumb.slick({
+	/*ch_adv_thumb.slick({
 		variableWidth: true,
 		slidesToShow: 1,
 		slidesToScroll: 1,
@@ -136,7 +149,7 @@ $(function() {
 		autoplay: false,
   		asNavFor: ch_adv,
 		focusOnSelect: true,
-	});
+	});*/
 
    	/*ch_group.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide) {
 	    var currentSlide = ch_group.slick('slickCurrentSlide') + 1;

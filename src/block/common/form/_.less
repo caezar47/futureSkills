@@ -3,42 +3,63 @@
 	}
 	&grid{
 		&.is--block-form{
-			max-width: 770px;
-			gap: 30px;
+			max-width: 803px;
+			gap: 0;
+			@g: 15px;
+			@rg: 17px;
+			margin-top: -@rg;
+			margin-bottom: -@rg;
+			margin-left: -@g;
+			margin-right: -@g;
 			& > *{
-				flex: 0 0 100%;
+				margin-top: @rg;
+				margin-bottom: @rg;
+				margin-left: @g;
+				margin-right: @g;
+				flex: 0 0 ~"calc(100% - @{g} - @{g})";
 				&.is--textarea,
 				&.is--submit{
-					margin-top: 20px;
+					padding-top: 20px;
 				}
 				&.is--submit{
-					margin-top: 20px;
+					padding-top: 20px;
 					text-align: center;
 				}
 			}
+			.flexbox-gap &{
+				max-width: 770px;
+				gap: 30px;				
+				margin: 0 !important;
+				& > *{
+					margin: 0 !important;
+					flex: 0 0 100%;
+				}
+			}
 			.media-breakpoint-up(@md; {
-				gap: 34px 4%;
 				& > *{
 					&.is--name{
-						flex: 0 0 22%;
+						flex: 0 0 ~"calc(25% - @{g} - @{g})";
 					}
 					&.is--email{
-						flex: 0 0 35%;
+						flex: 0 0 ~"calc(37.5% - @{g} - @{g})";
 					}
 					&.is--tel{
-						flex: 0 0 35%;						
+						flex: 0 0 ~"calc(37.5% - @{g} - @{g})";	
 					}
 					&.is--textarea,
 					&.is--submit{
-						flex: 0 0 100%;
+						flex: 0 0 ~"calc(100% - @{g} - @{g})";
 					}
 					&.is--textarea{
-						margin-top: 0;
+						padding-top: 0;
 					}
 					&.is--submit{
-						margin-top: 5px;
+						padding-top: 5px;
 						text-align: left;
 					}
+				}
+				.flexbox-gap &{
+					gap: @rg*2 @g*2;
 				}
 			});
 		}
