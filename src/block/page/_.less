@@ -987,29 +987,28 @@
 			//max-width: 1200px;
 			//margin: 0 auto;
 			justify-content: center;
-			/*gap: 0;
 			& > *{
 				margin: 15px 0;
 			}
-			@supports (display: flex; gap: 30px){*/
+			.flexbox-gap &{
 				gap: 30px;
 				grid-gap: 30px;
 				& > *{
 					margin: 0;
 				}
-			//}
+			}
 			.media-breakpoint-up(@md; {
 				& > *{
 					flex: 0 0 ~"calc(33.333% - 30px)";
-					//margin: 22px 15px;
+					margin: 22px 15px;
 				}
-				//@supports (display: flex; gap: 44px 30px){
+				.flexbox-gap &{
 					gap: 44px 30px;
 					grid-gap: 44px 30px;
 					& > *{
 						margin: 0;
 					}
-				//}
+				}
 			});
 		}  
 		&.is--index-competence{
