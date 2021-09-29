@@ -5,9 +5,18 @@
 			border-radius: @site_br - 10px;
 			display: flex;
 			align-items: center;
-			gap: 25px;
+			//gap: 25px;
 			padding: 10px 10px 10px 15px;
 			min-height: 148px;
+			& > *{
+				margin: 0 8.5px;
+			}
+			@supports (gap: 25px){
+				gap: 25px;
+				& > *{
+					margin: 0;
+				}
+			}
 			.media-breakpoint-up(@md; {
 				border-radius: @site_br;
 				text-align: center;
