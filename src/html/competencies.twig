@@ -17,10 +17,13 @@
         <main class="{{prefix.content}}wrap  is--default">
             <img src="{{path.img}}/bg/bg-sm.jpg" alt="" class="{{prefix.content}}bg  is--default  is--top">
             <img src="{{path.img}}/bg/bg-lg.jpg" alt="" class="{{prefix.content}}bg  is--default  is--bottom">
+            <div class="{{prefix.content}}bg  is--glow" data-glow >
+                <img src="{{path.img}}/bg/cursor.png" alt="">
+            </div>{# 
             <div class="{{prefix.content}}bg  is--glow  is--competencies" data-glow >
                 <img src="{{path.img}}/bg/competencies-glow-top.png" alt=""  >
                 <img src="{{path.img}}/bg/competencies-glow-bottom.png" alt="">
-            </div>
+            </div> #}
             {% include "../block/page/page.twig" with {
                 view:               'competencies',
                 content_prefix:     prefix.content, 
