@@ -98,10 +98,19 @@
 		ul{
 			display: flex;
 			justify-content: center;
-			gap: 20px;
-			margin: 0;
 			padding: 0;
 			list-style: none;
+			margin: -10px;
+			& > *{
+				margin: 10px;
+			}
+			.flexbox-gap &{
+				gap: 20px;
+				margin: 0!important;
+				& > *{
+					margin: 0!important;
+				}
+			}
 			a{
 				color: @white;
 				&:hover{
@@ -118,7 +127,13 @@
 			.text12();
 			ul{
 				justify-content: initial;
-				gap: 10px;
+				margin: -5px;
+				& > *{
+					margin: 5px;
+				}
+				.flexbox-gap &{
+					gap: 10px;
+				}
 			}
 		}
 	}

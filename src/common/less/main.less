@@ -3,10 +3,13 @@ body {
 	z-index: 1;
 	color: @site_color;
 	//padding-top: @navbar_device;
-	background: @site_bg;
+	background: @bg_site;
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
+	&.is--gradient{
+		//background: @site_bg;
+	}
 	.media-breakpoint-down(@xl; {
 		&::before{
 			content: '';

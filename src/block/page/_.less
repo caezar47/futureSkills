@@ -7,14 +7,13 @@
 		min-height: 100%;
 		position: relative;
 		overflow: hidden;
-		&.is--default{
-			background: @site_bg;
-		}
-		&.is--index{
-			background: @bg_index;
-		}
-		&.is--challenge{
-			background: linear-gradient(182.05deg, #042B3B 1.77%, #001E2D 23.3%, #061A28 48.06%, #0B2635 61.4%, #0B1F27 76.18%, #16333D 86.88%, #1A4C5C 100.52%);
+		.is--gradient &{
+			&.is--index{
+				background: @bg_index;
+			}
+			&.is--challenge{
+				background: @bg_challenge;
+			}
 		}
 	}
 	&content{
@@ -468,8 +467,8 @@
 		&.is--glow{
 			position: absolute;
 			z-index: 1;
-			width: 213px;
-			height: 222px;
+			width: 350px;
+			height: 350px;
 			display: none;
 			img{
 				position: absolute;
@@ -999,7 +998,6 @@
 			}
 			.flexbox-gap &{
 				gap: 30px;
-				grid-gap: 30px;
 				& > *{
 					margin: 0;
 				}
