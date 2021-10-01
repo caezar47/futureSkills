@@ -13,14 +13,14 @@
         } %}    
         
         <main class="{{prefix.content}}wrap  is--default">
-            <img src="{{path.img}}/bg/bg-sm.jpg" alt="" class="{{prefix.content}}bg  is--default  is--top">
-            <img src="{{path.img}}/bg/bg-lg.jpg" alt="" class="{{prefix.content}}bg  is--default  is--bottom">
             <div class="{{prefix.content}}bg  is--glow" data-glow >
             {# <div class="{{prefix.content}}bg  is--glow  is--uni" data-glow > #}
                 <img src="{{path.img}}/bg/cursor.png" alt="">
                 {# <img src="{{path.img}}/bg/uni-glow-top.png" alt=""  > #}
                 {# <img src="{{path.img}}/bg/uni-glow-bottom.png" alt=""> #}
             </div>
+            <img src="{{path.img}}/bg/bg-sm.jpg" alt="" class="{{prefix.content}}bg  is--default  is--top">
+            <img src="{{path.img}}/bg/bg-lg.jpg" alt="" class="{{prefix.content}}bg  is--default  is--bottom">
             {% include "../block/page/page.twig" with {
                 view:               'university',
                 content_prefix:     prefix.content, 
