@@ -147,7 +147,7 @@
     
         
         <main class="section__wrap  is--default">
-            <div class="section__bg  is--glow" data-glow >
+            <div class="section__bg  is--glow">
                 <img src="./img/bg/cursor.png" alt="">
             </div>
             
@@ -328,5 +328,28 @@ svg4everybody();
 document.createElement("picture");
 </script> 
 
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+		  const followCursor = () => {
+		    var el = document.querySelector('.section__bg.is--glow'); 
+		    if (el != null) {
+			    window.addEventListener('mousemove', e => { 
+			      const target = e.target 
+			      if (!target) return
+
+			      /*if (target.closest('a')) { // если курсор наведён на ссылку
+			        el.classList.add('follow-cursor_active') // элементу добавляем активный класс
+			      } else { // иначе
+			        el.classList.remove('follow-cursor_active') // удаляем активный класс
+			      }*/
+
+			      el.style.left = e.pageX + 'px' 
+			      el.style.top = e.pageY + 'px'
+			    })
+			  }
+		  }
+		  followCursor()
+		});
+	</script>
     </body>
 </html> 

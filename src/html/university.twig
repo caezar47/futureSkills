@@ -14,7 +14,7 @@
         } %}    
         
         <main class="{{prefix.content}}wrap  is--default">
-            <div class="{{prefix.content}}bg  is--glow" data-glow >
+            <div class="{{prefix.content}}bg  is--glow">
             {# <div class="{{prefix.content}}bg  is--glow  is--uni" data-glow > #}
                 <img src="{{path.img}}/bg/cursor.png" alt="">
                 {# <img src="{{path.img}}/bg/uni-glow-top.png" alt=""  > #}
@@ -328,6 +328,7 @@
 
         {% include "../block/common/modals/include.twig"%}        
         {% include "../block/common/script/script.twig" with {
+            followcursor: 'true',
         } %}
     </body>
 </html> 

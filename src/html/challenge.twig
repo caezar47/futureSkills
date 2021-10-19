@@ -15,7 +15,8 @@
         } %}    
         
         <main class="{{prefix.content}}wrap  is--challenge">
-            <div class="{{prefix.content}}bg  is--glow" data-glow>
+            {# <div class="{{prefix.content}}bg  is--glow" data-glow> #}
+            <div class="{{prefix.content}}bg  is--glow">
                 <img src="{{path.img}}/bg/cursor.png" alt="">
             </div>
             <img src="{{path.img}}/bg/bg-sm.jpg" alt="" class="{{prefix.content}}bg  is--challenge  is--top">
@@ -275,7 +276,8 @@
 
         {% include "../block/common/modals/include.twig"%}
         {% include "../block/common/script/script.twig" with {
-            fullpage: 'true'
+            fullpage: 'true',
+            followcursor: 'true',
         } %}
         <script>
             /*$('.card__item.is--сhallenge-card').on("mousemove", function() {
