@@ -1129,10 +1129,10 @@ document.createElement("picture");
 		  const followCursor = () => {
 		    var el = document.querySelector('.section__bg.is--glow'); 
 		    if (el != null) {
-			    window.addEventListener('mousemove', e => { 
-			      const target = e.target 
-			      if (!target) return
-
+			    window.addEventListener('mousemove', e => {
+			    	const target = e.target 			    	
+		      		el.classList.remove("is--over")
+		      		if (!target) return
 			      /*if (target.closest('a')) { // если курсор наведён на ссылку
 			        el.classList.add('follow-cursor_active') // элементу добавляем активный класс
 			      } else { // иначе
@@ -1142,6 +1142,9 @@ document.createElement("picture");
 			      el.style.left = e.pageX + 'px' 
 			      el.style.top = e.pageY + 'px'
 			    })
+			    window.addEventListener('mouseout', e => { 			    	
+			      	el.classList.add("is--over")
+			  	})
 			  }
 		  }
 		  followCursor()

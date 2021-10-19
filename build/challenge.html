@@ -146,10 +146,6 @@
     
         
         <main class="section__wrap  is--challenge">
-            
-            <div class="section__bg  is--glow">
-                <img src="./img/bg/cursor.png" alt="">
-            </div>
             <img src="./img/bg/bg-sm.jpg" alt="" class="section__bg  is--challenge  is--top">
             <img src="./img/bg/bg-md.jpg" alt="" class="section__bg  is--challenge  is--middle">
             <img src="./img/bg/bg-lg.jpg" alt="" class="section__bg  is--challenge  is--bottom">
@@ -586,6 +582,11 @@
         </div>
     </section>
  
+            
+            
+            <div class="section__bg  is--glow">
+                <img src="./img/bg/cursor.png" alt="">
+            </div>
         </main>
 
         	<footer class="footer__block"> 	
@@ -799,10 +800,10 @@ document.createElement("picture");
 		  const followCursor = () => {
 		    var el = document.querySelector('.section__bg.is--glow'); 
 		    if (el != null) {
-			    window.addEventListener('mousemove', e => { 
-			      const target = e.target 
-			      if (!target) return
-
+			    window.addEventListener('mousemove', e => {
+			    	const target = e.target 			    	
+		      		el.classList.remove("is--over")
+		      		if (!target) return
 			      /*if (target.closest('a')) { // если курсор наведён на ссылку
 			        el.classList.add('follow-cursor_active') // элементу добавляем активный класс
 			      } else { // иначе
@@ -812,6 +813,9 @@ document.createElement("picture");
 			      el.style.left = e.pageX + 'px' 
 			      el.style.top = e.pageY + 'px'
 			    })
+			    window.addEventListener('mouseout', e => { 			    	
+			      	el.classList.add("is--over")
+			  	})
 			  }
 		  }
 		  followCursor()
@@ -822,6 +826,8 @@ document.createElement("picture");
 <script src="./js/fullpage.min.js"></script>
 <script>
 	$('#modal-challenge').on('show.bs.modal', function (e) {
+		 
+
 		$('#fullpage').fullpage({
 			fixedElements: '#nav',
 			//responsiveWidth: '768',
@@ -850,7 +856,6 @@ document.createElement("picture");
 					$('#nav1').addClass('is--viewed');
 					$('#nav2').addClass('is--visible');
 					$('.section__nav').addClass('is--slide1');
-
 					$('.section__img').addClass('is--slide1');
 				}
 				else if(origin.index == 1 && direction == 'up'){				
@@ -928,12 +933,20 @@ document.createElement("picture");
 					//$('.section__text.is--right').addClass('is--static');
 				}*/
 			}
-		}); 
+		});
+		//
+	
 		$('.section__group.is--challenge-modal').addClass('is--visible');
 	});
 	$('#modal-challenge').on('hide.bs.modal', function (e) {
 		$('.section__group.is--challenge-modal').toggleClass('is--visible');
-		fullpage_api.destroy();
+		fullpage_api.destroy('all');
+		$('.section__nav').removeClass('is--slide1 is--slide2 is--slide3 is--slide4');
+		$('#nav1').addClass('is--visible');
+		$('#nav2').removeClass('is--visible  is--viewed');
+		$('#nav3').removeClass('is--visible  is--viewed');
+		$('#nav4').removeClass('is--visible  is--viewed');
+		$('.section__img').removeClass('is--slide1 is--slide2 is--slide3 is--slide4');
 	});
 
 	if($(document).width() < 768) {

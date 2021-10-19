@@ -15,10 +15,6 @@
         } %}    
         
         <main class="{{prefix.content}}wrap  is--challenge">
-            {# <div class="{{prefix.content}}bg  is--glow" data-glow> #}
-            <div class="{{prefix.content}}bg  is--glow">
-                <img src="{{path.img}}/bg/cursor.png" alt="">
-            </div>
             <img src="{{path.img}}/bg/bg-sm.jpg" alt="" class="{{prefix.content}}bg  is--challenge  is--top">
             <img src="{{path.img}}/bg/bg-md.jpg" alt="" class="{{prefix.content}}bg  is--challenge  is--middle">
             <img src="{{path.img}}/bg/bg-lg.jpg" alt="" class="{{prefix.content}}bg  is--challenge  is--bottom">
@@ -267,6 +263,11 @@
                     },
                 ],     
             } %} 
+            
+            {# <div class="{{prefix.content}}bg  is--glow" data-glow> #}
+            <div class="{{prefix.content}}bg  is--glow">
+                <img src="{{path.img}}/bg/cursor.png" alt="">
+            </div>
         </main>
 
         {% include "../block/common/footer/footer.twig" with {

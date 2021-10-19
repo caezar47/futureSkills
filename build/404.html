@@ -147,7 +147,7 @@
     
         
         <main class="section__wrap  is--default" >
-             <img src="./img/bg/bg-lg.jpg" alt="" class="section__bg  is--404">
+            <img src="./img/bg/bg-lg.jpg" alt="" class="section__bg  is--404">
             	<section class="section__content  is--404" >
 		<div class="section__container container  is--404">
 			<div class="section__grid  grid__row  is--404">
@@ -239,10 +239,10 @@ document.createElement("picture");
 		  const followCursor = () => {
 		    var el = document.querySelector('.section__bg.is--glow'); 
 		    if (el != null) {
-			    window.addEventListener('mousemove', e => { 
-			      const target = e.target 
-			      if (!target) return
-
+			    window.addEventListener('mousemove', e => {
+			    	const target = e.target 			    	
+		      		el.classList.remove("is--over")
+		      		if (!target) return
 			      /*if (target.closest('a')) { // если курсор наведён на ссылку
 			        el.classList.add('follow-cursor_active') // элементу добавляем активный класс
 			      } else { // иначе
@@ -252,6 +252,9 @@ document.createElement("picture");
 			      el.style.left = e.pageX + 'px' 
 			      el.style.top = e.pageY + 'px'
 			    })
+			    window.addEventListener('mouseout', e => { 			    	
+			      	el.classList.add("is--over")
+			  	})
 			  }
 		  }
 		  followCursor()
