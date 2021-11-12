@@ -199,8 +199,8 @@
 							</div>				
 						<div class="card__note  is--сhallenge-plus">				
 				<p>Командные соревнования по методологии WorldSkills;</p><p>Решение творческих технологических задач из практики лидеров технологического рынка</p>
-			</div> 
-								</div> 
+							</div> 
+					</div> 
 			<div class="card__item  is--сhallenge-plus">
 			<div class="card__group  is--сhallenge-plus">
 								<div class="card__img  is--сhallenge-plus">
@@ -212,8 +212,8 @@
 							</div>				
 						<div class="card__note  is--сhallenge-plus">				
 				<p>Подготовка профессионалов будущего — команд, создающих новые продукты и решения;</p><p>Развитие форматов оценки и развития навыков будущего</p>
-			</div> 
-								</div> 
+							</div> 
+					</div> 
 			<div class="card__item  is--сhallenge-plus">
 			<div class="card__group  is--сhallenge-plus">
 								<div class="card__img  is--сhallenge-plus">
@@ -225,8 +225,8 @@
 							</div>				
 						<div class="card__note  is--сhallenge-plus">				
 				Мультидисциплинарные команды студентов вузов и колледжей
-			</div> 
-								</div> 
+							</div> 
+					</div> 
 	
 
 
@@ -428,10 +428,10 @@
 							</div>				
 						<div class="card__note  is--сhallenge-card">				
 				<ul><li>Участвуйте в&nbsp;наших исследованиях будущего навыков и&nbsp;профессий</li></ul>
-			</div> 
-									<button data-close class="card__btn  is--сhallenge-card"><svg class="icon-svg icon-modal-close" role="img">
+								<button data-close class="card__btn  is--сhallenge-card"><svg class="icon-svg icon-modal-close" role="img">
 	<use xlink:href="./img/svg/sprite.svg#modal-close"></use>
 </svg></button>
+							</div> 
 					</div> 
 			<div class="card__item  is--сhallenge-card">
 			<div class="card__group  is--сhallenge-card">
@@ -444,10 +444,10 @@
 							</div>				
 						<div class="card__note  is--сhallenge-card">				
 				<ul><li>Станьте технологическими и&nbsp;содержательными партнерами F—S Team Challenge</li><li>Ваше видение современных форм организации работы может стать основой новых челленджей и&nbsp;ориентиром для обучения новых профессионалов</li></ul>
-			</div> 
-									<button data-close class="card__btn  is--сhallenge-card"><svg class="icon-svg icon-modal-close" role="img">
+								<button data-close class="card__btn  is--сhallenge-card"><svg class="icon-svg icon-modal-close" role="img">
 	<use xlink:href="./img/svg/sprite.svg#modal-close"></use>
 </svg></button>
+							</div> 
 					</div> 
 			<div class="card__item  is--сhallenge-card">
 			<div class="card__group  is--сhallenge-card">
@@ -460,10 +460,10 @@
 							</div>				
 						<div class="card__note  is--сhallenge-card">				
 				<ul><li>Включайте элементы оценки межпрофессиональных навыков будущего в&nbsp;существующие компетенции</li><li>Формируйте командные челленджи на основе перспективных технологий и&nbsp;форматов организации работы</li></ul>
-			</div> 
-									<button data-close class="card__btn  is--сhallenge-card"><svg class="icon-svg icon-modal-close" role="img">
+								<button data-close class="card__btn  is--сhallenge-card"><svg class="icon-svg icon-modal-close" role="img">
 	<use xlink:href="./img/svg/sprite.svg#modal-close"></use>
 </svg></button>
+							</div> 
 					</div> 
 			<div class="card__item  is--сhallenge-card">
 			<div class="card__group  is--сhallenge-card">
@@ -476,10 +476,10 @@
 							</div>				
 						<div class="card__note  is--сhallenge-card">				
 				<ul><li>Участвуйте в соревнованиях F—S Team Challenge, сформированных вместе с&nbsp;ведущими работодателями и&nbsp;лидерами технологических рынков</li><li>Внедряйте оценку и&nbsp;развитие навыков будущего в&nbsp;образовательные программы</li></ul>
-			</div> 
-									<button data-close class="card__btn  is--сhallenge-card"><svg class="icon-svg icon-modal-close" role="img">
+								<button data-close class="card__btn  is--сhallenge-card"><svg class="icon-svg icon-modal-close" role="img">
 	<use xlink:href="./img/svg/sprite.svg#modal-close"></use>
 </svg></button>
+							</div> 
 					</div> 
 	
 
@@ -963,7 +963,8 @@ document.createElement("picture");
                     $(this).parent().addClass('is--visit');
                 });
                 $('[data-close]').on("click", function() {
-                    $(this).parent().removeClass('is--visit');
+                    //$(this).parent().removeClass('is--visit');
+                    $(this).closest('.card__item').removeClass('is--visit');
                 });
             } 
         </script>

@@ -132,58 +132,46 @@
 		}
 		&.is--сhallenge-card{
 			max-width: 270px;
-			min-height: 420px;
 			position: relative;
 			transition: @trs-site;
-			border-radius: @site_br;
 			color: @black;
+			border-radius: @site_br;
 			font-size: 0.889rem;
 			line-height: 135%;
-			padding: 60px 30px;			
-			box-shadow: @default-s;			
 			cursor: pointer;
-			transition: @trs-site;
-			overflow: hidden;
-			&::before{
-				content: '';
-				position: absolute;
-				z-index: 1;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				transition: @trs-site;
-				//background: @default-p;
-				background: linear-gradient(115.86deg, #FAE579 3.38%, #E9FF92 20.66%, #E9FFA9 39.52%, #C0F3A0 61.68%, #8EE9BD 77.79%, #28D4EB 100.07%);
-				opacity: 0;
-				transform: scale(-1,1);
-			}
+			//overflow: hidden;
 			&.is--visit{
-				transform: scale(-1,1);
-				box-shadow: @default-s;	
-				&::before{
-					opacity: 1;
-				}
-			}
-			//&.is--visit:hover{	
-			//	box-shadow: @default-s;	
-			//}
-			.media-breakpoint-up(@xl; {
-				&:hover{
+				//box-shadow: @default-s;	
+				.card__group{
+					opacity: 0;
 					transform: scale(-1,1);
+					visibility: hidden;
+				}
+				.card__note{
+					transform: scale(1,1);
 					&::before{
+						//box-shadow: @default-sh;
 						opacity: 1;
 					}
 				}
+			}
+			.media-breakpoint-up(@xl; {
 				&:hover{
-					box-shadow: @default-sh;
+					//box-shadow: @default-sh;
+					.card__group{
+						opacity: 0;
+						transform: scale(-1,1);
+						visibility: hidden;
+					}
+					.card__note{
+						transform: scale(1,1);
+						&::before{
+							//box-shadow: @default-sh;
+							opacity: 1;
+						}
+					}
 				}
 			});
-			/*.media-breakpoint-up(@md; {
-				&:hover{
-					box-shadow: 0px 0px 65.9298px rgba(253, 255, 176, 0.5), inset 0px 0px 6.59298px rgba(253, 255, 176, 0.5);
-				}
-			});*/
 		}
 		&.is--сhallenge-team{
 			display: flex; 
@@ -458,14 +446,8 @@
 			color: @white;
 			padding: 75px 25px;
 			transition: @trs-site;
-			.card__item.is--visit &{
-				opacity: 0;
-			}
-			.media-breakpoint-up(@xl; {
-				.card__item:hover &{
-					opacity: 0;
-				}
-			});
+			box-shadow: @default-s;
+			visibility: visible;	
 		}
 		&.is--challenge-events{
 			.media-breakpoint-up(@md; {
@@ -943,14 +925,12 @@
 			});
 		}
 		&.is--сhallenge-card{
+			transition: @trs-site;
 			position: relative;
 			z-index: 2;
 			transform: scale(-1,1);
-			/*opacity: 0;
-			transition: @trs-site;
-			.card__item:hover &{
-				opacity: 1;
-			}*/
+			padding: 60px 30px;	
+			min-height: 440px;
 			p{
 				margin-bottom: 10px;
 			}
@@ -976,6 +956,20 @@
 						margin-bottom: 0;
 					} 
 				}
+			}
+			&::before{
+				content: '';
+				border-radius: @site_br;
+				position: absolute;
+				z-index: -1;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				transition: @trs-site;
+				background: linear-gradient(115.86deg, #FAE579 3.38%, #E9FF92 20.66%, #E9FFA9 39.52%, #C0F3A0 61.68%, #8EE9BD 77.79%, #28D4EB 100.07%);
+				opacity: 0;
+				//transform: scale(-1,1);
 			}
 			.media-breakpoint-down(@md; {
 				.text16();
@@ -1143,7 +1137,7 @@
 			.btn-clearfix();
 			position: absolute;
 			top: 10px;
-			left: 10px;
+			right: 10px;
 			z-index: 4;
 			width: 32px;
 			height: 32px;
@@ -1153,6 +1147,7 @@
 			.is--visit &{
 				opacity: 1;
 				visibility: visible;
+				//transition: @trs-site 0.2s;
 			}
 			svg{
 				display: block;

@@ -52,10 +52,10 @@
 			{% if value.note %}
 			<div class="{{prefix}}note  {{mod}}">				
 				{{value.note}}
+				{% if value.close %}
+				<button data-close class="{{prefix}}btn  {{mod}}">{% include "../svg-sprite/svg.twig" with {icon:"modal-close"} %}</button>
+				{% endif %}
 			</div> 
-			{% endif %}
-			{% if value.close %}
-			<button data-close class="{{prefix}}btn  {{mod}}">{% include "../svg-sprite/svg.twig" with {icon:"modal-close"} %}</button>
 			{% endif %}
 		</div> 
 	{% endfor %}
