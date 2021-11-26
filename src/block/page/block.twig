@@ -1,6 +1,7 @@
 {% if view == "header" %}
     <div class="{{content_prefix}}header  {{content_mod}}">
         <div>
+            {% if back %}
             <div class="{{content_prefix}}btn  is--goback  {{content_mod}}">
                 {% include "../common/button/tpl.twig" with {
                     view:   'tpl',
@@ -15,9 +16,10 @@
                     name:   back,
                 } %}
             </div> 
-            <h1 class="{{content_prefix}}heading  {{content_mod}}"> 
+            {% endif %}
+            <{% if heading_tag %}{{heading_tag}}{% else %}h1{% endif %} class="{{content_prefix}}heading  {{content_mod}}"> 
                 {{heading}}             
-            </h1> 
+            </{% if heading_tag %}{{heading_tag}}{% else %}h1{% endif %}> 
             {% if text %}
             <div class="{{content_prefix}}text  {{content_mod}}"> 
                 {{text}}                
@@ -65,10 +67,20 @@
 {% if view == "docs" %}
     <section class="{{content_prefix}}content  {{content_mod}}" {% if bg %}style="background-image: url({{bg}});"{% endif %}>
         <div class="{{content_prefix}}container container  {{content_mod}}">
-            <h2 class="{{content_prefix}}heading  {{content_mod}}"> 
-                {{heading}}             
-            </h2> 
+            {% if text %}
+            <div>
+                <h2 class="{{content_prefix}}heading  {{content_mod}}"> 
+                    {{heading}}             
+                </h2> 
+                <div class="{{content_prefix}}text  {{content_mod}}">{{text}}</div>
+            </div>
+            {% else %}
+                <h2 class="{{content_prefix}}heading  {{content_mod}}"> 
+                    {{heading}}             
+                </h2> 
+            {% endif %}
             <div class="{{content_prefix}}group  {{content_mod}}">
+                {% if card_list %}
                 <div class="{{content_prefix}}grid  grid__row  {{content_mod}}">
                     {% include "../common/card/card.twig" with {
                         view:   card_view,
@@ -77,8 +89,9 @@
                         list:   card_list,                    
                     } %}
                 </div>
+                {% endif %}
                 {% if btn %}
-                <div class="{{content_prefix}}btn  is--download">
+                <div class="{{content_prefix}}btn  {{btn_group}}">
                     {% include "../common/button/tpl.twig" with {
                         view:       'tpl',
                         tag:        btn_tag,

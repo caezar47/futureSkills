@@ -184,6 +184,7 @@
 	                    list:	card_list,                    
 	                } %}
 			    </div>
+				{% if btn %}
         		<div class="{{content_prefix}}btn  {{content_mod}}">
 			        {% include "../common/button/tpl.twig" with {
 	                    view:	'tpl',
@@ -198,6 +199,7 @@
 	                    name:	btn,
 	                } %}
 	        	</div>
+	        	{% endif %}
 	        </div>
         </div>
     </section>

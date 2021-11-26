@@ -281,6 +281,13 @@
 					left: 5.2vw;
 				});
 			}
+			.is--landing &{
+				background: @success2;
+				color: @black;
+				&::before{
+					background-color: #fefef7;
+				}
+			}
 		}
 		&{
 			.btn-clearfix();
@@ -308,6 +315,21 @@
 					}
 				}
 			}
+			.is--landing [data-slick-challenge] &{
+				&.is--prev{
+					.icon-prev(@c: 'FA671A');
+					&:hover{
+						.icon-prev(@c: 'fff');
+					}
+				}
+				&.is--next{
+					.icon-next(@c: 'FA671A');
+					&:hover{
+						.icon-next(@c: 'fff');
+					}
+				}
+
+			}
 			.slick-btn-group &{
 				position: relative;
 				width: 21px;
@@ -320,6 +342,20 @@
 				}
 				&.is--next{
 					.icon-forward();
+					&:hover{
+						.icon-forward(@c: '000');
+					}
+				}
+			}
+			.is--landing .slick-btn-group &{
+				&.is--prev{
+					.icon-back(@c: 'FA671A');
+					&:hover{
+						.icon-back(@c: '000');
+					}
+				}
+				&.is--next{
+					.icon-forward(@c: 'FA671A');
 					&:hover{
 						.icon-forward(@c: '000');
 					}

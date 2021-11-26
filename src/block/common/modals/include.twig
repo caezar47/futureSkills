@@ -20,6 +20,18 @@
     
     content_prefix:     prefix.content, 
     content_mod:        'is--university',
+} %}
+{% include "tpl.twig" with {
+    view:               "university",
+    prefix:             "modal__", 
+    mod:                "is--articles", 
+    ID:                 "modal-articles",
+    card_view:          'articles_modal',
+    card_prefix:        "card__",
+    card_mod:           "is--articles-modal", 
+    
+    content_prefix:     prefix.content, 
+    content_mod:        'is--articles',
 } %} 
 {% include "tpl.twig" with {
     view:               "challenge",

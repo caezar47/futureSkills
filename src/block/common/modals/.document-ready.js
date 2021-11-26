@@ -31,6 +31,28 @@ modal_btn_show.on('click', function(e) {
 $('.modal__block').on('hidden.bs.modal', function (e) {
 	$(this).find("[data-uni-team]").empty();
 });
+var articles_show = $('[data-target="#modal-articles"]');
+articles_show.on('click', function(e) {
+	var modal_data = 			JSON.parse($(this).attr('data-modal') || '{}');
+	var id = 					modal_data.id;
+	var name = 					modal_data.name;
+	var note = 					modal_data.note;
+	var img = 					modal_data.img;
+	var date = 					modal_data.date;
+
+	var modal = 				$(this).attr('data-target');
+
+	var modal_heading = 		$(modal).find("[data-name]");
+	var modal_note = 			$(modal).find("[data-note]");
+	var modal_img = 			$(modal).find("[data-picture]");
+	var modal_date = 			$(modal).find("[data-date]");
+
+	modal_heading.text(name);
+	modal_note.html(note);
+	modal_date.text(date);
+	modal_img.attr({'src':img});
+
+});
 //$('#modal-challenge').modal();
 
 /*var basketOpen = $('.informer__modal .btn__item');

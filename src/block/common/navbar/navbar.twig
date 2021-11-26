@@ -110,3 +110,21 @@
 	</div>
 </header>
 {% endif %}
+{% if view == "landing" %}
+<header class="{{navbar_prefix}}block  {{navbar_mod}}">
+	<div class="{{navbar_prefix}}header">
+		<div class="container">
+			<div class="{{navbar_prefix}}header-row flex__row">
+				<div class="is--logotip"> 
+					<a class="{{navbar_prefix}}logotip" href="#">
+						<picture>
+							<source media="(max-width: 767px)" srcset="{{path.img}}/page/landing/logotip-xs.svg">
+							<img src="{{path.img}}/page/landing/logotip.svg" class="img-responsive" alt="">
+						</picture>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+{% endif %}

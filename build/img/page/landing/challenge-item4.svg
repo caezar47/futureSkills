@@ -1,0 +1,35 @@
+<svg width="152" height="142" viewBox="0 0 152 142" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="70.5625" cy="71.2573" r="70" fill="white" fill-opacity="0.1"/>
+<path d="M90.1967 41.8735H50.9287V51.6233H41.179V90.8912H50.9287V100.641H90.1967V90.8912H99.9464V51.6233H90.1967V41.8735Z" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="bevel"/>
+<g filter="url(#filter0_i_6_136)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M53.1264 56L55.1264 54H85.1264L87.1264 56V86L85.1264 88H73.9385C71.5298 77.2431 63.4452 68.746 53.1264 66.2043V56ZM53.1264 68.2692V73.266C59.7032 75.4668 64.9244 81.0007 66.8973 88H71.8853C69.5562 78.3208 62.3057 70.7259 53.1264 68.2692ZM53.1264 80.3847V75.3883C58.5893 77.4455 62.9712 82.0997 64.8112 88H59.8116C58.4488 84.6879 56.0791 81.966 53.1264 80.3847ZM53.1264 82.7146V86L55.1264 88H57.6233C56.5642 85.793 54.9962 83.9629 53.1264 82.7146Z" fill="url(#paint0_linear_6_136)"/>
+</g>
+<path d="M58.8629 41.8733V27.5513" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="bevel"/>
+<path d="M82.2635 41.8733V27.5513" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="bevel"/>
+<path d="M70.5627 41.8734V31.2495" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="bevel"/>
+<path d="M58.8629 114.963V100.641" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="bevel"/>
+<path d="M82.2635 114.963V100.641" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="bevel"/>
+<path d="M70.5627 111.264V100.641" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="bevel"/>
+<path d="M99.9474 59.5576H114.269" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="bevel"/>
+<path d="M99.9474 82.9565H114.269" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="bevel"/>
+<path d="M99.9474 71.2568H110.571" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="bevel"/>
+<path d="M26.8574 59.5576H41.1794" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="bevel"/>
+<path d="M26.8574 82.9565H41.1794" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="bevel"/>
+<path d="M30.5558 71.2568H41.1797" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="bevel"/>
+<defs>
+<filter id="filter0_i_6_136" x="53.1264" y="54" width="34" height="34" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="2.06746"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 0.870588 0 0 0 0 0.192157 0 0 0 0.5 0"/>
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow_6_136"/>
+</filter>
+<linearGradient id="paint0_linear_6_136" x1="54.4129" y1="79.5" x2="88.0111" y2="78.2757" gradientUnits="userSpaceOnUse">
+<stop stop-color="#F9D953"/>
+<stop offset="1" stop-color="#EB5428"/>
+</linearGradient>
+</defs>
+</svg>

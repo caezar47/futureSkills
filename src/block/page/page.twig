@@ -1,9 +1,11 @@
 {% if view == "challenge" %}
 	<section class="{{content_prefix}}content  {{content_mod}}" > 
 		<div class="{{content_prefix}}container container  {{content_mod}}">
+			{% if heading %}
 			{% include "block.twig" with {
 				view:   'header',
 			} %}
+			{% endif %}
 			{% if content %}
 				{% for content in content %}
 				<div class="{{content_prefix}}group  {{content_mod}}  {{content.mod}}">
@@ -93,6 +95,16 @@
 							mod:    content.card_mod,
 							list:   content.card_list,
 						} %}
+					{% endif %}
+					{% if content.view == "sponsors" %}
+					<div class="{{content_prefix}}grid  grid__row  {{content_mod}}  {{content.mod}}">
+						{% include "../common/card/card.twig" with {
+							view:   content.card_view,
+							prefix: content.card_prefix,
+							mod:    content.card_mod,
+							list:   content.card_list,
+						} %}
+					</div>
 					{% endif %}
 				</div>
 				{% endfor %}
@@ -294,6 +306,61 @@
 		</div>
 	</section>
 {% endif %}
+{% if view == "articles" %}
+	<section class="{{content_prefix}}content  {{content_mod}}">
+		 
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			{% include "block.twig" with {
+				view:   'header',
+			} %}
+			<div class="{{content_prefix}}grid  grid__row  {{content_mod}}">
+				{% include "../common/card/card.twig" with {
+					view:   card_view,
+					prefix: card_prefix,
+					mod:    card_mod,
+					list:   card_list,                    
+				} %}
+			</div> 
+		</div>
+	</section>
+{% endif %}
+{% if view == "landing" %}
+	{% for content in content %}
+	<section class="{{content_prefix}}content  {{content.mod}}" 
+		{% if content.bg %}
+			style="background-image: 
+			{% for bg in content.bg %}
+				{% if bg.img %}
+				url({{bg.img}})
+				{% endif %}
+				{% if bg.gradient %}
+				{{bg.gradient}}
+				{% endif %}
+				{% if loop.last %}{% else %},{% endif %}
+			{% endfor %}
+			;" 
+		{% endif %}
+	>
+		<div class="{{content_prefix}}container container  {{content.mod}}">
+			{% if content.heading %}
+			<{{content.heading_tag}} class="{{content_prefix}}heading  {{content.mod}}">
+				{{content.heading}}
+			</{{content.heading_tag}}>
+			{% endif %}	
+			{% if content.img %}	
+			<div class="{{content_prefix}}img  {{content.mod}}">
+				<img src="{{content.img}}" class="img-responsive" alt="">
+			</div>	
+			{% endif %}	
+			{% if content.text %}	
+			<div class="{{content_prefix}}text  {{content.mod}}">
+				{{content.text}}
+			</div>	
+			{% endif %}			
+		</div>
+	</section>
+	{% endfor %}
+{% endif %}
 {% if view == "404" %}
 	<section class="{{content_prefix}}content  {{content_mod}}" {% if bg %}style="background-image: url({{bg}});"{% endif %}>
 		<div class="{{content_prefix}}container container  {{content_mod}}">
@@ -327,3 +394,5 @@
 		</div>
 	</section>
 {% endif %}
+
+{#  #}

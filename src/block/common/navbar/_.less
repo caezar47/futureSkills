@@ -13,6 +13,9 @@
 				position: fixed;	
 			}		
 		});
+		.is--landing &{
+			position: absolute;
+		}
 	}
 	//header
 	&header{
@@ -37,6 +40,15 @@
 					opacity: 1;
 				}
 			});
+
+			.is--landing &{
+				display: block;
+				padding: 53px 0;
+				opacity: 1;
+				.media-breakpoint-up(@md; {
+					padding: 20px 0;
+				});
+			}
 		}	
 		&-row{
 			position: relative;
@@ -176,6 +188,15 @@
 			min-width: 225px;
 			width: 225px;		
 		});	
+
+		.is--landing &{
+			width: 100%;
+			height: auto;
+			max-width: 345px;
+			.media-breakpoint-up(@md; {
+				max-width: 415px;
+			});
+		}
 	}
 	//collapse
 	&collapse{

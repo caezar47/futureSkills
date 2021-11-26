@@ -42,3 +42,64 @@
 		</div>
 	</footer>
 {% endif %}
+{% if view == "landing" %}
+	<footer class="{{footer_prefix}}block"> 	
+		<div class="{{footer_prefix}}container container">
+			<div class="{{footer_prefix}}row">
+				<div>
+					<a href="{{page.index}}" class="{{footer_prefix}}logotip">
+						{% include "../svg-sprite/svg.twig" with {icon:'logotip'} %} 
+					</a>
+					<div class="{{footer_prefix}}tags">
+						<a href="#">#FSTC2021</a>
+						<a href="#">#WorldSkillsRussia</a>
+						<a href="#">#Межвуз2021</a>
+					</div>
+				</div>
+				<div>
+					<div class="{{footer_prefix}}contacts">
+						<a href="tel:{{contacts.phone_tel}}">{{contacts.phone}}</a>
+					</div>
+					<div class="{{footer_prefix}}contacts">
+						<a href="mailto:{{contacts.email}}">{{contacts.email}}</a>
+					</div>
+					<div class="{{footer_prefix}}contacts">
+						{{contacts.address}}
+					</div>
+				</div>
+				<div class="{{footer_prefix}}soc">
+					<p>Подпишитесь на нас в соцсетях:</p>
+					<ul>
+						<li>
+							<a href="{{soc.inst}}" target="_blank">instagram</a>			
+						</li>
+						<li>
+							<a href="{{soc.yb}}" target="_blank">youtube</a>
+						</li>
+						<li>
+							<a href="{{soc.fb}}" target="_blank">facebook</a>
+						</li>
+						<li>
+							<a href="{{soc.tw}}" target="_blank">twitter</a>
+						</li>
+					</ul>
+				</div>
+				<div class="{{footer_prefix}}partners">
+					<p>Партнеры</p>
+					<a href="https://worldskills.ru/" target="_blank" class="{{footer_prefix}}wsr">
+						<img src="{{path.img}}/page/landing/wsr.png" class="img-responsive" alt="">
+					</a>
+					<a href="#" target="_blank" class="{{footer_prefix}}wsr">
+						<img src="{{path.img}}/page/landing/vuz.png" class="img-responsive" alt="">
+					</a>
+					<a href="#" target="_blank" class="{{footer_prefix}}wsr">
+						<img src="{{path.img}}/page/landing/mpr.png" class="img-responsive" alt="">
+					</a>
+					<a href="#" target="_blank" class="{{footer_prefix}}wsr">
+						<img src="{{path.img}}/page/landing/npr.png" class="img-responsive" alt="">
+					</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+{% endif %}

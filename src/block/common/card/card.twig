@@ -69,6 +69,41 @@
 		</div> 
 	{% endfor %}
 {% endif %}
+{% if view == 'sponsors' %}
+	{% for value in list %}
+		<div class="{{prefix}}item  {{mod}}">
+			<div class="{{prefix}}group  {{mod}}">
+				{% if value.label %}
+				<div class="{{prefix}}label  {{mod}}">
+					<p class="button__item  {{mod}}">				
+						<span>{{value.label}}</span>
+					</p>
+				</div> 
+				{% endif %}
+				{% if value.img %}
+				<div class="{{prefix}}img  {{mod}}">
+					<img src="{{value.img}}" class="img-responsive" alt="">
+				</div>
+				{% endif %}
+				{% if value.name %}
+				<h5 class="{{prefix}}heading  {{mod}}">				
+					{{value.name}}
+				</h5> 
+				{% endif %}
+			</div>				
+			{% if value.note %}
+			<div class="{{prefix}}note  {{mod}}">
+				<div>
+					{{value.note}}
+				</div>				
+				{% if value.close %}
+				<button data-close class="{{prefix}}btn  {{mod}}">{% include "../svg-sprite/svg.twig" with {icon:"modal-close"} %}</button>
+				{% endif %}
+			</div> 
+			{% endif %}
+		</div> 
+	{% endfor %}
+{% endif %}
 {% if view == 'university_card' %}
 	{% for value in list %}
 		<a href="#" data-toggle="modal" data-target="#{{value.modal}}" class="{{prefix}}item  {{mod}}"  data-modal='{"name":"{{value.name}}", "note":"{{value.note}}", "img":"{{value.img}}" {% if value.team %}, "team":[{% for team in value.team %}{"name": "{{team.name}}","label": "{{team.label}}","img": "{{team.img}}","tel": "{{team.tel}}","email": "{{team.email}}"}{% if  loop.last %}{% else %},{% endif %}{% endfor %}]{% else %},"team":""{% endif %} }'>
@@ -191,207 +226,43 @@
 	{% endfor %}
 {% endif %}
 
-{# old #}
-{% if view == 'home' %}
+
+{% if view == 'articles_card' %}
 	{% for value in list %}
-		<a href="{{value.link}}" class="{{prefix}}item  {{mod}}">
+		<a href="#" data-toggle="modal" data-target="#{{value.modal}}" class="{{prefix}}item  {{mod}}"  data-modal='{"name":"{{value.name}}","date":"{{value.date}}", "note":"{{value.note}}", "img":"{{value.img}}"}'>
+			{% if value.img %}
 			<div class="{{prefix}}img  {{mod}}">
-				<img src="{{value.img}}" class="img-responsive" alt="">
+				<picture>
+					<img src="{{value.img}}" class="img-responsive" alt="">
+				</picture>
 			</div>
-			<h4 class="{{prefix}}heading  {{mod}}">				
-				{{value.heading}}
-			</h4> 
-			<div class="{{prefix}}note  {{mod}}">				
-				{{value.note}}
-			</div>
+			{% endif %}
+			<div class="{{prefix}}group  {{mod}}">
+				{% if value.date %}
+				<p class="{{prefix}}date  {{mod}}">				
+					{{value.date}}
+				</p> 
+				{% endif %}
+				{% if value.name %}
+				<h5 class="{{prefix}}heading  {{mod}}">				
+					{{value.name}}
+				</h5> 
+				{% endif %}
+			</div> 
 		</a>
 	{% endfor %}
 {% endif %}
-
-
-{# old #}
-{% if view == 'building' %}
-	{% for value in list %}
-		<div class="{{prefix}}item  {{mod}}">
-			<a href="{{value.link}}" class="{{prefix}}img  {{mod}}">
-				<img src="{{value.img}}" class="img-responsive" alt="">
-				{% if value.decs %}
-				<div>
-					{% if value.qty %}
-					<h5><span>{{value.qty}}</span> Квартир в&nbsp;продаже</h5>
-					{% endif %}
-					{% if value.decs %}
-					<dl>
-						{% for d in value.decs %}
-							<div>
-								<dt>{{d.name}}</dt>
-								<dd><span>{{d.value}}</span> {{d.value_v}}</dd>
-							</div>
-						{% endfor %}
-					</dl>
-					{% endif %}
-				</div>
-				{% endif %}
-			</a>
-			<div class="{{prefix}}note  {{mod}}">				
-				<h4><a href="{{value.link}}">{{value.name}}</a></h4>
-				{% if value.note %}
-				<div class="is--note">{{value.note}}</div>
-				{% endif %}
-				{% if value.address %}
-				<p class="is--address">{{value.address}}</p>
-				{% endif %}
-				{% if value.metro %}
-				<p class="is--metro">{{value.metro}}</p>
-				{% endif %}
-			</div>
+{% if view == 'articles_modal' %}
+	<div class="{{prefix}}item  {{mod}}">
+		<div class="{{prefix}}img  {{mod}}">
+			<picture>
+				<img src="" data-picture class="img-responsive" alt="">
+			</picture>
 		</div>
-	{% endfor %}
-{% endif %}
-{% if view == 'newbuilding' %}
-	{% for value in list %}
-		<div>
-			<div class="{{prefix}}item  grid__row  {{mod}}">
-				<a href="{{value.link}}" class="{{prefix}}img  {{mod}}">
-					<img src="{{value.img}}" class="img-responsive" alt="">
-				</a>
-				<div class="{{prefix}}note  {{mod}}">				
-					<h3><a href="{{value.link}}">{{value.name}}</a></h3>
-					{% if value.address %}
-					<p class="is--address">{{value.address}}</p>
-					{% endif %}
-					{% if value.note %}
-					<div class="is--note">{{value.note}}</div>
-					{% endif %}
-					{% if value.decs %}
-					<dl>
-						{% for d in value.decs %}
-							<div>
-								<div class="is--decs-img">
-									{% include "../svg-sprite/svg.twig" with {icon:d.icon} %}
-								</div>
-								<div>
-									<dt>{{d.name}}</dt>
-									<dd>{{d.value}}</dd>
-								</div>
-							</div>
-						{% endfor %}
-					</dl>
-					{% include "../button/tpl.twig" with {
-	                    view:'tpl',
-	                    tag:'a',
-	                    link: value.link,
-	                    prefix:'button__',
-	                    mod:"",
-	                    elem:'item',
-	                    name: 'Подробнее о ЖК',
-	                } %}
-					{% endif %}
-				</div>
-			</div>
+		<div class="{{prefix}}group  {{mod}}">
+			<p class="{{prefix}}date  {{mod}}" data-date></p>
+			<h4 class="{{prefix}}heading  {{mod}}" data-name></h4>
+			<div class="{{prefix}}note  {{mod}}" data-note></div>
 		</div>
-	{% endfor %}
-{% endif %}
-{% if view == 'apartments-card' %}
-	{% for value in list %}
-		<div class="{{prefix}}item  {{mod}}">
-			<a href="{{value.link}}" class="{{prefix}}img  {{mod}}">
-				<img src="{{value.img}}" class="img-responsive" alt="">
-			</a>
-			<div class="{{prefix}}note  {{mod}}">				
-				<h4><a href="{{value.link}}">{{value.name}}</a></h4>
-				{% if value.complex %}
-				<h5>{{value.complex}}</h5>
-				{% endif %}
-				{% if value.address %}
-				<p class="is--address">{{value.address}}</p>
-				{% endif %}
-				{% if value.decs %}
-				<dl>
-					{% for d in value.decs %}
-						<div>
-							<dt>{{d.name}}</dt>
-							<dd>{{d.value}}</dd>
-						</div>
-					{% endfor %}
-				</dl>
-				{% endif %}
-				{% if value.cost %}
-				<p class="is--cost">{{value.cost}}</p>
-				{% endif %}
-			</div>
-		</div>
-	{% endfor %}
-{% endif %}
-{% if view == 'apartments-table' %}
-	<div class="{{prefix}}responsive  {{mod}}">
-		<table class="{{prefix}}group  {{mod}}">
-			<thead>
-				<tr>
-					<th>Планировка</th>
-					<th>Комнатность</th>
-					<th>Расположение</th>
-					<th>Этаж</th>
-					<th>Общая площадь, м<sup>2</sup></th>
-					<th>Цена, ₽</th>
-					<th></th>					
-				</tr>
-			</thead>
-			<tbody>			
-			{% for value in list %}
-				<tr class="{{prefix}}item  {{mod}}">
-					<td>
-						<a class="{{prefix}}img  {{mod}}" href="{{value.link}}">
-							<img src="{{value.img}}" class="img-responsive" alt="">
-						</a>
-					</td>
-					<td>
-						{% if value.room %}
-						<p class="is--room">{{value.room}}</p>
-						{% endif %}
-					</td>
-					<td>
-						<h4><a href="{{value.link}}">{{value.name}}</a></h4>
-						{% if value.complex %}
-						<h5>{{value.complex}}</h5>
-						{% endif %}
-						{% if value.address %}
-						<p class="is--address">{{value.address}}</p>
-						{% endif %}
-					</td>
-					<td>
-						{% if value.floor %}
-						<p class="is--floor">{{value.floor}}</p>
-						{% endif %}
-					</td>
-					<td>
-						{% if value.area %}
-						<p class="is--area">{{value.area}}</p>
-						{% endif %}
-					</td>
-					<td>
-						{% if value.cost %}
-						<p class="is--cost">{{value.cost}}</p>
-						{% endif %}
-					</td>
-					<td>
-						<div class="{{prefix}}btn  {{mod}}">
-							{% include "../button/tpl.twig" with {
-		                        view:'tpl',
-		                        tag:'button',
-		                        type:'button',
-		                        attr: "data-toggle='modal' data-target='#modal-tpl-phone-email'",
-		                        modal: '"id":"5","target":"Получить презентацию","name":"Получить презентацию","note":"Наш специалист вышлет Вам презентацию в ближайшее время"',
-		                        prefix:'button__',
-		                        mod:"is--line",
-		                        elem:'item',
-		                        name:value.btn,
-		                    } %}
-		                </div>
-					</td>
-				</tr>
-			{% endfor %}
-			</tbody>
-		</table>
 	</div>
 {% endif %}

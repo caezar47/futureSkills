@@ -51,6 +51,9 @@
 				filter: blur(0.671418px);
 				color: @white;
 				text-shadow: 0px 0px 9.39986px rgba(49, 255, 156, 0.7), 0px 0px 36.3899px rgba(49, 255, 156, 0.5);
+				.is--landing &{
+					text-shadow: 0px 0px 41.3493px rgba(255, 240, 163, 0.36);
+				}
 			}
 			.media-breakpoint-up(@xl; {
 				border-radius: @site_br;
@@ -169,6 +172,36 @@
 							//box-shadow: @default-sh;
 							opacity: 1;
 						}
+					}
+				}
+			});
+		}
+		&.is--сhallenge-sponsors{
+			position: relative;
+			transition: @trs-site;
+			&.is--visit{
+				.card__group{
+					opacity: 0;
+					transform: scale(-1,1);
+					visibility: hidden;
+				}
+				.card__note{
+					transform: scale(1,1);
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+			.media-breakpoint-up(@xl; {
+				&:hover{
+					.card__group{
+						opacity: 0;
+						transform: scale(-1,1);
+						visibility: hidden;
+					}
+					.card__note{
+						transform: scale(1,1);
+						opacity: 1;
+						visibility: visible;
 					}
 				}
 			});
@@ -379,6 +412,21 @@
 				}
 			}
 		}
+		&.is--articles-card{
+			background: linear-gradient(122.81deg, #FEFFF8 12.15%, #FAF6E8 67.57%, #F8EFD9 102.75%);
+			box-shadow: @default-s;
+			border-radius: @site_br - 10;
+			overflow: hidden;
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+			color: @black;
+		}
+		&.is--articles-modal{
+			color: @black;
+			max-width: 570px;
+			margin: 0 auto;
+		}
 	}
 	&group{
 		&.is--index-blockquote{
@@ -449,6 +497,17 @@
 			box-shadow: @default-s;
 			visibility: visible;	
 		}
+		&.is--сhallenge-sponsors{
+			transition: @trs-site;
+			background: @default-p;
+			box-shadow: @default-s;
+			border-radius: @site_br - 10px;
+			padding: 55px 60px 50px;
+			.media-breakpoint-up(@lg; {
+				border-radius: @site_br;
+				padding: 107px 50px 44px;
+			});
+		}
 		&.is--challenge-events{
 			.media-breakpoint-up(@md; {
 				position: relative;
@@ -488,6 +547,13 @@
 					margin-top: 40px;
 				}
 			}
+		}
+		&.is--articles-card{
+			padding: 20px 30px 40px 20px;
+			min-height: 201px;
+			.media-breakpoint-up(@md; {
+				padding: 20px 30px 30px 40px;
+			});
 		}
 	}
 	&img{
@@ -611,6 +677,22 @@
 				}
 			});
 		}
+		&.is--сhallenge-sponsors{
+			max-width: 380px;
+			height: 150px;
+			margin: 0 auto;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			img{
+				object-fit: contain;
+				object-position: center;
+			}
+			.media-breakpoint-up(@md; {
+				margin: 0 auto 30px;
+				height: 210px;
+			});
+		}
 		&.is--competencies{
 			min-height: 225px;
 			height: 225px;
@@ -698,6 +780,21 @@
 				.img-bg();
 			}
 		}
+		&.is--articles-card{
+			picture{
+				display: block;
+				height: 225px;
+				img{
+					.img-bg();
+				}
+			}
+		}
+		&.is--articles-modal{
+			margin-bottom: 20px;
+			img{
+				border-radius: @site_br - 10px;
+			}
+		}
 	}
 	&heading{
 		&.is--index-concept{
@@ -712,6 +809,9 @@
 			color: @primary;
 			font-weight: 400;
 			margin-bottom: 10px;
+			.is--landing &{
+				color: @success2;
+			}
 		}
 		&.is--index-challenge{
 			.t16();
@@ -777,6 +877,15 @@
 				.text20();
 			});
 		}
+		&.is--сhallenge-sponsors{
+			display: none;
+			text-align: center;
+			font-weight: 400;
+			font-family: @site_ff_custom;
+			.media-breakpoint-up(@md; {
+				display: block;
+			});
+		}
 		&.is--competencies{
 			font-weight: 400;
 			font-size: 1.111rem;
@@ -818,6 +927,24 @@
 		&.is--docs{
 			opacity: 0.8;
 		}
+		&.is--articles-card{
+			font-weight: 400;
+			font-size: 1.1rem;
+			line-height: 125%;
+			.media-breakpoint-up(@md; {
+				font-size: 1.333rem;
+			});
+		}
+		&.is--articles-modal{
+			font-weight: 400;
+			font-size: 1rem;
+			line-height: 130%;
+			margin-bottom: 20px;
+			.media-breakpoint-up(@md; {
+				font-size: 1.333rem;
+				line-height: 125%;
+			});
+		}
 	}
 	&note{
 		&.is--index-blockquote{
@@ -853,7 +980,9 @@
 						width: 5px;
 						height: 5px;
 						background-color: @primary;
-
+						.is--landing &{
+							background: @success2;
+						}
 					}
 				}
 			}
@@ -910,6 +1039,9 @@
 						width: 5px;
 						height: 5px;
 						background-color: @primary;
+						.is--landing &{
+							background-color: @success2;
+						}
 					}
 				}
 			}
@@ -987,6 +1119,61 @@
 				margin-bottom: 0;
 			}
 		}
+		&.is--сhallenge-sponsors{
+			position: absolute;
+			z-index: 3;
+			opacity: 0;
+			visibility: hidden;
+			transform: scale(-1,1);
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			transition: @trs-site;
+			font-family: @site_ff_custom;
+			background: linear-gradient(108.98deg, #ED7241 -93.82%, #EF8A60 -76.96%, #F1B394 -52.59%, #FFFBD8 23.85%, #FBEC8D 97.81%);
+			box-shadow: 0px 0px 65.9298px rgba(255, 200, 176, 0.5), inset 0px 0px 6.59298px rgba(255, 218, 145, 0.5);
+			border-radius: @site_br - 10px;
+			color: @default;
+			font-family: @site_ff_custom;
+			font-size: 0.778rem;
+			line-height: 145%;
+			padding: 30px 10px 10px 15px;
+			& > div{
+				height: 100%;
+				overflow: auto;
+				padding: 0px 15px 0 0;
+				margin-bottom: 0;
+				.scrollbar(@w: 3px; @r: 0px; @t: fadeout(@black, 90%); @s: @black);
+			}
+			h5{
+				font-size: 1rem;
+				font-weight: 400;
+				text-align: center;
+				margin-bottom: 15px;
+				font-family: @site_ff;
+			}
+			p, div{
+				margin-bottom: 15px;
+				&:last-child{
+					margin-bottom: 0;
+				}
+			}
+			.media-breakpoint-up(@lg; {
+				font-size: 0.889rem;
+				line-height: 150%;
+				border-radius: @site_br;
+				padding: 50px 20px 10px 60px;
+				h5{
+					font-size: 1.11rem;
+					margin-bottom: 20px;
+					font-family: @site_ff_custom;
+				}
+				& > div{
+					padding: 0px 35px 0 0;
+				}
+			});
+		}
 		&.is--challenge-events{
 			padding-top: 12px;
 			position: relative;
@@ -1057,6 +1244,17 @@
 				}
 			});				
 		}
+		&.is--articles-modal{
+			font-family: @site_ff_custom;
+		    font-size: .889rem;
+    		line-height: 150%;
+    		p, div{
+    			margin-bottom: 20px;
+    			&:last-child{
+    				margin-bottom: 0;
+    			}
+    		}
+		}
 	}
 	&label{
 		&.is--index-blockquote{
@@ -1072,6 +1270,23 @@
 			margin-bottom: 20px;
 			.media-breakpoint-up(@md; {
 				margin-bottom: 30px;
+			});
+		}
+		&.is--сhallenge-sponsors{
+			position: absolute;
+			top: 33px;
+			left: 50%;
+			transform: translateX(-50%);
+			.button__item{
+			    padding: 10px 28px;
+			    font-size: 0.567rem;
+			    line-height: 120%;
+			}
+			.media-breakpoint-up(@md; {
+				top: 50px;
+				.button__item{
+				    padding: 10px 15px;
+				}
 			});
 		}
 		&.is--team{
@@ -1130,6 +1345,23 @@
 			}
 		}
 	}
+	&date{
+		font-family: @site_ff_custom;
+		.t16();
+		&.is--articles-card{
+			margin-bottom: 25px;
+			font-weight: 300;
+			.media-breakpoint-up(@md; {
+				margin-bottom: 15px;
+			});
+		}
+		&.is--articles-modal{
+			margin-bottom: 15px;
+			.media-breakpoint-up(@md; {
+				margin-bottom: 20px;
+			});
+		}
+	}
 	&btn{
 		&.is--сhallenge-card{
 			opacity: 0;
@@ -1154,6 +1386,31 @@
 			}
 			.media-breakpoint-up(@xl; {
 				display: none;
+			});
+		}
+		&.is--сhallenge-sponsors{
+			opacity: 0;
+			visibility: hidden;
+			.btn-clearfix();
+			position: absolute;
+			z-index: 4;
+			top: 10px;
+			right: 10px;
+			width: 32px;
+			height: 32px;
+			color: @default;
+			padding: 10px;
+			transition: @trs-site;
+			.is--visit &{
+				opacity: 1;
+				visibility: visible;
+				//transition: @trs-site 0.2s;
+			}
+			svg{
+				display: block;
+			}
+			.media-breakpoint-up(@xl; {
+				//display: none;
 			});
 		}
 	}

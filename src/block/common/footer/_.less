@@ -5,10 +5,16 @@
 		.text14();
 		color: fadeout(@white, 30%);
 		font-family: @site_ff_custom;
-		text-align: center;
+		text-align: center;		
+		.is--landing &{
+			padding-bottom: 60px;
+		}
 		.media-breakpoint-up(@md; {
 			text-align: left;
 			padding: 70px 0 55px;
+			.is--landing &{
+				padding-bottom: 50px;
+			}
 		});
 	}
 	&container{
@@ -41,6 +47,75 @@
 				padding: 0!important;
 				border: 0;
 			}
+			.is--landing &{
+				display: grid;
+				grid-gap: 30px;
+				grid-template-columns: 5.3fr 4fr 3fr;
+				& > *{
+					&:nth-child(4){
+						padding-top: 50px!important;
+						grid-column: ~"2/4";
+					}
+				}
+			}
+		});
+	}
+	&partners{
+		color: @white;
+		text-transform: uppercase;
+		display: grid;
+		grid-gap: 40px 15px;
+		grid-template-columns: 1.2fr 1fr;
+		.text12();
+		font-family: @site_ff;
+		margin: 0 auto;
+		align-items: center;
+		max-width: 210px;
+		& > *{
+			&:nth-child(1){
+				grid-column: span 2;
+				margin-bottom: -15px;
+			}
+		}
+		.media-breakpoint-up(@md; {
+			align-items: initial;
+			max-width: initial;
+			margin: 0;
+			grid-template-columns: repeat(5, 1fr);
+			grid-gap: 15px;
+			img{
+				margin-left: auto;
+			}
+			& > *{
+				&:nth-child(1){
+					grid-column: initial;
+					margin-top: 3px;
+					margin-bottom: 0;
+				}
+				&:nth-child(2){
+					margin-top: -3px;
+					img{
+						width: 58px;
+					}
+				}
+				&:nth-child(3){
+					margin-top: 3px;
+					img{
+						width: 70px;
+					}
+				}
+				&:nth-child(4){
+					margin-top: -6px;
+					img{
+						width: 50px;
+					}
+				}
+				&:nth-child(5){
+					img{
+						width: 57px;
+					}
+				}
+			}
 		});
 	}
 	&logotip{
@@ -50,16 +125,31 @@
 		height: 16px;
 		margin: 0 auto 25px;
 		.media-breakpoint-up(@md; {
+			max-width: 225px;
 			margin: 0 0 30px;
+			.is--landing &{
+				margin-bottom: 20px;
+			}
 			*{
 				flex: initial;
 			}
 		});
-		.media-breakpoint-up(@md; {
-			max-width: 225px;
-		});
 		&:hover{
 			color: inherit;
+		}
+	}
+	&tags{
+		display: flex;
+		flex-wrap: wrap;
+		gap: 20px;
+		color: fadeout(@white, 30%);
+		justify-content: center;
+		.media-breakpoint-up(@md; {
+			max-width: 225px;
+			justify-content: initial;
+		});
+		a{
+			color: fadeout(@white, 30%);
 		}
 	}
 	&wsr{
