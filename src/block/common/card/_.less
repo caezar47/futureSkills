@@ -179,29 +179,48 @@
 		&.is--сhallenge-sponsors{
 			position: relative;
 			transition: @trs-site;
+			perspective: 800px;
+			.card__group{
+				transition: all 0.3s;
+			}
+			.card__note{
+				transition: all 0.3s;
+				backface-visibility: hidden;
+				transform: rotateY(-180deg);
+				opacity: 0;
+			}
 			&.is--visit{
 				.card__group{
-					opacity: 0;
-					transform: scale(-1,1);
-					visibility: hidden;
+					//opacity: 0;
+					//transform: scale(-1,1);
+					//visibility: hidden;
+					transition: all 0.5s;
+					transform: rotateY(180deg);
 				}
 				.card__note{
-					transform: scale(1,1);
+					//transform: scale(1,1);
 					opacity: 1;
-					visibility: visible;
+					//visibility: visible;
+
+					transition: all 0.5s;
+					transform: rotateY(0deg);
 				}
 			}
 			.media-breakpoint-up(@xl; {
 				&:hover{
 					.card__group{
-						opacity: 0;
-						transform: scale(-1,1);
-						visibility: hidden;
+						//opacity: 0;
+						//transform: scale(-1,1);
+						//visibility: hidden;
+						transition: all 0.5s;
+						transform: rotateY(180deg);
 					}
 					.card__note{
-						transform: scale(1,1);
+						//transform: scale(1,1);
 						opacity: 1;
-						visibility: visible;
+						//visibility: visible;
+						transition: all 0.5s;
+						transform: rotateY(0deg);
 					}
 				}
 			});
@@ -498,7 +517,7 @@
 			visibility: visible;	
 		}
 		&.is--сhallenge-sponsors{
-			transition: @trs-site;
+			//transition: @trs-site;
 			background: @default-p;
 			box-shadow: @default-s;
 			border-radius: @site_br - 10px;
@@ -1122,14 +1141,14 @@
 		&.is--сhallenge-sponsors{
 			position: absolute;
 			z-index: 3;
-			opacity: 0;
-			visibility: hidden;
-			transform: scale(-1,1);
+			//opacity: 0;
+			//visibility: hidden;
+			//transform: scale(-1,1);
 			top: 0;
 			left: 0;
 			right: 0;
 			bottom: 0;
-			transition: @trs-site;
+			//transition: @trs-site;
 			font-family: @site_ff_custom;
 			background: linear-gradient(108.98deg, #ED7241 -93.82%, #EF8A60 -76.96%, #F1B394 -52.59%, #FFFBD8 23.85%, #FBEC8D 97.81%);
 			box-shadow: 0px 0px 65.9298px rgba(255, 200, 176, 0.5), inset 0px 0px 6.59298px rgba(255, 218, 145, 0.5);
