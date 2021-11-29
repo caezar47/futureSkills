@@ -115,8 +115,11 @@
 {% if view == "challenge-modal" %}
 	<section class="{{content_prefix}}content  {{content_mod}}  section" >
 		<div id="nav" class="{{content_prefix}}group  {{content_mod}}">
-            <img src="{{path.img}}/bg/bg-sm.jpg" alt="" class="{{content_prefix}}bg  {{content_mod}}  is--top">
-            <img src="{{path.img}}/bg/bg-lg.jpg" alt="" class="{{content_prefix}}bg  {{content_mod}}  is--bottom">
+           {#  <img src="{{path.img}}/bg/bg-sm.jpg" alt="" class="{{content_prefix}}bg  {{content_mod}}  is--top">
+            <img src="{{path.img}}/bg/bg-lg.jpg" alt="" class="{{content_prefix}}bg  {{content_mod}}  is--bottom"> #}
+            {% for b in bg %}
+            	<img src="{{b.img}}" alt="" class="{{content_prefix}}bg  {{content_mod}}  {{b.mod}}"> 
+            {% endfor %}
 			<div class="{{content_prefix}}container container  {{content_mod}}">
 			<div class="{{content_prefix}}nav-wrap  {{content_mod}}">
 				<div class="{{content_prefix}}nav  {{content_mod}}">
@@ -139,10 +142,9 @@
 				<div class="round"></div>
 				<div class="center">
 					<div class="center--img">
-						<img src="{{path.img}}/page/сhallenge/modal/user-woman.svg" alt="" class="center--img1">
-						<img src="{{path.img}}/page/сhallenge/modal/user-man.svg" alt="" class="center--img2">
-						<img src="{{path.img}}/page/сhallenge/modal/user-woman.svg" alt="" class="center--img3">
-						<img src="{{path.img}}/page/сhallenge/modal/user-man.svg" alt="" class="center--img4">
+						{% for i in img %}
+						<img src="{{i.img}}" alt="" class="{{i.mod}}">
+						{% endfor %}
 					</div>
 					<div class="center--text">
 						<p class="center--text1">Профессионал</p>
@@ -150,22 +152,12 @@
 						<p class="center--text3">Новые <br>профессионалы</p>
 					</div>
 				</div>
-				<div class="icon  is--top">
-					<img src="{{path.img}}/page/сhallenge/modal/brain.svg" alt="">
-					<p>Cognitive foundation</p>
-				</div>
-				<div class="icon  is--right">
-					<img src="{{path.img}}/page/сhallenge/modal/leaf.svg" alt="">
-					<p>Green & universal wellbeing</p>
-				</div>
-				<div class="icon  is--bottom">
-					<img src="{{path.img}}/page/сhallenge/modal/microscheme.svg" alt="">
-					<p>Technical & digital</p>
-				</div>
-				<div class="icon  is--left">
-					<img src="{{path.img}}/page/сhallenge/modal/cultural.svg" alt="">
-					<p>Socio-economic & cultural</p>
-				</div>
+				{% for ic in icon %}
+					<div class="icon  {{ic.mod}}">
+						<img src="{{ic.img}}" alt="">
+						<p>{{ic.name}}</p>
+					</div>
+				{% endfor %}
 				<div class="text">
 					<h6>Новые продукты</h6>
 					<p>создаются командами, их социальными навыками и образом мышления (mindsets)</p>

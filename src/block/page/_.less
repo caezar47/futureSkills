@@ -114,7 +114,7 @@
 			background-size: 0 0, 0 0, auto, auto;
 			background-position: 100px -670px,-990px 405px,-405px 303px,0 0;
 			.media-breakpoint-up(@sm; {
-				background-position: 100px -670px,-990px 405px,-205px 173px,0 0;
+				background-position: -140px -586px,-1116px 235px,-205px 173px,0 0;
 			});
 			.media-breakpoint-up(@xl; {
 				background-size: auto, auto, 0 0, auto;
@@ -363,7 +363,8 @@
 			.media-breakpoint-up(@xl; {
 				//padding-top: 300px;
 				//padding-bottom: 240px;
-				padding-top: 120px;
+				//padding-top: 120px;
+				padding-top: 45px;
 				padding-bottom: 60px;
 			});
 		}
@@ -574,6 +575,16 @@
 					width: 1249px;
 					height: 730px;
 				//}
+
+    			.is--landing &{
+    				filter: blur(54px);
+    				opacity: 0.8;
+					width: 1475px;
+					height: 634px;
+				    top: -669px;
+    				right: -830px;
+					transform: rotate(134deg);
+    			}
 			}
 			&.is--bottom{
 				transform: rotate(-8.55deg);
@@ -583,6 +594,15 @@
 					width: 1666px;
 					height: 980px;
 				//}
+    			.is--landing &{
+    				filter: blur(54px);
+    				opacity: 0.8;
+					width: 1386px;
+					height: 696px;
+					transform: rotate(-67deg);
+					top: 500px;
+					left: -325px;
+    			}
 			}
 			.media-breakpoint-up(@lg; {
 				display: block;
@@ -858,14 +878,19 @@
 
 					&.is--visible{
 						.icon-bottom(@c: '31FF9C');
+						.is--landing &{
+							.icon-bottom(@c: 'FA671A');
+						}
 					}
 					&.is--viewed{
 						background: none!important;
 					}
 					&.is--visible:first-child,
 					&:first-child{
-						.icon-plus();
 						background-position: 5px 93px;
+						.is--landing &{
+							.icon-plus(@c: 'FA671A');
+						}
 					}					
 					&.is--visible:last-child,
 					&:last-child{
@@ -1978,6 +2003,10 @@
 					width: 230px;
 					height: 230px;
     			});
+    			.is--landing &{
+    				background: linear-gradient(122.81deg, #FCFBFB 12.15%, #FBEC8D 67.57%, #F9D953 102.75%);
+					box-shadow: 0px 0px 41.3493px rgba(255, 240, 163, 0.36), inset 0px 0px 4.13493px rgba(255, 222, 49, 0.5);
+    			}
 			}
 			.arrow{				
 				position: absolute;

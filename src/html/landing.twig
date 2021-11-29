@@ -33,10 +33,10 @@
                         heading:        'Чемпионат Future Skills Team Challenge 20201',
                         bg:             [
                             {
-                                img: [path.img,"/page/landing/bg-header.png"].join(""),
+                                img: [path.img,"/page/landing/bg-header-top.png"].join(""),
                             },
                             {
-                                img: [path.img,"/page/landing/bg-header.png"].join(""),
+                                img: [path.img,"/page/landing/bg-header-bottom.png"].join(""),
                             },
                             {
                                 img: [path.img,"/page/landing/bg-header-xs.png"].join(""),
@@ -444,7 +444,58 @@
             footer_prefix:"footer__"
         } %} 
 
-        {% include "../block/common/modals/include.twig" %}
+        {% include "../block/common/modals/include.twig" with {  
+            bg:         [
+                {
+                    mod:    'is--top',
+                    img:    [path.img,"/page/landing/modal/bg-top.jpg"].join(""),
+                },    
+                {
+                    mod:    'is--bottom',
+                    img:    [path.img,"/page/landing/modal/bg-bottom.jpg"].join(""),
+                },
+            ],
+            img:         [
+                {
+                    mod:    'center--img1',
+                    img:    [path.img,"/page/landing/modal/user-woman.svg"].join(""),
+                },
+                {
+                    mod:    'center--img2',
+                    img:    [path.img,"/page/landing/modal/user-man.svg"].join(""),
+                },
+                {
+                    mod:    'center--img3',
+                    img:    [path.img,"/page/landing/modal/user-woman.svg"].join(""),
+                },
+                {
+                    mod:    'center--img4',
+                    img:    [path.img,"/page/landing/modal/user-man.svg"].join(""),
+                },
+            ],
+            icon:         [
+                {
+                    mod:    'is--top',
+                    img:    [path.img,"/page/landing/modal/brain.svg"].join(""),
+                    name:   'Cognitive foundation',
+                },
+                {
+                    mod:    'is--right',
+                    img:    [path.img,"/page/landing/modal/leaf.svg"].join(""),
+                    name:   'Green & universal wellbeing',
+                },
+                {
+                    mod:    'is--bottom',
+                    img:    [path.img,"/page/landing/modal/microscheme.svg"].join(""),
+                    name:   'Technical & digital',
+                },
+                {
+                    mod:    'is--left',
+                    img:    [path.img,"/page/landing/modal/cultural.svg"].join(""),
+                    name:   'Socio-economic & cultural',
+                },
+            ],
+        }%}
         {% include "../block/common/script/script.twig" with {
             fullpage: 'true',
             followcursor: 'true',
