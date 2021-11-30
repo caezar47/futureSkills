@@ -95,10 +95,19 @@
 			<div class="{{prefix}}note  {{mod}}">
 				<div>
 					{{value.note}}
+					{% if value.video %}
+						<video controls class="{{prefix}}video  {{mod}}" muted >
+							<source src="{{value.video}}" >
+						</video>
+					{% endif %}
+					{% if value.youtube %}
+						<iframe class="{{prefix}}iframe  {{mod}}" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" src="//www.youtube.com/embed/{{value.youtube}}?enablejsapi=1"></iframe>
+					{% endif %}
 				</div>				
 				{% if value.close %}
 				<button data-close class="{{prefix}}btn  {{mod}}">{% include "../svg-sprite/svg.twig" with {icon:"modal-close"} %}</button>
 				{% endif %}
+				
 			</div> 
 			{% endif %}
 		</div> 
@@ -225,7 +234,6 @@
 		</a>
 	{% endfor %}
 {% endif %}
-
 
 {% if view == 'articles_card' %}
 	{% for value in list %}

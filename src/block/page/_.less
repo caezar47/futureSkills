@@ -269,6 +269,7 @@
 		}
 		//page
 		&.is--challenge{
+			padding-top: 85px;
 			padding-bottom: 80px;
 			.is--landing &{
 				padding-top: 70px;
@@ -2363,5 +2364,49 @@
 		}
 	}
 	&slider{
+	}
+	&banner{
+		&.is--challenge{
+			display: block;
+			color: @white;
+			background: linear-gradient(103.94deg, #010D18 7.9%, #03101A 95.56%);
+			background-repeat: no-repeat;
+			border-radius: 30px;
+			text-align: center;
+			overflow: hidden;
+			position: relative;
+			padding: 65px 30px 45px;
+   			margin-bottom: 25px;
+   			img{
+   				position: absolute;
+   				z-index: 1;
+   				&.is--left{
+					width: 1216px;
+					height: 903px;
+					transform: rotate(20deg);
+					top: -250px;
+					left: -765px;
+   				}
+   				&.is--right{
+					width: 1292px;
+					height: 959px;
+					transform: rotate(-160deg);
+					top: -505px;
+    				right: -740px;
+   				}
+   			}
+			h3{
+				position: relative;
+				z-index: 2;
+				.heading1();
+				font-weight: 400;
+				max-width: 780px;
+				margin: 0 auto 15px;
+			}
+			p{
+				position: relative;
+				z-index: 2;				
+			}
+		}
 	}
 }

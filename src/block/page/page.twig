@@ -1,6 +1,17 @@
 {% if view == "challenge" %}
 	<section class="{{content_prefix}}content  {{content_mod}}" > 
 		<div class="{{content_prefix}}container container  {{content_mod}}">
+			{% if banner %}
+			<a href="{{banner_link}}" class="{{content_prefix}}banner  {{content_mod}}" >
+				{% if banner_bg %}
+					{% for bg in banner_bg %}
+						<img src="{{bg.img}}" class="img-responsive  {{bg.mod}}" alt="">
+					{% endfor %}
+				{% endif %}
+				<h3>{{banner}}</h3>
+				<p>{{banner_date}}</p>
+			</a>
+			{% endif %}
 			{% if heading %}
 			{% include "block.twig" with {
 				view:   'header',

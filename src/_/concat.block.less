@@ -269,6 +269,7 @@
 		}
 		//page
 		&.is--challenge{
+			padding-top: 85px;
 			padding-bottom: 80px;
 			.is--landing &{
 				padding-top: 70px;
@@ -2364,6 +2365,50 @@
 	}
 	&slider{
 	}
+	&banner{
+		&.is--challenge{
+			display: block;
+			color: @white;
+			background: linear-gradient(103.94deg, #010D18 7.9%, #03101A 95.56%);
+			background-repeat: no-repeat;
+			border-radius: 30px;
+			text-align: center;
+			overflow: hidden;
+			position: relative;
+			padding: 65px 30px 45px;
+   			margin-bottom: 25px;
+   			img{
+   				position: absolute;
+   				z-index: 1;
+   				&.is--left{
+					width: 1216px;
+					height: 903px;
+					transform: rotate(20deg);
+					top: -250px;
+					left: -765px;
+   				}
+   				&.is--right{
+					width: 1292px;
+					height: 959px;
+					transform: rotate(-160deg);
+					top: -505px;
+    				right: -740px;
+   				}
+   			}
+			h3{
+				position: relative;
+				z-index: 2;
+				.heading1();
+				font-weight: 400;
+				max-width: 780px;
+				margin: 0 auto 15px;
+			}
+			p{
+				position: relative;
+				z-index: 2;				
+			}
+		}
+	}
 }
 .button__{
 	&item{
@@ -2792,6 +2837,7 @@
 			.card__note{
 				transition: all 0.3s;
 				backface-visibility: hidden;
+				visibility: hidden;
 				transform: rotateY(-180deg);
 				opacity: 0;
 			}
@@ -2799,15 +2845,14 @@
 				.card__group{
 					//opacity: 0;
 					//transform: scale(-1,1);
-					//visibility: hidden;
+					visibility: hidden;
 					transition: all 0.5s;
 					transform: rotateY(180deg);
 				}
 				.card__note{
 					//transform: scale(1,1);
 					opacity: 1;
-					//visibility: visible;
-
+					visibility: visible;
 					transition: all 0.5s;
 					transform: rotateY(0deg);
 				}
@@ -2815,17 +2860,15 @@
 			.media-breakpoint-up(@xl; {
 				&:hover{
 					.card__group{
-						//opacity: 0;
-						//transform: scale(-1,1);
-						//visibility: hidden;
-						transition: all 0.5s;
+						opacity: 0;
+						visibility: hidden;
+						transition: all 0.5s, opacity 0.3s;
 						transform: rotateY(180deg);
 					}
 					.card__note{
-						//transform: scale(1,1);
 						opacity: 1;
-						//visibility: visible;
-						transition: all 0.5s;
+						visibility: visible;
+						transition: all 0.5s, opacity 0.5s 0.2s;
 						transform: rotateY(0deg);
 					}
 				}
@@ -4037,6 +4080,20 @@
 			.media-breakpoint-up(@xl; {
 				//display: none;
 			});
+		}
+	}
+	&video{
+		&.is--сhallenge-sponsors{
+			width: 100%;
+			height: 253px;
+			border: 0;
+		}
+	}
+	&iframe{
+		&.is--сhallenge-sponsors{
+			width: 100%;
+			height: 253px;
+			border: 0;
 		}
 	}
 }

@@ -28,6 +28,7 @@
 		"competencies":"./competencies.html",
 		"competencies_card":"./competencies-card.html",
 		"university":"./university.html",
+		"landing":"./landing.html",
 		"contacts":"./contacts.html"
 	},
 	"prefix":{
