@@ -7,7 +7,7 @@
         {% include "../block/common/navbar/navbar.twig" with {
             view:           'landing',
             navbar_prefix:  'navbar__',
-            navbar_mod:     '',
+            navbar_mod:     'is--scroll', 
             active:         page.competencies_card,
         } %}    
         
@@ -513,15 +513,15 @@
 
                     var video = $(this).closest('.card__item').find('video');
                     var iframe = $(this).closest('.card__item').find('.card__iframe');
-                    
-                if (video.length > 0) {                    
-                    video.get(0).pause();
-                }
-                if (iframe.length > 0) {
-                    var frame_id = iframe.prop('src');   
-                    iframe.prop('src', ''); 
-                    iframe.prop('src', frame_id);
-                }
+
+                    if (video.length > 0) {                    
+                        video.get(0).pause();
+                    }
+                    if (iframe.length > 0) {
+                        var frame_id = iframe.prop('src');   
+                        iframe.prop('src', ''); 
+                        iframe.prop('src', frame_id);
+                    }
                 });
             } 
 

@@ -115,6 +115,40 @@
 	<div class="{{navbar_prefix}}header">
 		<div class="container">
 			<div class="{{navbar_prefix}}header-row flex__row">
+				<div class="is--logotip-v">
+					<a class="{{navbar_prefix}}logotip-v" href="#">
+						{% include "../svg-sprite/svg.twig" with {icon:'logotip-landing-finish'} %}
+						{% include "../svg-sprite/svg.twig" with {icon:'logotip-landing-start'} %}
+					</a> 
+				</div>
+				<div class="is--logotip"> 
+					<a class="{{navbar_prefix}}logotip" href="#">
+						<img src="{{path.img}}/page/landing/logotip.svg" class="img-responsive" alt=""> 
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="{{navbar_prefix}}collapse" >
+		<div class="{{navbar_prefix}}collapse-inner">	
+			<div class="container">
+				<div class="{{navbar_prefix}}collapse-row  flex__row">
+					<div class="is--logotip">
+						<a class="{{navbar_prefix}}logotip" href="#">
+							<img src="{{path.img}}/page/landing/logotip.svg" class="img-responsive" alt=""> 
+						</a>
+					</div>					
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+{% endif %}
+{% if view == "landing2" %}
+<header class="{{navbar_prefix}}block  {{navbar_mod}}">
+	<div class="{{navbar_prefix}}header">
+		<div class="container">
+			<div class="{{navbar_prefix}}header-row flex__row">
 				<div class="is--logotip"> 
 					<a class="{{navbar_prefix}}logotip" href="#">
 						<picture>

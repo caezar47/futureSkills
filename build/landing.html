@@ -21,17 +21,35 @@
 
 <link href="./css/style.css" rel="stylesheet">    </head>
     <body class="is--gradient  is--landing">        
-        <header class="navbar__block  ">
+        <header class="navbar__block  is--scroll">
 	<div class="navbar__header">
 		<div class="container">
 			<div class="navbar__header-row flex__row">
+				<div class="is--logotip-v">
+					<a class="navbar__logotip-v" href="#">
+						<svg class="icon-svg icon-logotip-landing-finish" role="img">
+	<use xlink:href="./img/svg/sprite.svg#logotip-landing-finish"></use>
+</svg>						<svg class="icon-svg icon-logotip-landing-start" role="img">
+	<use xlink:href="./img/svg/sprite.svg#logotip-landing-start"></use>
+</svg>					</a> 
+				</div>
 				<div class="is--logotip"> 
 					<a class="navbar__logotip" href="#">
-						<picture>
-							<source media="(max-width: 767px)" srcset="./img/page/landing/logotip-xs.svg">
-							<img src="./img/page/landing/logotip.svg" class="img-responsive" alt="">
-						</picture>
+						<img src="./img/page/landing/logotip.svg" class="img-responsive" alt=""> 
 					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="navbar__collapse" >
+		<div class="navbar__collapse-inner">	
+			<div class="container">
+				<div class="navbar__collapse-row  flex__row">
+					<div class="is--logotip">
+						<a class="navbar__logotip" href="#">
+							<img src="./img/page/landing/logotip.svg" class="img-responsive" alt=""> 
+						</a>
+					</div>					
 				</div>
 			</div>
 		</div>
@@ -1147,15 +1165,15 @@ document.createElement("picture");
 
                     var video = $(this).closest('.card__item').find('video');
                     var iframe = $(this).closest('.card__item').find('.card__iframe');
-                    
-                if (video.length > 0) {                    
-                    video.get(0).pause();
-                }
-                if (iframe.length > 0) {
-                    var frame_id = iframe.prop('src');   
-                    iframe.prop('src', ''); 
-                    iframe.prop('src', frame_id);
-                }
+
+                    if (video.length > 0) {                    
+                        video.get(0).pause();
+                    }
+                    if (iframe.length > 0) {
+                        var frame_id = iframe.prop('src');   
+                        iframe.prop('src', ''); 
+                        iframe.prop('src', frame_id);
+                    }
                 });
             } 
 
