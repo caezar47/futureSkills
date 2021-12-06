@@ -444,6 +444,107 @@
 			max-width: 570px;
 			margin: 0 auto;
 		}
+
+		&.is--landing-team{
+			display: flex; 
+			flex-direction: column;
+			margin-left: -5px;
+			margin-right: -5px;
+			margin-bottom: 115px;
+			&:last-child{
+				margin-bottom: 0;
+			}
+			& > *{
+				margin-left: 5px;
+				margin-right: 5px;
+				&:nth-child(1){
+					min-width: 283px;
+					margin-bottom: 40px;
+				}
+				&:nth-child(2){
+					flex: 1 1 auto;
+					margin-top: -4px;
+				}
+			}
+			.flexbox-gap &{
+				gap: 40px;
+				margin-left: 0 !important;
+				margin-right: 0 !important;
+				& > *{
+					margin-left: 0 !important;
+					margin-right: 0 !important;
+					&:nth-child(1){
+						margin-bottom: 0;
+					}
+				}
+			}
+			.media-breakpoint-up(@md; {
+				align-items: flex-start;
+				flex-direction: row;
+				margin-left: -15px;
+				margin-right: -15px;
+				margin-bottom: 205px;
+				&:last-child{
+					margin-bottom: 0;
+				}
+				& > *{
+					margin-left: 15px;
+					margin-right: 15px;
+					&:nth-child(1){
+						padding-top: 35px;
+						width: 28.8vw;
+						min-width: 260px;
+					}
+					&:nth-child(2){
+						margin-top: 0;
+					}
+				}
+				.flexbox-gap &{
+					gap: 30px;
+				}
+				&:nth-child(2n+2){
+					& > *{
+						&:nth-child(1){
+							order: 1;
+						}
+						&:nth-child(2){
+							.card__note{
+								transform: scale(-1, 1);
+								h6{
+									max-width: 100%;
+								}
+								*{
+									transform: scale(-1, 1);
+								}
+							}
+						}
+					}
+				}
+			});
+			.media-breakpoint-up(@xl; {
+				padding-left: 4.2vw;
+				margin-left: -35px;
+				margin-right: -35px;
+				& > *{
+					margin-left: 35px;
+					margin-right: 35px;
+					&:nth-child(1){
+						min-width: 377px;
+					}
+				}
+				.flexbox-gap &{
+					gap: 70px;
+				}
+				&:nth-child(2n+2){
+					padding-left: 0vw;
+					padding-right: 2.6vw;
+					.flexbox-gap &{
+						//gap: 30px;
+					}
+
+				}
+			});
+		}
 	}
 	&group{
 		&.is--index-blockquote{
@@ -811,6 +912,56 @@
 			img{
 				border-radius: @site_br - 10px;
 			}
+		}
+		&.is--landing-team{
+			position: relative;
+			display: block;
+			&::before{
+				content: '';
+				position: absolute;
+				z-index: 1;
+				top: 50%;
+				left: 50%;
+				max-width: 216px;
+				max-height: 216px;
+				width: 100%;
+				height: 100%;
+				background: linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+				box-shadow: 0px 0px 5.10377px rgba(49, 255, 156, 0.7), 0px 0px 19.7583px rgba(49, 255, 156, 0.5), inset 0px 0px 1.97583px rgba(49, 255, 156, 0.5);
+				border-radius: @site_br - 15;
+				transform: rotate(-13.68deg) translate(-38%,-62%);
+				filter: blur(0.364555px);
+			}
+			picture{
+				display: block;
+				position: relative;
+				z-index: 2;
+				border-radius: @site_br - 16;
+				overflow: hidden;
+				width: 225px;
+				height: 225px;
+				margin: 0 auto;
+			}
+			img{
+				.img-bg();
+			}
+			.media-breakpoint-up(@xl; {
+				&::before{
+					width: 100%;
+					max-width: 96%;
+					height: 100%;
+					max-height: 91%;
+					transform: rotate(-13.68deg) translate(-42%,-56%);
+					border-radius: @site_br + 15px;
+					filter: blur(1.21645px);
+				}
+				picture{
+					width: 100%;
+					max-width: 370px;
+					height: 370px;
+					border-radius: @site_br + 8;
+				}
+			});
 		}
 	}
 	&heading{
@@ -1271,6 +1422,44 @@
     				margin-bottom: 0;
     			}
     		}
+		}
+		&.is--landing-team{
+		    font-size: .889rem;
+    		line-height: 150%;
+    		overflow: auto;
+    		max-height: 540px;
+    		padding-right: 10px;
+    		.scrollbar(@w: 3px; @r: 0px; @t: fadeout(@white, 90%); @s: @white);
+			h2{
+				font-weight: 400;
+				margin-bottom: 30px;
+				text-align: center;
+			}
+			h5{
+				font-weight: 400;
+				margin-bottom: 5px;
+			}
+			* + h5{
+				padding-top: 15px;
+			}
+			h6{
+				font-weight: 400;
+				opacity: 0.6;
+				font-family: @site_ff_custom;
+			}
+			p, div{
+				margin-bottom: 22px;
+			}
+			.media-breakpoint-up(@md; {
+    			max-height: 450px;
+    			padding-right: 40px;
+				h2{
+					text-align: left;
+				}
+				h6{
+					max-width: 390px;
+				}
+			});
 		}
 	}
 	&label{

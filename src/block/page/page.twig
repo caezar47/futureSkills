@@ -345,21 +345,32 @@
 		{% endif %}
 	>
 		<div class="{{content_prefix}}container container  {{content.mod}}">
-			{% if content.heading %}
-			<{{content.heading_tag}} class="{{content_prefix}}heading  {{content.mod}}">
-				{{content.heading}}
-			</{{content.heading_tag}}>
-			{% endif %}	
-			{% if content.img %}	
-			<div class="{{content_prefix}}img  {{content.mod}}">
-				<img src="{{content.img}}" class="img-responsive" alt="">
-			</div>	
-			{% endif %}	
-			{% if content.text %}	
-			<div class="{{content_prefix}}text  {{content.mod}}">
-				{{content.text}}
-			</div>	
-			{% endif %}			
+			{% if content.view == "team" %}
+				{% include "../common/card/card.twig" with {
+					view:   content.card_view,
+					prefix: content.card_prefix,
+					mod:    content.card_mod,
+					list:   content.card_list,
+				} %}
+			{% endif %}
+			{% if content.view == "partners" %}				
+				{% if content.heading %}
+				<{{content.heading_tag}} class="{{content_prefix}}heading  {{content.mod}}">
+					{{content.heading}}
+				</{{content.heading_tag}}>
+				{% endif %}	
+				{% if content.img %}	
+				<div class="{{content_prefix}}img  {{content.mod}}">
+					<img src="{{content.img}}" class="img-responsive" alt="">
+				</div>	
+				{% endif %}	
+				{% if content.text %}	
+				<div class="{{content_prefix}}text  {{content.mod}}">
+					{{content.text}}
+				</div>	
+				{% endif %}	
+			{% endif %}
+
 		</div>
 	</section>
 	{% endfor %}

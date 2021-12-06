@@ -185,6 +185,13 @@
 			<div class="{{prefix}}img  {{mod}}">
 				<picture><img src="{{value.img}}" class="img-responsive" alt=""></picture>
 			</div>
+			{% if value.note %}
+			<div class="{{prefix}}group  {{mod}}">
+				<div class="{{prefix}}note  {{mod}}">
+					{{value.note}}
+				</div>
+			</div>
+			{% else %}
 			<div class="{{prefix}}group  {{mod}}">
 				{% if value.title %}
 				<h2 class="{{content_prefix}}heading  {{mod}}">				
@@ -203,7 +210,8 @@
 				<p class="{{prefix}}email  {{mod}}">				
 					<a href="mailto:{{value.email}}">{{value.email}}</a> 	
 				</p> 
-			</div> 
+			</div>
+			{% endif %} 
 		</div>
 	{% endfor %}
 {% endif %}
